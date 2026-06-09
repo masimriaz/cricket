@@ -1,0 +1,800 @@
+/* ============================================================
+   Freedom Cup 2026 - Tapball Cricket Tournament
+   Custom Stylesheet
+   ============================================================ */
+
+/* === CSS Variables === */
+:root {
+  --red: #BF0A30;
+  --white: #FFFFFF;
+  --blue: #002868;
+  --blue-dark: #001a4a;
+  --gold: #FFD700;
+  --transition: 0.3s ease;
+  --shadow-sm: 0 2px 8px rgba(0, 40, 104, 0.08);
+  --shadow-md: 0 8px 30px rgba(0, 40, 104, 0.12);
+  --shadow-lg: 0 16px 48px rgba(0, 40, 104, 0.18);
+  --radius: 12px;
+}
+
+/* === Base === */
+* {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  color: #222;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6,
+.display-1, .display-2, .display-3, .display-4, .display-5, .display-6 {
+  font-family: 'Poppins', sans-serif;
+}
+
+::selection {
+  background: var(--blue);
+  color: var(--white);
+}
+
+/* === Draft Banner === */
+.draft-banner {
+  animation: draftPulse 3s ease-in-out infinite;
+}
+@keyframes draftPulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.85; }
+}
+
+/* === Skip Link (Accessibility) === */
+.skip-link {
+  position: absolute;
+  top: -50px;
+  left: 0;
+  background: var(--blue);
+  color: #fff;
+  padding: 10px 20px;
+  z-index: 10000;
+  transition: top var(--transition);
+  font-weight: 600;
+  border-radius: 0 0 8px 0;
+}
+.skip-link:focus {
+  top: 0;
+  color: #fff;
+  outline: 3px solid var(--gold);
+}
+
+/* === Navigation === */
+.navbar-nhtcl {
+  background: linear-gradient(90deg, var(--blue-dark) 0%, var(--blue) 40%, #1a3a6b 100%);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.35);
+  padding: 0.6rem 0;
+  transition: all var(--transition);
+  border-bottom: 2px solid rgba(255, 215, 0, 0.2);
+}
+
+.navbar-nhtcl .nav-link {
+  color: rgba(255, 255, 255, 0.9);
+  font-weight: 500;
+  font-size: 0.82rem;
+  padding: 0.5rem 0.7rem;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+  position: relative;
+}
+
+.navbar-nhtcl .nav-link:hover,
+.navbar-nhtcl .nav-link.active {
+  color: var(--gold);
+  background: rgba(255, 215, 0, 0.1);
+}
+
+.navbar-nhtcl .nav-link.active::after {
+  content: '';
+  position: absolute;
+  bottom: 2px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 20px;
+  height: 3px;
+  background: var(--gold);
+  border-radius: 2px;
+}
+
+.navbar-nhtcl .navbar-brand {
+  font-size: 1.1rem;
+  letter-spacing: 0.5px;
+  color: #fff;
+}
+
+.navbar-nhtcl .navbar-brand:hover {
+  color: var(--gold);
+}
+
+/* === Navbar Scrolled State === */
+.navbar-nhtcl.scrolled {
+  padding: 0.35rem 0;
+  background: linear-gradient(90deg, rgba(0, 26, 74, 0.98), rgba(0, 40, 104, 0.98));
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+  border-bottom-color: rgba(255, 215, 0, 0.35);
+}
+
+/* === Hero Section === */
+.hero-section {
+  min-height: 100vh;
+  background: linear-gradient(135deg, var(--blue-dark) 0%, var(--blue) 50%, #1a3a6b 100%);
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  padding-top: 5rem;
+}
+
+.hero-stars {
+  position: absolute;
+  inset: 0;
+  opacity: 0.12;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80'%3E%3Ctext x='40' y='45' text-anchor='middle' font-size='24' fill='white'%3E%E2%98%85%3C/text%3E%3C/svg%3E");
+  animation: starsDrift 60s linear infinite;
+}
+
+@keyframes starsDrift {
+  from { transform: translateY(0); }
+  to { transform: translateY(-80px); }
+}
+
+.hero-flag-stripe {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 6px;
+  background: linear-gradient(90deg, var(--red) 33%, var(--white) 33% 66%, var(--blue) 66%);
+}
+
+/* === Countdown Timer === */
+.countdown-box {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: var(--radius);
+  padding: 1rem 1.5rem;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  min-width: 90px;
+  transition: transform 0.2s, background 0.2s;
+}
+
+.countdown-box:hover {
+  transform: scale(1.05);
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.countdown-box .count-num {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: var(--gold);
+  line-height: 1;
+  font-family: 'Poppins', sans-serif;
+}
+
+.countdown-box .count-label {
+  font-size: 0.7rem;
+  color: rgba(255, 255, 255, 0.65);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-top: 4px;
+}
+
+/* === Section Styling === */
+.section-padding {
+  padding: 3.5rem 0;
+}
+
+.section-title {
+  font-weight: 800;
+  position: relative;
+  display: inline-block;
+  margin-bottom: 0.5rem;
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 50px;
+  height: 3px;
+  background: var(--red);
+  border-radius: 2px;
+}
+
+/* === Cards === */
+.card-hover {
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.card-hover:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-lg);
+}
+
+/* === Quick Link Cards === */
+.quick-link-card {
+  border: none;
+  border-radius: 16px;
+  text-align: center;
+  padding: 1.5rem 1rem;
+  transition: all 0.3s ease;
+  background: #fff;
+  box-shadow: var(--shadow-sm);
+}
+
+.quick-link-card:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-4px);
+}
+
+.quick-link-card i {
+  font-size: 2rem;
+  color: var(--blue);
+  transition: transform 0.3s;
+}
+
+.quick-link-card:hover i {
+  transform: scale(1.15);
+  color: var(--red);
+}
+
+/* === Buttons === */
+.btn-patriotic {
+  background: var(--red);
+  color: #fff;
+  border: none;
+  font-weight: 600;
+  padding: 0.75rem 2rem;
+  border-radius: 50px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(191, 10, 48, 0.3);
+}
+
+.btn-patriotic:hover {
+  background: #9a0826;
+  color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(191, 10, 48, 0.4);
+}
+
+.btn-patriotic:active {
+  transform: translateY(0);
+}
+
+.btn-outline-patriotic {
+  border: 2px solid var(--red);
+  color: var(--red);
+  font-weight: 600;
+  padding: 0.6rem 1.8rem;
+  border-radius: 50px;
+  transition: all 0.3s ease;
+}
+
+.btn-outline-patriotic:hover {
+  background: var(--red);
+  color: #fff;
+  box-shadow: 0 4px 15px rgba(191, 10, 48, 0.25);
+}
+
+/* === Patriotic Background === */
+.bg-patriotic {
+  background: linear-gradient(135deg, var(--blue) 0%, var(--blue-dark) 100%);
+}
+
+/* === Text Colors === */
+.text-gold {
+  color: var(--gold);
+}
+
+/* === Sponsor Strip === */
+.sponsor-strip {
+  background: rgba(255, 255, 255, 0.05);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 1rem 0;
+}
+
+/* === Tables === */
+.table-standings th {
+  background: var(--blue);
+  color: #fff;
+  font-size: 0.85rem;
+  white-space: nowrap;
+}
+
+.qualify-row {
+  background: rgba(40, 167, 69, 0.08) !important;
+  border-left: 4px solid #28a745;
+}
+
+.table-hover tbody tr {
+  transition: background 0.15s;
+}
+
+/* === Awards === */
+.award-card {
+  text-align: center;
+  padding: 2rem;
+  border-radius: 16px;
+  border: none;
+}
+
+.award-card .trophy-icon {
+  font-size: 3rem;
+}
+
+/* === Gallery === */
+.gallery-item {
+  border-radius: var(--radius);
+  overflow: hidden;
+  aspect-ratio: 4/3;
+  background: linear-gradient(135deg, #e9ecef, #f8f9fa);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease, box-shadow 0.3s;
+  cursor: pointer;
+}
+
+.gallery-item:hover {
+  transform: scale(1.04);
+  box-shadow: var(--shadow-md);
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* === Invitation Letters === */
+.invitation-letter {
+  background: #fffef5;
+  border: 2px solid #e0d9c0;
+  border-radius: 8px;
+  padding: 2.5rem;
+  font-family: 'Inter', serif;
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.7;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+}
+
+/* === Brochure === */
+.brochure-modern {
+  max-width: 750px;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0, 40, 104, 0.15);
+  background: #fff;
+}
+
+.brochure-header {
+  background: linear-gradient(135deg, var(--blue-dark) 0%, var(--blue) 60%, #1a3a6b 100%);
+  position: relative;
+}
+
+.brochure-stars {
+  position: absolute;
+  inset: 0;
+  opacity: 0.08;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='50' height='50'%3E%3Ctext x='25' y='30' text-anchor='middle' font-size='16' fill='white'%3E%E2%98%85%3C/text%3E%3C/svg%3E");
+}
+
+.brochure-body {
+  background: #fff;
+}
+
+.brochure-card {
+  background: #f8f9fc;
+  border-radius: 12px;
+  padding: 1.25rem;
+  border: 1px solid rgba(0, 40, 104, 0.06);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.brochure-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 40, 104, 0.1);
+}
+
+.brochure-card-icon {
+  width: 36px;
+  height: 36px;
+  background: linear-gradient(135deg, var(--blue), var(--blue-dark));
+  color: #fff;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  margin-bottom: 0.75rem;
+}
+
+.brochure-cta {
+  background: linear-gradient(90deg, var(--red), #d4102e);
+  border-radius: 12px;
+  padding: 1.25rem 1.5rem;
+}
+
+/* === Bracket === */
+.bracket-line {
+  border: 2px solid var(--blue);
+  border-radius: 4px;
+}
+
+/* === Scroll Reveal Animation === */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* === Back to Top === */
+.back-to-top {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 45px;
+  height: 45px;
+  background: var(--blue);
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 40, 104, 0.3);
+  z-index: 1000;
+}
+
+.back-to-top.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+.back-to-top:hover {
+  background: var(--red);
+  transform: translateY(-3px);
+}
+
+/* === Lightbox === */
+.lightbox-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.92);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.lightbox-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.lightbox-overlay img {
+  max-width: 90vw;
+  max-height: 85vh;
+  border-radius: 8px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  color: #fff;
+  font-size: 2rem;
+  cursor: pointer;
+  background: none;
+  border: none;
+  opacity: 0.8;
+  transition: opacity 0.2s;
+}
+
+.lightbox-close:hover {
+  opacity: 1;
+}
+
+/* === Form Validation === */
+.form-control.is-invalid,
+.form-select.is-invalid {
+  border-color: var(--red);
+  box-shadow: 0 0 0 3px rgba(191, 10, 48, 0.1);
+}
+
+.form-control.is-valid,
+.form-select.is-valid {
+  border-color: #28a745;
+  box-shadow: 0 0 0 3px rgba(40, 167, 69, 0.1);
+}
+
+.invalid-feedback {
+  color: var(--red);
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+.form-control:focus,
+.form-select:focus {
+  border-color: var(--blue);
+  box-shadow: 0 0 0 3px rgba(0, 40, 104, 0.15);
+}
+
+/* === Accordion === */
+.accordion-button:not(.collapsed) {
+  background: rgba(0, 40, 104, 0.05);
+  color: var(--blue);
+  box-shadow: none;
+}
+
+.accordion-button:focus {
+  border-color: var(--blue);
+  box-shadow: 0 0 0 3px rgba(0, 40, 104, 0.1);
+}
+
+/* === Pulse Animation (for CTA) === */
+@keyframes pulse {
+  0%, 100% { box-shadow: 0 4px 15px rgba(191, 10, 48, 0.3); }
+  50% { box-shadow: 0 4px 30px rgba(191, 10, 48, 0.6); }
+}
+
+.btn-patriotic.pulse {
+  animation: pulse 2s ease-in-out infinite;
+}
+
+/* === Success Message === */
+.form-success {
+  background: #d4edda;
+  border: 1px solid #c3e6cb;
+  border-radius: var(--radius);
+  padding: 1.5rem;
+  text-align: center;
+  color: #155724;
+}
+
+/* === Responsive Tweaks === */
+@media (max-width: 767.98px) {
+  .hero-section {
+    min-height: auto;
+    padding: 5rem 0 2.5rem;
+  }
+  .hero-section .display-2 {
+    font-size: 1.75rem;
+  }
+  .hero-section .lead {
+    font-size: 0.9rem;
+  }
+  .countdown-box .count-num {
+    font-size: 1.6rem;
+  }
+  .countdown-box {
+    padding: 0.6rem 0.8rem;
+    min-width: 65px;
+  }
+  .countdown-box .count-label {
+    font-size: 0.6rem;
+  }
+  .section-padding {
+    padding: 2.5rem 0;
+  }
+  .display-5 {
+    font-size: 1.6rem;
+  }
+  .display-6 {
+    font-size: 1.3rem;
+  }
+  .card-body, .card.p-4 {
+    padding: 1.25rem !important;
+  }
+  .invitation-letter {
+    padding: 1.25rem;
+  }
+  .brochure-modern .brochure-body {
+    padding: 1.25rem !important;
+  }
+  .table {
+    font-size: 0.8rem;
+  }
+  .btn-patriotic, .btn-outline-patriotic {
+    padding: 0.6rem 1.5rem;
+    font-size: 0.9rem;
+  }
+  .navbar-nhtcl .navbar-brand {
+    font-size: 0.95rem;
+  }
+  .quick-link-card {
+    padding: 1rem 0.5rem;
+  }
+  .quick-link-card i {
+    font-size: 1.5rem;
+  }
+  .accordion-button {
+    font-size: 0.85rem;
+    padding: 0.75rem 1rem;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .hero-section {
+    padding: 4.5rem 0 2rem;
+  }
+  .hero-section .display-2 {
+    font-size: 1.5rem;
+  }
+  .countdown-box .count-num {
+    font-size: 1.3rem;
+  }
+  .countdown-box {
+    padding: 0.5rem 0.6rem;
+    min-width: 55px;
+    border-radius: 8px;
+  }
+  .section-padding {
+    padding: 2.5rem 0;
+  }
+  .display-5 {
+    font-size: 1.4rem;
+  }
+  .table {
+    font-size: 0.75rem;
+  }
+  .card {
+    border-radius: 10px;
+  }
+}
+
+/* ============================================================
+   PRINT STYLES
+   ============================================================ */
+@media print {
+  /* Hide non-essential elements */
+  .no-print,
+  .navbar,
+  .skip-link,
+  #countdown,
+  .hero-section,
+  .sponsor-strip,
+  footer,
+  .back-to-top,
+  .btn,
+  .alert,
+  iframe,
+  .lightbox-overlay {
+    display: none !important;
+  }
+
+  /* Reset layout */
+  body {
+    font-size: 11pt;
+    color: #000;
+    background: #fff;
+    line-height: 1.5;
+  }
+
+  .section-padding {
+    padding: 1rem 0;
+  }
+
+  .container {
+    max-width: 100%;
+    padding: 0;
+  }
+
+  /* Cards and shadows */
+  .card {
+    border: 1px solid #ddd !important;
+    box-shadow: none !important;
+    break-inside: avoid;
+  }
+
+  /* Tables */
+  .table {
+    font-size: 10pt;
+  }
+
+  .table-standings th {
+    background: #333 !important;
+    color: #fff !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  .qualify-row {
+    background: #e6f5e6 !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  /* Links */
+  a {
+    color: #000;
+    text-decoration: none;
+  }
+
+  /* Page breaks */
+  section {
+    break-before: auto;
+    break-inside: avoid;
+  }
+
+  h2, h3 {
+    break-after: avoid;
+  }
+
+  /* Invitation letters */
+  .invitation-letter {
+    border: 1px solid #ccc;
+    padding: 1in;
+    margin: 0;
+    max-width: 100%;
+    background: #fff;
+    page-break-inside: avoid;
+  }
+
+  /* Brochure - fit single page */
+  .brochure-modern {
+    box-shadow: none;
+    max-width: 100%;
+    page-break-inside: avoid;
+  }
+
+  .brochure-header {
+    background: #002868 !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  .brochure-cta {
+    background: #BF0A30 !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  /* Rules page */
+  .accordion-collapse {
+    display: block !important;
+    height: auto !important;
+  }
+
+  .accordion-button::after {
+    display: none;
+  }
+
+  /* Show print-only elements */
+  .print-only {
+    display: block !important;
+  }
+
+  /* Page margins */
+  @page {
+    size: letter portrait;
+    margin: 0.75in;
+  }
+}
