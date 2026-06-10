@@ -100,7 +100,6 @@ h1,h2,h3,h4,h5,h6{font-family:'Poppins',sans-serif}
 <a href="#volunteers" class="nav-link mb-1"><i class="bi bi-people"></i> Volunteers</a>
 <a href="#invitations" class="nav-link mb-1"><i class="bi bi-envelope"></i> Invitations</a>
 <a href="#checklist" class="nav-link mb-1"><i class="bi bi-check2-square"></i> Checklist</a>
-<a href="#registrations" class="nav-link mb-1"><i class="bi bi-table"></i> Registrations</a>
 </nav>
 </div>
 
@@ -484,25 +483,6 @@ h1,h2,h3,h4,h5,h6{font-family:'Poppins',sans-serif}
 </section>
 
 <!-- Registrations Viewer -->
-<section id="registrations" class="mb-4">
-<div class="dash-card bg-white">
-<div class="card-header bg-white border-bottom d-flex justify-content-between align-items-center">
-<span><i class="bi bi-table me-2 text-primary"></i>Team Registrations</span>
-<button class="btn btn-outline-primary btn-sm no-print" id="exportCsv"><i class="bi bi-download me-1"></i>Export CSV</button>
-</div>
-<div class="card-body">
-<div class="table-responsive">
-<table class="table table-hover align-middle" id="regTable">
-<thead><tr class="small text-muted text-uppercase"><th>#</th><th>Team Name</th><th>Captain</th><th>Email</th><th>Phone</th><th>Players</th><th>Date</th></tr></thead>
-<tbody id="regBody">
-<tr><td colspan="7" class="text-center text-muted py-4"><i class="bi bi-inbox me-2"></i>No registrations yet. Submissions from the public site will appear here.</td></tr>
-</tbody>
-</table>
-</div>
-</div>
-</div>
-</section>
-
 </div><!-- /col-lg-10 -->
 </div><!-- /row -->
 </div><!-- /container -->
@@ -513,34 +493,6 @@ h1,h2,h3,h4,h5,h6{font-family:'Poppins',sans-serif}
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 <script>
-// Load registrations from localStorage
-(function(){
-  var data = localStorage.getItem('nhtcl_registrations');
-  if(!data) return;
-  var rows = data.trim().split('\n');
-  if(!rows.length) return;
-  var tbody = document.getElementById('regBody');
-  tbody.innerHTML = '';
-  rows.forEach(function(row, i){
-    var cols = row.match(/(".*?"|[^,]+)/g) || [];
-    var clean = cols.map(function(c){ return c.replace(/^"|"$/g,'').replace(/""/g,'"'); });
-    var tr = document.createElement('tr');
-    tr.innerHTML = '<td>'+(i+1)+'</td><td><strong>'+clean[0]+'</strong></td><td>'+clean[1]+'</td><td>'+clean[2]+'</td><td>'+clean[3]+'</td><td>'+clean[4]+'</td><td><small>'+new Date(clean[6]).toLocaleDateString()+'</small></td>';
-    tbody.appendChild(tr);
-  });
-})();
-
-// Export CSV
-document.getElementById('exportCsv').addEventListener('click', function(){
-  var data = localStorage.getItem('nhtcl_registrations') || '';
-  var csv = 'Team Name,Captain Name,Email,Phone,Players,Message,Submitted At\n' + data;
-  var blob = new Blob([csv], {type:'text/csv'});
-  var a = document.createElement('a');
-  a.href = URL.createObjectURL(blob);
-  a.download = 'nhtcl_registrations.csv';
-  a.click();
-});
-
 // Persist checklist state
 document.querySelectorAll('.checklist-item input').forEach(function(cb){
   var key = 'nhtcl_check_' + cb.id;
