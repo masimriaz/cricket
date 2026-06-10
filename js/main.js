@@ -111,6 +111,16 @@
       }
     });
 
+    // Terms checkbox validation
+    var terms = document.getElementById('acceptTerms');
+    if (terms) {
+      terms.addEventListener('change', function () {
+        if (terms.checked) {
+          terms.classList.remove('is-invalid');
+        }
+      });
+    }
+
     // Submit validation
     form.addEventListener('submit', function (e) {
       e.preventDefault();
@@ -122,58 +132,46 @@
         }
       });
 
+      // Check terms checkbox
+      var terms = document.getElementById('acceptTerms');
+      if (terms && !terms.checked) {
+        allValid = false;
+        terms.classList.add('is-invalid');
+      }
+
       if (!allValid) {
         var firstInvalid = form.querySelector('.is-invalid');
         if (firstInvalid) firstInvalid.focus();
         return;
       }
 
-      // Collect form data
-      var data = {
-        teamName: document.getElementById('teamName').value.trim(),
-        captainName: document.getElementById('captainName').value.trim(),
-        captainEmail: document.getElementById('captainEmail').value.trim(),
-        captainPhone: document.getElementById('captainPhone').value.trim(),
-        numPlayers: document.getElementById('numPlayers').value.trim(),
-        message: document.getElementById('message').value.trim(),
-        submittedAt: new Date().toISOString()
-      };
+      // Submit via Formspree AJAX
+      var formData = new FormData(form);
+      var submitBtn = form.querySelector('[type="submit"]');
+      submitBtn.disabled = true;
+      submitBtn.innerHTML = '<span class="spinner-border spinner-border-sm me-2"></span>Submitting...';
 
-      // Save to CSV (append to localStorage and trigger download)
-      var csvHeader = 'Team Name,Captain Name,Email,Phone,Players,Message,Submitted At\n';
-      var csvRow = [
-        '"' + data.teamName.replace(/"/g, '""') + '"',
-        '"' + data.captainName.replace(/"/g, '""') + '"',
-        data.captainEmail,
-        data.captainPhone,
-        data.numPlayers,
-        '"' + data.message.replace(/"/g, '""') + '"',
-        data.submittedAt
-      ].join(',') + '\n';
-
-      // Store in localStorage for persistence
-      var existing = localStorage.getItem('nhtcl_registrations') || '';
-      localStorage.setItem('nhtcl_registrations', existing + csvRow);
-
-      // Trigger CSV download
-      var allRows = localStorage.getItem('nhtcl_registrations') || '';
-      var blob = new Blob([csvHeader + allRows], { type: 'text/csv' });
-      var url = URL.createObjectURL(blob);
-      var a = document.createElement('a');
-      a.href = url;
-      a.download = 'nhtcl_registrations.csv';
-      a.click();
-      URL.revokeObjectURL(url);
-
-      // Reset form
-      form.reset();
-      form.querySelectorAll('.is-valid, .is-invalid').forEach(function (el) {
-        el.classList.remove('is-valid', 'is-invalid');
+      fetch(form.action, {
+        method: 'POST',
+        body: formData,
+        headers: { 'Accept': 'application/json' }
+      }).then(function (response) {
+        if (response.ok) {
+          form.reset();
+          form.querySelectorAll('.is-valid, .is-invalid').forEach(function (el) {
+            el.classList.remove('is-valid', 'is-invalid');
+          });
+          var modal = new bootstrap.Modal(document.getElementById('successModal'));
+          modal.show();
+        } else {
+          alert('Something went wrong. Please try again or email us directly.');
+        }
+      }).catch(function () {
+        alert('Network error. Please check your connection and try again.');
+      }).finally(function () {
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = '<i class="bi bi-send me-2"></i>Submit Registration';
       });
-
-      // Show success modal
-      var modal = new bootstrap.Modal(document.getElementById('successModal'));
-      modal.show();
     });
   }
 
@@ -242,6 +240,26 @@
     var nums = countdownEl.querySelectorAll('.count-num');
     nums.forEach(function (num) {
       num.style.transition = 'transform 0.3s ease';
+    });
+  }
+
+  // === Save Brochure as Image ===
+  var saveBtn = document.getElementById('saveBrochure');
+  if (saveBtn) {
+    saveBtn.addEventListener('click', function () {
+      var brochure = document.querySelector('[data-brochure="printable"]');
+      if (!brochure || typeof html2canvas === 'undefined') return;
+      saveBtn.disabled = true;
+      saveBtn.innerHTML = '<span class="spinner-border spinner-border-sm me-2"></span>Generating...';
+      html2canvas(brochure, { scale: 3, useCORS: true, backgroundColor: '#ffffff' }).then(function (canvas) {
+        var link = document.createElement('a');
+        link.download = 'Freedom-Cup-2026-Brochure.jpg';
+        link.href = canvas.toDataURL('image/jpeg', 0.95);
+        link.click();
+      }).finally(function () {
+        saveBtn.disabled = false;
+        saveBtn.innerHTML = '<i class="bi bi-download me-2"></i>Save as Image';
+      });
     });
   }
 
