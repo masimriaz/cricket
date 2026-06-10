@@ -59,7 +59,7 @@
       captainName: { min: 2, msg: 'Captain name is required' },
       captainEmail: { pattern: /^[^\s@]+@[^\s@]+\.[^\s@]+$/, msg: 'Enter a valid email address' },
       captainPhone: { min: 7, msg: 'Enter a valid phone number' },
-      numPlayers: { min: 9, max: 11, msg: 'Players must be between 9 and 11' }
+      numPlayers: { min: 9, max: 10, msg: 'Players must be between 9 and 10' }
     };
 
     function validateField(input, rules) {
