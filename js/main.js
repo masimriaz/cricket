@@ -243,22 +243,24 @@
     });
   }
 
-  // === Save Brochure as Image ===
+  // === Save Brochure as HD JPEG Image ===
   var saveBtn = document.getElementById('saveBrochure');
   if (saveBtn) {
     saveBtn.addEventListener('click', function () {
       var brochure = document.querySelector('[data-brochure="printable"]');
       if (!brochure || typeof html2canvas === 'undefined') return;
       saveBtn.disabled = true;
-      saveBtn.innerHTML = '<span class="spinner-border spinner-border-sm me-2"></span>Generating...';
-      html2canvas(brochure, { scale: 3, useCORS: true, backgroundColor: '#ffffff' }).then(function (canvas) {
+      saveBtn.innerHTML = '<span class="spinner-border spinner-border-sm me-2"></span>Generating HD Image...';
+      html2canvas(brochure, { scale: 4, useCORS: true, backgroundColor: '#ffffff', logging: false }).then(function (canvas) {
         var link = document.createElement('a');
-        link.download = 'Freedom-Cup-2026-Brochure.jpg';
-        link.href = canvas.toDataURL('image/jpeg', 0.95);
+        link.download = 'Freedom-Cup-2026-Brochure-HD.jpeg';
+        link.href = canvas.toDataURL('image/jpeg', 1.0);
         link.click();
+      }).catch(function () {
+        alert('Could not generate image. Please try again.');
       }).finally(function () {
         saveBtn.disabled = false;
-        saveBtn.innerHTML = '<i class="bi bi-download me-2"></i>Save as Image';
+        saveBtn.innerHTML = '<i class="bi bi-download me-2"></i>Save HD Image';
       });
     });
   }
