@@ -37,6 +37,48 @@ h1,h2,h3,h4,h5,h6,.display-1,.display-2,.display-3,.display-4{font-family:'Poppi
 .gallery-item{border-radius:12px;overflow:hidden;aspect-ratio:4/3;background:#e9ecef;display:flex;align-items:center;justify-content:center;transition:transform .3s}.gallery-item:hover{transform:scale(1.03)}
 .invitation-letter{background:#fffef5;border:2px solid #e0d9c0;border-radius:8px;padding:3rem;font-family:'Inter',serif;max-width:700px;margin:0 auto}
 .brochure-section{background:#f8f9fa;border:2px dashed var(--blue);border-radius:12px;padding:3rem;max-width:800px;margin:0 auto}
+/* Gallery — Horizontal Reel + Masonry */
+.gallery-reel{overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch;scroll-snap-type:x mandatory;display:flex;gap:12px;padding:0 1rem 1.5rem}
+.gallery-reel::-webkit-scrollbar{display:none}
+.gallery-reel-item{flex:0 0 78vw;scroll-snap-align:center;border-radius:16px;overflow:hidden;position:relative;aspect-ratio:16/9;background:#0a0a1a}
+@media(min-width:768px){.gallery-reel-item{flex:0 0 45vw}}
+@media(min-width:1200px){.gallery-reel-item{flex:0 0 33vw}}
+.gallery-reel-item video{width:100%;height:100%;object-fit:cover}
+.gallery-reel-item .reel-play{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:radial-gradient(ellipse at center,rgba(0,0,0,.4) 0%,transparent 70%);cursor:pointer}
+.gallery-reel-item .reel-play i{font-size:3.5rem;color:#fff;filter:drop-shadow(0 4px 16px rgba(0,0,0,.7));transition:transform .2s}
+.gallery-reel-item:hover .reel-play i{transform:scale(1.2)}
+.gallery-masonry{columns:2;column-gap:10px}
+@media(min-width:576px){.gallery-masonry{columns:3;column-gap:12px}}
+@media(min-width:992px){.gallery-masonry{columns:4;column-gap:14px}}
+.gm-item{break-inside:avoid;margin-bottom:10px;border-radius:12px;overflow:hidden;position:relative;cursor:pointer;transition:transform .3s,box-shadow .3s}
+.gm-item:hover{transform:translateY(-4px);box-shadow:0 16px 40px rgba(0,0,0,.2)}
+.gm-item img{width:100%;display:block;transition:transform .5s}
+.gm-item:hover img{transform:scale(1.05)}
+.gm-item video{width:100%;display:block}
+.gm-item .gm-ov{position:absolute;inset:0;opacity:0;transition:opacity .3s;display:flex;align-items:flex-end;padding:12px;background:linear-gradient(0deg,rgba(0,20,60,.75) 0%,transparent 60%)}
+.gm-item:hover .gm-ov{opacity:1}
+.gm-item .gm-ov i{color:#fff;font-size:1.6rem;margin-right:auto}
+.gm-item .gm-ov span{color:rgba(255,255,255,.8);font-size:.7rem;font-weight:600;text-transform:uppercase;letter-spacing:1px}
+.gm-item[data-type="video"] .gm-ov{opacity:1;background:radial-gradient(ellipse at center,rgba(0,0,0,.3) 0%,transparent 70%);align-items:center;justify-content:center;padding:0}
+.gm-item[data-type="video"] .gm-ov i{font-size:2.6rem;margin:0;filter:drop-shadow(0 2px 8px rgba(0,0,0,.6))}
+.gm-item.hide{display:none}
+.gallery-filter-bar{display:flex;gap:8px;justify-content:center;flex-wrap:wrap}
+.gallery-filter-bar button{border:none;background:rgba(0,40,104,.08);color:var(--blue);border-radius:50px;padding:.55rem 1.3rem;font-size:.82rem;font-weight:600;cursor:pointer;transition:all .25s}
+.gallery-filter-bar button.active{background:var(--blue);color:#fff;box-shadow:0 4px 16px rgba(0,40,104,.35)}
+.gallery-filter-bar button:hover:not(.active){background:rgba(0,40,104,.15)}
+/* Lightbox */
+.gallery-lightbox{position:fixed;inset:0;z-index:99999;background:rgba(0,0,0,.97);display:none;align-items:center;justify-content:center;flex-direction:column;backdrop-filter:blur(12px)}
+.gallery-lightbox.active{display:flex}
+.gallery-lb-close{position:absolute;top:14px;right:16px;font-size:1.6rem;color:#fff;background:rgba(255,255,255,.1);border:none;cursor:pointer;z-index:10;width:46px;height:46px;border-radius:50%;display:flex;align-items:center;justify-content:center;backdrop-filter:blur(4px);transition:background .2s}
+.gallery-lb-close:hover{background:rgba(255,255,255,.25)}
+.gallery-lb-prev,.gallery-lb-next{position:absolute;top:50%;transform:translateY(-50%);font-size:1.3rem;color:#fff;background:rgba(255,255,255,.1);border:none;border-radius:50%;width:46px;height:46px;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:background .2s;backdrop-filter:blur(4px)}
+.gallery-lb-prev:hover,.gallery-lb-next:hover{background:rgba(255,255,255,.3)}
+.gallery-lb-prev{left:8px}.gallery-lb-next{right:8px}
+@media(min-width:768px){.gallery-lb-prev{left:24px}.gallery-lb-next{right:24px}.gallery-lb-prev,.gallery-lb-next{width:56px;height:56px;font-size:1.6rem}}
+.gallery-lb-content{max-width:95vw;max-height:85vh;display:flex;align-items:center;justify-content:center}
+.gallery-lb-content img{max-width:95vw;max-height:85vh;border-radius:8px;object-fit:contain}
+.gallery-lb-content video{max-width:95vw;max-height:85vh;border-radius:8px}
+.gallery-lb-counter{position:absolute;bottom:18px;color:rgba(255,255,255,.85);font-size:.78rem;background:rgba(0,0,0,.6);padding:5px 16px;border-radius:20px;backdrop-filter:blur(4px)}
 @media print{.no-print{display:none!important}.print-only{display:block!important}}
 .print-only{display:none}
 </style>
@@ -63,6 +105,7 @@ h1,h2,h3,h4,h5,h6,.display-1,.display-2,.display-3,.display-4{font-family:'Poppi
 <li class="nav-item"><a class="nav-link" href="#awards">Awards</a></li>
 <li class="nav-item"><a class="nav-link" href="#sponsors">Get Involved</a></li>
 <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+<li class="nav-item"><a class="nav-link" href="#gallery">Gallery</a></li>
 <li class="nav-item"><a class="nav-link" href="#brochure">Brochure</a></li>
 <li class="nav-item"><a class="nav-link" href="#sponsor-gallery">Sponsors</a></li>
 </ul>
@@ -832,6 +875,76 @@ h1,h2,h3,h4,h5,h6,.display-1,.display-2,.display-3,.display-4{font-family:'Poppi
 </section>
 
 
+<!-- SECTION: PHOTO & VIDEO GALLERY -->
+<section id="gallery" class="section-padding" aria-label="Photo and Video Gallery" style="background:#0d1117">
+<div class="container-fluid px-0">
+<div class="text-center mb-4 px-3">
+<h2 class="section-title display-5" style="color:#fff">Field Gallery</h2>
+<p class="mt-2" style="color:rgba(255,255,255,.6)">The best tape ball cricket ground in Connecticut — swipe to explore</p>
+</div>
+
+<!-- Video Reel (Horizontal Scroll) -->
+<div class="px-3 mb-2"><p class="fw-bold small text-uppercase" style="color:var(--gold);letter-spacing:2px"><i class="bi bi-camera-reels me-1"></i>Video Highlights</p></div>
+<div class="gallery-reel mb-5">
+<div class="gallery-reel-item" data-type="video"><video src="images/photo_gallary/WhatsApp Video 2026-06.mp4" preload="metadata" muted></video><div class="reel-play"><i class="bi bi-play-circle-fill"></i></div></div>
+<div class="gallery-reel-item" data-type="video"><video src="images/photo_gallary/WhatsApp Video 2026-06-13 at 9.37.20 PM.mp4" preload="metadata" muted></video><div class="reel-play"><i class="bi bi-play-circle-fill"></i></div></div>
+<div class="gallery-reel-item" data-type="video"><video src="images/photo_gallary/WhatsApp Video 2026-06-13 at 9.37.10 PM.mp4" preload="metadata" muted></video><div class="reel-play"><i class="bi bi-play-circle-fill"></i></div></div>
+<div class="gallery-reel-item" data-type="video"><video src="images/photo_gallary/WhatsApp Video 2026-06-13 at 9.36.31 PM.mp4" preload="metadata" muted></video><div class="reel-play"><i class="bi bi-play-circle-fill"></i></div></div>
+<div class="gallery-reel-item" data-type="video"><video src="images/photo_gallary/WhatsApp Video 2026-06-13 at 9.35.28 PM.mp4" preload="metadata" muted></video><div class="reel-play"><i class="bi bi-play-circle-fill"></i></div></div>
+<div class="gallery-reel-item" data-type="video"><video src="images/photo_gallary/WhatsApp Video 2026-06-13 at 9.37.26.mp4" preload="metadata" muted></video><div class="reel-play"><i class="bi bi-play-circle-fill"></i></div></div>
+<div class="gallery-reel-item" data-type="video"><video src="images/photo_gallary/WhatsApp Video 2026-06-13 at 9.37.26 PM.mp4" preload="metadata" muted></video><div class="reel-play"><i class="bi bi-play-circle-fill"></i></div></div>
+<div class="gallery-reel-item" data-type="video"><video src="images/photo_gallary/WhatsApp Video 2026-06-13 at 9.37.01 PM.mp4" preload="metadata" muted></video><div class="reel-play"><i class="bi bi-play-circle-fill"></i></div></div>
+<div class="gallery-reel-item" data-type="video"><video src="images/photo_gallary/WhatsApp Video 2026-06-13 at 9.36.54 PM.mp4" preload="metadata" muted></video><div class="reel-play"><i class="bi bi-play-circle-fill"></i></div></div>
+<div class="gallery-reel-item" data-type="video"><video src="images/photo_gallary/WhatsApp Video 2026-06-13 at 9.36.41 PM.mp4" preload="metadata" muted></video><div class="reel-play"><i class="bi bi-play-circle-fill"></i></div></div>
+<div class="gallery-reel-item" data-type="video"><video src="images/photo_gallary/WhatsApp Video 2026-06-13 at 9.36.36 PM.mp4" preload="metadata" muted></video><div class="reel-play"><i class="bi bi-play-circle-fill"></i></div></div>
+<div class="gallery-reel-item" data-type="video"><video src="images/photo_gallary/WhatsApp Video 2026-06-13 at 9.36.20 PM.mp4" preload="metadata" muted></video><div class="reel-play"><i class="bi bi-play-circle-fill"></i></div></div>
+<div class="gallery-reel-item" data-type="video"><video src="images/photo_gallary/WhatsApp Video 2026-06-13 at 9.36.17 PM.mp4" preload="metadata" muted></video><div class="reel-play"><i class="bi bi-play-circle-fill"></i></div></div>
+<div class="gallery-reel-item" data-type="video"><video src="images/photo_gallary/WhatsApp Video 2026-06-13 at 9.36.12 PM.mp4" preload="metadata" muted></video><div class="reel-play"><i class="bi bi-play-circle-fill"></i></div></div>
+<div class="gallery-reel-item" data-type="video"><video src="images/photo_gallary/WhatsApp Video 2026-06-13 at 9.35.42 PM.mp4" preload="metadata" muted></video><div class="reel-play"><i class="bi bi-play-circle-fill"></i></div></div>
+<div class="gallery-reel-item" data-type="video"><video src="images/photo_gallary/WhatsApp Video 2026-06-13 at 9.35.36 PM.mp4" preload="metadata" muted></video><div class="reel-play"><i class="bi bi-play-circle-fill"></i></div></div>
+<div class="gallery-reel-item" data-type="video"><video src="images/photo_gallary/WhatsApp Video 2026-06-13 at 9.35.29 PM.mp4" preload="metadata" muted></video><div class="reel-play"><i class="bi bi-play-circle-fill"></i></div></div>
+</div>
+
+<!-- Photo Masonry -->
+<div class="container">
+<div class="d-flex align-items-center justify-content-between mb-3 flex-wrap gap-2">
+<p class="fw-bold small text-uppercase mb-0" style="color:var(--gold);letter-spacing:2px"><i class="bi bi-images me-1"></i>Photo Gallery</p>
+<div class="gallery-filter-bar">
+<button class="active" data-gallery-filter="all">All</button>
+<button data-gallery-filter="photo"><i class="bi bi-image me-1"></i>Photos</button>
+<button data-gallery-filter="video"><i class="bi bi-film me-1"></i>Videos</button>
+</div>
+</div>
+<div class="gallery-masonry" id="galleryGrid">
+<div class="gm-item" data-type="photo"><img src="images/photo_gallary/Brochure 2.jpeg" alt="Freedom Cup field overview" loading="lazy"><div class="gm-ov"><i class="bi bi-arrows-fullscreen"></i><span>Photo</span></div></div>
+<div class="gm-item" data-type="photo"><img src="images/photo_gallary/WhatsApp Image 6.jpeg" alt="Cricket ground view" loading="lazy"><div class="gm-ov"><i class="bi bi-arrows-fullscreen"></i><span>Photo</span></div></div>
+<div class="gm-item" data-type="photo"><img src="images/photo_gallary/WhatsApp Image 2026-06-13 at 9.36.55 PM.jpeg" alt="Field setup" loading="lazy"><div class="gm-ov"><i class="bi bi-arrows-fullscreen"></i><span>Photo</span></div></div>
+<div class="gm-item" data-type="photo"><img src="images/photo_gallary/WhatsApp Image 2026-06-13 at 9.36.50 PM.jpeg" alt="Ground panorama" loading="lazy"><div class="gm-ov"><i class="bi bi-arrows-fullscreen"></i><span>Photo</span></div></div>
+<div class="gm-item" data-type="photo"><img src="images/photo_gallary/WhatsApp Image 5.jpeg" alt="Cricket pitch" loading="lazy"><div class="gm-ov"><i class="bi bi-arrows-fullscreen"></i><span>Photo</span></div></div>
+<div class="gm-item" data-type="photo"><img src="images/photo_gallary/WhatsApp Image 4.jpeg" alt="Playing area" loading="lazy"><div class="gm-ov"><i class="bi bi-arrows-fullscreen"></i><span>Photo</span></div></div>
+<div class="gm-item" data-type="photo"><img src="images/photo_gallary/WhatsApp Image 3.jpeg" alt="Venue grounds" loading="lazy"><div class="gm-ov"><i class="bi bi-arrows-fullscreen"></i><span>Photo</span></div></div>
+<div class="gm-item" data-type="photo"><img src="images/photo_gallary/WhatsApp Image 2.jpeg" alt="Field overview" loading="lazy"><div class="gm-ov"><i class="bi bi-arrows-fullscreen"></i><span>Photo</span></div></div>
+<div class="gm-item" data-type="photo"><img src="images/photo_gallary/WhatsApp Image 2026-06-13 at 9.35.56 PM.jpeg" alt="Ground facilities" loading="lazy"><div class="gm-ov"><i class="bi bi-arrows-fullscreen"></i><span>Photo</span></div></div>
+<div class="gm-item" data-type="photo"><img src="images/photo_gallary/Umpires.jpeg" alt="Umpires at the ground" loading="lazy"><div class="gm-ov"><i class="bi bi-arrows-fullscreen"></i><span>Photo</span></div></div>
+<div class="gm-item" data-type="photo"><img src="images/photo_gallary/WhatsApp Image 2026-06-13 at 9.35.43 PM.jpeg" alt="Match preparation" loading="lazy"><div class="gm-ov"><i class="bi bi-arrows-fullscreen"></i><span>Photo</span></div></div>
+<div class="gm-item" data-type="photo"><img src="images/photo_gallary/WhatsApp Image 2026-06-13 at 9.35.29 PM.jpeg" alt="Ground aerial view" loading="lazy"><div class="gm-ov"><i class="bi bi-arrows-fullscreen"></i><span>Photo</span></div></div>
+<div class="gm-item" data-type="video"><video src="images/photo_gallary/WhatsApp Video 2026-06-13 at 9.36.36 PM.mp4" preload="metadata" muted></video><div class="gm-ov"><i class="bi bi-play-circle-fill"></i></div></div>
+<div class="gm-item" data-type="video"><video src="images/photo_gallary/WhatsApp Video 2026-06-13 at 9.36.17 PM.mp4" preload="metadata" muted></video><div class="gm-ov"><i class="bi bi-play-circle-fill"></i></div></div>
+<div class="gm-item" data-type="video"><video src="images/photo_gallary/WhatsApp Video 2026-06-13 at 9.35.36 PM.mp4" preload="metadata" muted></video><div class="gm-ov"><i class="bi bi-play-circle-fill"></i></div></div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- Gallery Lightbox Modal -->
+<div class="gallery-lightbox" id="galleryLightbox" aria-hidden="true" role="dialog" aria-label="Media viewer">
+<button class="gallery-lb-close" aria-label="Close">&times;</button>
+<button class="gallery-lb-prev" aria-label="Previous"><i class="bi bi-chevron-left"></i></button>
+<button class="gallery-lb-next" aria-label="Next"><i class="bi bi-chevron-right"></i></button>
+<div class="gallery-lb-content" id="galleryLbContent"></div>
+<div class="gallery-lb-counter" id="galleryLbCounter"></div>
+</div>
+
 <!-- SECTION 12: BROCHURE -->
 <section id="brochure" class="section-padding" aria-label="Event Brochure">
 <div class="container">
@@ -945,7 +1058,7 @@ h1,h2,h3,h4,h5,h6,.display-1,.display-2,.display-3,.display-4{font-family:'Poppi
 
 <!-- SPONSOR GALLERY -->
 <section id="sponsor-gallery" class="py-0" aria-label="Our Sponsors">
-<!-- Colorful header banner -->
+<!-- Header banner -->
 <div class="text-white text-center py-5 position-relative overflow-hidden" style="background:linear-gradient(135deg,var(--blue-dark) 0%,var(--blue) 40%,#1a3a6b 100%)">
 <div class="position-absolute top-0 start-0 end-0 bottom-0" style="opacity:.06;background-image:url('data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2240%22 height=%2240%22%3E%3Ctext x=%2220%22 y=%2225%22 text-anchor=%22middle%22 font-size=%2214%22 fill=%22white%22%3E%E2%98%85%3C/text%3E%3C/svg%3E')"></div>
 <div class="position-relative">
@@ -958,16 +1071,30 @@ h1,h2,h3,h4,h5,h6,.display-1,.display-2,.display-3,.display-4{font-family:'Poppi
 <div class="section-padding" style="background:linear-gradient(180deg,#f0f4ff 0%,#fff 50%,#fffbf0 100%)">
 <div class="container">
 
-<!-- Title Sponsor -->
-<div class="text-center mb-5">
-<div class="d-inline-block px-4 py-1 rounded-pill mb-3" style="background:linear-gradient(90deg,var(--gold),#f5c518);box-shadow:0 4px 15px rgba(255,215,0,.3)">
-<span class="fw-bold text-uppercase" style="color:#333;letter-spacing:2px;font-size:.8rem">★ Title Sponsor ★</span>
+<!-- Gratitude Message -->
+<div class="text-center mb-5 mx-auto" style="max-width:700px">
+<i class="bi bi-heart-fill" style="font-size:2.5rem;color:var(--red)"></i>
+<h3 class="fw-bold mt-3 mb-3">Thank You to Our Incredible Sponsors</h3>
+<p class="text-muted mb-0">The Freedom Cup 2026 wouldn't be possible without the generosity and passion of our sponsors. Their love for cricket and commitment to building community is what makes this tournament a reality. We are deeply grateful for their support — they don't just sponsor an event, they invest in bringing people together through the beautiful game. 🙏🏏</p>
 </div>
-<div class="d-inline-block p-4 rounded-4 mx-auto" style="min-width:300px;background:#fff;border:3px solid var(--gold);box-shadow:0 8px 30px rgba(255,215,0,.15)">
-<div class="d-flex align-items-center justify-content-center" style="height:130px;background:linear-gradient(135deg,#fffdf5,#fff9e6);border-radius:12px">
-<div class="text-center">
-<i class="bi bi-star-fill" style="font-size:2rem;color:var(--gold)"></i>
-<p class="fw-bold text-muted mt-2 mb-0">Your Brand Here</p>
+
+<!-- Confirmed Sponsors -->
+<div class="row g-4 justify-content-center mb-5">
+<div class="col-sm-6 col-md-5 col-lg-4">
+<div class="card card-hover border-0 h-100 text-center overflow-hidden" style="box-shadow:0 8px 30px rgba(0,40,104,.12);border-top:4px solid var(--gold)!important">
+<div class="p-4">
+<img src="images/sponsor_gallary/New Haven Eagles.jpeg" alt="New Haven Eagles Cricket Club - Ground Sponsor" class="img-fluid rounded-3 mb-3" style="max-height:160px;object-fit:contain">
+<h5 class="fw-bold mb-1">New Haven Eagles Cricket Club</h5>
+<p class="small text-muted mb-0">Ground Sponsor & Preparations Partner</p>
+</div>
+</div>
+</div>
+<div class="col-sm-6 col-md-5 col-lg-4">
+<div class="card card-hover border-0 h-100 text-center overflow-hidden" style="box-shadow:0 8px 30px rgba(0,40,104,.12);border-top:4px solid var(--gold)!important">
+<div class="p-4">
+<img src="images/sponsor_gallary/Munir.jpeg" alt="Munir - Sponsor" class="img-fluid rounded-3 mb-3" style="max-height:160px;object-fit:contain">
+<h5 class="fw-bold mb-1">Munir</h5>
+<p class="small text-muted mb-0">Proud Supporter</p>
 </div>
 </div>
 </div>
@@ -975,29 +1102,33 @@ h1,h2,h3,h4,h5,h6,.display-1,.display-2,.display-3,.display-4{font-family:'Poppi
 
 <!-- Gold Sponsors -->
 <div class="text-center mb-4">
-<div class="d-inline-block px-3 py-1 rounded-pill mb-3" style="background:linear-gradient(90deg,var(--blue),var(--blue-dark))">
-<span class="fw-bold text-uppercase text-white" style="letter-spacing:2px;font-size:.75rem">Gold Sponsors</span>
+<div class="d-inline-block px-3 py-1 rounded-pill mb-3" style="background:linear-gradient(90deg,var(--gold),#f5c518);box-shadow:0 4px 15px rgba(255,215,0,.3)">
+<span class="fw-bold text-uppercase" style="color:#333;letter-spacing:2px;font-size:.75rem">★ Gold Sponsors ★</span>
 </div>
 </div>
 <div class="row g-4 justify-content-center mb-5">
+<!-- Add Gold sponsors here: copy a col block and update image src and name -->
 <div class="col-6 col-md-4 col-lg-3">
-<div class="card card-hover border-0 h-100 p-3 text-center" style="border-top:4px solid var(--blue)!important;box-shadow:0 4px 20px rgba(0,40,104,.08)">
-<div class="d-flex align-items-center justify-content-center" style="height:100px;background:linear-gradient(135deg,#f0f4ff,#e8eeff);border-radius:8px">
-<div><i class="bi bi-building" style="font-size:1.5rem;color:var(--blue)"></i><p class="small text-muted mt-1 mb-0">Sponsor Logo</p></div>
+<div class="card card-hover border-0 h-100 p-3 text-center" style="border-top:4px solid var(--gold)!important;box-shadow:0 4px 20px rgba(255,215,0,.1)">
+<div class="d-flex align-items-center justify-content-center" style="height:100px;background:linear-gradient(135deg,#fffdf5,#fff9e6);border-radius:8px">
+<div class="text-center"><i class="bi bi-star" style="font-size:1.5rem;color:var(--gold)"></i><p class="small text-muted mt-1 mb-0">Your Logo Here</p></div>
 </div>
 </div>
 </div>
+</div>
+
+<!-- Silver Sponsors -->
+<div class="text-center mb-4">
+<div class="d-inline-block px-3 py-1 rounded-pill mb-3" style="background:linear-gradient(90deg,#6c757d,#495057)">
+<span class="fw-bold text-uppercase text-white" style="letter-spacing:2px;font-size:.75rem">Silver Sponsors</span>
+</div>
+</div>
+<div class="row g-3 justify-content-center mb-5">
+<!-- Add Silver sponsors here: copy a col block and update image src and name -->
 <div class="col-6 col-md-4 col-lg-3">
-<div class="card card-hover border-0 h-100 p-3 text-center" style="border-top:4px solid var(--blue)!important;box-shadow:0 4px 20px rgba(0,40,104,.08)">
-<div class="d-flex align-items-center justify-content-center" style="height:100px;background:linear-gradient(135deg,#f0f4ff,#e8eeff);border-radius:8px">
-<div><i class="bi bi-building" style="font-size:1.5rem;color:var(--blue)"></i><p class="small text-muted mt-1 mb-0">Sponsor Logo</p></div>
-</div>
-</div>
-</div>
-<div class="col-6 col-md-4 col-lg-3">
-<div class="card card-hover border-0 h-100 p-3 text-center" style="border-top:4px solid var(--blue)!important;box-shadow:0 4px 20px rgba(0,40,104,.08)">
-<div class="d-flex align-items-center justify-content-center" style="height:100px;background:linear-gradient(135deg,#f0f4ff,#e8eeff);border-radius:8px">
-<div><i class="bi bi-building" style="font-size:1.5rem;color:var(--blue)"></i><p class="small text-muted mt-1 mb-0">Sponsor Logo</p></div>
+<div class="card card-hover border-0 h-100 p-3 text-center" style="border-top:3px solid #adb5bd!important;box-shadow:0 3px 15px rgba(0,0,0,.06)">
+<div class="d-flex align-items-center justify-content-center" style="height:90px;background:linear-gradient(135deg,#f8f9fa,#e9ecef);border-radius:8px">
+<div class="text-center"><i class="bi bi-star-half" style="font-size:1.3rem;color:#6c757d"></i><p class="small text-muted mt-1 mb-0">Your Logo Here</p></div>
 </div>
 </div>
 </div>
@@ -1010,31 +1141,11 @@ h1,h2,h3,h4,h5,h6,.display-1,.display-2,.display-3,.display-4{font-family:'Poppi
 </div>
 </div>
 <div class="row g-3 justify-content-center mb-5">
+<!-- Add Community partners here: copy a col block and update image src and name -->
 <div class="col-4 col-md-3 col-lg-2">
 <div class="card border-0 p-2 text-center card-hover" style="border-top:3px solid var(--red)!important;box-shadow:0 3px 15px rgba(191,10,48,.06)">
 <div class="d-flex align-items-center justify-content-center" style="height:70px;background:linear-gradient(135deg,#fff5f5,#ffe8e8);border-radius:6px">
-<i class="bi bi-shop" style="font-size:1.2rem;color:var(--red)"></i>
-</div>
-</div>
-</div>
-<div class="col-4 col-md-3 col-lg-2">
-<div class="card border-0 p-2 text-center card-hover" style="border-top:3px solid var(--red)!important;box-shadow:0 3px 15px rgba(191,10,48,.06)">
-<div class="d-flex align-items-center justify-content-center" style="height:70px;background:linear-gradient(135deg,#fff5f5,#ffe8e8);border-radius:6px">
-<i class="bi bi-shop" style="font-size:1.2rem;color:var(--red)"></i>
-</div>
-</div>
-</div>
-<div class="col-4 col-md-3 col-lg-2">
-<div class="card border-0 p-2 text-center card-hover" style="border-top:3px solid var(--red)!important;box-shadow:0 3px 15px rgba(191,10,48,.06)">
-<div class="d-flex align-items-center justify-content-center" style="height:70px;background:linear-gradient(135deg,#fff5f5,#ffe8e8);border-radius:6px">
-<i class="bi bi-shop" style="font-size:1.2rem;color:var(--red)"></i>
-</div>
-</div>
-</div>
-<div class="col-4 col-md-3 col-lg-2">
-<div class="card border-0 p-2 text-center card-hover" style="border-top:3px solid var(--red)!important;box-shadow:0 3px 15px rgba(191,10,48,.06)">
-<div class="d-flex align-items-center justify-content-center" style="height:70px;background:linear-gradient(135deg,#fff5f5,#ffe8e8);border-radius:6px">
-<i class="bi bi-shop" style="font-size:1.2rem;color:var(--red)"></i>
+<div class="text-center"><i class="bi bi-people" style="font-size:1.2rem;color:var(--red)"></i><p class="small text-muted mt-1 mb-0">Partner</p></div>
 </div>
 </div>
 </div>
@@ -1043,7 +1154,7 @@ h1,h2,h3,h4,h5,h6,.display-1,.display-2,.display-3,.display-4{font-family:'Poppi
 <!-- CTA -->
 <div class="text-center p-4 rounded-4" style="background:linear-gradient(135deg,var(--blue-dark),var(--blue));box-shadow:0 8px 30px rgba(0,40,104,.2)">
 <p class="text-white fw-bold mb-2" style="font-size:1.1rem"><i class="bi bi-megaphone-fill me-2 text-gold"></i>Want Your Brand on This Stage?</p>
-<p class="text-white small opacity-80 mb-3">Reach hundreds of community members — sponsor the Freedom Cup 2026!</p>
+<p class="text-white small opacity-80 mb-3">Join our sponsors — support community cricket and gain visibility among hundreds of cricket lovers!</p>
 <a href="#contact" class="btn btn-lg fw-bold" style="background:var(--gold);color:#333;border-radius:50px;padding:.75rem 2.5rem"><i class="bi bi-handshake me-2"></i>Become a Sponsor</a>
 </div>
 
@@ -1166,6 +1277,76 @@ const c=document.getElementById('navContent');
 if(c.classList.contains('show')){new bootstrap.Collapse(c).hide();}
 });
 });
+
+// Gallery Filter & Lightbox
+const cards=document.querySelectorAll('.gm-item, .gallery-reel-item');
+const filterBtns=document.querySelectorAll('[data-gallery-filter]');
+const lb=document.getElementById('galleryLightbox');
+const lbContent=document.getElementById('galleryLbContent');
+const lbCounter=document.getElementById('galleryLbCounter');
+let visible=[],currentIdx=0;
+
+function updateVisible(){visible=[...document.querySelectorAll('.gm-item:not(.hide), .gallery-reel-item')];}
+
+filterBtns.forEach(function(btn){
+btn.addEventListener('click',function(){
+filterBtns.forEach(function(b){b.classList.remove('active');});
+btn.classList.add('active');
+const f=btn.getAttribute('data-gallery-filter');
+document.querySelectorAll('.gm-item').forEach(function(c){c.classList.toggle('hide',f!=='all'&&c.dataset.type!==f);});
+updateVisible();
+});
+});
+
+function openLightbox(idx){
+currentIdx=idx;showSlide();
+lb.classList.add('active');lb.setAttribute('aria-hidden','false');
+document.body.style.overflow='hidden';
+}
+function closeLightbox(){
+lb.classList.remove('active');lb.setAttribute('aria-hidden','true');
+document.body.style.overflow='';
+lbContent.innerHTML='';
+}
+function showSlide(){
+const card=visible[currentIdx];if(!card)return;
+lbContent.innerHTML='';
+if(card.dataset.type==='video'){
+const v=document.createElement('video');
+v.src=card.querySelector('video').src;
+v.controls=true;v.autoplay=true;v.style.maxWidth='90vw';v.style.maxHeight='80vh';v.style.borderRadius='8px';
+lbContent.appendChild(v);
+}else{
+const img=document.createElement('img');
+img.src=card.querySelector('img').src;img.alt='Gallery fullscreen';
+lbContent.appendChild(img);
+}
+lbCounter.textContent=(currentIdx+1)+' / '+visible.length;
+}
+
+cards.forEach(function(c){c.addEventListener('click',function(){updateVisible();openLightbox(visible.indexOf(c));});});
+document.querySelector('.gallery-lb-close').addEventListener('click',closeLightbox);
+document.querySelector('.gallery-lb-prev').addEventListener('click',function(){currentIdx=(currentIdx-1+visible.length)%visible.length;showSlide();});
+document.querySelector('.gallery-lb-next').addEventListener('click',function(){currentIdx=(currentIdx+1)%visible.length;showSlide();});
+lb.addEventListener('click',function(e){if(e.target===lb)closeLightbox();});
+document.addEventListener('keydown',function(e){
+if(!lb.classList.contains('active'))return;
+if(e.key==='Escape')closeLightbox();
+if(e.key==='ArrowLeft'){currentIdx=(currentIdx-1+visible.length)%visible.length;showSlide();}
+if(e.key==='ArrowRight'){currentIdx=(currentIdx+1)%visible.length;showSlide();}
+});
+// Touch swipe for mobile lightbox
+let touchStartX=0;
+lb.addEventListener('touchstart',function(e){touchStartX=e.changedTouches[0].screenX;},{passive:true});
+lb.addEventListener('touchend',function(e){
+const diff=e.changedTouches[0].screenX-touchStartX;
+if(Math.abs(diff)>50){
+if(diff>0){currentIdx=(currentIdx-1+visible.length)%visible.length;}
+else{currentIdx=(currentIdx+1)%visible.length;}
+showSlide();
+}
+},{passive:true});
+updateVisible();
 });
 </script>
 <script src="js/main.js"></script>
