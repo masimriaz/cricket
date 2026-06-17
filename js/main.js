@@ -250,17 +250,47 @@
       var brochure = document.querySelector('[data-brochure="printable"]');
       if (!brochure || typeof html2canvas === 'undefined') return;
       saveBtn.disabled = true;
-      saveBtn.innerHTML = '<span class="spinner-border spinner-border-sm me-2"></span>Generating HD Image...';
-      html2canvas(brochure, { scale: 4, useCORS: true, backgroundColor: '#ffffff', logging: false }).then(function (canvas) {
+      saveBtn.innerHTML = '<span class="spinner-border spinner-border-sm me-2"></span>Generating...';
+
+      // Clone brochure and inline all images as base64 to avoid tainted canvas
+      var clone = brochure.cloneNode(true);
+      clone.style.position = 'absolute';
+      clone.style.left = '-9999px';
+      clone.style.top = '0';
+      clone.style.width = brochure.offsetWidth + 'px';
+      document.body.appendChild(clone);
+
+      var imgs = clone.querySelectorAll('img');
+      var promises = Array.from(imgs).map(function(img) {
+        return new Promise(function(resolve) {
+          if (!img.src || img.src.startsWith('data:')) { resolve(); return; }
+          var c = document.createElement('canvas');
+          var ctx = c.getContext('2d');
+          var i = new Image();
+          i.onload = function() {
+            c.width = i.width; c.height = i.height;
+            ctx.drawImage(i, 0, 0);
+            try { img.src = c.toDataURL(); } catch(e) {}
+            resolve();
+          };
+          i.onerror = function() { resolve(); };
+          i.src = img.src;
+        });
+      });
+
+      Promise.all(promises).then(function() {
+        return html2canvas(clone, { scale: 2, backgroundColor: '#ffffff', logging: false });
+      }).then(function(canvas) {
         var link = document.createElement('a');
-        link.download = 'Freedom-Cup-2026-Brochure-HD.jpeg';
-        link.href = canvas.toDataURL('image/jpeg', 1.0);
+        link.download = 'Freedom-Cup-2026-Brochure-HD.png';
+        link.href = canvas.toDataURL('image/png');
         link.click();
-      }).catch(function () {
-        alert('Could not generate image. Please try again.');
-      }).finally(function () {
+      }).catch(function() {
+        alert('Please open via a local server for image download: npx serve .');
+      }).finally(function() {
+        document.body.removeChild(clone);
         saveBtn.disabled = false;
-        saveBtn.innerHTML = '<i class="bi bi-download me-2"></i>Save HD Image';
+        saveBtn.innerHTML = '<i class="bi bi-download me-2"></i>Save / Print Brochure';
       });
     });
   }
