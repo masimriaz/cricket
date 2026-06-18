@@ -8,59 +8,65 @@
 <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
-:root{--red:#BF0A30;--blue:#002868;--blue-dark:#001a4a;--gold:#FFD700;--bg:#f0f2f7}
+:root{--red:#BF0A30;--blue:#002868;--blue-dark:#001a4a;--gold:#FFD700;--bg:#f4f6fa;--card-shadow:0 2px 12px rgba(0,40,104,.06)}
 *{scroll-behavior:smooth}
-body{font-family:'Inter',sans-serif;background:var(--bg);color:#222}
+body{font-family:'Inter',sans-serif;background:var(--bg);color:#2d3748}
 h1,h2,h3,h4,h5,h6{font-family:'Poppins',sans-serif}
 
 /* Header */
-.admin-header{background:linear-gradient(135deg,var(--blue-dark),var(--blue),#1a3a6b);color:#fff;padding:1.5rem 0;position:sticky;top:0;z-index:100;box-shadow:0 4px 20px rgba(0,0,0,.2)}
+.admin-header{background:linear-gradient(135deg,#0a0a1a 0%,var(--blue-dark) 50%,var(--blue) 100%);color:#fff;padding:1rem 0;position:sticky;top:0;z-index:100;box-shadow:0 4px 24px rgba(0,0,0,.3);border-bottom:3px solid var(--gold)}
 .admin-header .badge-live{background:var(--red);animation:pulse 2s infinite}
 @keyframes pulse{0%,100%{opacity:1}50%{opacity:.6}}
 
 /* Sidebar Nav */
-.admin-nav{position:sticky;top:80px}
-.admin-nav .nav-link{color:#555;font-size:.82rem;padding:.5rem .75rem;border-radius:8px;transition:all .2s;font-weight:500}
-.admin-nav .nav-link:hover,.admin-nav .nav-link.active{background:var(--blue);color:#fff}
+.admin-nav{position:sticky;top:80px;background:#fff;border-radius:14px;padding:.75rem;box-shadow:var(--card-shadow)}
+.admin-nav .nav-link{color:#4a5568;font-size:.8rem;padding:.6rem .85rem;border-radius:8px;transition:all .2s;font-weight:500;margin-bottom:2px}
+.admin-nav .nav-link:hover{background:rgba(0,40,104,.05);color:var(--blue)}
+.admin-nav .nav-link.active{background:var(--blue);color:#fff;box-shadow:0 4px 12px rgba(0,40,104,.25)}
 .admin-nav .nav-link i{width:20px;display:inline-block}
 
+/* Section Headers */
+.section-header{display:flex;align-items:center;gap:.75rem;margin-bottom:1.25rem;padding-bottom:.75rem;border-bottom:2px solid #e2e8f0}
+.section-header .section-icon{width:40px;height:40px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1.1rem;flex-shrink:0}
+.section-header h5{margin:0;font-weight:700;font-size:1rem}
+.section-header p{margin:0;font-size:.75rem;color:#718096}
+
 /* Cards */
-.dash-card{border:none;border-radius:14px;box-shadow:0 2px 16px rgba(0,0,0,.05);transition:transform .2s,box-shadow .2s;overflow:hidden}
-.dash-card:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(0,0,0,.1)}
-.dash-card .card-header{border:none;padding:1rem 1.5rem;font-weight:700;font-size:.9rem}
+.dash-card{border:none;border-radius:16px;box-shadow:var(--card-shadow);transition:transform .2s,box-shadow .2s;overflow:hidden;background:#fff}
+.dash-card:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(0,0,0,.08)}
 .dash-card .card-body{padding:1.5rem}
 
 /* Stat Cards */
-.stat-card{border-radius:14px;padding:1.25rem;text-align:center;border:none;position:relative;overflow:hidden}
-.stat-card::before{content:'';position:absolute;top:-20px;right:-20px;width:80px;height:80px;border-radius:50%;opacity:.1}
+.stat-card{border-radius:14px;padding:1.25rem;text-align:center;border:none;position:relative;overflow:hidden;background:#fff;box-shadow:var(--card-shadow)}
 .stat-card .stat-num{font-size:2rem;font-weight:800;font-family:'Poppins',sans-serif}
-.stat-card .stat-label{font-size:.75rem;text-transform:uppercase;letter-spacing:1px;opacity:.7}
+.stat-card .stat-label{font-size:.7rem;text-transform:uppercase;letter-spacing:1px;color:#718096;margin-top:.25rem}
 
 /* Timeline */
 .timeline{position:relative;padding-left:2rem}
-.timeline::before{content:'';position:absolute;left:8px;top:0;bottom:0;width:2px;background:linear-gradient(180deg,var(--blue),var(--red))}
-.timeline-item{position:relative;margin-bottom:1.25rem;padding-left:1rem}
+.timeline::before{content:'';position:absolute;left:8px;top:0;bottom:0;width:2px;background:linear-gradient(180deg,var(--blue),var(--gold),var(--red))}
+.timeline-item{position:relative;margin-bottom:1.25rem;padding-left:1rem;font-size:.85rem}
 .timeline-item::before{content:'';position:absolute;left:-1.6rem;top:4px;width:12px;height:12px;border-radius:50%;background:var(--blue);border:2px solid #fff;box-shadow:0 0 0 2px var(--blue)}
-.timeline-item.done::before{background:var(--gold)}
-.timeline-item.urgent::before{background:var(--red)}
+.timeline-item.done::before{background:var(--gold);box-shadow:0 0 0 2px var(--gold)}
+.timeline-item.urgent::before{background:var(--red);box-shadow:0 0 0 2px var(--red)}
 
 /* Checklist */
 .checklist-item{display:flex;align-items:center;padding:.6rem 0;border-bottom:1px solid #f0f0f0}
 .checklist-item:last-child{border:none}
 .checklist-item input:checked+label{text-decoration:line-through;opacity:.5}
-.checklist-item label{cursor:pointer;margin-left:.75rem;font-size:.85rem}
+.checklist-item label{cursor:pointer;margin-left:.75rem;font-size:.82rem}
 
 /* Equipment Cards */
-.equip-card{background:#fff;border-radius:12px;padding:1rem;border:1px solid #eee;text-align:center}
-.equip-card img,.equip-card .equip-icon{width:48px;height:48px;margin-bottom:.5rem}
-.equip-card .equip-icon{display:inline-flex;align-items:center;justify-content:center;border-radius:10px;font-size:1.4rem}
+.equip-card{background:#fff;border-radius:12px;padding:1rem;border:1px solid #e2e8f0;text-align:center;transition:transform .2s}
+.equip-card:hover{transform:translateY(-2px)}
+.equip-card .equip-icon{width:48px;height:48px;margin-bottom:.5rem;display:inline-flex;align-items:center;justify-content:center;border-radius:10px;font-size:1.4rem}
 
-/* Invitation Letters */
-.invitation-letter{background:#fffef5;border:2px solid #e0d9c0;border-radius:10px;padding:1.5rem;line-height:1.7;box-shadow:0 4px 15px rgba(0,0,0,.04);font-size:.85rem}
+/* Tables */
+.table thead{font-size:.75rem;text-transform:uppercase;letter-spacing:.5px}
+.table td,.table th{font-size:.82rem;vertical-align:middle}
 
 /* Responsive */
 @media(max-width:991.98px){.admin-sidebar{display:none}}
-@media print{.no-print{display:none!important}.invitation-letter{border:1px solid #ccc;padding:1in;box-shadow:none}}
+@media print{.no-print{display:none!important}body{background:#fff}}
 </style>
 </head>
 <body>
@@ -107,7 +113,11 @@ h1,h2,h3,h4,h5,h6{font-family:'Poppins',sans-serif}
 <div class="col-lg-10">
 
 <!-- Overview Stats -->
-<section id="overview" class="mb-4">
+<section id="overview" class="mb-5">
+<div class="section-header">
+<div class="section-icon" style="background:linear-gradient(135deg,var(--blue),var(--blue-dark));color:#fff"><i class="bi bi-speedometer2"></i></div>
+<div><h5>Tournament Overview</h5><p>Key numbers at a glance</p></div>
+</div>
 <div class="row g-3">
 <div class="col-6 col-md-3">
 <div class="stat-card bg-white">
@@ -138,12 +148,12 @@ h1,h2,h3,h4,h5,h6{font-family:'Poppins',sans-serif}
 </section>
 
 <!-- Budget -->
-<section id="budget" class="mb-4">
-<div class="dash-card bg-white">
-<div class="card-header bg-white border-bottom d-flex justify-content-between align-items-center">
-<span><i class="bi bi-cash-stack me-2 text-primary"></i>Budget Breakdown</span>
-<span class="badge bg-success">Revenue: $4,000 (8 × $500)</span>
+<section id="budget" class="mb-5">
+<div class="section-header">
+<div class="section-icon" style="background:linear-gradient(135deg,#28a745,#1e7e34);color:#fff"><i class="bi bi-cash-stack"></i></div>
+<div><h5>Budget & Finance</h5><p>Revenue, expenses & financial planning</p></div>
 </div>
+<div class="dash-card bg-white">
 <div class="card-body">
 <div class="row g-3 mb-3">
 <div class="col-md-6">
@@ -194,11 +204,12 @@ h1,h2,h3,h4,h5,h6{font-family:'Poppins',sans-serif}
 </section>
 
 <!-- Equipment & Procurement -->
-<section id="equipment" class="mb-4">
-<div class="dash-card bg-white">
-<div class="card-header bg-white border-bottom">
-<i class="bi bi-box-seam me-2 text-primary"></i>Equipment & Procurement
+<section id="equipment" class="mb-5">
+<div class="section-header">
+<div class="section-icon" style="background:linear-gradient(135deg,#e83e8c,#c2185b);color:#fff"><i class="bi bi-box-seam"></i></div>
+<div><h5>Equipment & Procurement</h5><p>What to buy and where to source</p></div>
 </div>
+<div class="dash-card">
 <div class="card-body">
 <div class="row g-3">
 <div class="col-6 col-md-4 col-lg-2">
@@ -258,11 +269,12 @@ h1,h2,h3,h4,h5,h6{font-family:'Poppins',sans-serif}
 </section>
 
 <!-- Sponsorship -->
-<section id="sponsors" class="mb-4">
-<div class="dash-card bg-white">
-<div class="card-header bg-white border-bottom">
-<i class="bi bi-gem me-2" style="color:var(--gold)"></i>Sponsorship Strategy
+<section id="sponsors" class="mb-5">
+<div class="section-header">
+<div class="section-icon" style="background:linear-gradient(135deg,var(--gold),#f5c518);color:#333"><i class="bi bi-gem"></i></div>
+<div><h5>Sponsorship Strategy</h5><p>Tiers, pricing & pitch approach</p></div>
 </div>
+<div class="dash-card">
 <div class="card-body">
 <div class="row g-3 mb-3">
 <div class="col-md-6 col-lg-3">
@@ -322,11 +334,12 @@ h1,h2,h3,h4,h5,h6{font-family:'Poppins',sans-serif}
 </section>
 
 <!-- Timeline -->
-<section id="timeline" class="mb-4">
-<div class="dash-card bg-white">
-<div class="card-header bg-white border-bottom">
-<i class="bi bi-calendar3 me-2 text-primary"></i>Event Planning Timeline
+<section id="timeline" class="mb-5">
+<div class="section-header">
+<div class="section-icon" style="background:linear-gradient(135deg,#6f42c1,#5a2d91);color:#fff"><i class="bi bi-calendar3"></i></div>
+<div><h5>Event Planning Timeline</h5><p>Key milestones from now to July 4</p></div>
 </div>
+<div class="dash-card">
 <div class="card-body">
 <div class="timeline">
 <div class="timeline-item urgent"><strong>Now – June 15:</strong> Secure sponsors, finalize entry fees, open registrations</div>
@@ -342,11 +355,12 @@ h1,h2,h3,h4,h5,h6{font-family:'Poppins',sans-serif}
 </section>
 
 <!-- Volunteers & Roles -->
-<section id="volunteers" class="mb-4">
-<div class="dash-card bg-white">
-<div class="card-header bg-white border-bottom">
-<i class="bi bi-people me-2 text-primary"></i>Volunteer Team & Assignments
+<section id="volunteers" class="mb-5">
+<div class="section-header">
+<div class="section-icon" style="background:linear-gradient(135deg,#0dcaf0,#0891b2);color:#fff"><i class="bi bi-people"></i></div>
+<div><h5>Volunteer Team & Assignments</h5><p>13 volunteers organized into functional groups</p></div>
 </div>
+<div class="dash-card">
 <div class="card-body">
 
 <!-- Team Overview -->
@@ -461,11 +475,12 @@ h1,h2,h3,h4,h5,h6{font-family:'Poppins',sans-serif}
 </section>
 
 <!-- Roles & Responsibility Matrix -->
-<section id="roles" class="mb-4">
-<div class="dash-card bg-white">
-<div class="card-header bg-white border-bottom">
-<i class="bi bi-diagram-3 me-2 text-primary"></i>Roles & Responsibility Matrix (RACI)
+<section id="roles" class="mb-5">
+<div class="section-header">
+<div class="section-icon" style="background:linear-gradient(135deg,var(--red),#9a0826);color:#fff"><i class="bi bi-diagram-3"></i></div>
+<div><h5>Roles & Responsibility Matrix</h5><p>Who does what — clear accountability</p></div>
 </div>
+<div class="dash-card">
 <div class="card-body">
 <p class="small text-muted mb-3"><strong>R</strong> = Responsible (does the work) • <strong>A</strong> = Accountable (final decision) • <strong>C</strong> = Consulted • <strong>I</strong> = Informed</p>
 
@@ -577,11 +592,12 @@ h1,h2,h3,h4,h5,h6{font-family:'Poppins',sans-serif}
 
 <!-- Invitation Letters -->
 <!-- Checklist -->
-<section id="checklist" class="mb-4">
-<div class="dash-card bg-white">
-<div class="card-header bg-white border-bottom">
-<i class="bi bi-check2-square me-2 text-primary"></i>Master Checklist
+<section id="checklist" class="mb-5">
+<div class="section-header">
+<div class="section-icon" style="background:linear-gradient(135deg,#fd7e14,#e55a00);color:#fff"><i class="bi bi-check2-square"></i></div>
+<div><h5>Master Checklist</h5><p>Track progress — check off as you complete</p></div>
 </div>
+<div class="dash-card">
 <div class="card-body">
 <div class="row g-4">
 <div class="col-md-6">
