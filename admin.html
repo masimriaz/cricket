@@ -8,139 +8,139 @@
 <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
-:root{--red:#BF0A30;--blue:#002868;--blue-dark:#001a4a;--gold:#FFD700;--bg:#f4f6fa;--card-shadow:0 2px 12px rgba(0,40,104,.06)}
-*{scroll-behavior:smooth}
-body{font-family:'Inter',sans-serif;background:var(--bg);color:#2d3748}
+:root{--red:#BF0A30;--blue:#002868;--blue-dark:#001a4a;--gold:#FFD700;--bg:#f8fafc;--sidebar-bg:#0f172a;--card-shadow:0 1px 3px rgba(0,0,0,.04),0 4px 16px rgba(0,0,0,.06)}
+*{scroll-behavior:smooth;box-sizing:border-box}
+body{font-family:'Inter',sans-serif;background:var(--bg);color:#1e293b;margin:0}
 h1,h2,h3,h4,h5,h6{font-family:'Poppins',sans-serif}
 
-/* Header */
-.admin-header{background:linear-gradient(135deg,#0a0a1a 0%,var(--blue-dark) 50%,var(--blue) 100%);color:#fff;padding:1rem 0;position:sticky;top:0;z-index:100;box-shadow:0 4px 24px rgba(0,0,0,.3);border-bottom:3px solid var(--gold)}
-.admin-header .badge-live{background:var(--red);animation:pulse 2s infinite}
-@keyframes pulse{0%,100%{opacity:1}50%{opacity:.6}}
+/* Layout */
+.dash-layout{display:flex;min-height:100vh}
+.dash-sidebar{width:240px;background:var(--sidebar-bg);position:fixed;top:0;bottom:0;left:0;z-index:200;padding:1.5rem 1rem;overflow-y:auto}
+.dash-main{margin-left:240px;flex:1;padding:2rem;min-width:0}
 
-/* Sidebar Nav */
-.admin-nav{position:sticky;top:80px;background:#fff;border-radius:14px;padding:.75rem;box-shadow:var(--card-shadow)}
-.admin-nav .nav-link{color:#4a5568;font-size:.8rem;padding:.6rem .85rem;border-radius:8px;transition:all .2s;font-weight:500;margin-bottom:2px}
-.admin-nav .nav-link:hover{background:rgba(0,40,104,.05);color:var(--blue)}
-.admin-nav .nav-link.active{background:var(--blue);color:#fff;box-shadow:0 4px 12px rgba(0,40,104,.25)}
-.admin-nav .nav-link i{width:20px;display:inline-block}
+/* Sidebar */
+.dash-sidebar .brand{color:#fff;font-size:1rem;font-weight:700;margin-bottom:.25rem}
+.dash-sidebar .brand-sub{color:rgba(255,255,255,.5);font-size:.7rem;margin-bottom:2rem}
+.dash-sidebar .nav-link{color:rgba(255,255,255,.6);font-size:.8rem;padding:.6rem .9rem;border-radius:8px;transition:all .15s;font-weight:500;margin-bottom:3px;display:flex;align-items:center;gap:.6rem;text-decoration:none}
+.dash-sidebar .nav-link:hover{color:#fff;background:rgba(255,255,255,.08)}
+.dash-sidebar .nav-link.active{color:#fff;background:var(--blue);box-shadow:0 4px 12px rgba(0,40,104,.4)}
+.dash-sidebar .nav-link i{font-size:.9rem;width:18px;text-align:center}
+.dash-sidebar .nav-divider{border-top:1px solid rgba(255,255,255,.08);margin:1rem 0}
 
-/* Section Headers */
-.section-header{display:flex;align-items:center;gap:.75rem;margin-bottom:1.25rem;padding-bottom:.75rem;border-bottom:2px solid #e2e8f0}
-.section-header .section-icon{width:40px;height:40px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1.1rem;flex-shrink:0}
-.section-header h5{margin:0;font-weight:700;font-size:1rem}
-.section-header p{margin:0;font-size:.75rem;color:#718096}
+/* Top Bar */
+.dash-topbar{display:flex;align-items:center;justify-content:space-between;margin-bottom:2rem;flex-wrap:wrap;gap:1rem}
+.dash-topbar h2{font-size:1.4rem;font-weight:800;margin:0}
+.dash-topbar p{font-size:.8rem;color:#64748b;margin:0}
+
+/* Section */
+.dash-section{margin-bottom:2.5rem}
+.dash-section-title{display:flex;align-items:center;gap:.6rem;margin-bottom:1rem}
+.dash-section-title .s-icon{width:36px;height:36px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:1rem;flex-shrink:0;color:#fff}
+.dash-section-title h5{font-size:.95rem;font-weight:700;margin:0}
+.dash-section-title .s-badge{font-size:.6rem;background:rgba(0,40,104,.08);color:var(--blue);padding:2px 8px;border-radius:4px;font-weight:600;text-transform:uppercase;letter-spacing:.5px}
 
 /* Cards */
-.dash-card{border:none;border-radius:16px;box-shadow:var(--card-shadow);transition:transform .2s,box-shadow .2s;overflow:hidden;background:#fff}
-.dash-card:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(0,0,0,.08)}
-.dash-card .card-body{padding:1.5rem}
+.dash-card{border:none;border-radius:12px;box-shadow:var(--card-shadow);background:#fff;overflow:hidden}
+.dash-card .card-body{padding:1.25rem}
 
 /* Stat Cards */
-.stat-card{border-radius:14px;padding:1.25rem;text-align:center;border:none;position:relative;overflow:hidden;background:#fff;box-shadow:var(--card-shadow)}
-.stat-card .stat-num{font-size:2rem;font-weight:800;font-family:'Poppins',sans-serif}
-.stat-card .stat-label{font-size:.7rem;text-transform:uppercase;letter-spacing:1px;color:#718096;margin-top:.25rem}
+.stat-card{border-radius:12px;padding:1.25rem;text-align:center;background:#fff;box-shadow:var(--card-shadow);border-left:4px solid transparent}
+.stat-card .stat-num{font-size:1.8rem;font-weight:800;font-family:'Poppins',sans-serif;line-height:1}
+.stat-card .stat-label{font-size:.65rem;text-transform:uppercase;letter-spacing:1px;color:#94a3b8;margin-top:.4rem}
 
 /* Timeline */
-.timeline{position:relative;padding-left:2rem}
-.timeline::before{content:'';position:absolute;left:8px;top:0;bottom:0;width:2px;background:linear-gradient(180deg,var(--blue),var(--gold),var(--red))}
-.timeline-item{position:relative;margin-bottom:1.25rem;padding-left:1rem;font-size:.85rem}
-.timeline-item::before{content:'';position:absolute;left:-1.6rem;top:4px;width:12px;height:12px;border-radius:50%;background:var(--blue);border:2px solid #fff;box-shadow:0 0 0 2px var(--blue)}
+.timeline{position:relative;padding-left:1.5rem}
+.timeline::before{content:'';position:absolute;left:6px;top:4px;bottom:4px;width:2px;background:linear-gradient(180deg,var(--blue),var(--gold),var(--red));border-radius:2px}
+.timeline-item{position:relative;margin-bottom:1rem;padding-left:1.25rem;font-size:.82rem;line-height:1.5}
+.timeline-item::before{content:'';position:absolute;left:-1.2rem;top:5px;width:10px;height:10px;border-radius:50%;background:var(--blue);border:2px solid var(--bg);box-shadow:0 0 0 2px var(--blue)}
 .timeline-item.done::before{background:var(--gold);box-shadow:0 0 0 2px var(--gold)}
 .timeline-item.urgent::before{background:var(--red);box-shadow:0 0 0 2px var(--red)}
 
 /* Checklist */
-.checklist-item{display:flex;align-items:center;padding:.6rem 0;border-bottom:1px solid #f0f0f0}
+.checklist-item{display:flex;align-items:center;padding:.55rem 0;border-bottom:1px solid #f1f5f9}
 .checklist-item:last-child{border:none}
-.checklist-item input:checked+label{text-decoration:line-through;opacity:.5}
-.checklist-item label{cursor:pointer;margin-left:.75rem;font-size:.82rem}
+.checklist-item input:checked+label{text-decoration:line-through;opacity:.4}
+.checklist-item label{cursor:pointer;margin-left:.6rem;font-size:.8rem}
 
 /* Equipment Cards */
-.equip-card{background:#fff;border-radius:12px;padding:1rem;border:1px solid #e2e8f0;text-align:center;transition:transform .2s}
-.equip-card:hover{transform:translateY(-2px)}
-.equip-card .equip-icon{width:48px;height:48px;margin-bottom:.5rem;display:inline-flex;align-items:center;justify-content:center;border-radius:10px;font-size:1.4rem}
+.equip-card{background:#fff;border-radius:10px;padding:.85rem;border:1px solid #e2e8f0;text-align:center;transition:all .2s}
+.equip-card:hover{border-color:var(--blue);box-shadow:0 4px 12px rgba(0,40,104,.08)}
+.equip-card .equip-icon{width:44px;height:44px;margin-bottom:.4rem;display:inline-flex;align-items:center;justify-content:center;border-radius:8px;font-size:1.3rem}
 
 /* Tables */
-.table thead{font-size:.75rem;text-transform:uppercase;letter-spacing:.5px}
-.table td,.table th{font-size:.82rem;vertical-align:middle}
+.table{font-size:.8rem}
+.table thead{font-size:.7rem;text-transform:uppercase;letter-spacing:.5px}
+.table td,.table th{vertical-align:middle;padding:.5rem .6rem}
 
 /* Responsive */
-@media(max-width:991.98px){.admin-sidebar{display:none}}
-@media print{.no-print{display:none!important}body{background:#fff}}
+@media(max-width:991.98px){.dash-sidebar{display:none}.dash-main{margin-left:0}}
+@media print{.no-print,.dash-sidebar{display:none!important}.dash-main{margin-left:0}body{background:#fff}}
 </style>
 </head>
 <body>
 
-<!-- Header -->
-<header class="admin-header no-print">
-<div class="container-fluid px-4">
-<div class="d-flex align-items-center justify-content-between">
-<div class="d-flex align-items-center gap-3">
-<div class="d-inline-flex align-items-center justify-content-center" style="width:40px;height:40px;background:rgba(255,215,0,.15);border:2px solid var(--gold);border-radius:50%">
-<span style="color:var(--gold);font-size:1.2rem">★</span>
-</div>
-<div>
-<h1 class="h5 fw-bold mb-0">Freedom Cup 2026 <span class="badge badge-live ms-2 small">ADMIN</span></h1>
-<p class="small opacity-70 mb-0">League Management Dashboard</p>
-</div>
-</div>
-<div class="d-flex gap-2">
-<a href="index.html" class="btn btn-outline-light btn-sm"><i class="bi bi-globe me-1"></i>Public Site</a>
-<button class="btn btn-sm text-white opacity-75" onclick="window.print()"><i class="bi bi-printer"></i></button>
-</div>
-</div>
-</div>
-</header>
+<!-- Dashboard Layout -->
+<div class="dash-layout">
 
-<div class="container-fluid px-4 py-4">
-<div class="row g-4">
-
-<!-- Sidebar -->
-<div class="col-lg-2 admin-sidebar no-print">
-<nav class="admin-nav">
-<a href="#overview" class="nav-link active mb-1"><i class="bi bi-speedometer2"></i> Overview</a>
-<a href="#budget" class="nav-link mb-1"><i class="bi bi-cash-stack"></i> Budget</a>
-<a href="#equipment" class="nav-link mb-1"><i class="bi bi-box-seam"></i> Equipment</a>
-<a href="#sponsors" class="nav-link mb-1"><i class="bi bi-gem"></i> Sponsors</a>
-<a href="#timeline" class="nav-link mb-1"><i class="bi bi-calendar3"></i> Timeline</a>
-<a href="#volunteers" class="nav-link mb-1"><i class="bi bi-people"></i> Volunteers</a>
-<a href="#roles" class="nav-link mb-1"><i class="bi bi-diagram-3"></i> RACI Matrix</a>
-<a href="#checklist" class="nav-link mb-1"><i class="bi bi-check2-square"></i> Checklist</a>
-</nav>
-</div>
+<!-- Fixed Sidebar -->
+<aside class="dash-sidebar no-print">
+<div class="brand"><span style="color:var(--gold)">★</span> Freedom Cup</div>
+<div class="brand-sub">Admin Dashboard</div>
+<a href="#overview" class="nav-link active"><i class="bi bi-grid-1x2"></i> Overview</a>
+<a href="#budget" class="nav-link"><i class="bi bi-wallet2"></i> Budget</a>
+<a href="#equipment" class="nav-link"><i class="bi bi-box-seam"></i> Equipment</a>
+<a href="#sponsors" class="nav-link"><i class="bi bi-gem"></i> Sponsors</a>
+<div class="nav-divider"></div>
+<a href="#timeline" class="nav-link"><i class="bi bi-calendar-range"></i> Timeline</a>
+<a href="#volunteers" class="nav-link"><i class="bi bi-people"></i> Team</a>
+<a href="#roles" class="nav-link"><i class="bi bi-diagram-3"></i> RACI</a>
+<a href="#checklist" class="nav-link"><i class="bi bi-check2-square"></i> Checklist</a>
+<div class="nav-divider"></div>
+<a href="index.html" class="nav-link"><i class="bi bi-globe"></i> Public Site</a>
+</aside>
 
 <!-- Main Content -->
-<div class="col-lg-10">
+<main class="dash-main">
+
+<!-- Top Bar -->
+<div class="dash-topbar">
+<div>
+<h2>Freedom Cup 2026</h2>
+<p>League Management Dashboard • July 4, 2026</p>
+</div>
+<div class="d-flex gap-2 no-print">
+<button class="btn btn-sm btn-outline-secondary" onclick="window.print()"><i class="bi bi-printer me-1"></i>Print</button>
+</div>
+</div>
 
 <!-- Overview Stats -->
-<section id="overview" class="mb-5">
-<div class="section-header">
-<div class="section-icon" style="background:linear-gradient(135deg,var(--blue),var(--blue-dark));color:#fff"><i class="bi bi-speedometer2"></i></div>
-<div><h5>Tournament Overview</h5><p>Key numbers at a glance</p></div>
+<section id="overview" class="dash-section">
+<div class="dash-section-title">
+<div class="s-icon" style="background:var(--blue)"><i class="bi bi-grid-1x2"></i></div>
+<h5>Overview</h5><span class="s-badge">4 Key Metrics</span>
 </div>
 <div class="row g-3">
 <div class="col-6 col-md-3">
-<div class="stat-card bg-white">
-<div class="stat-card::before" style="background:var(--blue)"></div>
+<div class="stat-card" style="border-left-color:var(--blue)">
 <div class="stat-num" style="color:var(--blue)">8</div>
 <div class="stat-label">Teams Target</div>
 </div>
 </div>
 <div class="col-6 col-md-3">
-<div class="stat-card bg-white">
+<div class="stat-card" style="border-left-color:var(--red)">
 <div class="stat-num" style="color:var(--red)">1</div>
 <div class="stat-label">Day</div>
 </div>
 </div>
 <div class="col-6 col-md-3">
-<div class="stat-card bg-white">
+<div class="stat-card" style="border-left-color:var(--gold)">
 <div class="stat-num" style="color:var(--gold)">$4,000</div>
 <div class="stat-label">Revenue (8×$500)</div>
 </div>
 </div>
 <div class="col-6 col-md-3">
-<div class="stat-card bg-white">
-<div class="stat-num" style="color:#28a745">14</div>
+<div class="stat-card" style="border-left-color:#16a34a">
+<div class="stat-num" style="color:#16a34a">14</div>
 <div class="stat-label">Total Matches</div>
 </div>
 </div>
@@ -148,10 +148,10 @@ h1,h2,h3,h4,h5,h6{font-family:'Poppins',sans-serif}
 </section>
 
 <!-- Budget -->
-<section id="budget" class="mb-5">
-<div class="section-header">
-<div class="section-icon" style="background:linear-gradient(135deg,#28a745,#1e7e34);color:#fff"><i class="bi bi-cash-stack"></i></div>
-<div><h5>Budget & Finance</h5><p>Revenue, expenses & financial planning</p></div>
+<section id="budget" class="dash-section">
+<div class="dash-section-title">
+<div class="s-icon" style="background:#16a34a"><i class="bi bi-wallet2"></i></div>
+<h5>Budget & Finance</h5><span class="s-badge">Revenue $4,000</span>
 </div>
 <div class="dash-card bg-white">
 <div class="card-body">
@@ -204,10 +204,10 @@ h1,h2,h3,h4,h5,h6{font-family:'Poppins',sans-serif}
 </section>
 
 <!-- Equipment & Procurement -->
-<section id="equipment" class="mb-5">
-<div class="section-header">
-<div class="section-icon" style="background:linear-gradient(135deg,#e83e8c,#c2185b);color:#fff"><i class="bi bi-box-seam"></i></div>
-<div><h5>Equipment & Procurement</h5><p>What to buy and where to source</p></div>
+<section id="equipment" class="dash-section">
+<div class="dash-section-title">
+<div class="s-icon" style="background:#db2777"><i class="bi bi-box-seam"></i></div>
+<h5>Equipment</h5><span class="s-badge">Procurement</span>
 </div>
 <div class="dash-card">
 <div class="card-body">
@@ -269,10 +269,10 @@ h1,h2,h3,h4,h5,h6{font-family:'Poppins',sans-serif}
 </section>
 
 <!-- Sponsorship -->
-<section id="sponsors" class="mb-5">
-<div class="section-header">
-<div class="section-icon" style="background:linear-gradient(135deg,var(--gold),#f5c518);color:#333"><i class="bi bi-gem"></i></div>
-<div><h5>Sponsorship Strategy</h5><p>Tiers, pricing & pitch approach</p></div>
+<section id="sponsors" class="dash-section">
+<div class="dash-section-title">
+<div class="s-icon" style="background:var(--gold)"><i class="bi bi-gem" style="color:#333"></i></div>
+<h5>Sponsorship</h5><span class="s-badge">Strategy</span>
 </div>
 <div class="dash-card">
 <div class="card-body">
@@ -334,10 +334,10 @@ h1,h2,h3,h4,h5,h6{font-family:'Poppins',sans-serif}
 </section>
 
 <!-- Timeline -->
-<section id="timeline" class="mb-5">
-<div class="section-header">
-<div class="section-icon" style="background:linear-gradient(135deg,#6f42c1,#5a2d91);color:#fff"><i class="bi bi-calendar3"></i></div>
-<div><h5>Event Planning Timeline</h5><p>Key milestones from now to July 4</p></div>
+<section id="timeline" class="dash-section">
+<div class="dash-section-title">
+<div class="s-icon" style="background:#7c3aed"><i class="bi bi-calendar-range"></i></div>
+<h5>Timeline</h5><span class="s-badge">Planning</span>
 </div>
 <div class="dash-card">
 <div class="card-body">
@@ -355,10 +355,10 @@ h1,h2,h3,h4,h5,h6{font-family:'Poppins',sans-serif}
 </section>
 
 <!-- Volunteers & Roles -->
-<section id="volunteers" class="mb-5">
-<div class="section-header">
-<div class="section-icon" style="background:linear-gradient(135deg,#0dcaf0,#0891b2);color:#fff"><i class="bi bi-people"></i></div>
-<div><h5>Volunteer Team & Assignments</h5><p>13 volunteers organized into functional groups</p></div>
+<section id="volunteers" class="dash-section">
+<div class="dash-section-title">
+<div class="s-icon" style="background:#0891b2"><i class="bi bi-people"></i></div>
+<h5>Team & Assignments</h5><span class="s-badge">13 Volunteers</span>
 </div>
 <div class="dash-card">
 <div class="card-body">
@@ -475,10 +475,10 @@ h1,h2,h3,h4,h5,h6{font-family:'Poppins',sans-serif}
 </section>
 
 <!-- Roles & Responsibility Matrix -->
-<section id="roles" class="mb-5">
-<div class="section-header">
-<div class="section-icon" style="background:linear-gradient(135deg,var(--red),#9a0826);color:#fff"><i class="bi bi-diagram-3"></i></div>
-<div><h5>Roles & Responsibility Matrix</h5><p>Who does what — clear accountability</p></div>
+<section id="roles" class="dash-section">
+<div class="dash-section-title">
+<div class="s-icon" style="background:var(--red)"><i class="bi bi-diagram-3"></i></div>
+<h5>RACI Matrix</h5><span class="s-badge">Accountability</span>
 </div>
 <div class="dash-card">
 <div class="card-body">
@@ -592,10 +592,10 @@ h1,h2,h3,h4,h5,h6{font-family:'Poppins',sans-serif}
 
 <!-- Invitation Letters -->
 <!-- Checklist -->
-<section id="checklist" class="mb-5">
-<div class="section-header">
-<div class="section-icon" style="background:linear-gradient(135deg,#fd7e14,#e55a00);color:#fff"><i class="bi bi-check2-square"></i></div>
-<div><h5>Master Checklist</h5><p>Track progress — check off as you complete</p></div>
+<section id="checklist" class="dash-section">
+<div class="dash-section-title">
+<div class="s-icon" style="background:#ea580c"><i class="bi bi-check2-square"></i></div>
+<h5>Master Checklist</h5><span class="s-badge">Track Progress</span>
 </div>
 <div class="dash-card">
 <div class="card-body">
@@ -636,13 +636,8 @@ h1,h2,h3,h4,h5,h6{font-family:'Poppins',sans-serif}
 </section>
 
 <!-- Registrations Viewer -->
-</div><!-- /col-lg-10 -->
-</div><!-- /row -->
-</div><!-- /container -->
-
-<footer class="text-center py-3 text-muted small no-print border-top">
-<p class="mb-0">Freedom Cup 2026 Admin Dashboard • For internal use only • <a href="index.html">View Public Site</a></p>
-</footer>
+</main><!-- /dash-main -->
+</div><!-- /dash-layout -->
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 <script>
