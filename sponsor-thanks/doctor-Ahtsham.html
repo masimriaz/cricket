@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Thank You — Doctor Ahtsham</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800;900&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Poppins',sans-serif;display:flex;align-items:center;justify-content:center;min-height:100vh;background:#0a0a0a}
+.card{width:1080px;height:1920px;position:relative;overflow:hidden;background:linear-gradient(170deg,#0a1628 0%,#0d1f3c 30%,#142952 60%,#1a3a6b 100%)}
+.card::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 20%,rgba(255,215,0,.06) 0%,transparent 60%),radial-gradient(ellipse at 80% 80%,rgba(191,10,48,.05) 0%,transparent 50%)}
+.card::after{content:'';position:absolute;inset:0;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80'%3E%3Ccircle cx='40' cy='40' r='1' fill='rgba(255,255,255,0.03)'/%3E%3C/svg%3E")}
+.glow-orb{position:absolute;border-radius:50%;filter:blur(80px);opacity:.15}
+.glow-orb.gold{width:400px;height:400px;background:#FFD700;top:-100px;right:-100px}
+.glow-orb.red{width:300px;height:300px;background:#BF0A30;bottom:100px;left:-80px}
+.glow-orb.blue{width:350px;height:350px;background:#4a90d9;bottom:-100px;right:-50px}
+.border-frame{position:absolute;inset:24px;border:1px solid rgba(255,215,0,.12);border-radius:32px;pointer-events:none}
+.border-frame::before{content:'';position:absolute;top:-1px;left:50%;transform:translateX(-50%);width:200px;height:3px;background:linear-gradient(90deg,transparent,#FFD700,transparent)}
+.border-frame::after{content:'';position:absolute;bottom:-1px;left:50%;transform:translateX(-50%);width:200px;height:3px;background:linear-gradient(90deg,transparent,#BF0A30,transparent)}
+.stripe-top{position:absolute;top:0;left:0;right:0;height:5px;background:linear-gradient(90deg,#BF0A30,#FFD700,#fff,#FFD700,#BF0A30)}
+.stripe-bot{position:absolute;bottom:0;left:0;right:0;height:5px;background:linear-gradient(90deg,#FFD700,#BF0A30,#fff,#BF0A30,#FFD700)}
+.bat-ball-left,.bat-ball-right{position:absolute;z-index:0;opacity:.07;font-size:180px}
+.bat-ball-left{top:15%;left:-20px;transform:rotate(-25deg)}
+.bat-ball-right{bottom:12%;right:-20px;transform:rotate(15deg)}
+.content{position:relative;z-index:1;display:flex;flex-direction:column;align-items:center;justify-content:center;height:100%;padding:80px 60px;text-align:center;color:#fff}
+.logo{margin-bottom:30px}
+.logo svg{filter:drop-shadow(0 4px 20px rgba(255,215,0,.3))}
+.badge-top{background:linear-gradient(135deg,#FFD700,#f7b500);color:#1a1a2e;padding:12px 40px;border-radius:50px;font-size:20px;font-weight:700;letter-spacing:4px;text-transform:uppercase;margin-bottom:30px;box-shadow:0 8px 32px rgba(255,215,0,.25),inset 0 1px 0 rgba(255,255,255,.3)}
+.title{font-family:'Playfair Display',serif;font-size:56px;font-weight:900;line-height:1.2;margin-bottom:20px;background:linear-gradient(180deg,#fff 20%,#a8c0e8);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.sponsor-img-wrap{position:relative;margin:25px auto}
+.sponsor-img-wrap::before{content:'';position:absolute;inset:-8px;border-radius:50%;background:conic-gradient(from 0deg,#FFD700,#BF0A30,#FFD700,#fff,#FFD700);animation:spin 8s linear infinite;opacity:.7}
+@keyframes spin{to{transform:rotate(360deg)}}
+.sponsor-img{width:220px;height:220px;border-radius:50%;border:4px solid #0d1f3c;object-fit:cover;object-position:top;display:block;position:relative;box-shadow:0 12px 40px rgba(0,0,0,.4)}
+.sponsor-name{font-family:'Playfair Display',serif;font-size:68px;font-weight:900;background:linear-gradient(135deg,#FFD700,#ffec80,#FFD700);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin:25px 0;filter:drop-shadow(0 2px 10px rgba(255,215,0,.3))}
+.message{font-size:30px;line-height:1.8;color:#fff;max-width:820px;margin:25px 0}
+.amount{display:inline-block;background:linear-gradient(135deg,rgba(255,215,0,.15),rgba(255,215,0,.05));border:1px solid rgba(255,215,0,.3);border-radius:12px;padding:4px 20px;color:#FFD700;font-weight:700;font-size:34px}
+.invite{font-size:26px;color:#fff;margin-top:25px;padding:24px 44px;border:1px solid rgba(255,215,0,.2);border-radius:20px;background:linear-gradient(135deg,rgba(255,215,0,.06),rgba(255,255,255,.02));backdrop-filter:blur(10px)}
+.event-info{margin-top:35px;font-size:24px;color:rgba(255,255,255,.9);line-height:1.8}
+.event-info strong{color:#FFD700}
+.logo-bar{margin-top:40px;display:flex;align-items:center;gap:16px;padding:14px 32px;border-radius:50px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08)}
+.logo-bar span{font-size:22px;color:rgba(255,255,255,.85)}
+</style>
+</head>
+<body>
+<div class="card">
+<div class="glow-orb gold"></div>
+<div class="glow-orb red"></div>
+<div class="glow-orb blue"></div>
+<div class="border-frame"></div>
+<div class="stripe-top"></div>
+<div class="stripe-bot"></div>
+<!-- Decorative bat & ball background icons -->
+<div class="bat-ball-left">
+<svg width="180" height="180" viewBox="0 0 100 100" fill="rgba(255,215,0,.5)"><ellipse cx="50" cy="15" rx="8" ry="8"/><rect x="46" y="22" width="8" height="55" rx="4"/><rect x="43" y="72" width="14" height="22" rx="3"/></svg>
+</div>
+<div class="bat-ball-right">
+<svg width="180" height="180" viewBox="0 0 100 100" fill="rgba(255,215,0,.5)"><circle cx="30" cy="30" r="12"/><path d="M30 30 Q32 28 34 26" stroke="rgba(255,215,0,.5)" stroke-width="1.5" fill="none"/><rect x="55" y="20" width="8" height="55" rx="4" transform="rotate(15 59 47)"/><rect x="52" y="70" width="14" height="22" rx="3" transform="rotate(15 59 81)"/></svg>
+</div>
+<div class="content">
+<!-- Freedom Cup Logo -->
+<div class="logo">
+<svg width="120" height="120" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+<circle cx="60" cy="60" r="56" fill="none" stroke="#FFD700" stroke-width="3"/>
+<circle cx="60" cy="60" r="50" fill="none" stroke="rgba(255,215,0,.3)" stroke-width="1"/>
+<!-- Trophy/Cup -->
+<path d="M45 40 h30 l-4 30 h-22 z" fill="#FFD700" opacity=".9"/>
+<path d="M48 70 h24 v4 h-24z" fill="#FFD700" opacity=".9"/>
+<path d="M44 74 h32 v3 h-32z" fill="#FFD700" opacity=".7"/>
+<path d="M38 38 Q32 45 36 52 L44 48" fill="none" stroke="#FFD700" stroke-width="2.5"/>
+<path d="M82 38 Q88 45 84 52 L76 48" fill="none" stroke="#FFD700" stroke-width="2.5"/>
+<!-- Stars -->
+<polygon points="60,18 62,24 68,24 63,28 65,34 60,30 55,34 57,28 52,24 58,24" fill="#FFD700"/>
+<!-- Bat & Ball small -->
+<circle cx="35" cy="90" r="5" fill="#BF0A30"/>
+<rect x="78" y="82" width="4" height="18" rx="2" fill="#BF0A30" transform="rotate(-20 80 91)"/>
+<!-- Text -->
+<text x="60" y="106" text-anchor="middle" fill="#fff" font-family="Poppins" font-size="8" font-weight="700">FREEDOM CUP</text>
+</svg>
+</div>
+<div class="badge-top">★ Freedom Cup 2026 ★</div>
+<div class="title">Thank You, Proud Sponsor!</div>
+<div class="sponsor-img-wrap">
+<img src="../images/sponsor_gallary/aithsham.png" alt="Doctor Ahtsham" class="sponsor-img">
+</div>
+<div class="sponsor-name">Doctor Ahtsham</div>
+<div class="message">
+Your generous contribution of <span class="amount">$250</span> makes this league possible. Your love for cricket and community spirit inspires everyone. We are truly grateful. 🏏❤️
+</div>
+<div class="invite">
+🎉 You & your family are warmly invited!<br>
+<span style="font-size:22px;opacity:.8">Bring the kids — let's enjoy cricket together!</span>
+</div>
+<div class="event-info">
+<strong>July 4, 2026</strong> • 150 Kimberly Ave, New Haven, CT<br>
+9:00 AM – 5:00 PM • 8 Teams • Action-Packed Cricket
+</div>
+<div class="logo-bar">
+<span>🏏 Hamden Qalandars & New Haven Eagles 🦅</span>
+</div>
+</div>
+</div>
+</body>
+</html>
