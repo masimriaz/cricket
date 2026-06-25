@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Freedom Cup 2026 — Official Pool Draw</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--red:#BF0A30;--blue:#002868;--blue-dark:#001a4a;--gold:#FFD700}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Inter',sans-serif;background:linear-gradient(135deg,#000d1a 0%,var(--blue-dark) 40%,var(--blue) 100%);color:#fff;min-height:100vh;overflow-x:hidden}
+h1,h2,h3,h4,h5,h6{font-family:'Poppins',sans-serif}
+
+/* Header */
+.draw-header{text-align:center;padding:1.5rem 1rem .5rem;position:relative}
+.draw-header h1{font-size:2.2rem;font-weight:800;letter-spacing:-0.5px}
+.draw-header .subtitle{color:rgba(255,255,255,.7);font-size:.9rem;margin-top:.25rem}
+.gold{color:var(--gold)}
+.flag-stripe{height:4px;background:linear-gradient(90deg,var(--red) 33%,#fff 33% 66%,var(--blue) 66%);border-radius:2px;margin-top:.75rem}
+
+/* Main Layout */
+.draw-layout{display:grid;grid-template-columns:1fr 300px 1fr;gap:1rem;padding:1rem 2rem;height:calc(100vh - 160px);min-height:500px}
+@media(max-width:1100px){.draw-layout{grid-template-columns:1fr 240px 1fr;padding:1rem}}
+
+/* Pool Columns */
+.pool-col{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.1);border-radius:16px;padding:1rem;display:flex;flex-direction:column;overflow:hidden}
+.pool-col h3{text-align:center;font-weight:700;font-size:1.1rem;padding:.5rem;border-radius:8px;margin-bottom:.75rem}
+.pool-a-header{background:linear-gradient(135deg,var(--blue),#1a3a6b);border:1px solid rgba(100,181,246,.3)}
+.pool-b-header{background:linear-gradient(135deg,var(--red),#9a0826);border:1px solid rgba(255,100,100,.3)}
+.pool-teams{flex:1;display:flex;flex-direction:column;gap:.5rem}
+
+/* Team Card in Pool */
+.team-slot{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:10px;padding:.6rem .8rem;display:flex;align-items:center;gap:.6rem;opacity:0;transform:scale(.8);transition:all .5s cubic-bezier(.34,1.56,.64,1)}
+.team-slot.placed{opacity:1;transform:scale(1)}
+.team-slot.flash{box-shadow:0 0 20px var(--gold),0 0 40px rgba(255,215,0,.3);border-color:var(--gold)}
+.team-slot .team-badge{width:38px;height:38px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:.75rem;color:#fff;flex-shrink:0}
+.team-slot .team-name{font-weight:600;font-size:.82rem}
+.team-slot .team-pos{margin-left:auto;font-size:.65rem;color:rgba(255,255,255,.5);font-weight:600}
+
+/* Center Area */
+.center-col{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1rem}
+
+/* Wheel */
+.wheel-container{position:relative;width:220px;height:220px}
+.wheel{width:100%;height:100%;border-radius:50%;position:relative;border:4px solid var(--gold);box-shadow:0 0 30px rgba(255,215,0,.2),inset 0 0 30px rgba(0,0,0,.4);overflow:hidden;transition:transform .1s}
+.wheel.spinning{animation:spin 0.4s linear infinite}
+.wheel-half{position:absolute;width:100%;height:50%}
+.wheel-half.top{top:0;background:linear-gradient(180deg,var(--blue),#1a3a6b);border-bottom:2px solid rgba(255,255,255,.2)}
+.wheel-half.bottom{bottom:0;background:linear-gradient(0deg,var(--red),#d4102e)}
+.wheel-label{position:absolute;width:100%;text-align:center;font-weight:700;font-size:.75rem;color:rgba(255,255,255,.8);letter-spacing:1px}
+.wheel-label.top-label{top:15%;left:0}
+.wheel-label.bottom-label{bottom:15%;left:0}
+.wheel-center{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:90px;height:90px;border-radius:50%;background:linear-gradient(135deg,#1a1a2e,#0d0d1a);border:3px solid var(--gold);display:flex;align-items:center;justify-content:center;font-weight:800;font-size:1.1rem;color:var(--gold);text-align:center;line-height:1.1;z-index:2;box-shadow:0 0 20px rgba(0,0,0,.5)}
+.wheel-pointer{position:absolute;top:-12px;left:50%;transform:translateX(-50%);width:0;height:0;border-left:10px solid transparent;border-right:10px solid transparent;border-top:16px solid var(--gold);z-index:3;filter:drop-shadow(0 2px 4px rgba(0,0,0,.5))}
+
+@keyframes spin{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
+.wheel.stopping{animation:spinSlow 1.5s cubic-bezier(.2,.8,.3,1) forwards}
+@keyframes spinSlow{from{transform:rotate(0deg)}to{transform:rotate(1080deg)}}
+
+/* Result Announcement */
+.result-announce{text-align:center;min-height:60px;display:flex;align-items:center;justify-content:center}
+.result-announce .pool-result{font-size:1.1rem;font-weight:700;opacity:0;transform:scale(.5);transition:all .4s cubic-bezier(.34,1.56,.64,1)}
+.result-announce .pool-result.show{opacity:1;transform:scale(1)}
+
+/* Draw Button */
+.draw-btn{background:linear-gradient(135deg,var(--gold),#f5c518);color:#1a1a2e;border:none;font-family:'Poppins',sans-serif;font-weight:700;font-size:1rem;padding:.8rem 2.5rem;border-radius:50px;cursor:pointer;transition:all .3s;box-shadow:0 4px 20px rgba(255,215,0,.3)}
+.draw-btn:hover:not(:disabled){transform:scale(1.05);box-shadow:0 6px 30px rgba(255,215,0,.5)}
+.draw-btn:disabled{opacity:.5;cursor:not-allowed;transform:none}
+.draw-btn.complete{background:linear-gradient(135deg,#28a745,#1b5e20);color:#fff}
+
+.reset-btn{background:transparent;border:1px solid rgba(255,255,255,.3);color:rgba(255,255,255,.7);font-size:.75rem;padding:.4rem 1rem;border-radius:20px;cursor:pointer;transition:all .2s;margin-top:.5rem}
+.reset-btn:hover{border-color:var(--gold);color:var(--gold)}
+
+/* Remaining Teams */
+.remaining{position:fixed;bottom:0;left:0;right:0;background:rgba(0,10,30,.95);border-top:1px solid rgba(255,215,0,.2);padding:.6rem 2rem;backdrop-filter:blur(10px)}
+.remaining h6{color:var(--gold);font-size:.7rem;text-transform:uppercase;letter-spacing:2px;margin-bottom:.4rem}
+.remaining-list{display:flex;flex-wrap:wrap;gap:.4rem;justify-content:center}
+.remaining-chip{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);border-radius:20px;padding:.25rem .7rem;font-size:.7rem;font-weight:500;transition:all .4s;display:flex;align-items:center;gap:.3rem}
+.remaining-chip.drawn{opacity:0;transform:scale(.5);width:0;padding:0;margin:0;border:0;overflow:hidden}
+.remaining-chip .chip-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0}
+
+/* Confetti Canvas */
+#confetti{position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:9999}
+
+/* Complete State */
+.draw-complete{position:fixed;top:50%;left:50%;transform:translate(-50%,-50%) scale(0);background:rgba(0,15,40,.95);border:2px solid var(--gold);border-radius:20px;padding:2.5rem 3rem;text-align:center;z-index:100;transition:transform .5s cubic-bezier(.34,1.56,.64,1);backdrop-filter:blur(10px)}
+.draw-complete.show{transform:translate(-50%,-50%) scale(1)}
+.draw-complete h2{font-size:1.8rem;font-weight:800;color:var(--gold)}
+.draw-complete p{color:rgba(255,255,255,.7);margin-top:.5rem}
+</style>
+</head>
+<body>
+
+<header class="draw-header">
+<h1><i class="bi bi-trophy-fill gold"></i> Freedom Cup 2026</h1>
+<p class="subtitle">★ Official Pool Draw Ceremony ★ July 4, 2026 • New Haven, CT</p>
+<div class="flag-stripe"></div>
+</header>
+
+<div class="draw-layout">
+<!-- Pool A -->
+<div class="pool-col">
+<h3 class="pool-a-header"><i class="bi bi-shield-fill me-1"></i> POOL A</h3>
+<div class="pool-teams" id="poolASlots"></div>
+</div>
+
+<!-- Center -->
+<div class="center-col">
+<div class="wheel-container">
+<div class="wheel-pointer"></div>
+<div class="wheel" id="wheel">
+<div class="wheel-half top"></div>
+<div class="wheel-half bottom"></div>
+<span class="wheel-label top-label">POOL A</span>
+<span class="wheel-label bottom-label">POOL B</span>
+<div class="wheel-center" id="wheelCenter">?</div>
+</div>
+</div>
+<div class="result-announce" id="resultArea"><div class="pool-result" id="poolResult"></div></div>
+<button class="draw-btn" id="drawBtn" onclick="drawNext()"><i class="bi bi-shuffle me-2"></i>START DRAW</button>
+<button class="reset-btn" id="resetBtn" onclick="resetDraw()" style="display:none"><i class="bi bi-arrow-repeat me-1"></i>Reset Draw</button>
+</div>
+
+<!-- Pool B -->
+<div class="pool-col">
+<h3 class="pool-b-header"><i class="bi bi-shield-fill me-1"></i> POOL B</h3>
+<div class="pool-teams" id="poolBSlots"></div>
+</div>
+</div>
+
+<!-- Remaining -->
+<div class="remaining">
+<h6><i class="bi bi-people-fill me-1"></i>Teams Remaining</h6>
+<div class="remaining-list" id="remainingList"></div>
+</div>
+
+<!-- Confetti -->
+<canvas id="confetti"></canvas>
+
+<!-- Complete Overlay -->
+<div class="draw-complete" id="drawComplete">
+<h2>🏆 DRAW COMPLETE!</h2>
+<p>All 10 teams have been assigned to their pools.<br>Let the Freedom Cup begin!</p>
+<button class="draw-btn" style="margin-top:1rem;font-size:.85rem;padding:.6rem 1.5rem" onclick="document.getElementById('drawComplete').classList.remove('show')">Close</button>
+</div>
+
+<script>
+const teams=[
+{name:'Punjab Tigers Albany',short:'PT',color:'#ff8c00'},
+{name:'Afghan 11',short:'A11',color:'#1e8449'},
+{name:'Zalmi SuperStrikers',short:'Z',color:'#5b2c6f'},
+{name:'Hamden Qalandars Green',short:'HQ',color:'#27ae60'},
+{name:'Young Fighters',short:'YF',color:'#e74c3c'},
+{name:'Rangbaaz',short:'R',color:'#c0392b'},
+{name:'MSC',short:'M',color:'#2980b9'},
+{name:'WMCC',short:'W',color:'#8e44ad'},
+{name:'Hamden Qalandars Blue',short:'HQ',color:'#2471a3'},
+{name:'Monroe Hawks',short:'MH',color:'#d35400'}
+];
+
+let poolA=[],poolB=[],drawOrder=[],drawIndex=0,isAnimating=false,audioCtx=null;
+
+function shuffle(arr){for(let i=arr.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[arr[i],arr[j]]=[arr[j],arr[i]];}return arr;}
+
+function initDraw(){
+// Pre-determine pool assignments respecting constraint
+let indices=[...Array(10).keys()];
+let valid=false,assignment;
+while(!valid){
+shuffle(indices);
+let a=indices.slice(0,5),b=indices.slice(5);
+// Check constraint: index 3=HQ Green, index 8=HQ Blue must be in different groups
+let greenInA=a.includes(3),blueInA=a.includes(8);
+if(greenInA!==blueInA){valid=true;assignment={a,b};}
+}
+poolA=assignment.a;poolB=assignment.b;
+// Randomize draw order
+drawOrder=shuffle([...Array(10).keys()]);
+drawIndex=0;
+renderRemaining();
+renderSlots();
+}
+
+function renderRemaining(){
+const el=document.getElementById('remainingList');
+el.innerHTML=teams.map((t,i)=>`<div class="remaining-chip" id="chip${i}"><span class="chip-dot" style="background:${t.color}"></span>${t.name}</div>`).join('');
+}
+
+function renderSlots(){
+document.getElementById('poolASlots').innerHTML='';
+document.getElementById('poolBSlots').innerHTML='';
+}
+
+function getPool(teamIdx){return poolA.includes(teamIdx)?'A':'B';}
+
+function drawNext(){
+if(isAnimating||drawIndex>=10)return;
+isAnimating=true;
+const btn=document.getElementById('drawBtn');
+btn.disabled=true;
+const teamIdx=drawOrder[drawIndex];
+const team=teams[teamIdx];
+const pool=getPool(teamIdx);
+
+// Update wheel center
+document.getElementById('wheelCenter').textContent=team.short;
+document.getElementById('poolResult').classList.remove('show');
+
+// Start spin + sound
+const wheel=document.getElementById('wheel');
+wheel.classList.add('spinning');
+playDrumroll();
+
+setTimeout(()=>{
+wheel.classList.remove('spinning');
+wheel.classList.add('stopping');
+setTimeout(()=>{
+wheel.classList.remove('stopping');
+stopSound();
+// Reveal result
+revealTeam(teamIdx,team,pool);
+},1500);
+},1500);
+}
+
+function revealTeam(teamIdx,team,pool){
+const resultEl=document.getElementById('poolResult');
+resultEl.innerHTML=`<span style="color:${pool==='A'?'#64b5f6':'#ef5350'}">${team.name}</span> → <span class="gold">POOL ${pool}</span>`;
+resultEl.classList.add('show');
+
+// Add card to pool
+const container=document.getElementById(pool==='A'?'poolASlots':'poolBSlots');
+const count=container.children.length;
+const card=document.createElement('div');
+card.className='team-slot';
+card.innerHTML=`<div class="team-badge" style="background:${team.color}">${team.short}</div><span class="team-name">${team.name}</span><span class="team-pos">${pool}${count+1}</span>`;
+container.appendChild(card);
+
+setTimeout(()=>{card.classList.add('placed');},50);
+setTimeout(()=>{card.classList.add('flash');},300);
+setTimeout(()=>{card.classList.remove('flash');},1200);
+
+// Remove from remaining
+const chip=document.getElementById('chip'+teamIdx);
+if(chip)chip.classList.add('drawn');
+
+drawIndex++;
+const btn=document.getElementById('drawBtn');
+
+if(drawIndex>=10){
+btn.textContent='✓ DRAW COMPLETE';
+btn.classList.add('complete');
+btn.disabled=true;
+document.getElementById('resetBtn').style.display='';
+setTimeout(()=>{
+document.getElementById('drawComplete').classList.add('show');
+launchConfetti();
+},800);
+}else{
+setTimeout(()=>{
+btn.disabled=false;
+btn.innerHTML='<i class="bi bi-shuffle me-2"></i>DRAW NEXT TEAM';
+isAnimating=false;
+},600);
+}
+}
+
+function resetDraw(){
+document.getElementById('drawComplete').classList.remove('show');
+document.getElementById('drawBtn').disabled=false;
+document.getElementById('drawBtn').innerHTML='<i class="bi bi-shuffle me-2"></i>START DRAW';
+document.getElementById('drawBtn').classList.remove('complete');
+document.getElementById('resetBtn').style.display='none';
+document.getElementById('wheelCenter').textContent='?';
+document.getElementById('poolResult').classList.remove('show');
+isAnimating=false;
+initDraw();
+}
+
+// Web Audio drumroll
+function playDrumroll(){
+try{
+audioCtx=new(window.AudioContext||window.webkitAudioContext)();
+const osc=audioCtx.createOscillator();
+const gain=audioCtx.createGain();
+osc.type='triangle';osc.frequency.value=80;
+const lfo=audioCtx.createOscillator();lfo.frequency.value=20;
+const lfoGain=audioCtx.createGain();lfoGain.gain.value=30;
+lfo.connect(lfoGain);lfoGain.connect(osc.frequency);
+osc.connect(gain);gain.connect(audioCtx.destination);
+gain.gain.value=0.15;
+lfo.start();osc.start();
+audioCtx._osc=osc;audioCtx._lfo=lfo;audioCtx._gain=gain;
+}catch(e){}
+}
+function stopSound(){
+try{
+if(audioCtx){
+audioCtx._gain.gain.exponentialRampToValueAtTime(0.001,audioCtx.currentTime+0.3);
+setTimeout(()=>{audioCtx._osc.stop();audioCtx._lfo.stop();audioCtx.close();audioCtx=null;},400);
+}
+}catch(e){}
+}
+
+// Confetti
+function launchConfetti(){
+const canvas=document.getElementById('confetti');
+const ctx=canvas.getContext('2d');
+canvas.width=window.innerWidth;canvas.height=window.innerHeight;
+const pieces=[];
+const colors=['#FFD700','#BF0A30','#002868','#fff','#ff6b6b','#64b5f6','#69f0ae'];
+for(let i=0;i<200;i++){
+pieces.push({x:canvas.width/2,y:canvas.height/2,vx:(Math.random()-0.5)*20,vy:Math.random()*-18-5,w:Math.random()*10+5,h:Math.random()*6+3,color:colors[Math.floor(Math.random()*colors.length)],rot:Math.random()*360,rv:(Math.random()-0.5)*10,gravity:0.4});
+}
+let frame=0;
+function animate(){
+ctx.clearRect(0,0,canvas.width,canvas.height);
+let alive=false;
+pieces.forEach(p=>{
+p.x+=p.vx;p.y+=p.vy;p.vy+=p.gravity;p.rot+=p.rv;p.vx*=0.99;
+if(p.y<canvas.height+50)alive=true;
+ctx.save();ctx.translate(p.x,p.y);ctx.rotate(p.rot*Math.PI/180);
+ctx.fillStyle=p.color;ctx.fillRect(-p.w/2,-p.h/2,p.w,p.h);ctx.restore();
+});
+frame++;
+if(alive&&frame<180)requestAnimationFrame(animate);
+else ctx.clearRect(0,0,canvas.width,canvas.height);
+}
+animate();
+}
+
+// Init
+initDraw();
+</script>
+</body>
+</html>

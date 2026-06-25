@@ -37,48 +37,59 @@ h1,h2,h3,h4,h5,h6,.display-1,.display-2,.display-3,.display-4{font-family:'Poppi
 .gallery-item{border-radius:12px;overflow:hidden;aspect-ratio:4/3;background:#e9ecef;display:flex;align-items:center;justify-content:center;transition:transform .3s}.gallery-item:hover{transform:scale(1.03)}
 .invitation-letter{background:#fffef5;border:2px solid #e0d9c0;border-radius:8px;padding:3rem;font-family:'Inter',serif;max-width:700px;margin:0 auto}
 .brochure-section{background:#f8f9fa;border:2px dashed var(--blue);border-radius:12px;padding:3rem;max-width:800px;margin:0 auto}
-/* Gallery — Horizontal Reel + Masonry */
-.gallery-reel{overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch;scroll-snap-type:x mandatory;display:flex;gap:12px;padding:0 1rem 1.5rem}
+/* Gallery — Modernized Grid + Reel */
+.gallery-reel-wrap{position:relative}
+.gallery-reel{overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch;scroll-snap-type:x mandatory;display:flex;gap:16px;padding:0 1.5rem 1.5rem;scroll-behavior:smooth}
 .gallery-reel::-webkit-scrollbar{display:none}
-.gallery-reel-item{flex:0 0 78vw;scroll-snap-align:center;border-radius:16px;overflow:hidden;position:relative;aspect-ratio:16/9;background:#0a0a1a}
-@media(min-width:768px){.gallery-reel-item{flex:0 0 45vw}}
-@media(min-width:1200px){.gallery-reel-item{flex:0 0 33vw}}
+.gallery-reel-item{flex:0 0 80vw;scroll-snap-align:center;border-radius:20px;overflow:hidden;position:relative;aspect-ratio:16/9;background:#080d18;border:2px solid rgba(255,215,0,.1);transition:border-color .3s,box-shadow .3s}
+.gallery-reel-item:hover{border-color:rgba(255,215,0,.4);box-shadow:0 8px 32px rgba(255,215,0,.12)}
+@media(min-width:768px){.gallery-reel-item{flex:0 0 46vw}}
+@media(min-width:1200px){.gallery-reel-item{flex:0 0 34vw}}
 .gallery-reel-item video{width:100%;height:100%;object-fit:cover}
-.gallery-reel-item .reel-play{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:radial-gradient(ellipse at center,rgba(0,0,0,.4) 0%,transparent 70%);cursor:pointer}
-.gallery-reel-item .reel-play i{font-size:3.5rem;color:#fff;filter:drop-shadow(0 4px 16px rgba(0,0,0,.7));transition:transform .2s}
-.gallery-reel-item:hover .reel-play i{transform:scale(1.2)}
-.gallery-masonry{columns:2;column-gap:10px}
-@media(min-width:576px){.gallery-masonry{columns:3;column-gap:12px}}
-@media(min-width:992px){.gallery-masonry{columns:4;column-gap:14px}}
-.gm-item{break-inside:avoid;margin-bottom:10px;border-radius:12px;overflow:hidden;position:relative;cursor:pointer;transition:transform .3s,box-shadow .3s}
-.gm-item:hover{transform:translateY(-4px);box-shadow:0 16px 40px rgba(0,0,0,.2)}
-.gm-item img{width:100%;display:block;transition:transform .5s}
-.gm-item:hover img{transform:scale(1.05)}
-.gm-item video{width:100%;display:block}
-.gm-item .gm-ov{position:absolute;inset:0;opacity:0;transition:opacity .3s;display:flex;align-items:flex-end;padding:12px;background:linear-gradient(0deg,rgba(0,20,60,.75) 0%,transparent 60%)}
+.gallery-reel-item .reel-play{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:radial-gradient(ellipse at center,rgba(0,0,0,.5) 0%,transparent 70%);cursor:pointer}
+.gallery-reel-item .reel-play i{font-size:4rem;color:#fff;filter:drop-shadow(0 4px 20px rgba(0,0,0,.8));transition:transform .25s,color .25s;border-radius:50%}
+.gallery-reel-item:hover .reel-play i{transform:scale(1.15);color:var(--gold)}
+.reel-arrow{position:absolute;top:50%;transform:translateY(-50%);z-index:5;width:44px;height:44px;border-radius:50%;border:2px solid var(--gold);background:rgba(0,20,60,.85);color:var(--gold);font-size:1.2rem;display:flex;align-items:center;justify-content:center;cursor:pointer;backdrop-filter:blur(6px);transition:all .2s}
+.reel-arrow:hover{background:var(--gold);color:#0a0a1a;box-shadow:0 4px 16px rgba(255,215,0,.4)}
+.reel-arrow.reel-left{left:8px}
+.reel-arrow.reel-right{right:8px}
+@media(max-width:575px){.reel-arrow{width:36px;height:36px;font-size:1rem}}
+/* Grid Gallery */
+.gallery-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+@media(min-width:576px){.gallery-grid{grid-template-columns:repeat(3,1fr);gap:14px}}
+@media(min-width:992px){.gallery-grid{grid-template-columns:repeat(4,1fr);gap:16px}}
+.gm-item{border-radius:16px;overflow:hidden;position:relative;cursor:pointer;aspect-ratio:4/3;background:#0a0f1a;border:2px solid transparent;transition:transform .3s,box-shadow .3s,border-color .3s}
+.gm-item:hover{transform:translateY(-5px);box-shadow:0 16px 48px rgba(255,215,0,.12);border-color:var(--gold)}
+.gm-item img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s}
+.gm-item:hover img{transform:scale(1.08)}
+.gm-item video{width:100%;height:100%;object-fit:cover;display:block}
+.gm-item .gm-ov{position:absolute;inset:0;opacity:0;transition:opacity .3s;display:flex;align-items:center;justify-content:center;background:rgba(0,13,40,.7);backdrop-filter:blur(2px)}
 .gm-item:hover .gm-ov{opacity:1}
-.gm-item .gm-ov i{color:#fff;font-size:1.6rem;margin-right:auto}
-.gm-item .gm-ov span{color:rgba(255,255,255,.8);font-size:.7rem;font-weight:600;text-transform:uppercase;letter-spacing:1px}
-.gm-item[data-type="video"] .gm-ov{opacity:1;background:radial-gradient(ellipse at center,rgba(0,0,0,.3) 0%,transparent 70%);align-items:center;justify-content:center;padding:0}
-.gm-item[data-type="video"] .gm-ov i{font-size:2.6rem;margin:0;filter:drop-shadow(0 2px 8px rgba(0,0,0,.6))}
+.gm-item .gm-ov i{color:#fff;font-size:2rem;filter:drop-shadow(0 2px 8px rgba(0,0,0,.5))}
+.gm-item .gm-ov span{position:absolute;bottom:10px;left:12px;color:rgba(255,255,255,.8);font-size:.65rem;font-weight:600;text-transform:uppercase;letter-spacing:1px}
+.gm-item[data-type="video"] .gm-ov{opacity:1;background:radial-gradient(ellipse at center,rgba(0,0,0,.4) 0%,transparent 70%);backdrop-filter:none}
+.gm-item[data-type="video"] .gm-ov i{font-size:2.8rem;color:rgba(255,255,255,.9)}
+.gm-item[data-type="video"]:hover .gm-ov i{color:var(--gold)}
 .gm-item.hide{display:none}
-.gallery-filter-bar{display:flex;gap:8px;justify-content:center;flex-wrap:wrap}
-.gallery-filter-bar button{border:none;background:rgba(0,40,104,.08);color:var(--blue);border-radius:50px;padding:.55rem 1.3rem;font-size:.82rem;font-weight:600;cursor:pointer;transition:all .25s}
-.gallery-filter-bar button.active{background:var(--blue);color:#fff;box-shadow:0 4px 16px rgba(0,40,104,.35)}
-.gallery-filter-bar button:hover:not(.active){background:rgba(0,40,104,.15)}
+/* Filter Bar */
+.gallery-filter-bar{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+.gallery-filter-bar button{border:2px solid rgba(255,215,0,.3);background:transparent;color:rgba(255,255,255,.8);border-radius:50px;padding:.6rem 1.5rem;font-size:.82rem;font-weight:600;cursor:pointer;transition:all .25s;backdrop-filter:blur(4px)}
+.gallery-filter-bar button.active{background:var(--gold);color:#0a0a1a;border-color:var(--gold);box-shadow:0 4px 20px rgba(255,215,0,.35)}
+.gallery-filter-bar button:hover:not(.active){background:rgba(255,215,0,.1);border-color:var(--gold);color:var(--gold)}
 /* Lightbox */
-.gallery-lightbox{position:fixed;inset:0;z-index:99999;background:rgba(0,0,0,.97);display:none;align-items:center;justify-content:center;flex-direction:column;backdrop-filter:blur(12px)}
-.gallery-lightbox.active{display:flex}
-.gallery-lb-close{position:absolute;top:14px;right:16px;font-size:1.6rem;color:#fff;background:rgba(255,255,255,.1);border:none;cursor:pointer;z-index:10;width:46px;height:46px;border-radius:50%;display:flex;align-items:center;justify-content:center;backdrop-filter:blur(4px);transition:background .2s}
-.gallery-lb-close:hover{background:rgba(255,255,255,.25)}
-.gallery-lb-prev,.gallery-lb-next{position:absolute;top:50%;transform:translateY(-50%);font-size:1.3rem;color:#fff;background:rgba(255,255,255,.1);border:none;border-radius:50%;width:46px;height:46px;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:background .2s;backdrop-filter:blur(4px)}
-.gallery-lb-prev:hover,.gallery-lb-next:hover{background:rgba(255,255,255,.3)}
-.gallery-lb-prev{left:8px}.gallery-lb-next{right:8px}
-@media(min-width:768px){.gallery-lb-prev{left:24px}.gallery-lb-next{right:24px}.gallery-lb-prev,.gallery-lb-next{width:56px;height:56px;font-size:1.6rem}}
+.gallery-lightbox{position:fixed;inset:0;z-index:99999;background:rgba(0,5,20,.97);display:none;align-items:center;justify-content:center;flex-direction:column;backdrop-filter:blur(16px);opacity:0;transition:opacity .3s}
+.gallery-lightbox.active{display:flex;opacity:1;animation:lbFadeIn .3s ease}
+@keyframes lbFadeIn{from{opacity:0}to{opacity:1}}
+.gallery-lb-close{position:absolute;top:16px;right:18px;font-size:1.5rem;color:#fff;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);cursor:pointer;z-index:10;width:50px;height:50px;border-radius:50%;display:flex;align-items:center;justify-content:center;backdrop-filter:blur(6px);transition:all .2s}
+.gallery-lb-close:hover{background:rgba(255,255,255,.2);border-color:var(--gold);color:var(--gold)}
+.gallery-lb-prev,.gallery-lb-next{position:absolute;top:50%;transform:translateY(-50%);font-size:1.3rem;color:#fff;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.15);border-radius:50%;width:50px;height:50px;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:all .2s;backdrop-filter:blur(6px)}
+.gallery-lb-prev:hover,.gallery-lb-next:hover{background:rgba(255,215,0,.15);border-color:var(--gold);color:var(--gold)}
+.gallery-lb-prev{left:12px}.gallery-lb-next{right:12px}
+@media(min-width:768px){.gallery-lb-prev{left:28px}.gallery-lb-next{right:28px}.gallery-lb-prev,.gallery-lb-next{width:58px;height:58px;font-size:1.6rem}}
 .gallery-lb-content{max-width:95vw;max-height:85vh;display:flex;align-items:center;justify-content:center}
-.gallery-lb-content img{max-width:95vw;max-height:85vh;border-radius:8px;object-fit:contain}
-.gallery-lb-content video{max-width:95vw;max-height:85vh;border-radius:8px}
-.gallery-lb-counter{position:absolute;bottom:18px;color:rgba(255,255,255,.85);font-size:.78rem;background:rgba(0,0,0,.6);padding:5px 16px;border-radius:20px;backdrop-filter:blur(4px)}
+.gallery-lb-content img{max-width:95vw;max-height:85vh;border-radius:10px;object-fit:contain;box-shadow:0 20px 60px rgba(0,0,0,.6)}
+.gallery-lb-content video{max-width:95vw;max-height:85vh;border-radius:10px;box-shadow:0 20px 60px rgba(0,0,0,.6)}
+.gallery-lb-counter{position:absolute;bottom:20px;color:rgba(255,255,255,.9);font-size:.8rem;background:rgba(0,20,60,.7);padding:6px 18px;border-radius:20px;border:1px solid rgba(255,215,0,.2);backdrop-filter:blur(6px)}
 @media print{.no-print{display:none!important}.print-only{display:block!important}}
 .print-only{display:none}
 </style>
@@ -1063,16 +1074,25 @@ h1,h2,h3,h4,h5,h6,.display-1,.display-2,.display-3,.display-4{font-family:'Poppi
 
 
 <!-- SECTION: PHOTO & VIDEO GALLERY -->
-<section id="gallery" class="section-padding" aria-label="Photo and Video Gallery" style="background:#0d1117">
+<section id="gallery" class="section-padding" aria-label="Photo and Video Gallery" style="background:linear-gradient(180deg,#080d18 0%,#0d1117 40%,#0a1628 100%)">
 <div class="container-fluid px-0">
-<div class="text-center mb-4 px-3">
+<!-- Section Header -->
+<div class="text-center mb-5 px-3">
+<div class="d-flex align-items-center justify-content-center gap-3 mb-3">
+<span style="width:40px;height:2px;background:linear-gradient(90deg,transparent,var(--gold))"></span>
+<span style="color:var(--gold);font-size:1.2rem">★</span>
+<span style="width:40px;height:2px;background:linear-gradient(90deg,var(--gold),transparent)"></span>
+</div>
 <h2 class="section-title display-5" style="color:#fff">Field Gallery</h2>
-<p class="mt-2" style="color:rgba(255,255,255,.6)">The best tape ball cricket ground in Connecticut — swipe to explore</p>
+<p class="mt-3 mx-auto" style="color:rgba(255,255,255,.6);max-width:550px">The best tape ball cricket ground in Connecticut — explore our venue through photos and videos</p>
 </div>
 
 <!-- Video Reel (Horizontal Scroll) -->
-<div class="px-3 mb-2"><p class="fw-bold small text-uppercase" style="color:var(--gold);letter-spacing:2px"><i class="bi bi-camera-reels me-1"></i>Video Highlights</p></div>
-<div class="gallery-reel mb-5">
+<div class="px-3 mb-2"><p class="fw-bold small text-uppercase mb-2" style="color:var(--gold);letter-spacing:2px"><i class="bi bi-camera-reels me-1"></i>Video Highlights</p></div>
+<div class="gallery-reel-wrap mb-5">
+<button class="reel-arrow reel-left" aria-label="Scroll left" onclick="document.getElementById('videoReel').scrollBy({left:-300,behavior:'smooth'})"><i class="bi bi-chevron-left"></i></button>
+<button class="reel-arrow reel-right" aria-label="Scroll right" onclick="document.getElementById('videoReel').scrollBy({left:300,behavior:'smooth'})"><i class="bi bi-chevron-right"></i></button>
+<div class="gallery-reel" id="videoReel">
 <div class="gallery-reel-item" data-type="video"><video src="images/photo_gallary/WhatsApp Video 2026-06.mp4" preload="metadata" muted></video><div class="reel-play"><i class="bi bi-play-circle-fill"></i></div></div>
 <div class="gallery-reel-item" data-type="video"><video src="images/photo_gallary/WhatsApp Video 2026-06-13 at 9.37.20 PM.mp4" preload="metadata" muted></video><div class="reel-play"><i class="bi bi-play-circle-fill"></i></div></div>
 <div class="gallery-reel-item" data-type="video"><video src="images/photo_gallary/WhatsApp Video 2026-06-13 at 9.37.10 PM.mp4" preload="metadata" muted></video><div class="reel-play"><i class="bi bi-play-circle-fill"></i></div></div>
@@ -1091,10 +1111,11 @@ h1,h2,h3,h4,h5,h6,.display-1,.display-2,.display-3,.display-4{font-family:'Poppi
 <div class="gallery-reel-item" data-type="video"><video src="images/photo_gallary/WhatsApp Video 2026-06-13 at 9.35.36 PM.mp4" preload="metadata" muted></video><div class="reel-play"><i class="bi bi-play-circle-fill"></i></div></div>
 <div class="gallery-reel-item" data-type="video"><video src="images/photo_gallary/WhatsApp Video 2026-06-13 at 9.35.29 PM.mp4" preload="metadata" muted></video><div class="reel-play"><i class="bi bi-play-circle-fill"></i></div></div>
 </div>
+</div>
 
-<!-- Photo Masonry -->
+<!-- Photo Grid -->
 <div class="container">
-<div class="d-flex align-items-center justify-content-between mb-3 flex-wrap gap-2">
+<div class="d-flex align-items-center justify-content-between mb-4 flex-wrap gap-2">
 <p class="fw-bold small text-uppercase mb-0" style="color:var(--gold);letter-spacing:2px"><i class="bi bi-images me-1"></i>Photo Gallery</p>
 <div class="gallery-filter-bar">
 <button class="active" data-gallery-filter="all">All</button>
@@ -1102,7 +1123,7 @@ h1,h2,h3,h4,h5,h6,.display-1,.display-2,.display-3,.display-4{font-family:'Poppi
 <button data-gallery-filter="video"><i class="bi bi-film me-1"></i>Videos</button>
 </div>
 </div>
-<div class="gallery-masonry" id="galleryGrid">
+<div class="gallery-grid" id="galleryGrid">
 <div class="gm-item" data-type="photo"><img src="images/photo_gallary/Brochure 2.jpeg" alt="Freedom Cup field overview" loading="lazy"><div class="gm-ov"><i class="bi bi-arrows-fullscreen"></i><span>Photo</span></div></div>
 <div class="gm-item" data-type="photo"><img src="images/photo_gallary/WhatsApp Image 6.jpeg" alt="Cricket ground view" loading="lazy"><div class="gm-ov"><i class="bi bi-arrows-fullscreen"></i><span>Photo</span></div></div>
 <div class="gm-item" data-type="photo"><img src="images/photo_gallary/WhatsApp Image 2026-06-13 at 9.36.55 PM.jpeg" alt="Field setup" loading="lazy"><div class="gm-ov"><i class="bi bi-arrows-fullscreen"></i><span>Photo</span></div></div>
@@ -1192,6 +1213,7 @@ h1,h2,h3,h4,h5,h6,.display-1,.display-2,.display-3,.display-4{font-family:'Poppi
 <div class="rounded-circle overflow-hidden" style="width:32px;height:32px;border:1px solid rgba(255,255,255,.4)"><img src="images/management/yousaf.png" alt="Yousaf" class="w-100 h-100" style="object-fit:cover"></div>
 <div class="rounded-circle overflow-hidden" style="width:32px;height:32px;border:1px solid rgba(255,255,255,.4)"><img src="images/management/Raza.jpeg" alt="Raza" class="w-100 h-100" style="object-fit:cover"></div>
 <div class="rounded-circle overflow-hidden" style="width:32px;height:32px;border:1px solid rgba(255,255,255,.4)"><img src="images/management/ali.png" alt="Ali" class="w-100 h-100" style="object-fit:cover"></div>
+<div class="rounded-circle overflow-hidden" style="width:32px;height:32px;border:2px solid var(--gold)"><img src="images/management/usman.jpeg" alt="Usman" class="w-100 h-100" style="object-fit:cover"></div>
 </div>
 <div style="position:absolute;bottom:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--red) 25%,var(--gold) 25% 50%,#fff 50% 75%,var(--gold) 75%)"></div>
 </div>
@@ -1460,8 +1482,7 @@ h1,h2,h3,h4,h5,h6,.display-1,.display-2,.display-3,.display-4{font-family:'Poppi
 <h5 class="mb-0 fw-bold"><i class="bi bi-trophy me-2 text-gold"></i>Closing Ceremony & Prize Distribution</h5>
 </div>
 <div class="card-body p-4">
-<div class="row g-4 align-items-center">
-<div class="col-sm-5 col-lg-4 text-center">
+<div class="text-center mb-4">
 <div class="position-relative d-inline-block mb-2">
 <div class="rounded-circle d-flex align-items-center justify-content-center mx-auto" style="width:100px;height:100px;background:linear-gradient(135deg,var(--gold),#f5c518);box-shadow:0 6px 20px rgba(255,215,0,.3)">
 <i class="bi bi-person-fill" style="font-size:2.5rem;color:#fff"></i>
@@ -1471,12 +1492,56 @@ h1,h2,h3,h4,h5,h6,.display-1,.display-2,.display-3,.display-4{font-family:'Poppi
 <h6 class="fw-bold mb-0">To Be Announced</h6>
 <p class="small text-muted mb-0">Chief Guest</p>
 </div>
-<div class="col-sm-7 col-lg-8">
-<p class="fw-bold small text-uppercase mb-3" style="color:var(--red);letter-spacing:1px"><i class="bi bi-star-fill me-1 text-gold"></i>VIP Panel</p>
-<div class="d-flex gap-3 flex-wrap">
-<div class="text-center"><div class="rounded-circle d-flex align-items-center justify-content-center mx-auto mb-1" style="width:56px;height:56px;background:#fff5f5;border:2px solid var(--red)"><i class="bi bi-person" style="font-size:1.3rem;color:var(--red)"></i></div><p class="small mb-0" style="font-size:.7rem">TBA</p></div>
-<div class="text-center"><div class="rounded-circle d-flex align-items-center justify-content-center mx-auto mb-1" style="width:56px;height:56px;background:#fff5f5;border:2px solid var(--red)"><i class="bi bi-person" style="font-size:1.3rem;color:var(--red)"></i></div><p class="small mb-0" style="font-size:.7rem">TBA</p></div>
-<div class="text-center"><div class="rounded-circle d-flex align-items-center justify-content-center mx-auto mb-1" style="width:56px;height:56px;background:#fff5f5;border:2px solid var(--red)"><i class="bi bi-person" style="font-size:1.3rem;color:var(--red)"></i></div><p class="small mb-0" style="font-size:.7rem">TBA</p></div>
+<hr class="my-4" style="border-color:rgba(255,215,0,.3)">
+<p class="fw-bold small text-uppercase text-center mb-4" style="color:var(--red);letter-spacing:2px"><i class="bi bi-star-fill me-1 text-gold"></i>Guests of Honor<i class="bi bi-star-fill ms-1 text-gold"></i></p>
+<div class="row g-3 justify-content-center">
+<div class="col-6 col-sm-4 col-lg-3 text-center">
+<div class="p-3 rounded-4 h-100" style="background:linear-gradient(180deg,#fffdf5,#fff);border:1px solid rgba(255,215,0,.2);transition:transform .3s,box-shadow .3s;cursor:default" onmouseenter="this.style.transform='translateY(-4px)';this.style.boxShadow='0 12px 30px rgba(255,215,0,.15)'" onmouseleave="this.style.transform='';this.style.boxShadow=''">
+<div class="rounded-circle overflow-hidden mx-auto mb-2" style="width:80px;height:80px;border:3px solid var(--gold);box-shadow:0 4px 12px rgba(255,215,0,.25)"><img src="images/guest_panel/tahir.jpeg" alt="Chaudry Tahir" class="w-100 h-100" style="object-fit:cover"></div>
+<h6 class="fw-bold mb-0" style="font-size:.85rem">Chaudry Tahir</h6>
+<span class="badge rounded-pill mt-1" style="background:rgba(255,215,0,.12);color:#b8860b;font-size:.6rem">Guest of Honor</span>
+</div>
+</div>
+<div class="col-6 col-sm-4 col-lg-3 text-center">
+<div class="p-3 rounded-4 h-100" style="background:linear-gradient(180deg,#fffdf5,#fff);border:1px solid rgba(255,215,0,.2);transition:transform .3s,box-shadow .3s;cursor:default" onmouseenter="this.style.transform='translateY(-4px)';this.style.boxShadow='0 12px 30px rgba(255,215,0,.15)'" onmouseleave="this.style.transform='';this.style.boxShadow=''">
+<div class="rounded-circle overflow-hidden mx-auto mb-2" style="width:80px;height:80px;border:3px solid var(--gold);box-shadow:0 4px 12px rgba(255,215,0,.25)"><img src="images/guest_panel/Nasir_Raza2.png" alt="Nasir Raza" class="w-100 h-100" style="object-fit:cover"></div>
+<h6 class="fw-bold mb-0" style="font-size:.85rem">Nasir Raza</h6>
+<span class="badge rounded-pill mt-1" style="background:rgba(255,215,0,.12);color:#b8860b;font-size:.6rem">Guest of Honor</span>
+</div>
+</div>
+<div class="col-6 col-sm-4 col-lg-3 text-center">
+<div class="p-3 rounded-4 h-100" style="background:linear-gradient(180deg,#fffdf5,#fff);border:1px solid rgba(255,215,0,.2);transition:transform .3s,box-shadow .3s;cursor:default" onmouseenter="this.style.transform='translateY(-4px)';this.style.boxShadow='0 12px 30px rgba(255,215,0,.15)'" onmouseleave="this.style.transform='';this.style.boxShadow=''">
+<div class="rounded-circle overflow-hidden mx-auto mb-2" style="width:80px;height:80px;border:3px solid var(--gold);box-shadow:0 4px 12px rgba(255,215,0,.25)"><img src="images/guest_panel/Abbas.jpeg" alt="Abdul Abbas" class="w-100 h-100" style="object-fit:cover"></div>
+<h6 class="fw-bold mb-0" style="font-size:.85rem">Abdul Abbas</h6>
+<span class="badge rounded-pill mt-1" style="background:rgba(255,215,0,.12);color:#b8860b;font-size:.6rem">Guest of Honor</span>
+</div>
+</div>
+<div class="col-6 col-sm-4 col-lg-3 text-center">
+<div class="p-3 rounded-4 h-100" style="background:linear-gradient(180deg,#fffdf5,#fff);border:1px solid rgba(255,215,0,.2);transition:transform .3s,box-shadow .3s;cursor:default" onmouseenter="this.style.transform='translateY(-4px)';this.style.boxShadow='0 12px 30px rgba(255,215,0,.15)'" onmouseleave="this.style.transform='';this.style.boxShadow=''">
+<div class="rounded-circle overflow-hidden mx-auto mb-2" style="width:80px;height:80px;border:3px solid var(--gold);box-shadow:0 4px 12px rgba(255,215,0,.25)"><img src="images/guest_panel/yousaf.png" alt="Yousaf Kashmiri" class="w-100 h-100" style="object-fit:cover"></div>
+<h6 class="fw-bold mb-0" style="font-size:.85rem">Yousaf Kashmiri</h6>
+<span class="badge rounded-pill mt-1" style="background:rgba(255,215,0,.12);color:#b8860b;font-size:.6rem">Guest of Honor</span>
+</div>
+</div>
+<div class="col-6 col-sm-4 col-lg-3 text-center">
+<div class="p-3 rounded-4 h-100" style="background:linear-gradient(180deg,#fffdf5,#fff);border:1px solid rgba(255,215,0,.2);transition:transform .3s,box-shadow .3s;cursor:default" onmouseenter="this.style.transform='translateY(-4px)';this.style.boxShadow='0 12px 30px rgba(255,215,0,.15)'" onmouseleave="this.style.transform='';this.style.boxShadow=''">
+<div class="rounded-circle overflow-hidden mx-auto mb-2" style="width:80px;height:80px;border:3px solid var(--gold);box-shadow:0 4px 12px rgba(255,215,0,.25)"><img src="images/guest_panel/aithsham.png" alt="Dr. Ahtsham" class="w-100 h-100" style="object-fit:cover"></div>
+<h6 class="fw-bold mb-0" style="font-size:.85rem">Dr. Ahtsham</h6>
+<span class="badge rounded-pill mt-1" style="background:rgba(255,215,0,.12);color:#b8860b;font-size:.6rem">Guest of Honor</span>
+</div>
+</div>
+<div class="col-6 col-sm-4 col-lg-3 text-center">
+<div class="p-3 rounded-4 h-100" style="background:linear-gradient(180deg,#fffdf5,#fff);border:1px solid rgba(255,215,0,.2);transition:transform .3s,box-shadow .3s;cursor:default" onmouseenter="this.style.transform='translateY(-4px)';this.style.boxShadow='0 12px 30px rgba(255,215,0,.15)'" onmouseleave="this.style.transform='';this.style.boxShadow=''">
+<div class="rounded-circle overflow-hidden mx-auto mb-2" style="width:80px;height:80px;border:3px solid var(--gold);box-shadow:0 4px 12px rgba(255,215,0,.25)"><img src="images/guest_panel/Raja.jpeg" alt="Raja Shoukat" class="w-100 h-100" style="object-fit:cover"></div>
+<h6 class="fw-bold mb-0" style="font-size:.85rem">Raja Shoukat</h6>
+<span class="badge rounded-pill mt-1" style="background:rgba(255,215,0,.12);color:#b8860b;font-size:.6rem">Guest of Honor</span>
+</div>
+</div>
+<div class="col-6 col-sm-4 col-lg-3 text-center">
+<div class="p-3 rounded-4 h-100" style="background:linear-gradient(180deg,#fffdf5,#fff);border:1px solid rgba(255,215,0,.2);transition:transform .3s,box-shadow .3s;cursor:default" onmouseenter="this.style.transform='translateY(-4px)';this.style.boxShadow='0 12px 30px rgba(255,215,0,.15)'" onmouseleave="this.style.transform='';this.style.boxShadow=''">
+<div class="rounded-circle overflow-hidden mx-auto mb-2" style="width:80px;height:80px;border:3px solid var(--gold);box-shadow:0 4px 12px rgba(255,215,0,.25)"><img src="images/guest_panel/Munir.jpeg" alt="Munir" class="w-100 h-100" style="object-fit:cover"></div>
+<h6 class="fw-bold mb-0" style="font-size:.85rem">Munir</h6>
+<span class="badge rounded-pill mt-1" style="background:rgba(255,215,0,.12);color:#b8860b;font-size:.6rem">Guest of Honor</span>
 </div>
 </div>
 </div>
@@ -1511,7 +1576,7 @@ h1,h2,h3,h4,h5,h6,.display-1,.display-2,.display-3,.display-4{font-family:'Poppi
 <img src="images/management/asim.png" alt="Asim" class="w-100 h-100" style="object-fit:cover">
 </div>
 <h6 class="fw-bold mb-0">Asim</h6>
-<p class="small mb-0" style="color:var(--blue)">Organizer</p>
+<p class="small mb-0" style="color:var(--blue)">Chief Organizer & Head of Management Committee</p>
 </div>
 </div>
 <div class="col-6 col-md-4 col-lg-3 text-center">
