@@ -36,18 +36,18 @@ h1,h2,h3,h4,h5,h6,.display-1,.display-2,.display-3,.display-4{font-family:'Poppi
 .award-card{text-align:center;padding:2rem;border-radius:16px;border:none}.award-card .trophy-icon{font-size:3rem}
 .gallery-item{border-radius:12px;overflow:hidden;aspect-ratio:4/3;background:#e9ecef;display:flex;align-items:center;justify-content:center;transition:transform .3s}.gallery-item:hover{transform:scale(1.03)}
 .invitation-letter{background:#fffef5;border:2px solid #e0d9c0;border-radius:8px;padding:3rem;font-family:'Inter',serif;max-width:700px;margin:0 auto}
-.brochure-section{background:#f8f9fa;border:2px dashed var(--blue);border-radius:12px;padding:3rem;max-width:800px;margin:0 auto}
+
 /* Gallery — Modernized Grid + Reel */
 .gallery-reel-wrap{position:relative}
 .gallery-reel{overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch;scroll-snap-type:x mandatory;display:flex;gap:16px;padding:0 1.5rem 1.5rem;scroll-behavior:smooth}
 .gallery-reel::-webkit-scrollbar{display:none}
-.gallery-reel-item{flex:0 0 80vw;scroll-snap-align:center;border-radius:20px;overflow:hidden;position:relative;aspect-ratio:16/9;background:#080d18;border:2px solid rgba(255,215,0,.1);transition:border-color .3s,box-shadow .3s}
-.gallery-reel-item:hover{border-color:rgba(255,215,0,.4);box-shadow:0 8px 32px rgba(255,215,0,.12)}
-@media(min-width:768px){.gallery-reel-item{flex:0 0 46vw}}
-@media(min-width:1200px){.gallery-reel-item{flex:0 0 34vw}}
+.gallery-reel-item{flex:0 0 60vw;scroll-snap-align:center;border-radius:12px;overflow:hidden;position:relative;aspect-ratio:16/9;background:#080d18;border:1px solid rgba(255,215,0,.08);transition:border-color .3s,box-shadow .3s,transform .3s}
+.gallery-reel-item:hover{border-color:rgba(255,215,0,.4);box-shadow:0 8px 32px rgba(255,215,0,.15);transform:scale(1.02)}
+@media(min-width:768px){.gallery-reel-item{flex:0 0 35vw}}
+@media(min-width:1200px){.gallery-reel-item{flex:0 0 25vw}}
 .gallery-reel-item video{width:100%;height:100%;object-fit:cover}
 .gallery-reel-item .reel-play{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:radial-gradient(ellipse at center,rgba(0,0,0,.5) 0%,transparent 70%);cursor:pointer}
-.gallery-reel-item .reel-play i{font-size:4rem;color:#fff;filter:drop-shadow(0 4px 20px rgba(0,0,0,.8));transition:transform .25s,color .25s;border-radius:50%}
+.gallery-reel-item .reel-play i{font-size:2.5rem;color:#fff;filter:drop-shadow(0 4px 20px rgba(0,0,0,.8));transition:transform .25s,color .25s;border-radius:50%}
 .gallery-reel-item:hover .reel-play i{transform:scale(1.15);color:var(--gold)}
 .reel-arrow{position:absolute;top:50%;transform:translateY(-50%);z-index:5;width:44px;height:44px;border-radius:50%;border:2px solid var(--gold);background:rgba(0,20,60,.85);color:var(--gold);font-size:1.2rem;display:flex;align-items:center;justify-content:center;cursor:pointer;backdrop-filter:blur(6px);transition:all .2s}
 .reel-arrow:hover{background:var(--gold);color:#0a0a1a;box-shadow:0 4px 16px rgba(255,215,0,.4)}
@@ -55,27 +55,27 @@ h1,h2,h3,h4,h5,h6,.display-1,.display-2,.display-3,.display-4{font-family:'Poppi
 .reel-arrow.reel-right{right:8px}
 @media(max-width:575px){.reel-arrow{width:36px;height:36px;font-size:1rem}}
 /* Grid Gallery */
-.gallery-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
-@media(min-width:576px){.gallery-grid{grid-template-columns:repeat(3,1fr);gap:14px}}
-@media(min-width:992px){.gallery-grid{grid-template-columns:repeat(4,1fr);gap:16px}}
-.gm-item{border-radius:16px;overflow:hidden;position:relative;cursor:pointer;aspect-ratio:4/3;background:#0a0f1a;border:2px solid transparent;transition:transform .3s,box-shadow .3s,border-color .3s}
-.gm-item:hover{transform:translateY(-5px);box-shadow:0 16px 48px rgba(255,215,0,.12);border-color:var(--gold)}
-.gm-item img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s}
-.gm-item:hover img{transform:scale(1.08)}
+.gallery-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:6px}
+@media(min-width:576px){.gallery-grid{grid-template-columns:repeat(4,1fr);gap:8px}}
+@media(min-width:992px){.gallery-grid{grid-template-columns:repeat(6,1fr);gap:8px}}
+.gm-item{border-radius:8px;overflow:hidden;position:relative;cursor:pointer;aspect-ratio:1/1;background:#0a0f1a;border:1px solid rgba(255,215,0,.08);transition:transform .3s,box-shadow .3s,border-color .3s}
+.gm-item:hover{transform:translateY(-3px) scale(1.02);box-shadow:0 12px 40px rgba(255,215,0,.15);border-color:rgba(255,215,0,.5)}
+.gm-item img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s cubic-bezier(.25,.46,.45,.94)}
+.gm-item:hover img{transform:scale(1.12)}
 .gm-item video{width:100%;height:100%;object-fit:cover;display:block}
-.gm-item .gm-ov{position:absolute;inset:0;opacity:0;transition:opacity .3s;display:flex;align-items:center;justify-content:center;background:rgba(0,13,40,.7);backdrop-filter:blur(2px)}
+.gm-item .gm-ov{position:absolute;inset:0;opacity:0;transition:opacity .3s;display:flex;align-items:center;justify-content:center;background:linear-gradient(180deg,transparent 0%,rgba(0,10,30,.85) 100%);backdrop-filter:blur(2px)}
 .gm-item:hover .gm-ov{opacity:1}
-.gm-item .gm-ov i{color:#fff;font-size:2rem;filter:drop-shadow(0 2px 8px rgba(0,0,0,.5))}
+.gm-item .gm-ov i{color:#fff;font-size:1.4rem;filter:drop-shadow(0 2px 8px rgba(0,0,0,.5))}
 .gm-item .gm-ov span{position:absolute;bottom:10px;left:12px;color:rgba(255,255,255,.8);font-size:.65rem;font-weight:600;text-transform:uppercase;letter-spacing:1px}
 .gm-item[data-type="video"] .gm-ov{opacity:1;background:radial-gradient(ellipse at center,rgba(0,0,0,.4) 0%,transparent 70%);backdrop-filter:none}
-.gm-item[data-type="video"] .gm-ov i{font-size:2.8rem;color:rgba(255,255,255,.9)}
+.gm-item[data-type="video"] .gm-ov i{font-size:1.8rem;color:rgba(255,255,255,.9)}
 .gm-item[data-type="video"]:hover .gm-ov i{color:var(--gold)}
 .gm-item.hide{display:none}
 /* Filter Bar */
-.gallery-filter-bar{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
-.gallery-filter-bar button{border:2px solid rgba(255,215,0,.3);background:transparent;color:rgba(255,255,255,.8);border-radius:50px;padding:.6rem 1.5rem;font-size:.82rem;font-weight:600;cursor:pointer;transition:all .25s;backdrop-filter:blur(4px)}
-.gallery-filter-bar button.active{background:var(--gold);color:#0a0a1a;border-color:var(--gold);box-shadow:0 4px 20px rgba(255,215,0,.35)}
-.gallery-filter-bar button:hover:not(.active){background:rgba(255,215,0,.1);border-color:var(--gold);color:var(--gold)}
+.gallery-filter-bar{display:flex;gap:8px;justify-content:center;flex-wrap:wrap}
+.gallery-filter-bar button{border:1px solid rgba(255,215,0,.2);background:rgba(255,255,255,.03);color:rgba(255,255,255,.7);border-radius:50px;padding:.45rem 1.2rem;font-size:.78rem;font-weight:600;cursor:pointer;transition:all .25s;backdrop-filter:blur(4px)}
+.gallery-filter-bar button.active{background:linear-gradient(135deg,var(--gold),#f5c518);color:#0a0a1a;border-color:var(--gold);box-shadow:0 4px 20px rgba(255,215,0,.3)}
+.gallery-filter-bar button:hover:not(.active){background:rgba(255,215,0,.08);border-color:rgba(255,215,0,.5);color:var(--gold)}
 /* Lightbox */
 .gallery-lightbox{position:fixed;inset:0;z-index:99999;background:rgba(0,5,20,.97);display:none;align-items:center;justify-content:center;flex-direction:column;backdrop-filter:blur(16px);opacity:0;transition:opacity .3s}
 .gallery-lightbox.active{display:flex;opacity:1;animation:lbFadeIn .3s ease}
@@ -109,15 +109,16 @@ h1,h2,h3,h4,h5,h6,.display-1,.display-2,.display-3,.display-4{font-family:'Poppi
 <ul class="navbar-nav ms-auto">
 <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
 <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-<li class="nav-item"><a class="nav-link" href="#schedule">Schedule</a></li>
 <li class="nav-item"><a class="nav-link" href="#teams">Teams</a></li>
+<li class="nav-item"><a class="nav-link" href="#schedule">Schedule</a></li>
+<li class="nav-item"><a class="nav-link" href="#pitch-map">Pitch Map</a></li>
 <li class="nav-item"><a class="nav-link" href="#rules">Rules</a></li>
 <li class="nav-item"><a class="nav-link" href="#standings">Standings</a></li>
 <li class="nav-item"><a class="nav-link" href="#awards">Awards</a></li>
 <li class="nav-item"><a class="nav-link" href="#sponsors">Get Involved</a></li>
 <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
 <li class="nav-item"><a class="nav-link" href="#gallery">Gallery</a></li>
-<li class="nav-item"><a class="nav-link" href="#brochure">Brochure</a></li>
+<li class="nav-item"><a class="nav-link" href="brochure.html">Brochure</a></li>
 <li class="nav-item"><a class="nav-link" href="#sponsor-gallery">Sponsors</a></li>
 </ul>
 </div>
@@ -146,7 +147,7 @@ h1,h2,h3,h4,h5,h6,.display-1,.display-2,.display-3,.display-4{font-family:'Poppi
 <div class="countdown-box text-center"><div class="count-num" data-seconds>--</div><div class="count-label">Seconds</div></div>
 </div>
 
-<a href="#contact" class="btn btn-patriotic btn-lg mb-4"><i class="bi bi-pencil-square me-2"></i>Register Your Team</a>
+<a href="pool-draw.html" class="btn btn-patriotic btn-lg mb-4"><i class="bi bi-shuffle me-2"></i>Pool Draw</a>
 
 <!-- Event Summary -->
 <p class="mx-auto mb-5" style="max-width:600px;opacity:.9">Celebrate America's Independence Day with the Freedom Cup — New Haven's premier tape ball cricket tournament. Ten teams battle across 3 mat pitches in one explosive day of sixes, fours, and pure cricketing glory. Fast-paced, exciting, and open to all skill levels!</p>
@@ -156,7 +157,7 @@ h1,h2,h3,h4,h5,h6,.display-1,.display-2,.display-3,.display-4{font-family:'Poppi
 <!-- Quick Links -->
 <div class="row g-3 justify-content-center mb-4">
 <div class="col-6 col-md-4 col-lg-2"><a href="#schedule" class="quick-link-card d-block text-decoration-none card-hover"><i class="bi bi-calendar3"></i><p class="mt-2 mb-0 fw-600 text-dark small">Schedule</p></a></div>
-<div class="col-6 col-md-4 col-lg-2"><a href="#teams" class="quick-link-card d-block text-decoration-none card-hover"><i class="bi bi-people"></i><p class="mt-2 mb-0 fw-600 text-dark small">Teams</p></a></div>
+<div class="col-6 col-md-4 col-lg-2"><a href="pool-draw.html" class="quick-link-card d-block text-decoration-none card-hover"><i class="bi bi-shuffle"></i><p class="mt-2 mb-0 fw-600 text-dark small">Pool Draw</p></a></div>
 <div class="col-6 col-md-4 col-lg-2"><a href="#rules" class="quick-link-card d-block text-decoration-none card-hover"><i class="bi bi-book"></i><p class="mt-2 mb-0 fw-600 text-dark small">Rules</p></a></div>
 <div class="col-6 col-md-4 col-lg-2"><a href="#standings" class="quick-link-card d-block text-decoration-none card-hover"><i class="bi bi-bar-chart"></i><p class="mt-2 mb-0 fw-600 text-dark small">Standings</p></a></div>
 <div class="col-6 col-md-4 col-lg-2"><a href="#contact" class="quick-link-card d-block text-decoration-none card-hover"><i class="bi bi-envelope"></i><p class="mt-2 mb-0 fw-600 text-dark small">Contact</p></a></div>
@@ -170,58 +171,156 @@ h1,h2,h3,h4,h5,h6,.display-1,.display-2,.display-3,.display-4{font-family:'Poppi
 </section>
 
 <!-- SECTION 2: ABOUT -->
-<section id="about" class="section-padding" aria-label="About the Tournament">
+<section id="about" class="section-padding" aria-label="About the Tournament" style="background:linear-gradient(180deg,#fff 0%,#f0f4ff 100%)">
 <div class="container">
-<div class="text-center mb-3">
-<h2 class="section-title display-5">About Freedom Cup</h2>
-<p class="text-muted mt-2">Everything you need to know about the tournament</p>
+<div class="text-center mb-4">
+<span class="d-inline-block px-3 py-1 rounded-pill mb-2" style="background:rgba(0,40,104,.08);color:var(--blue);font-size:.75rem;font-weight:600;letter-spacing:2px">🏏 THE TOURNAMENT</span>
+<h2 class="display-5 fw-bold" style="color:var(--blue)">About Freedom Cup</h2>
+<p class="mt-2 text-muted">New Haven's premier Independence Day cricket celebration</p>
 </div>
 
-<div class="row g-4 mb-5">
-<div class="col-12">
-<div class="card card-hover border-0 shadow-sm p-4">
-<h3 class="h5 fw-bold text-primary"><i class="bi bi-flag me-2" style="color:var(--red)"></i>The Freedom Cup Story</h3>
-<p class="mb-0">Cricket has always been more than a sport — it's a bond that unites communities across cultures. The Freedom Cup brings that spirit to New Haven, Connecticut on America's Independence Day. Ten teams, one shared love for the game, and one action-packed day of thrilling tape ball cricket under the summer sun. Whether you grew up playing gully cricket, backyard tape ball, or discovered the sport right here in the USA — this tournament is your stage. Fast-paced, affordable, and open to all skill levels. No expensive gear, no barriers — just pure cricketing joy, sixes flying, community pride, and the pursuit of glory. 🏏🇺🇸</p>
+<!-- Hero Story Card -->
+<div class="rounded-4 p-4 p-md-5 mb-5 position-relative overflow-hidden" style="background:linear-gradient(135deg,#001a4a 0%,#002868 50%,#1a3a6b 100%);box-shadow:0 20px 60px rgba(0,40,104,.2)">
+<div class="position-absolute top-0 start-0 end-0 bottom-0" style="opacity:.05;background-image:url('data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2240%22 height=%2240%22%3E%3Ctext x=%2220%22 y=%2225%22 text-anchor=%22middle%22 font-size=%2214%22 fill=%22white%22%3E%E2%98%85%3C/text%3E%3C/svg%3E')"></div>
+<div class="position-relative text-white">
+<h3 class="h4 fw-bold mb-3" style="color:var(--gold)"><i class="bi bi-flag-fill me-2"></i>The Freedom Cup Story</h3>
+<p class="mb-0" style="font-size:1.05rem;line-height:1.8;opacity:.9">Cricket has always been more than a sport — it's a bond that unites communities across cultures. The Freedom Cup brings that spirit to New Haven, Connecticut on America's Independence Day. Ten teams, one shared love for the game, and one action-packed day of thrilling tape ball cricket under the summer sun. Whether you grew up playing gully cricket, backyard tape ball, or discovered the sport right here in the USA — this tournament is your stage. Fast-paced, affordable, and open to all skill levels. No expensive gear, no barriers — just pure cricketing joy, sixes flying, community pride, and the pursuit of glory. 🏏🇺🇸</p>
+</div>
+</div>
+
+<!-- Stats Strip -->
+<div class="row g-3 mb-5">
+<div class="col-4 col-md">
+<div class="text-center p-3 rounded-3" style="background:rgba(0,40,104,.04);border:1px solid rgba(0,40,104,.1)">
+<div class="fw-bold fs-4" style="color:var(--blue)">10</div>
+<small class="text-muted fw-semibold">Teams</small>
+</div>
+</div>
+<div class="col-4 col-md">
+<div class="text-center p-3 rounded-3" style="background:rgba(191,10,48,.04);border:1px solid rgba(191,10,48,.1)">
+<div class="fw-bold fs-4" style="color:var(--red)">9v9</div>
+<small class="text-muted fw-semibold">Format</small>
+</div>
+</div>
+<div class="col-4 col-md">
+<div class="text-center p-3 rounded-3" style="background:rgba(255,215,0,.06);border:1px solid rgba(255,215,0,.2)">
+<div class="fw-bold fs-4" style="color:#b8860b">6</div>
+<small class="text-muted fw-semibold">Overs</small>
+</div>
+</div>
+<div class="col-4 col-md">
+<div class="text-center p-3 rounded-3" style="background:rgba(0,40,104,.04);border:1px solid rgba(0,40,104,.1)">
+<div class="fw-bold fs-4" style="color:var(--blue)">3</div>
+<small class="text-muted fw-semibold">Pitches</small>
+</div>
+</div>
+<div class="col-4 col-md">
+<div class="text-center p-3 rounded-3" style="background:rgba(191,10,48,.04);border:1px solid rgba(191,10,48,.1)">
+<div class="fw-bold fs-4" style="color:var(--red)">22</div>
+<small class="text-muted fw-semibold">Matches</small>
+</div>
+</div>
+<div class="col-4 col-md">
+<div class="text-center p-3 rounded-3" style="background:rgba(255,215,0,.06);border:1px solid rgba(255,215,0,.2)">
+<div class="fw-bold fs-4" style="color:#b8860b">1</div>
+<small class="text-muted fw-semibold">Day</small>
 </div>
 </div>
 </div>
 
-<div class="row g-4 mb-5">
+<!-- Info Cards -->
+<div class="row g-4">
 <div class="col-lg-4">
-<div class="card card-hover h-100 border-0 shadow-sm p-4">
-<h3 class="h5 fw-bold"><i class="bi bi-list-check me-2 text-gold"></i>Format Overview</h3>
-<ul class="list-unstyled mb-0">
-<li class="mb-2"><strong>9-a-side, 6 overs per side</strong></li>
-<li>Match duration: ~60 minutes</li>
-<li>15-minute break between rounds</li>
+<div class="card h-100 border-0 shadow-sm p-4 rounded-4 position-relative overflow-hidden" style="border-top:4px solid var(--blue)!important">
+<div class="d-inline-flex align-items-center justify-content-center rounded-circle mb-3" style="width:48px;height:48px;background:rgba(0,40,104,.08)"><i class="bi bi-lightning-charge-fill fs-5" style="color:var(--blue)"></i></div>
+<h3 class="h5 fw-bold">Format</h3>
+<ul class="list-unstyled mb-0 text-muted">
+<li class="mb-2">🏏 <strong>9-a-side</strong>, 6 overs per side</li>
+<li class="mb-2">⏱️ Match duration: ~50 minutes</li>
+<li>🔄 15-min changeover between rounds</li>
 </ul>
 </div>
 </div>
 <div class="col-lg-4">
-<div class="card card-hover h-100 border-0 shadow-sm p-4">
-<h3 class="h5 fw-bold"><i class="bi bi-diagram-3 me-2 text-gold"></i>Tournament Structure</h3>
-<ul class="list-unstyled mb-0">
-<li>2 Pools × 5 Teams</li>
-<li>4 pool matches per team</li>
-<li>Top 2 per pool → Semi-finals</li>
-<li>Winners → Grand Final</li>
+<div class="card h-100 border-0 shadow-sm p-4 rounded-4 position-relative overflow-hidden" style="border-top:4px solid var(--red)!important">
+<div class="d-inline-flex align-items-center justify-content-center rounded-circle mb-3" style="width:48px;height:48px;background:rgba(191,10,48,.08)"><i class="bi bi-diagram-3-fill fs-5" style="color:var(--red)"></i></div>
+<h3 class="h5 fw-bold">Structure</h3>
+<ul class="list-unstyled mb-0 text-muted">
+<li class="mb-2">🏆 2 Pools × 5 Teams</li>
+<li class="mb-2">📋 4 pool matches per team</li>
+<li class="mb-2">⚡ Top 2 per pool → Semi-Finals</li>
+<li>👑 Winners → Grand Final</li>
 </ul>
 </div>
 </div>
 <div class="col-lg-4">
-<div class="card card-hover h-100 border-0 shadow-sm p-4">
-<h3 class="h5 fw-bold"><i class="bi bi-geo-alt me-2 text-gold"></i>Venue</h3>
-<p class="mb-1"><strong>150 Kimberly Avenue, New Haven, CT</strong></p>
-<ul class="list-unstyled mb-0">
-<li>3 mat pitches for simultaneous action</li>
-<li>Ample spectator space</li>
-<li>Parking available on the school side</li>
+<div class="card h-100 border-0 shadow-sm p-4 rounded-4 position-relative overflow-hidden" style="border-top:4px solid var(--gold)!important">
+<div class="d-inline-flex align-items-center justify-content-center rounded-circle mb-3" style="width:48px;height:48px;background:rgba(255,215,0,.1)"><i class="bi bi-geo-alt-fill fs-5" style="color:#b8860b"></i></div>
+<h3 class="h5 fw-bold">Venue</h3>
+<p class="mb-2 text-muted"><strong>150 Kimberly Avenue, New Haven, CT</strong></p>
+<ul class="list-unstyled mb-0 text-muted">
+<li class="mb-2">🏟️ 3 mat pitches, parallel action</li>
+<li class="mb-2">👥 Ample spectator space</li>
+<li>🅿️ Parking on school side only</li>
 </ul>
-<p class="mt-2 mb-0 small fst-italic" style="color:var(--red)"><i class="bi bi-info-circle me-1"></i>Kindly park on the school side only — no parking inside the ground. Thank you!</p>
 </div>
 </div>
 </div>
 
+</div>
+</section>
+
+<!-- SECTION: TEAMS & POOLS -->
+<section id="teams" class="section-padding" aria-label="Teams" style="background:linear-gradient(135deg,#0a0a1a 0%,#0d1b3e 50%,#1a0533 100%)">
+<div class="container">
+<div class="text-center mb-4">
+<h2 class="display-5 fw-bold text-white">⚔️ The Battleground</h2>
+<p class="mt-2" style="color:rgba(255,255,255,.7)">10 teams. 2 pools. 1 champion. Who will lift the Freedom Cup?</p>
+</div>
+
+<!-- All Teams -->
+<div class="row g-2 mb-5 justify-content-center" id="allTeamsRow">
+<div class="col-6 col-md-4 col-lg"><div class="text-center p-3 rounded-3" style="background:rgba(255,140,0,.1);border:1px solid rgba(255,140,0,.3)"><div class="rounded-circle d-inline-flex align-items-center justify-content-center mb-2" style="width:50px;height:50px;background:#ff8c00"><span class="fw-bold text-white">PT</span></div><p class="mb-0 fw-bold text-white small">Punjab Tigers Albany</p></div></div>
+<div class="col-6 col-md-4 col-lg"><div class="text-center p-3 rounded-3" style="background:rgba(30,132,73,.1);border:1px solid rgba(30,132,73,.3)"><div class="rounded-circle d-inline-flex align-items-center justify-content-center mb-2" style="width:50px;height:50px;background:#1e8449"><span class="fw-bold text-white">A11</span></div><p class="mb-0 fw-bold text-white small">Afghan 11</p></div></div>
+<div class="col-6 col-md-4 col-lg"><div class="text-center p-3 rounded-3" style="background:rgba(91,44,111,.1);border:1px solid rgba(91,44,111,.3)"><div class="rounded-circle d-inline-flex align-items-center justify-content-center mb-2" style="width:50px;height:50px;background:#5b2c6f"><span class="fw-bold text-white">Z</span></div><p class="mb-0 fw-bold text-white small">Zalmi SuperStrikers</p></div></div>
+<div class="col-6 col-md-4 col-lg"><div class="text-center p-3 rounded-3" style="background:rgba(39,174,96,.1);border:1px solid rgba(39,174,96,.3)"><div class="rounded-circle d-inline-flex align-items-center justify-content-center mb-2" style="width:50px;height:50px;background:#27ae60"><span class="fw-bold text-white">HQ</span></div><p class="mb-0 fw-bold text-white small">Hamden Qalandars Green</p></div></div>
+<div class="col-6 col-md-4 col-lg"><div class="text-center p-3 rounded-3" style="background:rgba(231,76,60,.1);border:1px solid rgba(231,76,60,.3)"><div class="rounded-circle d-inline-flex align-items-center justify-content-center mb-2" style="width:50px;height:50px;background:#e74c3c"><span class="fw-bold text-white">YF</span></div><p class="mb-0 fw-bold text-white small">Young Fighters</p></div></div>
+<div class="col-6 col-md-4 col-lg"><div class="text-center p-3 rounded-3" style="background:rgba(192,57,43,.1);border:1px solid rgba(192,57,43,.3)"><div class="rounded-circle d-inline-flex align-items-center justify-content-center mb-2" style="width:50px;height:50px;background:#c0392b"><span class="fw-bold text-white">R</span></div><p class="mb-0 fw-bold text-white small">Rangbaaz</p></div></div>
+<div class="col-6 col-md-4 col-lg"><div class="text-center p-3 rounded-3" style="background:rgba(41,128,185,.1);border:1px solid rgba(41,128,185,.3)"><div class="rounded-circle d-inline-flex align-items-center justify-content-center mb-2" style="width:50px;height:50px;background:#2980b9"><span class="fw-bold text-white">M</span></div><p class="mb-0 fw-bold text-white small">MSC</p></div></div>
+<div class="col-6 col-md-4 col-lg"><div class="text-center p-3 rounded-3" style="background:rgba(142,68,173,.1);border:1px solid rgba(142,68,173,.3)"><div class="rounded-circle d-inline-flex align-items-center justify-content-center mb-2" style="width:50px;height:50px;background:#8e44ad"><span class="fw-bold text-white">W</span></div><p class="mb-0 fw-bold text-white small">WMCC</p></div></div>
+<div class="col-6 col-md-4 col-lg"><div class="text-center p-3 rounded-3" style="background:rgba(36,113,163,.1);border:1px solid rgba(36,113,163,.3)"><div class="rounded-circle d-inline-flex align-items-center justify-content-center mb-2" style="width:50px;height:50px;background:#2471a3"><span class="fw-bold text-white">HQ</span></div><p class="mb-0 fw-bold text-white small">Hamden Qalandars Blue</p></div></div>
+<div class="col-6 col-md-4 col-lg"><div class="text-center p-3 rounded-3" style="background:rgba(211,84,0,.1);border:1px solid rgba(211,84,0,.3)"><div class="rounded-circle d-inline-flex align-items-center justify-content-center mb-2" style="width:50px;height:50px;background:#d35400"><span class="fw-bold text-white">MH</span></div><p class="mb-0 fw-bold text-white small">Monroe Hawks</p></div></div>
+</div>
+
+<!-- Pool A & Pool B -->
+<div class="row g-4">
+<div class="col-md-6">
+<div class="rounded-4 p-4 h-100" style="background:rgba(0,40,104,.2);border:2px solid rgba(100,181,246,.3)">
+<h4 class="text-center fw-bold mb-3" style="color:#64b5f6"><i class="bi bi-shield-fill me-2"></i>POOL A</h4>
+<ol class="list-group list-group-flush" id="poolAList">
+<li class="list-group-item bg-transparent border-bottom text-white fw-semibold py-2" style="border-color:rgba(100,181,246,.15)!important"><span class="badge bg-primary me-2">A1</span>TBD — Awaiting Draw</li>
+<li class="list-group-item bg-transparent border-bottom text-white fw-semibold py-2" style="border-color:rgba(100,181,246,.15)!important"><span class="badge bg-primary me-2">A2</span>TBD — Awaiting Draw</li>
+<li class="list-group-item bg-transparent border-bottom text-white fw-semibold py-2" style="border-color:rgba(100,181,246,.15)!important"><span class="badge bg-primary me-2">A3</span>TBD — Awaiting Draw</li>
+<li class="list-group-item bg-transparent border-bottom text-white fw-semibold py-2" style="border-color:rgba(100,181,246,.15)!important"><span class="badge bg-primary me-2">A4</span>TBD — Awaiting Draw</li>
+<li class="list-group-item bg-transparent border-0 text-white fw-semibold py-2"><span class="badge bg-primary me-2">A5</span>TBD — Awaiting Draw</li>
+</ol>
+<p class="text-center mt-3 mb-0"><a href="pool-draw.html" class="btn btn-sm fw-bold" style="background:#ffd700;color:#1a1a2e;border-radius:50px"><i class="bi bi-shuffle me-1"></i>Go to Pool Draw</a></p>
+</div>
+</div>
+<div class="col-md-6">
+<div class="rounded-4 p-4 h-100" style="background:rgba(191,10,48,.15);border:2px solid rgba(255,100,100,.3)">
+<h4 class="text-center fw-bold mb-3" style="color:#ef5350"><i class="bi bi-shield-fill me-2"></i>POOL B</h4>
+<ol class="list-group list-group-flush" id="poolBList">
+<li class="list-group-item bg-transparent border-bottom text-white fw-semibold py-2" style="border-color:rgba(255,100,100,.15)!important"><span class="badge bg-danger me-2">B1</span>TBD — Awaiting Draw</li>
+<li class="list-group-item bg-transparent border-bottom text-white fw-semibold py-2" style="border-color:rgba(255,100,100,.15)!important"><span class="badge bg-danger me-2">B2</span>TBD — Awaiting Draw</li>
+<li class="list-group-item bg-transparent border-bottom text-white fw-semibold py-2" style="border-color:rgba(255,100,100,.15)!important"><span class="badge bg-danger me-2">B3</span>TBD — Awaiting Draw</li>
+<li class="list-group-item bg-transparent border-bottom text-white fw-semibold py-2" style="border-color:rgba(255,100,100,.15)!important"><span class="badge bg-danger me-2">B4</span>TBD — Awaiting Draw</li>
+<li class="list-group-item bg-transparent border-0 text-white fw-semibold py-2"><span class="badge bg-danger me-2">B5</span>TBD — Awaiting Draw</li>
+</ol>
+<p class="text-center mt-3 mb-0"><a href="pool-draw.html" class="btn btn-sm fw-bold" style="background:#ffd700;color:#1a1a2e;border-radius:50px"><i class="bi bi-shuffle me-1"></i>Go to Pool Draw</a></p>
+</div>
+</div>
+</div>
 </div>
 </section>
 
@@ -230,150 +329,82 @@ h1,h2,h3,h4,h5,h6,.display-1,.display-2,.display-3,.display-4{font-family:'Poppi
 <div class="container">
 <div class="text-center mb-3">
 <h2 class="section-title display-5">Match Schedule</h2>
-<p class="text-muted mt-2">One explosive day of non-stop tape ball cricket action! 🔥</p>
+<p class="text-muted mt-2">One explosive day — 20 pool matches across 3 pitches, semis & final! 🔥</p>
 </div>
 
-<!-- Format Timings -->
-<div class="row g-4 mb-5 justify-content-center">
-<div class="col-md-8 col-lg-6">
-<div class="card border-0 shadow-sm card-hover h-100">
-<div class="card-header bg-patriotic text-white text-center py-3"><h4 class="mb-0 h5">9-a-side, 6 Overs Per Side</h4></div>
-<div class="card-body p-4">
-<table class="table table-sm mb-0">
-<tbody>
-<tr><td>Match Duration</td><td class="fw-bold">60 minutes</td></tr>
-<tr><td>1st Innings</td><td>24 min (6 overs × 4 min)</td></tr>
-<tr><td>Break</td><td>10 min</td></tr>
-<tr><td>2nd Innings</td><td>24 min (6 overs × 4 min)</td></tr>
-<tr><td>Break Between Rounds</td><td>15 min</td></tr>
-<tr><td>Day Schedule</td><td class="fw-bold text-primary">9:00 AM – ~8:00 PM</td></tr>
-</tbody>
-</table>
+<!-- Quick Stats -->
+<div class="row g-3 mb-4 justify-content-center">
+<div class="col-6 col-md-3">
+<div class="card border-0 shadow-sm text-center p-3 h-100"><i class="bi bi-clock-fill text-primary fs-4"></i><h5 class="fw-bold mb-0 mt-2">9:00 AM</h5><small class="text-muted">First Ball</small></div>
 </div>
+<div class="col-6 col-md-3">
+<div class="card border-0 shadow-sm text-center p-3 h-100"><i class="bi bi-trophy-fill text-gold fs-4"></i><h5 class="fw-bold mb-0 mt-2">6:00 PM</h5><small class="text-muted">Grand Final</small></div>
 </div>
+<div class="col-6 col-md-3">
+<div class="card border-0 shadow-sm text-center p-3 h-100"><i class="bi bi-pin-map-fill text-danger fs-4"></i><h5 class="fw-bold mb-0 mt-2">3 Pitches</h5><small class="text-muted">Parallel</small></div>
+</div>
+<div class="col-6 col-md-3">
+<div class="card border-0 shadow-sm text-center p-3 h-100"><i class="bi bi-lightning-fill text-warning fs-4"></i><h5 class="fw-bold mb-0 mt-2">50 min</h5><small class="text-muted">Per Match</small></div>
 </div>
 </div>
 
-<!-- Full Day Schedule -->
+<!-- Match Format Card -->
+<div class="card border-0 shadow-sm mb-4">
+<div class="card-header bg-patriotic text-white text-center py-2"><h5 class="mb-0 h6">🏏 9-a-side • 6 Overs • 50-min Matches • 15-min Changeover</h5></div>
+</div>
+
+<!-- Pool Stage Schedule Table -->
 <div class="card border-0 shadow-sm mb-4">
 <div class="card-header bg-white border-bottom py-3">
-<h3 class="h5 mb-0"><i class="bi bi-calendar-date me-2 text-primary"></i>Saturday, July 4, 2026 — Full Schedule</h3>
+<h3 class="h5 mb-0"><i class="bi bi-calendar-date me-2 text-primary"></i>Friday, July 4, 2026 — Pool Stage</h3>
+<small class="text-muted">20 matches • 7 rounds • 3 pitches running simultaneously</small>
 </div>
-<div class="card-body p-4">
-<h4 class="h6 fw-bold text-primary mb-2">Pool Stage — Non-Stop Tape Ball Action! 🔥</h4>
-<p class="mb-3"><strong>20 Pool Matches</strong> | 5 Rounds | 3 Mat Pitches Running Simultaneously | 15-min break between rounds — sixes, fours, and wickets flying everywhere!</p>
-<div class="table-responsive mb-4">
-<table class="table table-bordered table-hover align-middle">
-<thead class="table-dark"><tr><th>Round</th><th>Pitch 1</th><th>Pitch 2</th><th>Pitch 3</th></tr></thead>
+<div class="card-body p-3">
+<div class="table-responsive">
+<table class="table table-bordered table-hover align-middle text-center mb-0">
+<thead class="table-dark"><tr><th style="width:15%">Round</th><th class="table-primary">Pitch 1</th><th class="table-success">Pitch 2</th><th class="table-warning">Pitch 3</th></tr></thead>
 <tbody>
-<tr><td><strong>Round 1</strong><br><small>9:00 AM</small></td><td>A1 vs A2</td><td>A3 vs A4</td><td>B1 vs B2</td></tr>
-<tr><td><strong>Round 2</strong><br><small>~10:15 AM</small></td><td>B3 vs B4</td><td>A1 vs A3</td><td>B1 vs B3</td></tr>
-<tr><td><strong>Round 3</strong><br><small>~11:30 AM</small></td><td>A2 vs A5</td><td>B2 vs B5</td><td>A4 vs A5</td></tr>
-<tr><td><strong>Round 4</strong><br><small>~12:45 PM</small></td><td>B4 vs B5</td><td>A1 vs A5</td><td>B1 vs B5</td></tr>
-<tr><td><strong>Round 5</strong><br><small>~2:00 PM</small></td><td>A2 vs A4</td><td>A3 vs A5</td><td>B2 vs B4</td></tr>
-<tr><td><strong>Round 6</strong><br><small>~3:15 PM</small></td><td>B3 vs B5</td><td>A1 vs A4</td><td>B1 vs B4</td></tr>
-<tr><td><strong>Round 7</strong><br><small>~4:30 PM</small></td><td>A2 vs A3</td><td>B2 vs B3</td><td>Remaining*</td></tr>
+<tr><td><strong>R1</strong><br><span class="badge bg-primary">9:00 AM</span></td><td>A1 vs A3</td><td>B3 vs B5</td><td>B1 vs B2</td></tr>
+<tr><td><strong>R2</strong><br><span class="badge bg-primary">10:05 AM</span></td><td>A2 vs A3</td><td>B2 vs B5</td><td>A1 vs A5</td></tr>
+<tr><td><strong>R3</strong><br><span class="badge bg-primary">11:10 AM</span></td><td>A1 vs A2</td><td>A3 vs A4</td><td>B3 vs B4</td></tr>
+<tr><td><strong>R4</strong><br><span class="badge bg-primary">12:15 PM</span></td><td>A2 vs A4</td><td>B1 vs B3</td><td>B4 vs B5</td></tr>
+<tr><td><strong>R5</strong><br><span class="badge bg-primary">1:20 PM</span></td><td>A4 vs A5</td><td>B2 vs B3</td><td>B1 vs B5</td></tr>
+<tr><td><strong>R6</strong><br><span class="badge bg-primary">2:25 PM</span></td><td>A1 vs A4</td><td>A2 vs A5</td><td>B1 vs B4</td></tr>
+<tr><td><strong>R7</strong><br><span class="badge bg-primary">3:30 PM</span></td><td>A3 vs A5</td><td>B2 vs B4</td><td class="text-muted">—</td></tr>
 </tbody>
 </table>
-<p class="small text-muted">*Remaining fixtures scheduled based on ground availability. Each team guaranteed 4 pool matches.</p>
 </div>
-<h4 class="h6 fw-bold mb-2" style="color:var(--red)">Knockout Stage & Closing 🏆</h4>
+<p class="small text-muted mt-2 mb-0"><i class="bi bi-info-circle me-1"></i>Pool assignments will be updated after today's draw. Each team plays 4 pool matches. 15-min rest between rounds.</p>
+</div>
+</div>
+
+<!-- Knockout Stage -->
+<div class="card border-0 shadow-sm mb-4">
+<div class="card-header text-white py-3" style="background:linear-gradient(135deg,var(--red),#9a0826)">
+<h3 class="h5 mb-0"><i class="bi bi-trophy me-2"></i>Knockout Stage & Closing</h3>
+</div>
+<div class="card-body p-3">
 <div class="table-responsive">
-<table class="table table-bordered align-middle">
+<table class="table table-bordered align-middle text-center mb-0">
 <thead class="table-dark"><tr><th>Time</th><th>Event</th><th>Details</th></tr></thead>
 <tbody>
-<tr><td>~5:45 PM</td><td><strong>Semi-Final 1</strong></td><td>Pool A #1 vs Pool B #2 (Pitch 1)</td></tr>
-<tr><td>~5:45 PM</td><td><strong>Semi-Final 2</strong></td><td>Pool B #1 vs Pool A #2 (Pitch 2)</td></tr>
-<tr><td>~7:00 PM</td><td><strong>Grand Final</strong></td><td>SF1 Winner vs SF2 Winner</td></tr>
-<tr><td>~8:00 PM</td><td><strong>Closing Ceremony</strong></td><td>Awards, speeches, photos</td></tr>
+<tr class="table-info"><td><span class="badge bg-danger">4:45 PM</span></td><td><strong>Semi-Final 1</strong></td><td>Pool A #1 vs Pool B #2 — Pitch 1</td></tr>
+<tr class="table-info"><td><span class="badge bg-danger">4:45 PM</span></td><td><strong>Semi-Final 2</strong></td><td>Pool B #1 vs Pool A #2 — Pitch 2</td></tr>
+<tr class="table-warning"><td><span class="badge bg-dark">6:00 PM</span></td><td><strong>🏆 Grand Final</strong></td><td>SF1 Winner vs SF2 Winner — Pitch 1</td></tr>
+<tr><td><span class="badge bg-secondary">7:15 PM</span></td><td><strong>🎉 Closing Ceremony</strong></td><td>Awards, Speeches & Photos</td></tr>
 </tbody>
 </table>
 </div>
 </div>
 </div>
 
-<!-- Pool Draw -->
-<div class="row g-4 mb-5">
-<div class="col-12 text-center mb-2">
-<div class="alert border-0 py-3 rounded-3" style="background:linear-gradient(90deg,rgba(255,215,0,.1),rgba(0,40,104,.05));border:1px dashed var(--gold)!important">
-<i class="bi bi-shuffle me-2 text-gold"></i><strong>Pool assignments pending — </strong><a href="#teams" class="fw-bold" style="color:var(--blue)">Perform Pool Draw</a> to assign teams
-</div>
-</div>
-<div class="col-md-6">
-<div class="card border-0 shadow-sm text-center p-4">
-<h4 class="fw-bold text-primary">Pool A</h4>
-<ol class="list-group list-group-flush" id="schedulePoolA">
-<li class="list-group-item text-muted fst-italic">Awaiting Pool Draw</li><li class="list-group-item text-muted fst-italic">Awaiting Pool Draw</li><li class="list-group-item text-muted fst-italic">Awaiting Pool Draw</li><li class="list-group-item text-muted fst-italic">Awaiting Pool Draw</li><li class="list-group-item text-muted fst-italic">Awaiting Pool Draw</li>
-</ol>
-<small class="text-muted mt-2 d-block">10 round-robin fixtures</small>
-</div>
-</div>
-<div class="col-md-6">
-<div class="card border-0 shadow-sm text-center p-4">
-<h4 class="fw-bold" style="color:var(--red)">Pool B</h4>
-<ol class="list-group list-group-flush" id="schedulePoolB">
-<li class="list-group-item text-muted fst-italic">Awaiting Pool Draw</li><li class="list-group-item text-muted fst-italic">Awaiting Pool Draw</li><li class="list-group-item text-muted fst-italic">Awaiting Pool Draw</li><li class="list-group-item text-muted fst-italic">Awaiting Pool Draw</li><li class="list-group-item text-muted fst-italic">Awaiting Pool Draw</li>
-</ol>
-<small class="text-muted mt-2 d-block">10 round-robin fixtures</small>
-</div>
-</div>
-</div>
-
-<!-- Knockout Bracket -->
-<h3 class="h5 fw-bold text-center mb-4"><i class="bi bi-diagram-3 me-2"></i>Tournament Pathway</h3>
-
-<!-- Pool Stage Overview -->
-<div class="row g-4 mb-4">
-<div class="col-md-6">
-<div class="card border-0 shadow-sm h-100">
-<div class="card-header bg-patriotic text-white text-center py-2"><strong>Pool A</strong> — Round Robin</div>
-<div class="card-body p-3">
-<div class="table-responsive">
-<table class="table table-sm table-bordered mb-2 text-center">
-<thead class="table-light"><tr><th>#</th><th>Team</th></tr></thead>
-<tbody id="pathwayPoolA">
-<tr><td>A1</td><td class="text-muted fst-italic">Awaiting Draw</td></tr>
-<tr><td>A2</td><td class="text-muted fst-italic">Awaiting Draw</td></tr>
-<tr><td>A3</td><td class="text-muted fst-italic">Awaiting Draw</td></tr>
-<tr><td>A4</td><td class="text-muted fst-italic">Awaiting Draw</td></tr>
-<tr><td>A5</td><td class="text-muted fst-italic">Awaiting Draw</td></tr>
-</tbody>
-</table>
-</div>
-<p class="small text-muted mb-0 text-center">Each team plays 4 matches<br><strong>Top 2 qualify →</strong></p>
-</div>
-</div>
-</div>
-<div class="col-md-6">
-<div class="card border-0 shadow-sm h-100">
-<div class="card-header text-white text-center py-2" style="background:var(--red)"><strong>Pool B</strong> — Round Robin</div>
-<div class="card-body p-3">
-<div class="table-responsive">
-<table class="table table-sm table-bordered mb-2 text-center">
-<thead class="table-light"><tr><th>#</th><th>Team</th></tr></thead>
-<tbody id="pathwayPoolB">
-<tr><td>B1</td><td class="text-muted fst-italic">Awaiting Draw</td></tr>
-<tr><td>B2</td><td class="text-muted fst-italic">Awaiting Draw</td></tr>
-<tr><td>B3</td><td class="text-muted fst-italic">Awaiting Draw</td></tr>
-<tr><td>B4</td><td class="text-muted fst-italic">Awaiting Draw</td></tr>
-<tr><td>B5</td><td class="text-muted fst-italic">Awaiting Draw</td></tr>
-</tbody>
-</table>
-</div>
-<p class="small text-muted mb-0 text-center">Each team plays 4 matches<br><strong>Top 2 qualify →</strong></p>
-</div>
-</div>
-</div>
-</div>
-
-<!-- Knockout Bracket -->
+<!-- Tournament Bracket -->
 <div class="card border-0 shadow-sm p-4">
-<h4 class="h6 fw-bold text-center text-uppercase text-primary mb-4">Knockout Stage — After Pool Matches</h4>
+<h4 class="h6 fw-bold text-center text-uppercase text-primary mb-4"><i class="bi bi-diagram-3 me-2"></i>Tournament Pathway</h4>
 <div class="row align-items-center">
-<!-- Semi Finals -->
 <div class="col-md-4">
 <div class="card border-primary mb-3 text-center">
-<div class="card-header bg-primary text-white py-2"><small class="fw-bold">Semi-Final 1 • ~5:45 PM • Pitch 1</small></div>
+<div class="card-header bg-primary text-white py-2"><small class="fw-bold">Semi-Final 1 • 4:45 PM • Pitch 1</small></div>
 <div class="card-body py-3">
 <p class="mb-1 fw-bold" style="color:var(--blue)">🏏 Pool A — 1st Place</p>
 <p class="mb-0 text-muted small">vs</p>
@@ -381,7 +412,7 @@ h1,h2,h3,h4,h5,h6,.display-1,.display-2,.display-3,.display-4{font-family:'Poppi
 </div>
 </div>
 <div class="card text-center" style="border-color:var(--red)">
-<div class="card-header text-white py-2" style="background:var(--red)"><small class="fw-bold">Semi-Final 2 • ~5:45 PM • Pitch 2</small></div>
+<div class="card-header text-white py-2" style="background:var(--red)"><small class="fw-bold">Semi-Final 2 • 4:45 PM • Pitch 2</small></div>
 <div class="card-body py-3">
 <p class="mb-1 fw-bold" style="color:var(--red)">🏏 Pool B — 1st Place</p>
 <p class="mb-0 text-muted small">vs</p>
@@ -389,22 +420,20 @@ h1,h2,h3,h4,h5,h6,.display-1,.display-2,.display-3,.display-4{font-family:'Poppi
 </div>
 </div>
 </div>
-<!-- Arrow -->
 <div class="col-md-2 text-center py-3">
 <i class="bi bi-arrow-right d-none d-md-inline" style="font-size:2.5rem;color:var(--gold)"></i>
 <i class="bi bi-arrow-down d-md-none" style="font-size:2rem;color:var(--gold)"></i>
 <p class="small text-muted mt-1 mb-0">Winners advance</p>
 </div>
-<!-- Final -->
 <div class="col-md-6">
 <div class="card border-0 shadow text-center" style="background:linear-gradient(135deg,var(--blue),var(--blue-dark));color:#fff">
 <div class="card-body py-4 px-3">
 <p class="text-gold fw-bold text-uppercase small mb-1">★ Grand Final ★</p>
 <h4 class="fw-bold mb-2">🏆 Championship Match</h4>
 <p class="mb-1 opacity-90">SF1 Winner vs SF2 Winner</p>
-<p class="small opacity-75 mb-2">~7:00 PM • Pitch 1</p>
+<p class="small opacity-75 mb-2">6:00 PM • Pitch 1</p>
 <hr class="opacity-25 my-2">
-<p class="small opacity-75 mb-0"><i class="bi bi-calendar-event me-1"></i>Closing Ceremony: ~8:00 PM</p>
+<p class="small opacity-75 mb-0"><i class="bi bi-calendar-event me-1"></i>Closing Ceremony: 7:15 PM</p>
 </div>
 </div>
 </div>
@@ -413,162 +442,135 @@ h1,h2,h3,h4,h5,h6,.display-1,.display-2,.display-3,.display-4{font-family:'Poppi
 </div>
 </section>
 
-
-<!-- SECTION 4: TEAMS -->
-<section id="teams" class="section-padding" aria-label="Teams">
+<!-- PITCH MAP & ROUND-ROBIN VISUAL -->
+<section id="pitch-map" class="section-padding" aria-label="Pitch Map" style="background:linear-gradient(180deg,#0a1628 0%,#0f2044 100%)">
 <div class="container">
 <div class="text-center mb-4">
-<h2 class="section-title display-5">The Battleground</h2>
-<p class="text-muted mt-2">10 teams. 2 pools. 1 champion. Who will lift the Freedom Cup?</p>
+<h2 class="section-title display-5 text-white">Pitch Map & Match Flow</h2>
+<p class="text-white-50 mt-2">3 pitches running simultaneously — follow your team across the day</p>
 </div>
 
-<!-- Registration Banner -->
-<div class="text-center border-0 mb-5 py-4 px-3 rounded-4 position-relative overflow-hidden" style="background:linear-gradient(135deg,#0a3d0a 0%,#155724 50%,#1e7e34 100%);box-shadow:0 12px 40px rgba(21,87,36,.3)">
-<div class="position-absolute top-0 start-0 end-0 bottom-0" style="opacity:.06;background-image:url('data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2240%22 height=%2240%22%3E%3Ctext x=%2220%22 y=%2225%22 text-anchor=%22middle%22 font-size=%2214%22 fill=%22white%22%3E%E2%98%85%3C/text%3E%3C/svg%3E')"></div>
-<div class="position-relative text-white">
-<h4 class="fw-bold mb-2"><i class="bi bi-check-circle-fill me-2 text-gold"></i>All 10 Slots FILLED!</h4>
-<p class="mb-3 opacity-90">All teams confirmed — <strong>Pool Draw coming soon!</strong></p>
-<div class="d-flex justify-content-center gap-4 flex-wrap mb-3">
-<div class="text-center"><span class="d-block fw-bold fs-4 text-gold">10/10</span><small class="opacity-70">Teams</small></div>
-<div class="text-center"><span class="d-block fw-bold fs-4 text-gold">9</span><small class="opacity-70">Per Side</small></div>
-<div class="text-center"><span class="d-block fw-bold fs-4 text-gold">6</span><small class="opacity-70">Overs</small></div>
-<div class="text-center"><span class="d-block fw-bold fs-4 text-gold">1</span><small class="opacity-70">Day</small></div>
+<!-- 3 Pitch Visual -->
+<div class="row g-3 mb-5">
+<div class="col-md-4">
+<div class="card border-0 h-100" style="background:rgba(33,150,243,.08);border:2px solid rgba(33,150,243,.3)!important;border-radius:16px">
+<div class="card-header text-center py-3" style="background:linear-gradient(135deg,#1565c0,#0d47a1);border-radius:14px 14px 0 0">
+<h5 class="mb-0 text-white fw-bold"><i class="bi bi-geo-alt-fill me-2"></i>Pitch 1</h5>
+<small class="text-white-50">Main Ground</small>
 </div>
-<button class="btn btn-lg fw-bold" id="poolDrawBtn" style="background:var(--gold);color:#333;border-radius:50px;padding:.7rem 2.5rem" onclick="startPoolDraw()"><i class="bi bi-shuffle me-2"></i>Pool Draw</button>
-</div>
-</div>
-
-<!-- Confirmed Teams Grid -->
-<div class="mb-4">
-<div class="d-flex align-items-center mb-3 gap-2">
-<div class="rounded-pill px-3 py-1" style="background:linear-gradient(90deg,var(--blue),var(--red))"><span class="fw-bold text-white small text-uppercase" style="letter-spacing:1px">10 Confirmed Teams</span></div>
-<div class="flex-grow-1" style="height:2px;background:linear-gradient(90deg,var(--blue),var(--red),transparent)"></div>
-</div>
-<div class="row g-3" id="teamsGrid">
-<div class="col-6 col-md-4 col-lg-2-4" style="flex:0 0 20%;max-width:20%">
-<div class="card card-hover text-center border-0 h-100 position-relative overflow-hidden" style="box-shadow:0 8px 30px rgba(0,40,104,.15);border-radius:16px;background:linear-gradient(160deg,#0a1628,#142952)">
-<div class="position-absolute top-0 start-0 end-0" style="height:4px;background:linear-gradient(90deg,#FFD700,#f5c518)"></div>
-<div class="card-body p-3 d-flex flex-column align-items-center">
-<div class="rounded-circle d-flex align-items-center justify-content-center mb-2" style="width:72px;height:72px;background:linear-gradient(135deg,#1a3a6b,#0d1f3c);border:3px solid #FFD700;box-shadow:0 4px 15px rgba(255,215,0,.2)"><span class="fw-900 text-white" style="font-size:1.8rem">R</span></div>
-<h6 class="fw-bold text-white mb-1" style="font-size:.85rem">Rangbaaz</h6>
-<span class="badge rounded-pill" style="background:rgba(255,215,0,.15);color:#FFD700;font-size:.65rem">CONFIRMED</span>
+<div class="card-body p-2">
+<div class="list-group list-group-flush">
+<div class="list-group-item bg-transparent text-white border-bottom px-2 py-2 d-flex justify-content-between align-items-center" style="border-color:rgba(100,181,246,.2)!important"><span class="badge bg-primary me-2">R1</span><span class="fw-semibold">A1 vs A3</span><span style="color:#90caf9;font-size:.8rem">9:00 AM</span></div>
+<div class="list-group-item bg-transparent text-white border-bottom px-2 py-2 d-flex justify-content-between align-items-center" style="border-color:rgba(100,181,246,.2)!important"><span class="badge bg-primary me-2">R2</span><span class="fw-semibold">A2 vs A3</span><span style="color:#90caf9;font-size:.8rem">10:05 AM</span></div>
+<div class="list-group-item bg-transparent text-white border-bottom px-2 py-2 d-flex justify-content-between align-items-center" style="border-color:rgba(100,181,246,.2)!important"><span class="badge bg-primary me-2">R3</span><span class="fw-semibold">A1 vs A2</span><span style="color:#90caf9;font-size:.8rem">11:10 AM</span></div>
+<div class="list-group-item bg-transparent text-white border-bottom px-2 py-2 d-flex justify-content-between align-items-center" style="border-color:rgba(100,181,246,.2)!important"><span class="badge bg-primary me-2">R4</span><span class="fw-semibold">A2 vs A4</span><span style="color:#90caf9;font-size:.8rem">12:15 PM</span></div>
+<div class="list-group-item bg-transparent text-white border-bottom px-2 py-2 d-flex justify-content-between align-items-center" style="border-color:rgba(100,181,246,.2)!important"><span class="badge bg-primary me-2">R5</span><span class="fw-semibold">A4 vs A5</span><span style="color:#90caf9;font-size:.8rem">1:20 PM</span></div>
+<div class="list-group-item bg-transparent text-white border-bottom px-2 py-2 d-flex justify-content-between align-items-center" style="border-color:rgba(100,181,246,.2)!important"><span class="badge bg-primary me-2">R6</span><span class="fw-semibold">A1 vs A4</span><span style="color:#90caf9;font-size:.8rem">2:25 PM</span></div>
+<div class="list-group-item bg-transparent text-white border-bottom px-2 py-2 d-flex justify-content-between align-items-center" style="border-color:rgba(100,181,246,.2)!important"><span class="badge bg-primary me-2">R7</span><span class="fw-semibold">A3 vs A5</span><span style="color:#90caf9;font-size:.8rem">3:30 PM</span></div>
+<div class="list-group-item bg-transparent border-0 px-2 py-2 d-flex justify-content-between align-items-center" style="color:#ffd700"><span class="badge bg-danger me-2">SF1</span><span class="fw-bold">A#1 vs B#2</span><span style="font-size:.8rem">4:45 PM</span></div>
+<div class="list-group-item bg-transparent border-0 px-2 py-2 d-flex justify-content-between align-items-center" style="color:#ffd700"><span class="badge bg-dark me-2">FIN</span><span class="fw-bold">🏆 FINAL</span><span style="font-size:.8rem">6:00 PM</span></div>
 </div>
 </div>
 </div>
-<div class="col-6 col-md-4 col-lg-2-4" style="flex:0 0 20%;max-width:20%">
-<div class="card card-hover text-center border-0 h-100 position-relative overflow-hidden" style="box-shadow:0 8px 30px rgba(0,40,104,.15);border-radius:16px;background:linear-gradient(160deg,#0a1628,#142952)">
-<div class="position-absolute top-0 start-0 end-0" style="height:4px;background:linear-gradient(90deg,#00c853,#69f0ae)"></div>
-<div class="card-body p-3 d-flex flex-column align-items-center">
-<div class="rounded-circle d-flex align-items-center justify-content-center mb-2" style="width:72px;height:72px;background:linear-gradient(135deg,#1b5e20,#2e7d32);border:3px solid #69f0ae;box-shadow:0 4px 15px rgba(105,240,174,.2)"><span class="fw-900 text-white" style="font-size:1.8rem">Z</span></div>
-<h6 class="fw-bold text-white mb-1" style="font-size:.85rem">Zalmi SuperStrikers</h6>
-<span class="badge rounded-pill" style="background:rgba(105,240,174,.15);color:#69f0ae;font-size:.65rem">CONFIRMED</span>
+</div>
+<div class="col-md-4">
+<div class="card border-0 h-100" style="background:rgba(76,175,80,.08);border:2px solid rgba(76,175,80,.3)!important;border-radius:16px">
+<div class="card-header text-center py-3" style="background:linear-gradient(135deg,#2e7d32,#1b5e20);border-radius:14px 14px 0 0">
+<h5 class="mb-0 text-white fw-bold"><i class="bi bi-geo-alt-fill me-2"></i>Pitch 2</h5>
+<small class="text-white-50">Center Strip</small>
+</div>
+<div class="card-body p-2">
+<div class="list-group list-group-flush">
+<div class="list-group-item bg-transparent text-white border-bottom px-2 py-2 d-flex justify-content-between align-items-center" style="border-color:rgba(76,175,80,.2)!important"><span class="badge bg-success me-2">R1</span><span class="fw-semibold">B3 vs B5</span><span style="color:#a5d6a7;font-size:.8rem">9:00 AM</span></div>
+<div class="list-group-item bg-transparent text-white border-bottom px-2 py-2 d-flex justify-content-between align-items-center" style="border-color:rgba(76,175,80,.2)!important"><span class="badge bg-success me-2">R2</span><span class="fw-semibold">B2 vs B5</span><span style="color:#a5d6a7;font-size:.8rem">10:05 AM</span></div>
+<div class="list-group-item bg-transparent text-white border-bottom px-2 py-2 d-flex justify-content-between align-items-center" style="border-color:rgba(76,175,80,.2)!important"><span class="badge bg-success me-2">R3</span><span class="fw-semibold">A3 vs A4</span><span style="color:#a5d6a7;font-size:.8rem">11:10 AM</span></div>
+<div class="list-group-item bg-transparent text-white border-bottom px-2 py-2 d-flex justify-content-between align-items-center" style="border-color:rgba(76,175,80,.2)!important"><span class="badge bg-success me-2">R4</span><span class="fw-semibold">B1 vs B3</span><span style="color:#a5d6a7;font-size:.8rem">12:15 PM</span></div>
+<div class="list-group-item bg-transparent text-white border-bottom px-2 py-2 d-flex justify-content-between align-items-center" style="border-color:rgba(76,175,80,.2)!important"><span class="badge bg-success me-2">R5</span><span class="fw-semibold">B2 vs B3</span><span style="color:#a5d6a7;font-size:.8rem">1:20 PM</span></div>
+<div class="list-group-item bg-transparent text-white border-bottom px-2 py-2 d-flex justify-content-between align-items-center" style="border-color:rgba(76,175,80,.2)!important"><span class="badge bg-success me-2">R6</span><span class="fw-semibold">A2 vs A5</span><span style="color:#a5d6a7;font-size:.8rem">2:25 PM</span></div>
+<div class="list-group-item bg-transparent text-white border-bottom px-2 py-2 d-flex justify-content-between align-items-center" style="border-color:rgba(76,175,80,.2)!important"><span class="badge bg-success me-2">R7</span><span class="fw-semibold">B2 vs B4</span><span style="color:#a5d6a7;font-size:.8rem">3:30 PM</span></div>
+<div class="list-group-item bg-transparent border-0 px-2 py-2 d-flex justify-content-between align-items-center" style="color:#ffd700"><span class="badge bg-danger me-2">SF2</span><span class="fw-bold">B#1 vs A#2</span><span style="font-size:.8rem">4:45 PM</span></div>
 </div>
 </div>
 </div>
-<div class="col-6 col-md-4 col-lg-2-4" style="flex:0 0 20%;max-width:20%">
-<div class="card card-hover text-center border-0 h-100 position-relative overflow-hidden" style="box-shadow:0 8px 30px rgba(0,40,104,.15);border-radius:16px;background:linear-gradient(160deg,#0a1628,#142952)">
-<div class="position-absolute top-0 start-0 end-0" style="height:4px;background:linear-gradient(90deg,#2196f3,#64b5f6)"></div>
-<div class="card-body p-3 d-flex flex-column align-items-center">
-<div class="rounded-circle d-flex align-items-center justify-content-center mb-2" style="width:72px;height:72px;background:linear-gradient(135deg,#0d47a1,#1565c0);border:3px solid #64b5f6;box-shadow:0 4px 15px rgba(100,181,246,.2)"><span class="fw-900 text-white" style="font-size:1.8rem">M</span></div>
-<h6 class="fw-bold text-white mb-1" style="font-size:.85rem">MSC</h6>
-<span class="badge rounded-pill" style="background:rgba(100,181,246,.15);color:#64b5f6;font-size:.65rem">CONFIRMED</span>
 </div>
+<div class="col-md-4">
+<div class="card border-0 h-100" style="background:rgba(255,152,0,.08);border:2px solid rgba(255,152,0,.3)!important;border-radius:16px">
+<div class="card-header text-center py-3" style="background:linear-gradient(135deg,#e65100,#bf360c);border-radius:14px 14px 0 0">
+<h5 class="mb-0 text-white fw-bold"><i class="bi bi-geo-alt-fill me-2"></i>Pitch 3</h5>
+<small class="text-white-50">Far End</small>
 </div>
-</div>
-<div class="col-6 col-md-4 col-lg-2-4" style="flex:0 0 20%;max-width:20%">
-<div class="card card-hover text-center border-0 h-100 position-relative overflow-hidden" style="box-shadow:0 8px 30px rgba(0,40,104,.15);border-radius:16px;background:linear-gradient(160deg,#0a1628,#142952)">
-<div class="position-absolute top-0 start-0 end-0" style="height:4px;background:linear-gradient(90deg,#ff5722,#ff8a65)"></div>
-<div class="card-body p-3 d-flex flex-column align-items-center">
-<div class="rounded-circle d-flex align-items-center justify-content-center mb-2" style="width:72px;height:72px;background:linear-gradient(135deg,#bf360c,#e64a19);border:3px solid #ff8a65;box-shadow:0 4px 15px rgba(255,138,101,.2)"><span class="fw-900 text-white" style="font-size:1.8rem">YF</span></div>
-<h6 class="fw-bold text-white mb-1" style="font-size:.85rem">Young Fighters</h6>
-<span class="badge rounded-pill" style="background:rgba(255,138,101,.15);color:#ff8a65;font-size:.65rem">CONFIRMED</span>
-</div>
-</div>
-</div>
-<div class="col-6 col-md-4 col-lg-2-4" style="flex:0 0 20%;max-width:20%">
-<div class="card card-hover text-center border-0 h-100 position-relative overflow-hidden" style="box-shadow:0 8px 30px rgba(0,40,104,.15);border-radius:16px;background:linear-gradient(160deg,#0a1628,#142952)">
-<div class="position-absolute top-0 start-0 end-0" style="height:4px;background:linear-gradient(90deg,#4caf50,#81c784)"></div>
-<div class="card-body p-3 d-flex flex-column align-items-center">
-<div class="rounded-circle d-flex align-items-center justify-content-center mb-2" style="width:72px;height:72px;background:linear-gradient(135deg,#1b5e20,#388e3c);border:3px solid #81c784;box-shadow:0 4px 15px rgba(129,199,132,.2)"><span class="fw-900 text-white" style="font-size:1.5rem">HQ</span></div>
-<h6 class="fw-bold text-white mb-1" style="font-size:.85rem">Hamden Qalandars Green</h6>
-<span class="badge rounded-pill" style="background:rgba(129,199,132,.15);color:#81c784;font-size:.65rem">CONFIRMED</span>
-</div>
-</div>
-</div>
-<div class="col-6 col-md-4 col-lg-2-4" style="flex:0 0 20%;max-width:20%">
-<div class="card card-hover text-center border-0 h-100 position-relative overflow-hidden" style="box-shadow:0 8px 30px rgba(0,40,104,.15);border-radius:16px;background:linear-gradient(160deg,#0a1628,#142952)">
-<div class="position-absolute top-0 start-0 end-0" style="height:4px;background:linear-gradient(90deg,#1976d2,#42a5f5)"></div>
-<div class="card-body p-3 d-flex flex-column align-items-center">
-<div class="rounded-circle d-flex align-items-center justify-content-center mb-2" style="width:72px;height:72px;background:linear-gradient(135deg,#0d47a1,#1565c0);border:3px solid #42a5f5;box-shadow:0 4px 15px rgba(66,165,245,.2)"><span class="fw-900 text-white" style="font-size:1.5rem">HQ</span></div>
-<h6 class="fw-bold text-white mb-1" style="font-size:.85rem">Hamden Qalandars Blue</h6>
-<span class="badge rounded-pill" style="background:rgba(66,165,245,.15);color:#42a5f5;font-size:.65rem">CONFIRMED</span>
-</div>
-</div>
-</div>
-<div class="col-6 col-md-4 col-lg-2-4" style="flex:0 0 20%;max-width:20%">
-<div class="card card-hover text-center border-0 h-100 position-relative overflow-hidden" style="box-shadow:0 8px 30px rgba(0,40,104,.15);border-radius:16px;background:linear-gradient(160deg,#0a1628,#142952)">
-<div class="position-absolute top-0 start-0 end-0" style="height:4px;background:linear-gradient(90deg,#9c27b0,#ce93d8)"></div>
-<div class="card-body p-3 d-flex flex-column align-items-center">
-<div class="rounded-circle d-flex align-items-center justify-content-center mb-2" style="width:72px;height:72px;background:linear-gradient(135deg,#4a148c,#6a1b9a);border:3px solid #ce93d8;box-shadow:0 4px 15px rgba(206,147,216,.2)"><span class="fw-900 text-white" style="font-size:1.5rem">W</span></div>
-<h6 class="fw-bold text-white mb-1" style="font-size:.85rem">WMCC</h6>
-<span class="badge rounded-pill" style="background:rgba(206,147,216,.15);color:#ce93d8;font-size:.65rem">CONFIRMED</span>
-</div>
-</div>
-</div>
-<div class="col-6 col-md-4 col-lg-2-4" style="flex:0 0 20%;max-width:20%">
-<div class="card card-hover text-center border-0 h-100 position-relative overflow-hidden" style="box-shadow:0 8px 30px rgba(0,40,104,.15);border-radius:16px;background:linear-gradient(160deg,#0a1628,#142952)">
-<div class="position-absolute top-0 start-0 end-0" style="height:4px;background:linear-gradient(90deg,#e91e63,#f48fb1)"></div>
-<div class="card-body p-3 d-flex flex-column align-items-center">
-<div class="rounded-circle d-flex align-items-center justify-content-center mb-2" style="width:72px;height:72px;background:linear-gradient(135deg,#880e4f,#ad1457);border:3px solid #f48fb1;box-shadow:0 4px 15px rgba(244,143,177,.2)"><span class="fw-900 text-white" style="font-size:1.5rem">A11</span></div>
-<h6 class="fw-bold text-white mb-1" style="font-size:.85rem">Afghan 11</h6>
-<span class="badge rounded-pill" style="background:rgba(244,143,177,.15);color:#f48fb1;font-size:.65rem">CONFIRMED</span>
-</div>
-</div>
-</div>
-<div class="col-6 col-md-4 col-lg-2-4" style="flex:0 0 20%;max-width:20%">
-<div class="card card-hover text-center border-0 h-100 position-relative overflow-hidden" style="box-shadow:0 8px 30px rgba(0,40,104,.15);border-radius:16px;background:linear-gradient(160deg,#0a1628,#142952)">
-<div class="position-absolute top-0 start-0 end-0" style="height:4px;background:linear-gradient(90deg,#ff8c00,#ffb74d)"></div>
-<div class="card-body p-3 d-flex flex-column align-items-center">
-<div class="rounded-circle d-flex align-items-center justify-content-center mb-2" style="width:72px;height:72px;background:linear-gradient(135deg,#e65100,#f57c00);border:3px solid #ffb74d;box-shadow:0 4px 15px rgba(255,183,77,.2)"><span class="fw-900 text-white" style="font-size:1.5rem">PT</span></div>
-<h6 class="fw-bold text-white mb-1" style="font-size:.85rem">Punjab Tigers Albany</h6>
-<span class="badge rounded-pill" style="background:rgba(255,183,77,.15);color:#ffb74d;font-size:.65rem">CONFIRMED</span>
-</div>
-</div>
-</div>
-<div class="col-6 col-md-4 col-lg-2-4" style="flex:0 0 20%;max-width:20%">
-<div class="card card-hover text-center border-0 h-100 position-relative overflow-hidden" style="box-shadow:0 8px 30px rgba(0,40,104,.15);border-radius:16px;background:linear-gradient(160deg,#0a1628,#142952)">
-<div class="position-absolute top-0 start-0 end-0" style="height:4px;background:linear-gradient(90deg,#795548,#bcaaa4)"></div>
-<div class="card-body p-3 d-flex flex-column align-items-center">
-<div class="rounded-circle d-flex align-items-center justify-content-center mb-2" style="width:72px;height:72px;background:linear-gradient(135deg,#3e2723,#4e342e);border:3px solid #bcaaa4;box-shadow:0 4px 15px rgba(188,170,164,.2)"><span class="fw-900 text-white" style="font-size:1.5rem">MH</span></div>
-<h6 class="fw-bold text-white mb-1" style="font-size:.85rem">Monroe Hawks</h6>
-<span class="badge rounded-pill" style="background:rgba(188,170,164,.15);color:#bcaaa4;font-size:.65rem">CONFIRMED</span>
+<div class="card-body p-2">
+<div class="list-group list-group-flush">
+<div class="list-group-item bg-transparent text-white border-bottom px-2 py-2 d-flex justify-content-between align-items-center" style="border-color:rgba(255,152,0,.2)!important"><span class="badge bg-warning text-dark me-2">R1</span><span class="fw-semibold">B1 vs B2</span><span style="color:#ffcc80;font-size:.8rem">9:00 AM</span></div>
+<div class="list-group-item bg-transparent text-white border-bottom px-2 py-2 d-flex justify-content-between align-items-center" style="border-color:rgba(255,152,0,.2)!important"><span class="badge bg-warning text-dark me-2">R2</span><span class="fw-semibold">A1 vs A5</span><span style="color:#ffcc80;font-size:.8rem">10:05 AM</span></div>
+<div class="list-group-item bg-transparent text-white border-bottom px-2 py-2 d-flex justify-content-between align-items-center" style="border-color:rgba(255,152,0,.2)!important"><span class="badge bg-warning text-dark me-2">R3</span><span class="fw-semibold">B3 vs B4</span><span style="color:#ffcc80;font-size:.8rem">11:10 AM</span></div>
+<div class="list-group-item bg-transparent text-white border-bottom px-2 py-2 d-flex justify-content-between align-items-center" style="border-color:rgba(255,152,0,.2)!important"><span class="badge bg-warning text-dark me-2">R4</span><span class="fw-semibold">B4 vs B5</span><span style="color:#ffcc80;font-size:.8rem">12:15 PM</span></div>
+<div class="list-group-item bg-transparent text-white border-bottom px-2 py-2 d-flex justify-content-between align-items-center" style="border-color:rgba(255,152,0,.2)!important"><span class="badge bg-warning text-dark me-2">R5</span><span class="fw-semibold">B1 vs B5</span><span style="color:#ffcc80;font-size:.8rem">1:20 PM</span></div>
+<div class="list-group-item bg-transparent text-white border-bottom px-2 py-2 d-flex justify-content-between align-items-center" style="border-color:rgba(255,152,0,.2)!important"><span class="badge bg-warning text-dark me-2">R6</span><span class="fw-semibold">B1 vs B4</span><span style="color:#ffcc80;font-size:.8rem">2:25 PM</span></div>
+<div class="list-group-item bg-transparent text-white border-bottom px-2 py-2 d-flex justify-content-between align-items-center" style="border-color:rgba(255,152,0,.2)!important"><span class="badge bg-warning text-dark me-2">R7</span><span class="text-muted fw-semibold">— Free —</span><span style="color:#ffcc80;font-size:.8rem">3:30 PM</span></div>
 </div>
 </div>
 </div>
 </div>
 </div>
 
-<!-- Pool Draw Result (hidden until draw is performed) -->
-<div id="poolDrawResult" class="d-none">
+<!-- Round Robin Pattern per Pool -->
 <div class="row g-4">
 <div class="col-md-6">
-<div class="d-flex align-items-center mb-3 gap-2">
-<div class="rounded-pill px-3 py-1" style="background:var(--blue)"><span class="fw-bold text-white small text-uppercase" style="letter-spacing:1px">Pool A</span></div>
-<div class="flex-grow-1" style="height:2px;background:linear-gradient(90deg,var(--blue),transparent)"></div>
+<div class="card border-0" style="background:rgba(0,40,104,.2);border:1px solid rgba(100,181,246,.2)!important;border-radius:14px">
+<div class="card-header text-center py-2" style="background:var(--blue);border-radius:13px 13px 0 0"><h5 class="mb-0 text-white fw-bold">Pool A — Round Robin</h5></div>
+<div class="card-body p-3">
+<div class="table-responsive">
+<table class="table table-sm table-bordered text-center text-white mb-2" style="--bs-table-bg:transparent;--bs-table-border-color:rgba(255,255,255,.1)">
+<thead><tr><th style="color:#90caf9">Match#</th><th class="text-white">Home</th><th style="color:#90caf9">vs</th><th class="text-white">Away</th><th style="color:#90caf9">Round</th><th style="color:#90caf9">Pitch</th></tr></thead>
+<tbody>
+<tr><td class="text-white">1</td><td class="fw-bold text-white">A1</td><td style="color:#64b5f6">vs</td><td class="fw-bold text-white">A3</td><td class="text-white">R1</td><td><span class="badge bg-primary">P1</span></td></tr>
+<tr><td class="text-white">2</td><td class="fw-bold text-white">A2</td><td style="color:#64b5f6">vs</td><td class="fw-bold text-white">A3</td><td class="text-white">R2</td><td><span class="badge bg-primary">P1</span></td></tr>
+<tr><td class="text-white">3</td><td class="fw-bold text-white">A1</td><td style="color:#64b5f6">vs</td><td class="fw-bold text-white">A5</td><td class="text-white">R2</td><td><span class="badge bg-warning text-dark">P3</span></td></tr>
+<tr><td class="text-white">4</td><td class="fw-bold text-white">A1</td><td style="color:#64b5f6">vs</td><td class="fw-bold text-white">A2</td><td class="text-white">R3</td><td><span class="badge bg-primary">P1</span></td></tr>
+<tr><td class="text-white">5</td><td class="fw-bold text-white">A3</td><td style="color:#64b5f6">vs</td><td class="fw-bold text-white">A4</td><td class="text-white">R3</td><td><span class="badge bg-success">P2</span></td></tr>
+<tr><td class="text-white">6</td><td class="fw-bold text-white">A2</td><td style="color:#64b5f6">vs</td><td class="fw-bold text-white">A4</td><td class="text-white">R4</td><td><span class="badge bg-primary">P1</span></td></tr>
+<tr><td class="text-white">7</td><td class="fw-bold text-white">A4</td><td style="color:#64b5f6">vs</td><td class="fw-bold text-white">A5</td><td class="text-white">R5</td><td><span class="badge bg-primary">P1</span></td></tr>
+<tr><td class="text-white">8</td><td class="fw-bold text-white">A1</td><td style="color:#64b5f6">vs</td><td class="fw-bold text-white">A4</td><td class="text-white">R6</td><td><span class="badge bg-primary">P1</span></td></tr>
+<tr><td class="text-white">9</td><td class="fw-bold text-white">A2</td><td style="color:#64b5f6">vs</td><td class="fw-bold text-white">A5</td><td class="text-white">R6</td><td><span class="badge bg-success">P2</span></td></tr>
+<tr><td class="text-white">10</td><td class="fw-bold text-white">A3</td><td style="color:#64b5f6">vs</td><td class="fw-bold text-white">A5</td><td class="text-white">R7</td><td><span class="badge bg-primary">P1</span></td></tr>
+</tbody>
+</table>
 </div>
-<div class="row g-3" id="poolACards"></div>
+<p class="small mb-0 text-center" style="color:#a5d6a7">Each team plays 4 matches • Top 2 advance to Semi-Finals</p>
+</div>
+</div>
 </div>
 <div class="col-md-6">
-<div class="d-flex align-items-center mb-3 gap-2">
-<div class="rounded-pill px-3 py-1" style="background:var(--red)"><span class="fw-bold text-white small text-uppercase" style="letter-spacing:1px">Pool B</span></div>
-<div class="flex-grow-1" style="height:2px;background:linear-gradient(90deg,var(--red),transparent)"></div>
+<div class="card border-0" style="background:rgba(191,10,48,.15);border:1px solid rgba(255,100,100,.2)!important;border-radius:14px">
+<div class="card-header text-center py-2" style="background:var(--red);border-radius:13px 13px 0 0"><h5 class="mb-0 text-white fw-bold">Pool B — Round Robin</h5></div>
+<div class="card-body p-3">
+<div class="table-responsive">
+<table class="table table-sm table-bordered text-center text-white mb-2" style="--bs-table-bg:transparent;--bs-table-border-color:rgba(255,255,255,.1)">
+<thead><tr><th style="color:#ef9a9a">Match#</th><th class="text-white">Home</th><th style="color:#ef9a9a">vs</th><th class="text-white">Away</th><th style="color:#ef9a9a">Round</th><th style="color:#ef9a9a">Pitch</th></tr></thead>
+<tbody>
+<tr><td class="text-white">1</td><td class="fw-bold text-white">B3</td><td style="color:#ef5350">vs</td><td class="fw-bold text-white">B5</td><td class="text-white">R1</td><td><span class="badge bg-success">P2</span></td></tr>
+<tr><td class="text-white">2</td><td class="fw-bold text-white">B1</td><td style="color:#ef5350">vs</td><td class="fw-bold text-white">B2</td><td class="text-white">R1</td><td><span class="badge bg-warning text-dark">P3</span></td></tr>
+<tr><td class="text-white">3</td><td class="fw-bold text-white">B2</td><td style="color:#ef5350">vs</td><td class="fw-bold text-white">B5</td><td class="text-white">R2</td><td><span class="badge bg-success">P2</span></td></tr>
+<tr><td class="text-white">4</td><td class="fw-bold text-white">B3</td><td style="color:#ef5350">vs</td><td class="fw-bold text-white">B4</td><td class="text-white">R3</td><td><span class="badge bg-warning text-dark">P3</span></td></tr>
+<tr><td class="text-white">5</td><td class="fw-bold text-white">B1</td><td style="color:#ef5350">vs</td><td class="fw-bold text-white">B3</td><td class="text-white">R4</td><td><span class="badge bg-success">P2</span></td></tr>
+<tr><td class="text-white">6</td><td class="fw-bold text-white">B4</td><td style="color:#ef5350">vs</td><td class="fw-bold text-white">B5</td><td class="text-white">R4</td><td><span class="badge bg-warning text-dark">P3</span></td></tr>
+<tr><td class="text-white">7</td><td class="fw-bold text-white">B2</td><td style="color:#ef5350">vs</td><td class="fw-bold text-white">B3</td><td class="text-white">R5</td><td><span class="badge bg-success">P2</span></td></tr>
+<tr><td class="text-white">8</td><td class="fw-bold text-white">B1</td><td style="color:#ef5350">vs</td><td class="fw-bold text-white">B5</td><td class="text-white">R5</td><td><span class="badge bg-warning text-dark">P3</span></td></tr>
+<tr><td class="text-white">9</td><td class="fw-bold text-white">B1</td><td style="color:#ef5350">vs</td><td class="fw-bold text-white">B4</td><td class="text-white">R6</td><td><span class="badge bg-warning text-dark">P3</span></td></tr>
+<tr><td class="text-white">10</td><td class="fw-bold text-white">B2</td><td style="color:#ef5350">vs</td><td class="fw-bold text-white">B4</td><td class="text-white">R7</td><td><span class="badge bg-success">P2</span></td></tr>
+</tbody>
+</table>
 </div>
-<div class="row g-3" id="poolBCards"></div>
+<p class="small mb-0 text-center" style="color:#ef9a9a">Each team plays 4 matches • Top 2 advance to Semi-Finals</p>
 </div>
 </div>
 </div>
+</div>
+
 </div>
 </section>
+
 
 <!-- SECTION 5: RULES -->
 <section id="rules" class="section-padding bg-light" aria-label="Tournament Rules">
@@ -603,7 +605,7 @@ h1,h2,h3,h4,h5,h6,.display-1,.display-2,.display-3,.display-4{font-family:'Poppi
 <li>Teams must report 15 minutes before scheduled match time.</li>
 <li>A team failing to field the minimum players within 10 minutes forfeits the match.</li>
 <li>Taped tennis balls provided by organizers will be used for all matches.</li>
-<li>Teams must bring their own bats (no professional/hard-ball bats). Organizers will not provide bats.</li>
+<li>Teams must bring their own bats. Fiber bats and tape ball bats are allowed. No professional hard-ball (English willow/Kashmir willow) bats permitted. Organizers will not provide bats.</li>
 <li>No metal spikes or studs allowed.</li>
 <li>Each team must designate a captain who will be the point of contact.</li>
 </ul>
@@ -737,7 +739,7 @@ h1,h2,h3,h4,h5,h6,.display-1,.display-2,.display-3,.display-4{font-family:'Poppi
 <p class="text-muted mt-2">Pool stage rankings</p>
 </div>
 
-<div class="alert alert-info text-center no-print"><i class="bi bi-info-circle me-2"></i>Standings updated after each round — <a href="#teams" class="fw-bold">Pool Draw</a> required first</div>
+<div class="alert alert-info text-center no-print"><i class="bi bi-info-circle me-2"></i>Standings updated after each round — <a href="pool-draw.html" class="fw-bold">Pool Draw</a> required first</div>
 
 <!-- Pool A Table -->
 <h3 class="h5 fw-bold text-primary mb-3">Pool A</h3>
@@ -998,52 +1000,47 @@ h1,h2,h3,h4,h5,h6,.display-1,.display-2,.display-3,.display-4{font-family:'Poppi
 <section id="contact" class="section-padding" aria-label="Contact and Registration">
 <div class="container">
 <div class="text-center mb-3">
-<h2 class="section-title display-5">Contact & Register</h2>
-<p class="text-muted mt-2">Register your team or get in touch</p>
-<p class="fw-bold" style="color:var(--red)"><i class="bi bi-tag me-2"></i>Entry Fee: $500 per team</p>
+<h2 class="section-title display-5">Contact Us</h2>
+<p class="text-muted mt-2">Become a sponsor, volunteer, or get in touch</p>
+<div class="alert border-0 d-inline-block px-4 py-2 rounded-pill" style="background:linear-gradient(135deg,#155724,#1e7e34);color:#fff"><i class="bi bi-lock-fill me-2"></i><strong>Registration CLOSED</strong> — All 10 teams are locked in!</div>
 </div>
 
 <div class="row g-5">
 <!-- Registration Form -->
 <div class="col-lg-7">
 <div class="card border-0 shadow-sm p-4">
-<h3 class="h5 fw-bold mb-3"><i class="bi bi-pencil-square me-2 text-primary"></i>Team Registration</h3>
+<h3 class="h5 fw-bold mb-3"><i class="bi bi-heart-fill me-2 text-primary"></i>Sponsor or Volunteer</h3>
+<p class="small text-muted mb-3">Interested in sponsoring the event or volunteering on game day? Let us know!</p>
 <form data-form="registration" action="https://formspree.io/f/mykapegq" method="POST" novalidate>
-<input type="hidden" name="_subject" value="Freedom Cup 2026 - New Team Registration">
+<input type="hidden" name="_subject" value="Freedom Cup 2026 - Sponsor/Volunteer Inquiry">
 <div class="row g-3">
 <div class="col-md-6">
-<label for="teamName" class="form-label">Team Name <span class="text-danger" aria-label="required">*</span></label>
-<input type="text" class="form-control" id="teamName" name="teamName" required>
+<label for="teamName" class="form-label">Your Name <span class="text-danger" aria-label="required">*</span></label>
+<input type="text" class="form-control" id="teamName" name="name" required>
 </div>
 <div class="col-md-6">
-<label for="captainName" class="form-label">Captain Name <span class="text-danger" aria-label="required">*</span></label>
-<input type="text" class="form-control" id="captainName" name="captainName" required>
+<label for="captainEmail" class="form-label">Email <span class="text-danger" aria-label="required">*</span></label>
+<input type="email" class="form-control" id="captainEmail" name="email" required>
 </div>
 <div class="col-md-6">
-<label for="captainEmail" class="form-label">Captain Email <span class="text-danger" aria-label="required">*</span></label>
-<input type="email" class="form-control" id="captainEmail" name="captainEmail" required>
+<label for="captainPhone" class="form-label">Phone</label>
+<input type="tel" class="form-control" id="captainPhone" name="phone">
 </div>
 <div class="col-md-6">
-<label for="captainPhone" class="form-label">Captain Phone <span class="text-danger" aria-label="required">*</span></label>
-<input type="tel" class="form-control" id="captainPhone" name="captainPhone" required>
-</div>
-<div class="col-md-6">
-<label for="numPlayers" class="form-label">Number of Players <span class="text-danger" aria-label="required">*</span></label>
-<input type="number" class="form-control" id="numPlayers" name="numPlayers" min="9" max="10" required>
+<label for="inquiryType" class="form-label">I'm interested in <span class="text-danger">*</span></label>
+<select class="form-select" id="inquiryType" name="type" required>
+<option value="">Select...</option>
+<option value="sponsor">Sponsoring the event</option>
+<option value="volunteer">Volunteering on game day</option>
+<option value="other">General inquiry</option>
+</select>
 </div>
 <div class="col-12">
 <label for="message" class="form-label">Message</label>
-<textarea class="form-control" id="message" name="message" rows="3" placeholder="Any questions or comments..."></textarea>
+<textarea class="form-control" id="message" name="message" rows="3" placeholder="Tell us how you'd like to support..."></textarea>
 </div>
 <div class="col-12">
-<div class="form-check">
-<input type="checkbox" class="form-check-input" id="acceptTerms" required>
-<label class="form-check-label small" for="acceptTerms">I accept the <a href="#rules" class="fw-bold">tournament rules</a> and terms of the Freedom Cup 2026 league <span class="text-danger">*</span></label>
-<div class="invalid-feedback">You must accept the terms to register</div>
-</div>
-</div>
-<div class="col-12">
-<button type="submit" class="btn btn-patriotic w-100"><i class="bi bi-send me-2"></i>Submit Registration</button>
+<button type="submit" class="btn btn-patriotic w-100"><i class="bi bi-send me-2"></i>Submit</button>
 </div>
 </div>
 </form>
@@ -1072,154 +1069,6 @@ h1,h2,h3,h4,h5,h6,.display-1,.display-2,.display-3,.display-4{font-family:'Poppi
 </div>
 </section>
 
-
-<!-- SECTION: PHOTO & VIDEO GALLERY -->
-<section id="gallery" class="section-padding" aria-label="Photo and Video Gallery" style="background:linear-gradient(180deg,#080d18 0%,#0d1117 40%,#0a1628 100%)">
-<div class="container-fluid px-0">
-<!-- Section Header -->
-<div class="text-center mb-5 px-3">
-<div class="d-flex align-items-center justify-content-center gap-3 mb-3">
-<span style="width:40px;height:2px;background:linear-gradient(90deg,transparent,var(--gold))"></span>
-<span style="color:var(--gold);font-size:1.2rem">★</span>
-<span style="width:40px;height:2px;background:linear-gradient(90deg,var(--gold),transparent)"></span>
-</div>
-<h2 class="section-title display-5" style="color:#fff">Field Gallery</h2>
-<p class="mt-3 mx-auto" style="color:rgba(255,255,255,.6);max-width:550px">The best tape ball cricket ground in Connecticut — explore our venue through photos and videos</p>
-</div>
-
-<!-- Video Reel (Horizontal Scroll) -->
-<div class="px-3 mb-2"><p class="fw-bold small text-uppercase mb-2" style="color:var(--gold);letter-spacing:2px"><i class="bi bi-camera-reels me-1"></i>Video Highlights</p></div>
-<div class="gallery-reel-wrap mb-5">
-<button class="reel-arrow reel-left" aria-label="Scroll left" onclick="document.getElementById('videoReel').scrollBy({left:-300,behavior:'smooth'})"><i class="bi bi-chevron-left"></i></button>
-<button class="reel-arrow reel-right" aria-label="Scroll right" onclick="document.getElementById('videoReel').scrollBy({left:300,behavior:'smooth'})"><i class="bi bi-chevron-right"></i></button>
-<div class="gallery-reel" id="videoReel">
-<div class="gallery-reel-item" data-type="video"><video src="images/photo_gallary/WhatsApp Video 2026-06.mp4" preload="metadata" muted></video><div class="reel-play"><i class="bi bi-play-circle-fill"></i></div></div>
-<div class="gallery-reel-item" data-type="video"><video src="images/photo_gallary/WhatsApp Video 2026-06-13 at 9.37.20 PM.mp4" preload="metadata" muted></video><div class="reel-play"><i class="bi bi-play-circle-fill"></i></div></div>
-<div class="gallery-reel-item" data-type="video"><video src="images/photo_gallary/WhatsApp Video 2026-06-13 at 9.37.10 PM.mp4" preload="metadata" muted></video><div class="reel-play"><i class="bi bi-play-circle-fill"></i></div></div>
-<div class="gallery-reel-item" data-type="video"><video src="images/photo_gallary/WhatsApp Video 2026-06-13 at 9.36.31 PM.mp4" preload="metadata" muted></video><div class="reel-play"><i class="bi bi-play-circle-fill"></i></div></div>
-<div class="gallery-reel-item" data-type="video"><video src="images/photo_gallary/WhatsApp Video 2026-06-13 at 9.35.28 PM.mp4" preload="metadata" muted></video><div class="reel-play"><i class="bi bi-play-circle-fill"></i></div></div>
-<div class="gallery-reel-item" data-type="video"><video src="images/photo_gallary/WhatsApp Video 2026-06-13 at 9.37.26.mp4" preload="metadata" muted></video><div class="reel-play"><i class="bi bi-play-circle-fill"></i></div></div>
-<div class="gallery-reel-item" data-type="video"><video src="images/photo_gallary/WhatsApp Video 2026-06-13 at 9.37.26 PM.mp4" preload="metadata" muted></video><div class="reel-play"><i class="bi bi-play-circle-fill"></i></div></div>
-<div class="gallery-reel-item" data-type="video"><video src="images/photo_gallary/WhatsApp Video 2026-06-13 at 9.37.01 PM.mp4" preload="metadata" muted></video><div class="reel-play"><i class="bi bi-play-circle-fill"></i></div></div>
-<div class="gallery-reel-item" data-type="video"><video src="images/photo_gallary/WhatsApp Video 2026-06-13 at 9.36.54 PM.mp4" preload="metadata" muted></video><div class="reel-play"><i class="bi bi-play-circle-fill"></i></div></div>
-<div class="gallery-reel-item" data-type="video"><video src="images/photo_gallary/WhatsApp Video 2026-06-13 at 9.36.41 PM.mp4" preload="metadata" muted></video><div class="reel-play"><i class="bi bi-play-circle-fill"></i></div></div>
-<div class="gallery-reel-item" data-type="video"><video src="images/photo_gallary/WhatsApp Video 2026-06-13 at 9.36.36 PM.mp4" preload="metadata" muted></video><div class="reel-play"><i class="bi bi-play-circle-fill"></i></div></div>
-<div class="gallery-reel-item" data-type="video"><video src="images/photo_gallary/WhatsApp Video 2026-06-13 at 9.36.20 PM.mp4" preload="metadata" muted></video><div class="reel-play"><i class="bi bi-play-circle-fill"></i></div></div>
-<div class="gallery-reel-item" data-type="video"><video src="images/photo_gallary/WhatsApp Video 2026-06-13 at 9.36.17 PM.mp4" preload="metadata" muted></video><div class="reel-play"><i class="bi bi-play-circle-fill"></i></div></div>
-<div class="gallery-reel-item" data-type="video"><video src="images/photo_gallary/WhatsApp Video 2026-06-13 at 9.36.12 PM.mp4" preload="metadata" muted></video><div class="reel-play"><i class="bi bi-play-circle-fill"></i></div></div>
-<div class="gallery-reel-item" data-type="video"><video src="images/photo_gallary/WhatsApp Video 2026-06-13 at 9.35.42 PM.mp4" preload="metadata" muted></video><div class="reel-play"><i class="bi bi-play-circle-fill"></i></div></div>
-<div class="gallery-reel-item" data-type="video"><video src="images/photo_gallary/WhatsApp Video 2026-06-13 at 9.35.36 PM.mp4" preload="metadata" muted></video><div class="reel-play"><i class="bi bi-play-circle-fill"></i></div></div>
-<div class="gallery-reel-item" data-type="video"><video src="images/photo_gallary/WhatsApp Video 2026-06-13 at 9.35.29 PM.mp4" preload="metadata" muted></video><div class="reel-play"><i class="bi bi-play-circle-fill"></i></div></div>
-</div>
-</div>
-
-<!-- Photo Grid -->
-<div class="container">
-<div class="d-flex align-items-center justify-content-between mb-4 flex-wrap gap-2">
-<p class="fw-bold small text-uppercase mb-0" style="color:var(--gold);letter-spacing:2px"><i class="bi bi-images me-1"></i>Photo Gallery</p>
-<div class="gallery-filter-bar">
-<button class="active" data-gallery-filter="all">All</button>
-<button data-gallery-filter="photo"><i class="bi bi-image me-1"></i>Photos</button>
-<button data-gallery-filter="video"><i class="bi bi-film me-1"></i>Videos</button>
-</div>
-</div>
-<div class="gallery-grid" id="galleryGrid">
-<div class="gm-item" data-type="photo"><img src="images/photo_gallary/Brochure 2.jpeg" alt="Freedom Cup field overview" loading="lazy"><div class="gm-ov"><i class="bi bi-arrows-fullscreen"></i><span>Photo</span></div></div>
-<div class="gm-item" data-type="photo"><img src="images/photo_gallary/WhatsApp Image 6.jpeg" alt="Cricket ground view" loading="lazy"><div class="gm-ov"><i class="bi bi-arrows-fullscreen"></i><span>Photo</span></div></div>
-<div class="gm-item" data-type="photo"><img src="images/photo_gallary/WhatsApp Image 2026-06-13 at 9.36.55 PM.jpeg" alt="Field setup" loading="lazy"><div class="gm-ov"><i class="bi bi-arrows-fullscreen"></i><span>Photo</span></div></div>
-<div class="gm-item" data-type="photo"><img src="images/photo_gallary/WhatsApp Image 2026-06-13 at 9.36.50 PM.jpeg" alt="Ground panorama" loading="lazy"><div class="gm-ov"><i class="bi bi-arrows-fullscreen"></i><span>Photo</span></div></div>
-<div class="gm-item" data-type="photo"><img src="images/photo_gallary/WhatsApp Image 5.jpeg" alt="Cricket pitch" loading="lazy"><div class="gm-ov"><i class="bi bi-arrows-fullscreen"></i><span>Photo</span></div></div>
-<div class="gm-item" data-type="photo"><img src="images/photo_gallary/WhatsApp Image 4.jpeg" alt="Playing area" loading="lazy"><div class="gm-ov"><i class="bi bi-arrows-fullscreen"></i><span>Photo</span></div></div>
-<div class="gm-item" data-type="photo"><img src="images/photo_gallary/WhatsApp Image 3.jpeg" alt="Venue grounds" loading="lazy"><div class="gm-ov"><i class="bi bi-arrows-fullscreen"></i><span>Photo</span></div></div>
-<div class="gm-item" data-type="photo"><img src="images/photo_gallary/WhatsApp Image 2.jpeg" alt="Field overview" loading="lazy"><div class="gm-ov"><i class="bi bi-arrows-fullscreen"></i><span>Photo</span></div></div>
-<div class="gm-item" data-type="photo"><img src="images/photo_gallary/WhatsApp Image 2026-06-13 at 9.35.56 PM.jpeg" alt="Ground facilities" loading="lazy"><div class="gm-ov"><i class="bi bi-arrows-fullscreen"></i><span>Photo</span></div></div>
-<div class="gm-item" data-type="photo"><img src="images/photo_gallary/Umpires.jpeg" alt="Umpires at the ground" loading="lazy"><div class="gm-ov"><i class="bi bi-arrows-fullscreen"></i><span>Photo</span></div></div>
-<div class="gm-item" data-type="photo"><img src="images/photo_gallary/WhatsApp Image 2026-06-13 at 9.35.43 PM.jpeg" alt="Match preparation" loading="lazy"><div class="gm-ov"><i class="bi bi-arrows-fullscreen"></i><span>Photo</span></div></div>
-<div class="gm-item" data-type="photo"><img src="images/photo_gallary/WhatsApp Image 2026-06-13 at 9.35.29 PM.jpeg" alt="Ground aerial view" loading="lazy"><div class="gm-ov"><i class="bi bi-arrows-fullscreen"></i><span>Photo</span></div></div>
-<div class="gm-item" data-type="video"><video src="images/photo_gallary/WhatsApp Video 2026-06-13 at 9.36.36 PM.mp4" preload="metadata" muted></video><div class="gm-ov"><i class="bi bi-play-circle-fill"></i></div></div>
-<div class="gm-item" data-type="video"><video src="images/photo_gallary/WhatsApp Video 2026-06-13 at 9.36.17 PM.mp4" preload="metadata" muted></video><div class="gm-ov"><i class="bi bi-play-circle-fill"></i></div></div>
-<div class="gm-item" data-type="video"><video src="images/photo_gallary/WhatsApp Video 2026-06-13 at 9.35.36 PM.mp4" preload="metadata" muted></video><div class="gm-ov"><i class="bi bi-play-circle-fill"></i></div></div>
-</div>
-</div>
-</div>
-</section>
-
-<!-- Gallery Lightbox Modal -->
-<div class="gallery-lightbox" id="galleryLightbox" aria-hidden="true" role="dialog" aria-label="Media viewer">
-<button class="gallery-lb-close" aria-label="Close">&times;</button>
-<button class="gallery-lb-prev" aria-label="Previous"><i class="bi bi-chevron-left"></i></button>
-<button class="gallery-lb-next" aria-label="Next"><i class="bi bi-chevron-right"></i></button>
-<div class="gallery-lb-content" id="galleryLbContent"></div>
-<div class="gallery-lb-counter" id="galleryLbCounter"></div>
-</div>
-
-<!-- SECTION 12: BROCHURE -->
-<section id="brochure" class="section-padding" aria-label="Event Brochure">
-<div class="container">
-<div class="text-center mb-3">
-<h2 class="section-title display-5">Event Brochure</h2>
-<p class="text-muted mt-2">Download & share with your cricket community</p>
-<button class="btn btn-patriotic no-print" id="saveBrochure"><i class="bi bi-download me-2"></i>Save / Print Brochure</button>
-</div>
-
-<div class="brochure-modern mx-auto" data-brochure="printable" style="max-width:420px;border-radius:16px;overflow:hidden;box-shadow:0 20px 60px rgba(0,40,104,.2)">
-<!-- Hero Header -->
-<div class="text-center text-white position-relative overflow-hidden" style="background:linear-gradient(135deg,#000d2b 0%,var(--blue) 50%,#1a3a6b 100%);padding:2rem 1rem 1.5rem">
-<div class="position-absolute top-0 start-0 end-0 bottom-0" style="opacity:.08;background-image:url('data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2240%22 height=%2240%22%3E%3Ctext x=%2220%22 y=%2225%22 text-anchor=%22middle%22 font-size=%2214%22 fill=%22white%22%3E%E2%98%85%3C/text%3E%3C/svg%3E')"></div>
-<div class="position-relative">
-<p class="text-uppercase fw-bold mb-1" style="color:var(--gold);letter-spacing:2px;font-size:.65rem">🏏 Tape Ball Cricket Tournament</p>
-<h3 style="font-size:2.5rem;font-weight:900;letter-spacing:-1px" class="mb-1">FREEDOM CUP</h3>
-<div class="d-inline-block px-3 py-1 rounded-pill mb-2" style="background:var(--red);box-shadow:0 4px 12px rgba(191,10,48,.4)">
-<span class="fw-bold text-uppercase" style="font-size:.8rem;letter-spacing:2px">★ July 4, 2026 ★</span>
-</div>
-<p class="mb-0 small opacity-85"><i class="bi bi-geo-alt-fill me-1"></i>150 Kimberly Ave, New Haven, CT</p>
-</div>
-<div class="mt-2" style="height:4px;background:linear-gradient(90deg,var(--red) 20%,var(--gold) 20% 40%,#fff 40% 60%,var(--gold) 60% 80%,var(--red) 80%)"></div>
-</div>
-
-<!-- Entry Fee Strip -->
-<div class="text-center py-2" style="background:linear-gradient(90deg,var(--red),#d4102e);color:#fff">
-<p class="fw-bold mb-0" style="font-size:.8rem;letter-spacing:1px">💰 $500/TEAM • CASH PRIZES + TROPHIES 💰</p>
-</div>
-
-<!-- Info — All compact -->
-<div class="p-3" style="background:#fff;font-size:.72rem;line-height:1.7">
-<div class="row g-2">
-<div class="col-6"><span class="fw-bold" style="color:var(--blue)">⚡ FORMAT</span><br>🏏 9-a-side • 6 overs<br>10 teams • 2 pools of 5<br>Round Robin → Semis → Final</div>
-<div class="col-6"><span class="fw-bold" style="color:var(--red)">🕐 SCHEDULE</span><br>⏰ 9AM — Pool Matches<br>🏆 5:45PM — Semi-Finals<br>👑 7PM — Grand Final<br>🎉 8PM — Awards</div>
-<div class="col-6"><span class="fw-bold" style="color:#b8860b">🏆 PRIZES</span><br>Winner — Cash + Trophy<br>Runner-up — Cash + Trophy<br>MOS — Cash • Best Bowler</div>
-<div class="col-6"><span class="fw-bold" style="color:#28a745">📍 VENUE</span><br>150 Kimberly Avenue<br>New Haven, CT<br>3 pitches • Spectator-friendly</div>
-</div>
-</div>
-
-<!-- CTA -->
-<div class="text-center p-2" style="background:linear-gradient(135deg,var(--blue-dark),var(--blue));color:#fff">
-<p class="fw-bold mb-0" style="font-size:.85rem">🙌 REGISTER NOW!</p>
-<p class="mb-0" style="font-size:.65rem;opacity:.85">📧 asimesp@gmail.com • 📞 609-608-6282</p>
-<p class="mb-0" style="font-size:.6rem;opacity:.7">🔗 masimriaz.github.io/cricket/#contact</p>
-</div>
-
-<!-- Organizers -->
-<div class="text-center text-white p-3 position-relative" style="background:linear-gradient(135deg,#0a0a1a,var(--blue-dark))">
-<p class="fw-bold mb-1" style="font-size:.6rem;color:var(--gold);letter-spacing:1px;text-transform:uppercase">Organized By</p>
-<p class="fw-bold mb-2" style="font-size:.8rem">🦅 Hamden Qalandars & New Haven Eagles</p>
-<div class="d-flex flex-wrap justify-content-center gap-1 mb-1">
-<div class="rounded-circle overflow-hidden" style="width:32px;height:32px;border:2px solid var(--gold)"><img src="images/management/asim.png" alt="Asim" class="w-100 h-100" style="object-fit:cover"></div>
-<div class="rounded-circle overflow-hidden" style="width:32px;height:32px;border:2px solid var(--gold)"><img src="images/management/hammad.png" alt="Hammad" class="w-100 h-100" style="object-fit:cover"></div>
-<div class="rounded-circle overflow-hidden" style="width:32px;height:32px;border:2px solid var(--gold)"><img src="images/management/sohaib.png" alt="Sohaib" class="w-100 h-100" style="object-fit:cover"></div>
-<div class="rounded-circle overflow-hidden" style="width:32px;height:32px;border:2px solid var(--gold)"><img src="images/management/arsalan.png" alt="Arsalan" class="w-100 h-100" style="object-fit:cover"></div>
-<div class="rounded-circle overflow-hidden" style="width:32px;height:32px;border:2px solid var(--gold)"><img src="images/management/subhan.png" alt="Subhan" class="w-100 h-100" style="object-fit:cover"></div>
-<div class="rounded-circle overflow-hidden" style="width:32px;height:32px;border:2px solid var(--gold)"><img src="images/management/yahya.png" alt="Yahya" class="w-100 h-100" style="object-fit:cover"></div>
-<div class="rounded-circle overflow-hidden" style="width:32px;height:32px;border:1px solid rgba(255,255,255,.4)"><img src="images/management/yousaf.png" alt="Yousaf" class="w-100 h-100" style="object-fit:cover"></div>
-<div class="rounded-circle overflow-hidden" style="width:32px;height:32px;border:1px solid rgba(255,255,255,.4)"><img src="images/management/Raza.jpeg" alt="Raza" class="w-100 h-100" style="object-fit:cover"></div>
-<div class="rounded-circle overflow-hidden" style="width:32px;height:32px;border:1px solid rgba(255,255,255,.4)"><img src="images/management/ali.png" alt="Ali" class="w-100 h-100" style="object-fit:cover"></div>
-<div class="rounded-circle overflow-hidden" style="width:32px;height:32px;border:2px solid var(--gold)"><img src="images/management/usman.jpeg" alt="Usman" class="w-100 h-100" style="object-fit:cover"></div>
-</div>
-<div style="position:absolute;bottom:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--red) 25%,var(--gold) 25% 50%,#fff 50% 75%,var(--gold) 75%)"></div>
-</div>
-</div>
-</div>
-</section>
 
 <!-- SPONSOR GALLERY -->
 <section id="sponsor-gallery" class="py-0" aria-label="Our Sponsors">
@@ -1655,6 +1504,88 @@ h1,h2,h3,h4,h5,h6,.display-1,.display-2,.display-3,.display-4{font-family:'Poppi
 </div>
 </section>
 
+<!-- SECTION: PHOTO & VIDEO GALLERY -->
+<section id="gallery" class="section-padding" aria-label="Photo and Video Gallery" style="background:linear-gradient(135deg,#030810 0%,#0a1628 40%,#0d0d2b 100%);position:relative;overflow:hidden">
+<div style="position:absolute;inset:0;background:radial-gradient(ellipse at 20% 50%,rgba(0,40,104,.15) 0%,transparent 50%),radial-gradient(ellipse at 80% 50%,rgba(191,10,48,.1) 0%,transparent 50%);pointer-events:none"></div>
+<div class="container-fluid px-0 position-relative">
+<!-- Section Header -->
+<div class="text-center mb-5 px-3">
+<span class="d-inline-block px-3 py-1 rounded-pill mb-3" style="background:rgba(255,215,0,.1);border:1px solid rgba(255,215,0,.3);color:var(--gold);font-size:.75rem;font-weight:600;letter-spacing:2px">📸 VENUE & HIGHLIGHTS</span>
+<h2 class="display-5 fw-bold text-white">Photo & Video Gallery</h2>
+<p class="mt-2 mx-auto" style="color:rgba(255,255,255,.5);max-width:500px;font-size:.95rem">Explore the best tape ball cricket ground in Connecticut</p>
+<div class="d-flex justify-content-center gap-4 mt-3">
+<span class="text-white-50 small"><i class="bi bi-images me-1" style="color:var(--gold)"></i>12 Photos</span>
+<span class="text-white-50 small"><i class="bi bi-film me-1" style="color:var(--gold)"></i>17 Videos</span>
+</div>
+</div>
+
+<!-- Video Reel (Horizontal Scroll) -->
+<div class="px-3 mb-2"><p class="fw-bold small text-uppercase mb-2" style="color:var(--gold);letter-spacing:2px"><i class="bi bi-camera-reels me-1"></i>Video Highlights</p></div>
+<div class="gallery-reel-wrap mb-5">
+<button class="reel-arrow reel-left" aria-label="Scroll left" onclick="document.getElementById('videoReel').scrollBy({left:-300,behavior:'smooth'})"><i class="bi bi-chevron-left"></i></button>
+<button class="reel-arrow reel-right" aria-label="Scroll right" onclick="document.getElementById('videoReel').scrollBy({left:300,behavior:'smooth'})"><i class="bi bi-chevron-right"></i></button>
+<div class="gallery-reel" id="videoReel">
+<div class="gallery-reel-item" data-type="video"><video src="images/photo_gallary/WhatsApp Video 2026-06.mp4" preload="metadata" muted></video><div class="reel-play"><i class="bi bi-play-circle-fill"></i></div></div>
+<div class="gallery-reel-item" data-type="video"><video src="images/photo_gallary/WhatsApp Video 2026-06-13 at 9.37.20 PM.mp4" preload="metadata" muted></video><div class="reel-play"><i class="bi bi-play-circle-fill"></i></div></div>
+<div class="gallery-reel-item" data-type="video"><video src="images/photo_gallary/WhatsApp Video 2026-06-13 at 9.37.10 PM.mp4" preload="metadata" muted></video><div class="reel-play"><i class="bi bi-play-circle-fill"></i></div></div>
+<div class="gallery-reel-item" data-type="video"><video src="images/photo_gallary/WhatsApp Video 2026-06-13 at 9.36.31 PM.mp4" preload="metadata" muted></video><div class="reel-play"><i class="bi bi-play-circle-fill"></i></div></div>
+<div class="gallery-reel-item" data-type="video"><video src="images/photo_gallary/WhatsApp Video 2026-06-13 at 9.35.28 PM.mp4" preload="metadata" muted></video><div class="reel-play"><i class="bi bi-play-circle-fill"></i></div></div>
+<div class="gallery-reel-item" data-type="video"><video src="images/photo_gallary/WhatsApp Video 2026-06-13 at 9.37.26.mp4" preload="metadata" muted></video><div class="reel-play"><i class="bi bi-play-circle-fill"></i></div></div>
+<div class="gallery-reel-item" data-type="video"><video src="images/photo_gallary/WhatsApp Video 2026-06-13 at 9.37.26 PM.mp4" preload="metadata" muted></video><div class="reel-play"><i class="bi bi-play-circle-fill"></i></div></div>
+<div class="gallery-reel-item" data-type="video"><video src="images/photo_gallary/WhatsApp Video 2026-06-13 at 9.37.01 PM.mp4" preload="metadata" muted></video><div class="reel-play"><i class="bi bi-play-circle-fill"></i></div></div>
+<div class="gallery-reel-item" data-type="video"><video src="images/photo_gallary/WhatsApp Video 2026-06-13 at 9.36.54 PM.mp4" preload="metadata" muted></video><div class="reel-play"><i class="bi bi-play-circle-fill"></i></div></div>
+<div class="gallery-reel-item" data-type="video"><video src="images/photo_gallary/WhatsApp Video 2026-06-13 at 9.36.41 PM.mp4" preload="metadata" muted></video><div class="reel-play"><i class="bi bi-play-circle-fill"></i></div></div>
+<div class="gallery-reel-item" data-type="video"><video src="images/photo_gallary/WhatsApp Video 2026-06-13 at 9.36.36 PM.mp4" preload="metadata" muted></video><div class="reel-play"><i class="bi bi-play-circle-fill"></i></div></div>
+<div class="gallery-reel-item" data-type="video"><video src="images/photo_gallary/WhatsApp Video 2026-06-13 at 9.36.20 PM.mp4" preload="metadata" muted></video><div class="reel-play"><i class="bi bi-play-circle-fill"></i></div></div>
+<div class="gallery-reel-item" data-type="video"><video src="images/photo_gallary/WhatsApp Video 2026-06-13 at 9.36.17 PM.mp4" preload="metadata" muted></video><div class="reel-play"><i class="bi bi-play-circle-fill"></i></div></div>
+<div class="gallery-reel-item" data-type="video"><video src="images/photo_gallary/WhatsApp Video 2026-06-13 at 9.36.12 PM.mp4" preload="metadata" muted></video><div class="reel-play"><i class="bi bi-play-circle-fill"></i></div></div>
+<div class="gallery-reel-item" data-type="video"><video src="images/photo_gallary/WhatsApp Video 2026-06-13 at 9.35.42 PM.mp4" preload="metadata" muted></video><div class="reel-play"><i class="bi bi-play-circle-fill"></i></div></div>
+<div class="gallery-reel-item" data-type="video"><video src="images/photo_gallary/WhatsApp Video 2026-06-13 at 9.35.36 PM.mp4" preload="metadata" muted></video><div class="reel-play"><i class="bi bi-play-circle-fill"></i></div></div>
+<div class="gallery-reel-item" data-type="video"><video src="images/photo_gallary/WhatsApp Video 2026-06-13 at 9.35.29 PM.mp4" preload="metadata" muted></video><div class="reel-play"><i class="bi bi-play-circle-fill"></i></div></div>
+</div>
+</div>
+
+<!-- Photo Grid -->
+<div class="container">
+<div class="d-flex align-items-center justify-content-between mb-4 flex-wrap gap-2">
+<p class="fw-bold small text-uppercase mb-0" style="color:var(--gold);letter-spacing:2px"><i class="bi bi-images me-1"></i>Photo Gallery</p>
+<div class="gallery-filter-bar">
+<button class="active" data-gallery-filter="all">All</button>
+<button data-gallery-filter="photo"><i class="bi bi-image me-1"></i>Photos</button>
+<button data-gallery-filter="video"><i class="bi bi-film me-1"></i>Videos</button>
+</div>
+</div>
+<div class="gallery-grid" id="galleryGrid">
+<div class="gm-item" data-type="photo"><img src="images/photo_gallary/Brochure 2.jpeg" alt="Freedom Cup field overview" loading="lazy"><div class="gm-ov"><i class="bi bi-arrows-fullscreen"></i><span>Photo</span></div></div>
+<div class="gm-item" data-type="photo"><img src="images/photo_gallary/WhatsApp Image 6.jpeg" alt="Cricket ground view" loading="lazy"><div class="gm-ov"><i class="bi bi-arrows-fullscreen"></i><span>Photo</span></div></div>
+<div class="gm-item" data-type="photo"><img src="images/photo_gallary/WhatsApp Image 2026-06-13 at 9.36.55 PM.jpeg" alt="Field setup" loading="lazy"><div class="gm-ov"><i class="bi bi-arrows-fullscreen"></i><span>Photo</span></div></div>
+<div class="gm-item" data-type="photo"><img src="images/photo_gallary/WhatsApp Image 2026-06-13 at 9.36.50 PM.jpeg" alt="Ground panorama" loading="lazy"><div class="gm-ov"><i class="bi bi-arrows-fullscreen"></i><span>Photo</span></div></div>
+<div class="gm-item" data-type="photo"><img src="images/photo_gallary/WhatsApp Image 5.jpeg" alt="Cricket pitch" loading="lazy"><div class="gm-ov"><i class="bi bi-arrows-fullscreen"></i><span>Photo</span></div></div>
+<div class="gm-item" data-type="photo"><img src="images/photo_gallary/WhatsApp Image 4.jpeg" alt="Playing area" loading="lazy"><div class="gm-ov"><i class="bi bi-arrows-fullscreen"></i><span>Photo</span></div></div>
+<div class="gm-item" data-type="photo"><img src="images/photo_gallary/WhatsApp Image 3.jpeg" alt="Venue grounds" loading="lazy"><div class="gm-ov"><i class="bi bi-arrows-fullscreen"></i><span>Photo</span></div></div>
+<div class="gm-item" data-type="photo"><img src="images/photo_gallary/WhatsApp Image 2.jpeg" alt="Field overview" loading="lazy"><div class="gm-ov"><i class="bi bi-arrows-fullscreen"></i><span>Photo</span></div></div>
+<div class="gm-item" data-type="photo"><img src="images/photo_gallary/WhatsApp Image 2026-06-13 at 9.35.56 PM.jpeg" alt="Ground facilities" loading="lazy"><div class="gm-ov"><i class="bi bi-arrows-fullscreen"></i><span>Photo</span></div></div>
+<div class="gm-item" data-type="photo"><img src="images/photo_gallary/Umpires.jpeg" alt="Umpires at the ground" loading="lazy"><div class="gm-ov"><i class="bi bi-arrows-fullscreen"></i><span>Photo</span></div></div>
+<div class="gm-item" data-type="photo"><img src="images/photo_gallary/WhatsApp Image 2026-06-13 at 9.35.43 PM.jpeg" alt="Match preparation" loading="lazy"><div class="gm-ov"><i class="bi bi-arrows-fullscreen"></i><span>Photo</span></div></div>
+<div class="gm-item" data-type="photo"><img src="images/photo_gallary/WhatsApp Image 2026-06-13 at 9.35.29 PM.jpeg" alt="Ground aerial view" loading="lazy"><div class="gm-ov"><i class="bi bi-arrows-fullscreen"></i><span>Photo</span></div></div>
+<div class="gm-item" data-type="video"><video src="images/photo_gallary/WhatsApp Video 2026-06-13 at 9.36.36 PM.mp4" preload="metadata" muted></video><div class="gm-ov"><i class="bi bi-play-circle-fill"></i></div></div>
+<div class="gm-item" data-type="video"><video src="images/photo_gallary/WhatsApp Video 2026-06-13 at 9.36.17 PM.mp4" preload="metadata" muted></video><div class="gm-ov"><i class="bi bi-play-circle-fill"></i></div></div>
+<div class="gm-item" data-type="video"><video src="images/photo_gallary/WhatsApp Video 2026-06-13 at 9.35.36 PM.mp4" preload="metadata" muted></video><div class="gm-ov"><i class="bi bi-play-circle-fill"></i></div></div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- Gallery Lightbox Modal -->
+<div class="gallery-lightbox" id="galleryLightbox" aria-hidden="true" role="dialog" aria-label="Media viewer">
+<button class="gallery-lb-close" aria-label="Close">&times;</button>
+<button class="gallery-lb-prev" aria-label="Previous"><i class="bi bi-chevron-left"></i></button>
+<button class="gallery-lb-next" aria-label="Next"><i class="bi bi-chevron-right"></i></button>
+<div class="gallery-lb-content" id="galleryLbContent"></div>
+<div class="gallery-lb-counter" id="galleryLbCounter"></div>
+</div>
+
+
 <!-- Registration Success Modal -->
 <div class="modal fade" id="successModal" tabindex="-1" aria-labelledby="successModalLabel" aria-hidden="true">
 <div class="modal-dialog modal-dialog-centered">
@@ -1698,7 +1629,7 @@ h1,h2,h3,h4,h5,h6,.display-1,.display-2,.display-3,.display-4{font-family:'Poppi
 <li><a href="#home" class="text-white-50 text-decoration-none">Home</a></li>
 <li><a href="#about" class="text-white-50 text-decoration-none">About</a></li>
 <li><a href="#schedule" class="text-white-50 text-decoration-none">Schedule</a></li>
-<li><a href="#teams" class="text-white-50 text-decoration-none">Teams</a></li>
+<li><a href="pool-draw.html" class="text-white-50 text-decoration-none">Pool Draw</a></li>
 <li><a href="#rules" class="text-white-50 text-decoration-none">Rules</a></li>
 <li><a href="#standings" class="text-white-50 text-decoration-none">Standings</a></li>
 </ul>
@@ -1708,7 +1639,7 @@ h1,h2,h3,h4,h5,h6,.display-1,.display-2,.display-3,.display-4{font-family:'Poppi
 <li><a href="#awards" class="text-white-50 text-decoration-none">Awards</a></li>
 <li><a href="#sponsors" class="text-white-50 text-decoration-none">Get Involved</a></li>
 <li><a href="#contact" class="text-white-50 text-decoration-none">Contact</a></li>
-<li><a href="#brochure" class="text-white-50 text-decoration-none">Brochure</a></li>
+<li><a href="brochure.html" class="text-white-50 text-decoration-none">Brochure</a></li>
 </ul>
 </div>
 </div>
@@ -1741,7 +1672,6 @@ h1,h2,h3,h4,h5,h6,.display-1,.display-2,.display-3,.display-4{font-family:'Poppi
 
 <!-- Scripts -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
 <script>
 // Countdown Timer
 (function(){
@@ -1843,84 +1773,5 @@ updateVisible();
 });
 </script>
 <script src="js/main.js"></script>
-<script>
-// Pool Draw Logic
-const TEAMS=['Rangbaaz','Zalmi SuperStrikers','MSC','Young Fighters','Hamden Qalandars Green','Hamden Qalandars Blue','WMCC','Afghan 11','Punjab Tigers Albany','Monroe Hawks'];
-
-function shuffle(arr){for(let i=arr.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[arr[i],arr[j]]=[arr[j],arr[i]];}return arr;}
-
-function startPoolDraw(){
-const btn=document.getElementById('poolDrawBtn');
-btn.disabled=true;btn.innerHTML='<i class="bi bi-hourglass-split me-2"></i>Drawing...';
-
-// Animate shuffle effect
-let count=0;
-const interval=setInterval(()=>{
-const s=shuffle([...TEAMS]);
-updatePoolDisplay(s.slice(0,5),s.slice(5,10));
-count++;
-if(count>=12){
-clearInterval(interval);
-// Final draw - ensure Hamden Qalandars teams are in different pools
-let final;
-do { final=shuffle([...TEAMS]); } while(
-final.slice(0,5).includes('Hamden Qalandars Green') && final.slice(0,5).includes('Hamden Qalandars Blue')
-|| final.slice(5,10).includes('Hamden Qalandars Green') && final.slice(5,10).includes('Hamden Qalandars Blue')
-);
-const poolA=final.slice(0,5),poolB=final.slice(5,10);
-updatePoolDisplay(poolA,poolB);
-btn.innerHTML='<i class="bi bi-check-circle me-2"></i>Draw Complete!';
-btn.classList.remove('btn-lg');btn.style.background='#28a745';btn.style.color='#fff';
-
-// Show pool result section in Teams
-document.getElementById('poolDrawResult').classList.remove('d-none');
-renderPoolCards(poolA,poolB);
-
-// Save to localStorage
-localStorage.setItem('freedomCupPools',JSON.stringify({poolA,poolB}));
-}
-},150);
-}
-
-function updatePoolDisplay(poolA,poolB){
-// Schedule section
-const sA=document.getElementById('schedulePoolA');
-const sB=document.getElementById('schedulePoolB');
-if(sA)sA.innerHTML=poolA.map(t=>'<li class="list-group-item fw-bold">'+t+'</li>').join('');
-if(sB)sB.innerHTML=poolB.map(t=>'<li class="list-group-item fw-bold">'+t+'</li>').join('');
-
-// Pathway tables
-const pA=document.getElementById('pathwayPoolA');
-const pB=document.getElementById('pathwayPoolB');
-if(pA)pA.innerHTML=poolA.map((t,i)=>'<tr><td>A'+(i+1)+'</td><td class="fw-bold">'+t+'</td></tr>').join('');
-if(pB)pB.innerHTML=poolB.map((t,i)=>'<tr><td>B'+(i+1)+'</td><td class="fw-bold">'+t+'</td></tr>').join('');
-
-// Standings tables
-const stA=document.getElementById('standingsPoolA');
-const stB=document.getElementById('standingsPoolB');
-if(stA){const rows=stA.querySelectorAll('tbody tr');rows.forEach((r,i)=>{if(poolA[i])r.cells[1].textContent=poolA[i];r.cells[1].classList.remove('text-muted','fst-italic');});}
-if(stB){const rows=stB.querySelectorAll('tbody tr');rows.forEach((r,i)=>{if(poolB[i])r.cells[1].textContent=poolB[i];r.cells[1].classList.remove('text-muted','fst-italic');});}
-}
-
-function renderPoolCards(poolA,poolB){
-const cA=document.getElementById('poolACards');
-const cB=document.getElementById('poolBCards');
-cA.innerHTML=poolA.map((t,i)=>'<div class="col-6"><div class="card card-hover text-center border-0 h-100 position-relative overflow-hidden" style="box-shadow:0 8px 30px rgba(0,40,104,.2);border-radius:16px;background:linear-gradient(160deg,#0a1628,#142952)"><div class="position-absolute top-0 start-0 end-0" style="height:4px;background:linear-gradient(90deg,var(--blue),#64b5f6)"></div><div class="card-body p-3 d-flex flex-column align-items-center"><div class="rounded-circle d-flex align-items-center justify-content-center mb-2" style="width:60px;height:60px;background:linear-gradient(135deg,var(--blue),var(--blue-dark));border:3px solid #64b5f6;box-shadow:0 4px 15px rgba(100,181,246,.3)"><span class="fw-900 text-white" style="font-size:1.2rem">A'+(i+1)+'</span></div><h6 class="fw-bold text-white mb-1" style="font-size:.85rem">'+t+'</h6><span class="badge rounded-pill" style="background:rgba(100,181,246,.15);color:#64b5f6;font-size:.65rem">POOL A</span></div></div></div>').join('');
-cB.innerHTML=poolB.map((t,i)=>'<div class="col-6"><div class="card card-hover text-center border-0 h-100 position-relative overflow-hidden" style="box-shadow:0 8px 30px rgba(191,10,48,.2);border-radius:16px;background:linear-gradient(160deg,#1a0a0a,#3d1020)"><div class="position-absolute top-0 start-0 end-0" style="height:4px;background:linear-gradient(90deg,var(--red),#f48fb1)"></div><div class="card-body p-3 d-flex flex-column align-items-center"><div class="rounded-circle d-flex align-items-center justify-content-center mb-2" style="width:60px;height:60px;background:linear-gradient(135deg,var(--red),#9a0826);border:3px solid #f48fb1;box-shadow:0 4px 15px rgba(244,143,177,.3)"><span class="fw-900 text-white" style="font-size:1.2rem">B'+(i+1)+'</span></div><h6 class="fw-bold text-white mb-1" style="font-size:.85rem">'+t+'</h6><span class="badge rounded-pill" style="background:rgba(244,143,177,.15);color:#f48fb1;font-size:.65rem">POOL B</span></div></div></div>').join('');
-}
-
-// Restore saved draw on page load
-(function(){
-const saved=localStorage.getItem('freedomCupPools');
-if(saved){
-const{poolA,poolB}=JSON.parse(saved);
-updatePoolDisplay(poolA,poolB);
-document.getElementById('poolDrawResult').classList.remove('d-none');
-renderPoolCards(poolA,poolB);
-const btn=document.getElementById('poolDrawBtn');
-if(btn){btn.innerHTML='<i class="bi bi-arrow-repeat me-2"></i>Re-Draw Pools';btn.disabled=false;}
-}
-})();
-</script>
 </body>
 </html>

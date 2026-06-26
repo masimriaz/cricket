@@ -372,6 +372,9 @@
 <div>
   <!-- Print button (above brochure, hidden in print) -->
   <div class="print-btn-wrap">
+    <button class="print-btn" id="downloadPng" style="background:linear-gradient(135deg,#FFD700,#f5c518);color:#1a1a2e;margin-right:.5rem">
+      <i class="bi bi-download"></i> Download HD PNG
+    </button>
     <button class="print-btn" onclick="window.print()">
       <i class="bi bi-printer"></i> Print / Save as PDF
     </button>
@@ -536,5 +539,25 @@
   </div><!-- /brochure -->
 </div>
 
+<script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+<script>
+document.getElementById('downloadPng').addEventListener('click', function() {
+  var btn = this;
+  var brochure = document.querySelector('.brochure');
+  btn.disabled = true;
+  btn.innerHTML = '<span class="spinner-border spinner-border-sm me-1"></span> Generating HD...';
+  html2canvas(brochure, { scale: 3, backgroundColor: '#ffffff', useCORS: true, allowTaint: true }).then(function(canvas) {
+    var link = document.createElement('a');
+    link.download = 'Freedom-Cup-2026-Brochure-HD.png';
+    link.href = canvas.toDataURL('image/png');
+    link.click();
+  }).catch(function() {
+    alert('Download failed. Try Print > Save as PDF instead.');
+  }).finally(function() {
+    btn.disabled = false;
+    btn.innerHTML = '<i class="bi bi-download"></i> Download HD PNG';
+  });
+});
+</script>
 </body>
 </html>
