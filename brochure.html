@@ -12,12 +12,6 @@
 *{box-sizing:border-box;margin:0;padding:0}
 body{font-family:'Inter',sans-serif;background:#e8ecf1;display:flex;flex-direction:column;align-items:center;min-height:100vh;padding:1.5rem 1rem;color:#222}
 h1,h2,h3,h4,h5,h6{font-family:'Poppins',sans-serif}
-.btn-row{display:flex;gap:.5rem;flex-wrap:wrap;justify-content:center;margin-bottom:1.5rem}
-.btn-row button{border:none;font-family:'Poppins',sans-serif;font-weight:600;font-size:.85rem;padding:.6rem 1.5rem;border-radius:50px;cursor:pointer;transition:all .2s;display:inline-flex;align-items:center;gap:.4rem}
-.btn-download{background:linear-gradient(135deg,var(--gold),#f5c518);color:#1a1a2e;box-shadow:0 4px 16px rgba(255,215,0,.3)}
-.btn-download:hover{transform:translateY(-2px);box-shadow:0 6px 24px rgba(255,215,0,.4)}
-.btn-print{background:var(--blue);color:#fff}
-.btn-print:hover{background:var(--blue-dark)}
 
 /* Brochure */
 .brochure{width:100%;max-width:700px;background:#fff;border-radius:16px;overflow:hidden;box-shadow:0 20px 60px rgba(0,40,104,.18)}
@@ -88,11 +82,6 @@ body{background:#fff;padding:0}
 </style>
 </head>
 <body>
-
-<div class="btn-row">
-<button class="btn-download" id="downloadPng"><i class="bi bi-download"></i> Download HD PNG</button>
-<button class="btn-print" onclick="window.print()"><i class="bi bi-printer"></i> Print / PDF</button>
-</div>
 
 <div class="brochure" id="brochure">
 <!-- HEADER -->
@@ -190,25 +179,5 @@ Round Robin → Semi-Finals → Final<br>
 </div>
 </div>
 
-<script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
-<script>
-document.getElementById('downloadPng').addEventListener('click', function() {
-  var btn = this;
-  var brochure = document.getElementById('brochure');
-  btn.disabled = true;
-  btn.innerHTML = '<span class="spinner-border spinner-border-sm me-1"></span> Generating HD...';
-  html2canvas(brochure, { scale: 3, backgroundColor: '#ffffff', useCORS: true, allowTaint: true }).then(function(canvas) {
-    var link = document.createElement('a');
-    link.download = 'Freedom-Cup-2026-Brochure.png';
-    link.href = canvas.toDataURL('image/png');
-    link.click();
-  }).catch(function() {
-    alert('Download failed. Try Print > Save as PDF instead.');
-  }).finally(function() {
-    btn.disabled = false;
-    btn.innerHTML = '<i class="bi bi-download"></i> Download HD PNG';
-  });
-});
-</script>
 </body>
 </html>
