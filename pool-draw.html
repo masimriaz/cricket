@@ -28,8 +28,8 @@ h1,h2,h3,h4,h5,h6{font-family:'Poppins',sans-serif}
 .content-wrap{position:relative;z-index:1}
 
 /* Header */
-.draw-header{text-align:center;padding:1.2rem .5rem .5rem}
-.draw-header h1{font-size:1.4rem;font-weight:900;letter-spacing:-0.5px;text-shadow:0 0 20px rgba(255,215,0,.4),0 0 40px rgba(255,215,0,.2)}
+.draw-header{text-align:center;padding:.75rem .5rem .4rem}
+.draw-header h1{font-size:1.3rem;font-weight:900;letter-spacing:-0.5px;text-shadow:0 0 20px rgba(255,215,0,.4),0 0 40px rgba(255,215,0,.2)}
 .draw-header .title-shimmer{display:inline-block;background:linear-gradient(90deg,var(--gold),#fff,var(--gold));background-size:200% auto;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;animation:shimmer 3s linear infinite}
 @keyframes shimmer{0%{background-position:0% center}100%{background-position:200% center}}
 .draw-header .trophy-wrap{position:relative;display:inline-block}
@@ -41,8 +41,8 @@ h1,h2,h3,h4,h5,h6{font-family:'Poppins',sans-serif}
 .flag-stripe{height:3px;background:linear-gradient(90deg,var(--red) 33%,#fff 33% 66%,var(--blue) 66%);border-radius:2px;margin-top:.5rem;box-shadow:0 2px 10px rgba(255,215,0,.2)}
 
 /* Wheel Section */
-.wheel-section{display:flex;flex-direction:column;align-items:center;padding:.75rem 0}
-.wheel-container{position:relative;width:170px;height:170px}
+.wheel-section{display:flex;flex-direction:column;align-items:center;padding:.5rem 0}
+.wheel-container{position:relative;width:140px;height:140px}
 .wheel-glow{position:absolute;inset:-8px;border-radius:50%;border:2px solid rgba(255,215,0,.3);animation:ringPulse 2s ease-in-out infinite;box-shadow:0 0 20px rgba(255,215,0,.15),inset 0 0 20px rgba(255,215,0,.05)}
 @keyframes ringPulse{0%,100%{border-color:rgba(255,215,0,.2);box-shadow:0 0 15px rgba(255,215,0,.1)}50%{border-color:rgba(255,215,0,.6);box-shadow:0 0 30px rgba(255,215,0,.3)}}
 .wheel{width:100%;height:100%;border-radius:50%;position:relative;border:4px solid var(--gold);box-shadow:0 0 30px rgba(255,215,0,.3),inset 0 0 25px rgba(0,0,0,.5);overflow:hidden;transition:transform .1s}
@@ -54,20 +54,20 @@ h1,h2,h3,h4,h5,h6{font-family:'Poppins',sans-serif}
 .wheel-label{position:absolute;width:100%;text-align:center;font-weight:700;font-size:.65rem;color:rgba(255,255,255,.9);letter-spacing:2px;text-shadow:0 1px 4px rgba(0,0,0,.5)}
 .wheel-label.top-label{top:14%}
 .wheel-label.bottom-label{bottom:14%}
-.wheel-center{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:62px;height:62px;border-radius:50%;background:linear-gradient(135deg,#1a1a2e,#0d0d1a);border:3px solid var(--gold);display:flex;align-items:center;justify-content:center;font-weight:800;font-size:1rem;color:var(--gold);z-index:2;box-shadow:0 0 20px rgba(255,215,0,.3),inset 0 0 10px rgba(0,0,0,.5)}
+.wheel-center{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:52px;height:52px;border-radius:50%;background:linear-gradient(135deg,#1a1a2e,#0d0d1a);border:3px solid var(--gold);display:flex;align-items:center;justify-content:center;font-weight:800;font-size:.9rem;color:var(--gold);z-index:2;box-shadow:0 0 20px rgba(255,215,0,.3),inset 0 0 10px rgba(0,0,0,.5)}
 .wheel-pointer{position:absolute;top:-12px;left:50%;transform:translateX(-50%);width:0;height:0;border-left:10px solid transparent;border-right:10px solid transparent;border-top:16px solid var(--gold);z-index:3;filter:drop-shadow(0 0 8px rgba(255,215,0,.8)) drop-shadow(0 2px 4px rgba(0,0,0,.5))}
 @keyframes spin{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
 @keyframes spinSlow{from{transform:rotate(0deg)}to{transform:rotate(1080deg)}}
 
 /* Result Announcement */
-.result-announce{text-align:center;min-height:40px;display:flex;align-items:center;justify-content:center;padding:.3rem .5rem;position:relative}
-.result-announce .pool-result{font-size:.95rem;font-weight:700;opacity:0;transform:scale(.5);transition:all .5s cubic-bezier(.34,1.56,.64,1);text-shadow:0 2px 10px rgba(0,0,0,.5)}
+.result-announce{text-align:center;min-height:32px;display:flex;align-items:center;justify-content:center;padding:.2rem .5rem;position:relative}
+.result-announce .pool-result{font-size:.85rem;font-weight:700;opacity:0;transform:scale(.5);transition:all .5s cubic-bezier(.34,1.56,.64,1);text-shadow:0 2px 10px rgba(0,0,0,.5)}
 .result-announce .pool-result.show{opacity:1;transform:scale(1)}
 .result-announce .pool-result.show::before{content:'';position:absolute;inset:-10px;background:radial-gradient(ellipse,rgba(255,215,0,.1) 0%,transparent 70%);border-radius:50%;animation:burstGlow .6s ease-out forwards;z-index:-1}
 @keyframes burstGlow{0%{transform:scale(0);opacity:1}100%{transform:scale(2);opacity:0}}
 
 /* Draw Button */
-.draw-btn{background:linear-gradient(135deg,var(--gold),#f5c518,#ffed4a);color:#1a1a2e;border:none;font-family:'Poppins',sans-serif;font-weight:700;font-size:.95rem;padding:.8rem 2rem;border-radius:50px;cursor:pointer;transition:all .3s;box-shadow:0 6px 30px rgba(255,215,0,.35),0 2px 10px rgba(0,0,0,.3);width:100%;max-width:300px;position:relative;overflow:hidden;animation:btnPulse 2s ease-in-out infinite}
+.draw-btn{background:linear-gradient(135deg,var(--gold),#f5c518,#ffed4a);color:#1a1a2e;border:none;font-family:'Poppins',sans-serif;font-weight:700;font-size:.85rem;padding:.65rem 1.5rem;border-radius:50px;cursor:pointer;transition:all .3s;box-shadow:0 6px 30px rgba(255,215,0,.35),0 2px 10px rgba(0,0,0,.3);width:100%;max-width:260px;position:relative;overflow:hidden;animation:btnPulse 2s ease-in-out infinite}
 .draw-btn::after{content:'';position:absolute;top:0;left:-100%;width:60%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.4),transparent);transform:skewX(-20deg);transition:none;animation:btnShine 3s ease-in-out infinite}
 @keyframes btnShine{0%,100%{left:-100%}50%{left:120%}}
 .draw-btn:hover:not(:disabled){transform:translateY(-2px) scale(1.03);box-shadow:0 8px 40px rgba(255,215,0,.5),0 4px 15px rgba(0,0,0,.3)}
@@ -82,11 +82,11 @@ h1,h2,h3,h4,h5,h6{font-family:'Poppins',sans-serif}
 .reset-btn:hover{border-color:var(--gold);color:var(--gold);box-shadow:0 0 10px rgba(255,215,0,.2)}
 
 /* Pool Cards - Glassmorphism */
-.pools-row{padding:0 .5rem}
-.pool-card{background:rgba(255,255,255,.04);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,.08);border-radius:14px;padding:.6rem .5rem;height:100%;transition:box-shadow .3s}
+.pools-row{padding:.75rem .5rem 0}
+.pool-card{background:rgba(255,255,255,.05);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,.1);border-radius:14px;padding:.75rem .6rem;min-height:120px;transition:box-shadow .3s}
 .pool-card-a{box-shadow:0 0 20px rgba(0,40,104,.3)}
 .pool-card-b{box-shadow:0 0 20px rgba(191,10,48,.2)}
-.pool-card h5{text-align:center;font-weight:700;font-size:.75rem;padding:.4rem;border-radius:8px;margin-bottom:.5rem;letter-spacing:1px;text-transform:uppercase}
+.pool-card h5{text-align:center;font-weight:700;font-size:.85rem;padding:.5rem;border-radius:8px;margin-bottom:.6rem;letter-spacing:1px;text-transform:uppercase}
 .pool-a-header{background:linear-gradient(135deg,var(--blue),#1a3a6b);border:1px solid rgba(100,181,246,.3);box-shadow:0 0 12px rgba(100,181,246,.2);animation:glowA 3s ease-in-out infinite}
 .pool-b-header{background:linear-gradient(135deg,var(--red),#9a0826);border:1px solid rgba(255,100,100,.3);box-shadow:0 0 12px rgba(255,100,100,.2);animation:glowB 3s ease-in-out infinite}
 @keyframes glowA{0%,100%{box-shadow:0 0 8px rgba(100,181,246,.2)}50%{box-shadow:0 0 20px rgba(100,181,246,.4)}}
@@ -130,14 +130,15 @@ h1,h2,h3,h4,h5,h6{font-family:'Poppins',sans-serif}
 @media(min-width:768px){
 .draw-header h1{font-size:1.9rem}
 .draw-header .subtitle{font-size:.8rem}
-.wheel-container{width:210px;height:210px}
-.wheel-center{width:74px;height:74px;font-size:1.1rem}
+.wheel-container{width:200px;height:200px}
+.wheel-center{width:70px;height:70px;font-size:1.1rem}
 .team-slot .team-badge{width:32px;height:32px;font-size:.65rem}
 .team-slot .team-name{font-size:.75rem}
-.pool-card h5{font-size:.85rem}
+.pool-card h5{font-size:.9rem}
+.pool-card{min-height:150px}
 .draw-btn{font-size:1rem;max-width:340px}
 .result-announce .pool-result{font-size:1.05rem}
-.pools-row{padding:0 1.5rem}
+.pools-row{padding:.75rem 1.5rem 0}
 .remaining{margin-left:1.5rem;margin-right:1.5rem}
 }
 
