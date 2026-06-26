@@ -185,6 +185,7 @@ h1,h2,h3,h4,h5,h6{font-family:'Poppins',sans-serif}
 <div class="result-announce" id="resultArea"><div class="pool-result" id="poolResult"></div></div>
 <button class="draw-btn" id="drawBtn" onclick="drawNext()"><i class="bi bi-shuffle me-2"></i>START DRAW</button>
 <button class="reset-btn" id="resetBtn" onclick="resetDraw()" style="display:none"><i class="bi bi-arrow-repeat me-1"></i>Reset Draw</button>
+<button class="reset-btn" onclick="localStorage.removeItem('freedomCupPools');alert('Storage cleared! Index page will show TBD again.')"><i class="bi bi-trash me-1"></i>Clear Storage</button>
 </section>
 
 <div class="pools-row">
