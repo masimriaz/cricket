@@ -335,6 +335,10 @@ btn.textContent='✓ DRAW COMPLETE';
 btn.classList.add('complete');
 btn.disabled=true;
 document.getElementById('resetBtn').style.display='';
+// Save pools to localStorage for index page
+var pA=poolA.map(i=>teams[i].name);
+var pB=poolB.map(i=>teams[i].name);
+localStorage.setItem('freedomCupPools',JSON.stringify({poolA:pA,poolB:pB}));
 setTimeout(()=>{
 document.getElementById('drawComplete').classList.add('show');
 launchConfetti();

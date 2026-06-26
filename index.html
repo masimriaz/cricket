@@ -1773,5 +1773,16 @@ updateVisible();
 });
 </script>
 <script src="js/main.js"></script>
+<script>
+(function(){
+var saved=localStorage.getItem('freedomCupPools');
+if(!saved)return;
+var pools=JSON.parse(saved);
+var listA=document.getElementById('poolAList');
+var listB=document.getElementById('poolBList');
+if(listA&&pools.poolA){listA.innerHTML=pools.poolA.map(function(t,i){return '<li class="list-group-item bg-transparent border-bottom text-white fw-semibold py-2" style="border-color:rgba(100,181,246,.15)!important"><span class="badge bg-primary me-2">A'+(i+1)+'</span>'+t+'</li>';}).join('');}
+if(listB&&pools.poolB){listB.innerHTML=pools.poolB.map(function(t,i){return '<li class="list-group-item bg-transparent border-bottom text-white fw-semibold py-2" style="border-color:rgba(255,100,100,.15)!important"><span class="badge bg-danger me-2">B'+(i+1)+'</span>'+t+'</li>';}).join('');}
+})();
+</script>
 </body>
 </html>
