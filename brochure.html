@@ -8,547 +8,198 @@
 <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
-  :root {
-    --red: #BF0A30;
-    --white: #FFFFFF;
-    --blue: #002868;
-    --blue-dark: #001a4a;
-    --gold: #FFD700;
-  }
+:root{--red:#BF0A30;--blue:#002868;--blue-dark:#001a4a;--gold:#FFD700}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Inter',sans-serif;background:#e8ecf1;display:flex;flex-direction:column;align-items:center;min-height:100vh;padding:1.5rem 1rem;color:#222}
+h1,h2,h3,h4,h5,h6{font-family:'Poppins',sans-serif}
+.btn-row{display:flex;gap:.5rem;flex-wrap:wrap;justify-content:center;margin-bottom:1.5rem}
+.btn-row button{border:none;font-family:'Poppins',sans-serif;font-weight:600;font-size:.85rem;padding:.6rem 1.5rem;border-radius:50px;cursor:pointer;transition:all .2s;display:inline-flex;align-items:center;gap:.4rem}
+.btn-download{background:linear-gradient(135deg,var(--gold),#f5c518);color:#1a1a2e;box-shadow:0 4px 16px rgba(255,215,0,.3)}
+.btn-download:hover{transform:translateY(-2px);box-shadow:0 6px 24px rgba(255,215,0,.4)}
+.btn-print{background:var(--blue);color:#fff}
+.btn-print:hover{background:var(--blue-dark)}
 
-  * { box-sizing: border-box; margin: 0; padding: 0; }
+/* Brochure */
+.brochure{width:100%;max-width:700px;background:#fff;border-radius:16px;overflow:hidden;box-shadow:0 20px 60px rgba(0,40,104,.18)}
 
-  body {
-    font-family: 'Inter', sans-serif;
-    background: #e8ecf1;
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    min-height: 100vh;
-    padding: 2rem 1rem;
-    color: #222;
-  }
+/* Header */
+.b-header{background:linear-gradient(140deg,var(--blue-dark) 0%,var(--blue) 55%,#1a3a6b 100%);position:relative;padding:2rem 1.5rem 1.5rem;text-align:center;color:#fff;overflow:hidden}
+.b-header::before{content:'';position:absolute;inset:0;opacity:.06;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='50' height='50'%3E%3Ctext x='25' y='32' text-anchor='middle' font-size='16' fill='white'%3E%E2%98%85%3C/text%3E%3C/svg%3E")}
+.b-header .flag{position:absolute;top:0;left:0;right:0;height:5px;background:linear-gradient(90deg,var(--red) 33%,#fff 33% 66%,var(--blue) 66%)}
+.b-header .eyebrow{font-size:.65rem;font-weight:700;letter-spacing:4px;text-transform:uppercase;color:var(--gold);margin-bottom:.4rem}
+.b-header h1{font-size:clamp(2rem,5vw,3rem);font-weight:900;letter-spacing:-1px;line-height:1}
+.b-header h1 span{color:var(--gold)}
+.b-header .tagline{font-size:.85rem;opacity:.8;margin:.4rem 0 .8rem}
+.b-header .date-pill{display:inline-block;background:var(--red);font-weight:700;font-size:.85rem;padding:.35rem 1.2rem;border-radius:50px;letter-spacing:1px}
+.b-header .venue{font-size:.8rem;opacity:.75;margin-top:.5rem}
+.b-header .entry-strip{margin-top:1rem;background:rgba(255,215,0,.12);border:1px solid rgba(255,215,0,.3);border-radius:8px;padding:.5rem 1rem;font-size:.8rem;font-weight:600;color:var(--gold)}
 
-  h1,h2,h3,h4,h5,h6 { font-family: 'Poppins', sans-serif; }
+/* Body */
+.b-body{padding:1.5rem}
+.section-label{font-size:.65rem;font-weight:700;text-transform:uppercase;letter-spacing:2px;color:var(--red);margin-bottom:.5rem;display:flex;align-items:center;gap:.4rem}
+.info-grid{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;margin-bottom:1.2rem}
+@media(max-width:500px){.info-grid{grid-template-columns:1fr}}
+.info-box{background:#f4f7fb;border-radius:10px;padding:.9rem 1rem;border:1px solid rgba(0,40,104,.06);font-size:.8rem;line-height:1.8}
+.info-box strong{color:var(--blue)}
+.info-box .label{font-size:.6rem;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;color:var(--red);margin-bottom:.3rem}
 
-  /* ── Brochure wrapper ── */
-  .brochure {
-    width: 100%;
-    max-width: 780px;
-    background: #fff;
-    border-radius: 20px;
-    overflow: hidden;
-    box-shadow: 0 24px 72px rgba(0,40,104,0.22);
-  }
+/* Schedule */
+.sched-strip{background:linear-gradient(90deg,var(--blue-dark),var(--blue));border-radius:10px;padding:1rem 1.2rem;color:#fff;margin-bottom:1.2rem;font-size:.78rem}
+.sched-strip .label{color:var(--gold);font-size:.6rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;margin-bottom:.5rem}
+.sched-row{display:flex;align-items:center;gap:.6rem;padding:.25rem 0;border-bottom:1px solid rgba(255,255,255,.08)}
+.sched-row:last-child{border:none}
+.sched-row .time{min-width:70px;font-weight:700;color:var(--gold);font-size:.72rem}
 
-  /* ── HEADER ── */
-  .brochure-header {
-    background: linear-gradient(140deg, var(--blue-dark) 0%, var(--blue) 55%, #1a3a6b 100%);
-    position: relative;
-    padding: 2.5rem 2rem 2rem;
-    text-align: center;
-    color: #fff;
-    overflow: hidden;
-  }
-  .header-stars {
-    position: absolute;
-    inset: 0;
-    opacity: 0.08;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60'%3E%3Ctext x='30' y='36' text-anchor='middle' font-size='20' fill='white'%3E%E2%98%85%3C/text%3E%3C/svg%3E");
-  }
-  .flag-stripe {
-    position: absolute;
-    top: 0; left: 0; right: 0;
-    height: 6px;
-    background: linear-gradient(90deg, var(--red) 33%, var(--white) 33% 66%, var(--blue) 66%);
-  }
-  .eyebrow {
-    font-size: 0.72rem;
-    font-weight: 700;
-    letter-spacing: 4px;
-    text-transform: uppercase;
-    color: var(--gold);
-    margin-bottom: 0.5rem;
-  }
-  .brochure-title {
-    font-size: clamp(2.4rem, 6vw, 3.6rem);
-    font-weight: 900;
-    letter-spacing: -1px;
-    line-height: 1;
-    margin-bottom: 0.4rem;
-  }
-  .brochure-title span { color: var(--gold); }
-  .subtitle {
-    font-size: 1rem;
-    opacity: 0.85;
-    margin-bottom: 1rem;
-  }
-  .date-pill {
-    display: inline-block;
-    background: var(--red);
-    color: #fff;
-    font-weight: 700;
-    font-size: 0.95rem;
-    padding: 0.4rem 1.4rem;
-    border-radius: 50px;
-    letter-spacing: 1px;
-    margin-bottom: 0.6rem;
-  }
-  .venue-line {
-    font-size: 0.88rem;
-    opacity: 0.8;
-  }
-  .venue-line i { color: var(--gold); }
-  .entry-banner {
-    margin-top: 1.4rem;
-    background: rgba(255,215,0,0.12);
-    border: 1px solid rgba(255,215,0,0.3);
-    border-radius: 10px;
-    padding: 0.6rem 1.2rem;
-    font-size: 0.9rem;
-    font-weight: 600;
-    color: var(--gold);
-    letter-spacing: 0.5px;
-  }
+/* VIP Panel */
+.vip-panel{background:linear-gradient(135deg,#1a0533,#0d1b3e);border-radius:10px;padding:1rem 1.2rem;color:#fff;margin-bottom:1.2rem;text-align:center}
+.vip-panel .label{color:var(--gold);font-size:.6rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;margin-bottom:.6rem}
+.vip-panel h4{font-size:.9rem;font-weight:700;color:var(--gold);margin-bottom:.3rem}
+.vip-panel p{font-size:.75rem;opacity:.8;margin-bottom:0}
 
-  /* ── BODY ── */
-  .brochure-body { padding: 2rem; }
+/* Awards */
+.awards-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:.5rem;margin-bottom:1.2rem}
+@media(max-width:500px){.awards-grid{grid-template-columns:repeat(2,1fr)}}
+.award-tile{text-align:center;background:#f8f9fc;border-radius:8px;padding:.5rem .3rem;border:1px solid rgba(0,40,104,.05)}
+.award-tile .icon{font-size:1.2rem}
+.award-tile .name{font-size:.6rem;font-weight:600;color:#444;margin-top:.2rem}
 
-  /* ── Info grid ── */
-  .info-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1rem;
-    margin-bottom: 1rem;
-  }
-  @media (max-width: 560px) { .info-grid { grid-template-columns: 1fr; } }
+/* CTA */
+.cta-block{background:linear-gradient(135deg,var(--red),#d4102e);border-radius:10px;padding:.8rem 1.2rem;text-align:center;color:#fff;margin-bottom:1.2rem}
+.cta-block strong{font-size:.85rem}
+.cta-block .links{font-size:.7rem;opacity:.9;margin-top:.3rem}
 
-  .info-card {
-    background: #f4f6fb;
-    border-radius: 14px;
-    padding: 1.1rem 1.2rem;
-    border: 1px solid rgba(0,40,104,0.07);
-  }
-  .info-card .card-heading {
-    font-size: 0.72rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    color: var(--red);
-    margin-bottom: 0.65rem;
-    display: flex;
-    align-items: center;
-    gap: 0.4rem;
-  }
-  .info-card ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    font-size: 0.88rem;
-    line-height: 1.9;
-  }
-  .info-card ul li::before {
-    content: '✦ ';
-    color: var(--gold);
-    font-size: 0.65rem;
-  }
-  .info-card ul li strong { color: var(--blue); }
+/* Footer - Management */
+.b-footer{background:linear-gradient(135deg,#0a0a1a,var(--blue-dark));padding:1.5rem;text-align:center;color:#fff}
+.b-footer .label{color:var(--gold);font-size:.6rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;margin-bottom:.6rem}
+.b-footer .org-name{font-size:.85rem;font-weight:700;margin-bottom:.8rem}
+.mgmt-grid{display:flex;flex-wrap:wrap;justify-content:center;gap:.5rem;margin-bottom:.8rem}
+.mgmt-photo{width:40px;height:40px;border-radius:50%;overflow:hidden;border:2px solid var(--gold)}
+.mgmt-photo img{width:100%;height:100%;object-fit:cover}
+.b-footer .tagline{font-size:.65rem;color:rgba(255,255,255,.6);margin-top:.5rem}
+.b-footer .flag-bottom{height:3px;background:linear-gradient(90deg,var(--red) 25%,var(--gold) 25% 50%,#fff 50% 75%,var(--gold) 75%);border-radius:2px;margin-top:.8rem}
 
-  /* ── Schedule strip ── */
-  .schedule-strip {
-    background: linear-gradient(90deg, var(--blue-dark), var(--blue));
-    border-radius: 14px;
-    padding: 1.1rem 1.4rem;
-    color: #fff;
-    margin-bottom: 1rem;
-  }
-  .schedule-strip .strip-title {
-    font-size: 0.72rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    color: var(--gold);
-    margin-bottom: 0.75rem;
-    display: flex;
-    align-items: center;
-    gap: 0.4rem;
-  }
-  .schedule-row {
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-    padding: 0.3rem 0;
-    font-size: 0.88rem;
-    border-bottom: 1px solid rgba(255,255,255,0.08);
-  }
-  .schedule-row:last-child { border-bottom: none; }
-  .sched-time {
-    min-width: 105px;
-    font-weight: 700;
-    color: var(--gold);
-    font-size: 0.82rem;
-  }
-  .sched-icon { font-size: 1rem; opacity: 0.85; }
-  .sched-desc { opacity: 0.9; }
-
-  /* ── Awards ── */
-  .awards-row {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 0.7rem;
-    margin-bottom: 1rem;
-  }
-  @media (max-width: 560px) { .awards-row { grid-template-columns: 1fr 1fr; } }
-
-  .award-tile {
-    background: #f4f6fb;
-    border-radius: 12px;
-    text-align: center;
-    padding: 0.9rem 0.5rem;
-    border: 1px solid rgba(0,40,104,0.07);
-  }
-  .award-tile .award-icon { font-size: 1.6rem; margin-bottom: 0.3rem; }
-  .award-tile .award-name { font-size: 0.72rem; font-weight: 700; color: var(--blue); line-height: 1.3; }
-
-  /* ── Venue note ── */
-  .venue-note {
-    background: #fff8e1;
-    border-left: 4px solid var(--gold);
-    border-radius: 0 10px 10px 0;
-    padding: 0.65rem 1rem;
-    font-size: 0.82rem;
-    color: #5a4200;
-    margin-bottom: 1rem;
-    display: flex;
-    align-items: flex-start;
-    gap: 0.5rem;
-  }
-  .venue-note i { color: var(--gold); margin-top: 2px; flex-shrink: 0; }
-
-  /* ── CTA ── */
-  .cta-block {
-    background: linear-gradient(90deg, var(--red), #d4102e);
-    border-radius: 14px;
-    padding: 1.2rem 1.5rem;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 0.75rem;
-    margin-bottom: 1.25rem;
-  }
-  .cta-block .cta-text { color: #fff; }
-  .cta-block .cta-text strong { font-size: 1.05rem; display: block; }
-  .cta-block .cta-text span { font-size: 0.82rem; opacity: 0.88; }
-  .cta-block .cta-link {
-    background: #fff;
-    color: var(--red);
-    font-weight: 700;
-    font-size: 0.82rem;
-    padding: 0.5rem 1.2rem;
-    border-radius: 50px;
-    text-decoration: none;
-    white-space: nowrap;
-    flex-shrink: 0;
-  }
-  .cta-block .cta-link:hover { background: var(--gold); color: var(--blue-dark); }
-
-  /* ── Contact row ── */
-  .contact-row {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1rem;
-    font-size: 0.85rem;
-    color: #555;
-    margin-bottom: 1.5rem;
-    align-items: center;
-  }
-  .contact-row i { color: var(--blue); margin-right: 4px; }
-  .contact-row a { color: var(--blue); text-decoration: none; font-weight: 600; }
-
-  /* ── FOOTER / Organizing Team ── */
-  .brochure-footer {
-    background: var(--blue-dark);
-    padding: 1.5rem 2rem;
-    text-align: center;
-    color: #fff;
-    position: relative;
-    overflow: hidden;
-  }
-  .footer-stars {
-    position: absolute;
-    inset: 0;
-    opacity: 0.05;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60'%3E%3Ctext x='30' y='36' text-anchor='middle' font-size='20' fill='white'%3E%E2%98%85%3C/text%3E%3C/svg%3E");
-  }
-  .footer-flag-stripe {
-    position: absolute;
-    bottom: 0; left: 0; right: 0;
-    height: 5px;
-    background: linear-gradient(90deg, var(--red) 33%, var(--white) 33% 66%, var(--blue) 66%);
-  }
-  .organizer-label {
-    font-size: 0.68rem;
-    font-weight: 700;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-    color: rgba(255,255,255,0.45);
-    margin-bottom: 0.5rem;
-  }
-  .organizer-divider {
-    width: 40px;
-    height: 2px;
-    background: var(--gold);
-    border-radius: 2px;
-    margin: 0.4rem auto 0.8rem;
-  }
-  .organizer-name {
-    font-size: clamp(1.25rem, 3.5vw, 1.7rem);
-    font-weight: 800;
-    color: var(--gold);
-    letter-spacing: 0.5px;
-    margin-bottom: 0.25rem;
-  }
-  .organizer-sub {
-    font-size: 0.8rem;
-    opacity: 0.6;
-    margin-bottom: 0.75rem;
-  }
-  .co-organizer-label {
-    font-size: 0.68rem;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    color: rgba(255,255,255,0.35);
-    margin-bottom: 0.2rem;
-  }
-  .co-organizer-name {
-    font-size: 0.9rem;
-    font-weight: 600;
-    color: rgba(255,255,255,0.65);
-  }
-  .tagline {
-    font-size: 0.75rem;
-    opacity: 0.45;
-    margin-top: 0.9rem;
-    letter-spacing: 0.5px;
-  }
-
-  /* ── Print button (hidden in print) ── */
-  .print-btn-wrap {
-    text-align: center;
-    padding: 1.5rem 0 0.5rem;
-  }
-  .print-btn {
-    background: var(--blue);
-    color: #fff;
-    border: none;
-    padding: 0.65rem 2rem;
-    border-radius: 50px;
-    font-weight: 600;
-    font-size: 0.9rem;
-    cursor: pointer;
-    transition: background 0.2s, transform 0.2s;
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-  }
-  .print-btn:hover { background: var(--red); transform: translateY(-2px); }
-
-  /* ── PRINT ── */
-  @media print {
-    body { background: #fff; padding: 0; }
-    .brochure {
-      box-shadow: none;
-      border-radius: 0;
-      max-width: 100%;
-    }
-    .print-btn-wrap { display: none; }
-    @page { size: letter portrait; margin: 0.5in; }
-  }
+/* Print */
+@media print{
+body{background:#fff;padding:0}
+.brochure{box-shadow:none;border-radius:0;max-width:100%}
+.btn-row{display:none}
+@page{size:letter portrait;margin:.4in}
+}
 </style>
 </head>
 <body>
 
-<div>
-  <!-- Print button (above brochure, hidden in print) -->
-  <div class="print-btn-wrap">
-    <button class="print-btn" id="downloadPng" style="background:linear-gradient(135deg,#FFD700,#f5c518);color:#1a1a2e;margin-right:.5rem">
-      <i class="bi bi-download"></i> Download HD PNG
-    </button>
-    <button class="print-btn" onclick="window.print()">
-      <i class="bi bi-printer"></i> Print / Save as PDF
-    </button>
-  </div>
+<div class="btn-row">
+<button class="btn-download" id="downloadPng"><i class="bi bi-download"></i> Download HD PNG</button>
+<button class="btn-print" onclick="window.print()"><i class="bi bi-printer"></i> Print / PDF</button>
+</div>
 
-  <!-- ══════════════════ BROCHURE ══════════════════ -->
-  <div class="brochure">
+<div class="brochure" id="brochure">
+<!-- HEADER -->
+<div class="b-header">
+<div class="flag"></div>
+<p class="eyebrow">🏏 Tape Ball Cricket Tournament</p>
+<h1>Freedom <span>Cup</span></h1>
+<p class="tagline">New Haven's Premier Independence Day Cricket Celebration</p>
+<div class="date-pill">★ JULY 4, 2026 ★</div>
+<p class="venue"><i class="bi bi-geo-alt-fill"></i> 150 Kimberly Avenue, New Haven, CT</p>
+<div class="entry-strip">🏆 10 Teams • 3 Pitches • Cash Prizes + Trophies • $500/Team Entry</div>
+</div>
 
-    <!-- HEADER -->
-    <div class="brochure-header">
-      <div class="flag-stripe"></div>
-      <div class="header-stars"></div>
-      <p class="eyebrow">🏏 Tape Ball Cricket Tournament</p>
-      <h1 class="brochure-title">Freedom <span>Cup</span></h1>
-      <p class="subtitle">New Haven's Community Cricket Celebration</p>
-      <div class="date-pill">★ JULY 4–5, 2026 ★</div>
-      <p class="venue-line mt-2">
-        <i class="bi bi-geo-alt-fill"></i>
-        150 Kimberly Avenue, New Haven, CT
-      </p>
-      <div class="entry-banner">
-        🏆 &nbsp;Cash Prizes &nbsp;•&nbsp; Trophies &nbsp;•&nbsp; Community Glory &nbsp;•&nbsp; Entry Fee TBD &nbsp;🏆
-      </div>
-    </div>
+<!-- BODY -->
+<div class="b-body">
 
-    <!-- BODY -->
-    <div class="brochure-body">
+<!-- Format & Structure -->
+<p class="section-label"><i class="bi bi-lightning-charge-fill" style="color:var(--gold)"></i> Tournament Details</p>
+<div class="info-grid">
+<div class="info-box">
+<div class="label">⚡ Format</div>
+<strong>9-a-side</strong> • 6 overs per innings<br>
+~50 min match duration<br>
+Fiber bats & tape ball bats allowed<br>
+Professional umpires for all matches
+</div>
+<div class="info-box">
+<div class="label">🏆 Structure</div>
+<strong>10 teams</strong> • 2 pools of 5<br>
+4 pool matches per team<br>
+Round Robin → Semi-Finals → Final<br>
+3 pitches running simultaneously
+</div>
+</div>
 
-      <!-- Format + Structure -->
-      <div class="info-grid">
-        <div class="info-card">
-          <div class="card-heading">
-            <i class="bi bi-lightning-charge-fill" style="color:var(--gold)"></i> Format
-          </div>
-          <ul>
-            <li><strong>9-a-side</strong> + 1 Impact Player</li>
-            <li><strong>6 overs</strong> per innings</li>
-            <li>~60 min match duration</li>
-            <li>15-min break between rounds</li>
-            <li>8 teams • Open to all skill levels</li>
-          </ul>
-        </div>
-        <div class="info-card">
-          <div class="card-heading">
-            <i class="bi bi-diagram-3-fill" style="color:var(--gold)"></i> Tournament Structure
-          </div>
-          <ul>
-            <li><strong>2 Pools</strong> of 4 teams</li>
-            <li>3 pool matches per team</li>
-            <li>Round Robin → Top 2 advance</li>
-            <li>Semi-Finals → Grand Final</li>
-            <li>3 pitches running parallel</li>
-          </ul>
-        </div>
-      </div>
+<!-- Schedule -->
+<div class="sched-strip">
+<div class="label"><i class="bi bi-clock-fill me-1"></i> Match Day Schedule</div>
+<div class="sched-row"><span class="time">9:00 AM</span><span>🏏 Pool matches begin (7 rounds × 3 pitches)</span></div>
+<div class="sched-row"><span class="time">3:30 PM</span><span>✅ Pool stage concludes</span></div>
+<div class="sched-row"><span class="time">4:45 PM</span><span>⚡ Semi-Finals (2 matches, parallel)</span></div>
+<div class="sched-row"><span class="time">6:00 PM</span><span>🏆 Grand Final</span></div>
+<div class="sched-row"><span class="time">7:15 PM</span><span>🎉 Closing Ceremony & Awards</span></div>
+</div>
 
-      <!-- Schedule -->
-      <div class="schedule-strip">
-        <div class="strip-title">
-          <i class="bi bi-clock-fill"></i> Match Schedule
-        </div>
-        <div class="schedule-row">
-          <span class="sched-time">9:00 AM</span>
-          <span class="sched-icon">🏏</span>
-          <span class="sched-desc">Pool matches start — Rounds 1 to 4 (parallel)</span>
-        </div>
-        <div class="schedule-row">
-          <span class="sched-time">~2:00 PM</span>
-          <span class="sched-icon">⚡</span>
-          <span class="sched-desc">Semi-Finals — Pool A #1 vs B #2 &amp; Pool B #1 vs A #2</span>
-        </div>
-        <div class="schedule-row">
-          <span class="sched-time">~3:15 PM</span>
-          <span class="sched-icon">🏆</span>
-          <span class="sched-desc">Grand Final — SF1 Winner vs SF2 Winner</span>
-        </div>
-        <div class="schedule-row">
-          <span class="sched-time">~4:30 PM</span>
-          <span class="sched-icon">🎉</span>
-          <span class="sched-desc">Closing Ceremony — Awards, speeches &amp; photos</span>
-        </div>
-      </div>
+<!-- VIP Panel -->
+<div class="vip-panel">
+<div class="label">🌟 VIP Guest Panel</div>
+<h4>Honorable Mayor of New Haven</h4>
+<p>Special Guest of Honor — Opening Ceremony & Awards Presentation</p>
+<p style="margin-top:.4rem;font-size:.7rem;color:var(--gold)">★ City Officials • Community Leaders • Distinguished Guests ★</p>
+</div>
 
-      <!-- Awards -->
-      <div class="info-card" style="margin-bottom:1rem">
-        <div class="card-heading">
-          <i class="bi bi-trophy-fill" style="color:var(--gold)"></i> Awards &amp; Recognition
-        </div>
-        <div class="awards-row" style="margin-top:0.5rem">
-          <div class="award-tile">
-            <div class="award-icon">🥇</div>
-            <div class="award-name">Winner<br>Trophy + Cash</div>
-          </div>
-          <div class="award-tile">
-            <div class="award-icon">🥈</div>
-            <div class="award-name">Runner-up<br>Trophy + Cash</div>
-          </div>
-          <div class="award-tile">
-            <div class="award-icon">⭐</div>
-            <div class="award-name">Man of<br>the Series</div>
-          </div>
-          <div class="award-tile">
-            <div class="award-icon">🎳</div>
-            <div class="award-name">Best<br>Bowler</div>
-          </div>
-          <div class="award-tile">
-            <div class="award-icon">🌟</div>
-            <div class="award-name">MOM<br>Semi-Final 1</div>
-          </div>
-          <div class="award-tile">
-            <div class="award-icon">🌟</div>
-            <div class="award-name">MOM<br>Semi-Final 2</div>
-          </div>
-          <div class="award-tile">
-            <div class="award-icon">🌟</div>
-            <div class="award-name">MOM<br>Grand Final</div>
-          </div>
-          <div class="award-tile">
-            <div class="award-icon">🏅</div>
-            <div class="award-name">Special<br>Award</div>
-          </div>
-        </div>
-      </div>
+<!-- Awards -->
+<p class="section-label"><i class="bi bi-trophy-fill" style="color:var(--gold)"></i> Awards & Prizes</p>
+<div class="awards-grid">
+<div class="award-tile"><div class="icon">🥇</div><div class="name">Winner<br>Trophy + Cash</div></div>
+<div class="award-tile"><div class="icon">🥈</div><div class="name">Runner-up<br>Trophy + Cash</div></div>
+<div class="award-tile"><div class="icon">⭐</div><div class="name">Man of<br>the Series</div></div>
+<div class="award-tile"><div class="icon">🎳</div><div class="name">Best<br>Bowler</div></div>
+<div class="award-tile"><div class="icon">🌟</div><div class="name">MOM<br>Semi-Final 1</div></div>
+<div class="award-tile"><div class="icon">🌟</div><div class="name">MOM<br>Semi-Final 2</div></div>
+<div class="award-tile"><div class="icon">🌟</div><div class="name">MOM<br>Grand Final</div></div>
+<div class="award-tile"><div class="icon">🏅</div><div class="name">Special<br>Award</div></div>
+</div>
 
-      <!-- Parking note -->
-      <div class="venue-note">
-        <i class="bi bi-p-circle-fill"></i>
-        <span><strong>Parking:</strong> Please park on the school side only — no parking inside the ground. Thank you for keeping the ground clear for play!</span>
-      </div>
+<!-- CTA -->
+<div class="cta-block">
+<strong>🙌 Community Cricket at its Finest!</strong>
+<div class="links">📧 asimesp@gmail.com • 📞 609-608-6282<br>🔗 masimriaz.github.io/cricket</div>
+</div>
 
-      <!-- CTA -->
-      <div class="cta-block">
-        <div class="cta-text">
-          <strong>🏏 Register Your Team Now!</strong>
-          <span>Only 8 spots available — limited slots, don't miss out!</span>
-        </div>
-        <a href="https://masimriaz.github.io/cricket/" class="cta-link" target="_blank">
-          Register →
-        </a>
-      </div>
+<!-- Venue Note -->
+<p style="font-size:.7rem;text-align:center;color:#666;margin-bottom:0"><i class="bi bi-p-circle-fill me-1"></i>Parking on school side only — no parking inside the ground</p>
+</div>
 
-      <!-- Contact -->
-      <div class="contact-row">
-        <span><i class="bi bi-envelope-fill"></i><a href="mailto:asimesp@gmail.com">asimesp@gmail.com</a></span>
-        <span><i class="bi bi-globe"></i><a href="https://masimriaz.github.io/cricket/" target="_blank">masimriaz.github.io/cricket</a></span>
-        <span><i class="bi bi-geo-alt-fill"></i>150 Kimberly Ave, New Haven, CT</span>
-      </div>
-
-    </div><!-- /brochure-body -->
-
-    <!-- FOOTER — Organizing Team -->
-    <div class="brochure-footer">
-      <div class="footer-stars"></div>
-      <div class="footer-flag-stripe"></div>
-      <p class="organizer-label">Proudly Organized By</p>
-      <div class="organizer-divider"></div>
-      <p class="organizer-name">🦅 Hamden Qalandars</p>
-      <p class="organizer-sub">New Haven Cricket Community</p>
-      <p class="tagline">★ &nbsp; Cricket Brings Us Together &nbsp; • &nbsp; Good Quality Cricket &nbsp; • &nbsp; Community Spirit &nbsp; ★</p>
-    </div>
-
-  </div><!-- /brochure -->
+<!-- FOOTER - Management Committee -->
+<div class="b-footer">
+<div class="label">★ Management Committee ★</div>
+<p class="org-name">🦅 Hamden Qalandars & New Haven Eagles</p>
+<div class="mgmt-grid">
+<div class="mgmt-photo"><img src="images/management/asim.png" alt="Asim"></div>
+<div class="mgmt-photo"><img src="images/management/hammad.png" alt="Hammad"></div>
+<div class="mgmt-photo"><img src="images/management/sohaib.png" alt="Sohaib"></div>
+<div class="mgmt-photo"><img src="images/management/arsalan.png" alt="Arsalan"></div>
+<div class="mgmt-photo"><img src="images/management/subhan.png" alt="Subhan"></div>
+<div class="mgmt-photo"><img src="images/management/yahya.png" alt="Yahya"></div>
+<div class="mgmt-photo"><img src="images/management/yousaf.png" alt="Yousaf"></div>
+<div class="mgmt-photo"><img src="images/management/Raza.jpeg" alt="Raza"></div>
+<div class="mgmt-photo"><img src="images/management/ali.png" alt="Ali"></div>
+</div>
+<p style="font-size:.65rem;opacity:.7">Asim (Chief Organizer) • Hammad • Sohaib • Arsalan • Subhan • Yahya • Yousaf • Raza • Ali</p>
+<p class="tagline">★ Cricket Brings Us Together • Good Quality Cricket • Community Spirit ★</p>
+<div class="flag-bottom"></div>
+</div>
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
 <script>
 document.getElementById('downloadPng').addEventListener('click', function() {
   var btn = this;
-  var brochure = document.querySelector('.brochure');
+  var brochure = document.getElementById('brochure');
   btn.disabled = true;
   btn.innerHTML = '<span class="spinner-border spinner-border-sm me-1"></span> Generating HD...';
   html2canvas(brochure, { scale: 3, backgroundColor: '#ffffff', useCORS: true, allowTaint: true }).then(function(canvas) {
     var link = document.createElement('a');
-    link.download = 'Freedom-Cup-2026-Brochure-HD.png';
+    link.download = 'Freedom-Cup-2026-Brochure.png';
     link.href = canvas.toDataURL('image/png');
     link.click();
   }).catch(function() {
