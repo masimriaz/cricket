@@ -298,11 +298,7 @@ h1,h2,h3,h4,h5,h6,.display-1,.display-2,.display-3,.display-4{font-family:'Poppi
 <div class="rounded-4 p-4 h-100" style="background:rgba(0,40,104,.2);border:2px solid rgba(100,181,246,.3)">
 <h4 class="text-center fw-bold mb-3" style="color:#64b5f6"><i class="bi bi-shield-fill me-2"></i>POOL A</h4>
 <ol class="list-group list-group-flush" id="poolAList">
-<li class="list-group-item bg-transparent border-bottom text-white fw-semibold py-2" style="border-color:rgba(100,181,246,.15)!important"><span class="badge bg-primary me-2">A1</span>TBD — Awaiting Draw</li>
-<li class="list-group-item bg-transparent border-bottom text-white fw-semibold py-2" style="border-color:rgba(100,181,246,.15)!important"><span class="badge bg-primary me-2">A2</span>TBD — Awaiting Draw</li>
-<li class="list-group-item bg-transparent border-bottom text-white fw-semibold py-2" style="border-color:rgba(100,181,246,.15)!important"><span class="badge bg-primary me-2">A3</span>TBD — Awaiting Draw</li>
-<li class="list-group-item bg-transparent border-bottom text-white fw-semibold py-2" style="border-color:rgba(100,181,246,.15)!important"><span class="badge bg-primary me-2">A4</span>TBD — Awaiting Draw</li>
-<li class="list-group-item bg-transparent border-0 text-white fw-semibold py-2"><span class="badge bg-primary me-2">A5</span>TBD — Awaiting Draw</li>
+<li class="list-group-item bg-transparent border-0 text-center py-3" style="color:rgba(255,255,255,.4)"><i class="bi bi-hourglass-split me-2"></i>Awaiting Pool Draw</li>
 </ol>
 </div>
 </div>
@@ -310,14 +306,13 @@ h1,h2,h3,h4,h5,h6,.display-1,.display-2,.display-3,.display-4{font-family:'Poppi
 <div class="rounded-4 p-4 h-100" style="background:rgba(191,10,48,.15);border:2px solid rgba(255,100,100,.3)">
 <h4 class="text-center fw-bold mb-3" style="color:#ef5350"><i class="bi bi-shield-fill me-2"></i>POOL B</h4>
 <ol class="list-group list-group-flush" id="poolBList">
-<li class="list-group-item bg-transparent border-bottom text-white fw-semibold py-2" style="border-color:rgba(255,100,100,.15)!important"><span class="badge bg-danger me-2">B1</span>TBD — Awaiting Draw</li>
-<li class="list-group-item bg-transparent border-bottom text-white fw-semibold py-2" style="border-color:rgba(255,100,100,.15)!important"><span class="badge bg-danger me-2">B2</span>TBD — Awaiting Draw</li>
-<li class="list-group-item bg-transparent border-bottom text-white fw-semibold py-2" style="border-color:rgba(255,100,100,.15)!important"><span class="badge bg-danger me-2">B3</span>TBD — Awaiting Draw</li>
-<li class="list-group-item bg-transparent border-bottom text-white fw-semibold py-2" style="border-color:rgba(255,100,100,.15)!important"><span class="badge bg-danger me-2">B4</span>TBD — Awaiting Draw</li>
-<li class="list-group-item bg-transparent border-0 text-white fw-semibold py-2"><span class="badge bg-danger me-2">B5</span>TBD — Awaiting Draw</li>
+<li class="list-group-item bg-transparent border-0 text-center py-3" style="color:rgba(255,255,255,.4)"><i class="bi bi-hourglass-split me-2"></i>Awaiting Pool Draw</li>
 </ol>
 </div>
 </div>
+</div>
+<div class="text-center mt-3">
+<button class="btn btn-sm fw-bold" style="background:var(--gold);color:#1a1a2e;border-radius:50px;padding:.5rem 1.5rem" onclick="loadPools()"><i class="bi bi-arrow-repeat me-1"></i>Load Pool Teams</button>
 </div>
 </div>
 </section>
@@ -1772,15 +1767,15 @@ updateVisible();
 </script>
 <script src="js/main.js"></script>
 <script>
-(function(){
+function loadPools(){
 var saved=localStorage.getItem('freedomCupPools');
-if(!saved)return;
+if(!saved){alert('No pool data found. Complete the draw first.');return;}
 var pools=JSON.parse(saved);
 var listA=document.getElementById('poolAList');
 var listB=document.getElementById('poolBList');
 if(listA&&pools.poolA){listA.innerHTML=pools.poolA.map(function(t,i){return '<li class="list-group-item bg-transparent border-bottom text-white fw-semibold py-2" style="border-color:rgba(100,181,246,.15)!important"><span class="badge bg-primary me-2">A'+(i+1)+'</span>'+t+'</li>';}).join('');}
 if(listB&&pools.poolB){listB.innerHTML=pools.poolB.map(function(t,i){return '<li class="list-group-item bg-transparent border-bottom text-white fw-semibold py-2" style="border-color:rgba(255,100,100,.15)!important"><span class="badge bg-danger me-2">B'+(i+1)+'</span>'+t+'</li>';}).join('');}
-})();
+}
 </script>
 </body>
 </html>
