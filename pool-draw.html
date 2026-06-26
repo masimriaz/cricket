@@ -185,7 +185,7 @@ h1,h2,h3,h4,h5,h6{font-family:'Poppins',sans-serif}
 <div class="result-announce" id="resultArea"><div class="pool-result" id="poolResult"></div></div>
 <button class="draw-btn" id="drawBtn" onclick="drawNext()"><i class="bi bi-shuffle me-2"></i>START DRAW</button>
 <button class="reset-btn" id="resetBtn" onclick="resetDraw()" style="display:none"><i class="bi bi-arrow-repeat me-1"></i>Reset Draw</button>
-<button class="reset-btn" onclick="localStorage.removeItem('freedomCupPools');alert('Storage cleared! Index page will show TBD again.')"><i class="bi bi-trash me-1"></i>Clear Storage</button>
+<button class="reset-btn" onclick="localStorage.removeItem('freedomCupPools');document.getElementById('clearModal').classList.add('show');document.getElementById('clearModal').style.display='flex'"><i class="bi bi-trash me-1"></i>Clear Storage</button>
 </section>
 
 <div class="pools-row">
@@ -220,6 +220,16 @@ h1,h2,h3,h4,h5,h6{font-family:'Poppins',sans-serif}
 </div>
 
 </div>
+<!-- Clear Storage Modal -->
+<div id="clearModal" style="display:none;position:fixed;inset:0;z-index:200;align-items:center;justify-content:center;background:rgba(0,0,0,.7);backdrop-filter:blur(6px)">
+<div style="background:linear-gradient(135deg,#0a1628,#1a3a6b);border:2px solid var(--gold);border-radius:16px;padding:2rem;text-align:center;max-width:320px;width:85%">
+<div style="font-size:2.5rem;margin-bottom:.5rem">🗑️</div>
+<h4 style="color:var(--gold);font-weight:700;margin-bottom:.5rem">Storage Cleared!</h4>
+<p style="color:rgba(255,255,255,.7);font-size:.8rem;margin-bottom:1rem">Index page will show TBD again.<br>Refresh the index page to confirm.</p>
+<button onclick="document.getElementById('clearModal').style.display='none';document.getElementById('clearModal').classList.remove('show')" style="background:var(--gold);color:#1a1a2e;border:none;font-weight:700;padding:.5rem 1.5rem;border-radius:50px;cursor:pointer;font-size:.85rem">OK</button>
+</div>
+</div>
+
 <script>
 // Generate CSS particles
 (function(){
