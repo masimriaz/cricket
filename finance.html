@@ -58,13 +58,13 @@ h1,h2,h3,h4,h5,h6{font-family:'Poppins',sans-serif}
 <div class="col-md-6">
 <div class="card h-100">
 <div class="card-body">
-<h5 class="section-title" style="color:#16a34a"><i class="bi bi-arrow-down-circle-fill"></i>Revenue & Sponsorship</h5>
+<h5 class="section-title" style="color:#16a34a"><i class="bi bi-arrow-down-circle-fill"></i>Budget (Entry Fees + Sponsors)</h5>
 <table class="table table-sm table-hover mb-2">
 <thead class="table-success"><tr><th>Source</th><th class="text-end">Amount</th><th class="text-center no-print">Action</th></tr></thead>
 <tbody id="revenueBody"></tbody>
-<tfoot><tr class="fw-bold table-light"><td>Total Revenue</td><td class="text-end" id="totalRevenue">—</td><td class="no-print"></td></tr></tfoot>
+<tfoot><tr class="fw-bold table-light"><td>Total Budget</td><td class="text-end" id="totalRevenue">—</td><td class="no-print"></td></tr></tfoot>
 </table>
-<button class="btn btn-sm btn-outline-success w-100 no-print" onclick="addRow('revenue')"><i class="bi bi-plus-circle me-1"></i>Add Revenue/Sponsor</button>
+<button class="btn btn-sm btn-outline-success w-100 no-print" onclick="addRow('revenue')"><i class="bi bi-plus-circle me-1"></i>Add Budget/Sponsor</button>
 </div>
 </div>
 </div>
@@ -98,7 +98,7 @@ h1,h2,h3,h4,h5,h6{font-family:'Poppins',sans-serif}
 <div class="col-md-6">
 <div class="card">
 <div class="card-body">
-<h5 class="section-title"><i class="bi bi-pie-chart-fill text-success"></i>Revenue Breakdown</h5>
+<h5 class="section-title"><i class="bi bi-pie-chart-fill text-success"></i>Budget Breakdown</h5>
 <div id="revenuePie"></div>
 </div>
 </div>
@@ -143,9 +143,9 @@ function render() {
 
   // Stats
   document.getElementById('stats').innerHTML = `
-    <div class="stat-box" style="border-left-color:#16a34a"><div class="num" style="color:#16a34a">$${totalRev.toLocaleString()}</div><div class="label">Total Revenue</div></div>
-    <div class="stat-box" style="border-left-color:#dc2626"><div class="num" style="color:#dc2626">$${totalExp.toLocaleString()}</div><div class="label">Total Expenses</div></div>
-    <div class="stat-box" style="border-left-color:${profit>=0?'var(--blue)':'#dc2626'}"><div class="num" style="color:${profit>=0?'var(--blue)':'#dc2626'}">$${profit.toLocaleString()}</div><div class="label">${profit>=0?'Net Profit':'Net Loss'}</div></div>
+    <div class="stat-box" style="border-left-color:#16a34a"><div class="num" style="color:#16a34a">$${totalRev.toLocaleString()}</div><div class="label">Total Budget</div></div>
+    <div class="stat-box" style="border-left-color:#dc2626"><div class="num" style="color:#dc2626">$${totalExp.toLocaleString()}</div><div class="label">Spent</div></div>
+    <div class="stat-box" style="border-left-color:var(--blue)"><div class="num" style="color:var(--blue)">$${profit.toLocaleString()}</div><div class="label">Remaining</div></div>
     <div class="stat-box" style="border-left-color:var(--gold)"><div class="num" style="color:var(--gold)">${totalRev>0?Math.round((totalExp/totalRev)*100):0}%</div><div class="label">Budget Used</div></div>
   `;
 
@@ -162,11 +162,11 @@ function render() {
   document.getElementById('totalExpense').textContent = '$' + totalExp.toLocaleString();
 
   // Bar chart
-  const maxVal = Math.max(totalRev, totalExp, 1);
+  const maxVal = Math.max(totalRev, 1);
   document.getElementById('chart').innerHTML = `
-    <div class="mb-2"><div class="d-flex justify-content-between mb-1"><small class="fw-bold">Revenue</small><small class="fw-bold text-success">$${totalRev.toLocaleString()}</small></div><div style="background:#e2e8f0;border-radius:4px;height:24px"><div class="chart-bar" style="width:${(totalRev/maxVal)*100}%;background:linear-gradient(90deg,#16a34a,#4ade80);height:100%"></div></div></div>
-    <div class="mb-2"><div class="d-flex justify-content-between mb-1"><small class="fw-bold">Expenses</small><small class="fw-bold text-danger">$${totalExp.toLocaleString()}</small></div><div style="background:#e2e8f0;border-radius:4px;height:24px"><div class="chart-bar" style="width:${(totalExp/maxVal)*100}%;background:linear-gradient(90deg,#dc2626,#f87171);height:100%"></div></div></div>
-    <div><div class="d-flex justify-content-between mb-1"><small class="fw-bold">Profit</small><small class="fw-bold" style="color:${profit>=0?'var(--blue)':'#dc2626'}">$${profit.toLocaleString()}</small></div><div style="background:#e2e8f0;border-radius:4px;height:24px"><div class="chart-bar" style="width:${(Math.abs(profit)/maxVal)*100}%;background:linear-gradient(90deg,${profit>=0?'var(--blue),#60a5fa':'#dc2626,#f87171'});height:100%"></div></div></div>
+    <div class="mb-2"><div class="d-flex justify-content-between mb-1"><small class="fw-bold">Total Budget</small><small class="fw-bold text-success">$${totalRev.toLocaleString()}</small></div><div style="background:#e2e8f0;border-radius:4px;height:24px"><div class="chart-bar" style="width:100%;background:linear-gradient(90deg,#16a34a,#4ade80);height:100%"></div></div></div>
+    <div class="mb-2"><div class="d-flex justify-content-between mb-1"><small class="fw-bold">Spent</small><small class="fw-bold text-danger">$${totalExp.toLocaleString()}</small></div><div style="background:#e2e8f0;border-radius:4px;height:24px"><div class="chart-bar" style="width:${(totalExp/maxVal)*100}%;background:linear-gradient(90deg,#dc2626,#f87171);height:100%"></div></div></div>
+    <div><div class="d-flex justify-content-between mb-1"><small class="fw-bold">Remaining</small><small class="fw-bold" style="color:var(--blue)">$${profit.toLocaleString()}</small></div><div style="background:#e2e8f0;border-radius:4px;height:24px"><div class="chart-bar" style="width:${(Math.max(profit,0)/maxVal)*100}%;background:linear-gradient(90deg,var(--blue),#60a5fa);height:100%"></div></div></div>
   `;
 
   // Expense pie (horizontal stacked bar)
