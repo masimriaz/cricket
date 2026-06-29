@@ -8,52 +8,52 @@
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 body{font-family:'Poppins',sans-serif;background:#e8ecf1;display:flex;justify-content:center;padding:1rem;min-height:100vh}
-.invite{width:8.5in;background:#fff;overflow:hidden;box-shadow:0 20px 60px rgba(0,40,104,.15)}
+.invite{width:8.5in;min-height:11in;max-height:11in;background:#fff;overflow:hidden;box-shadow:0 20px 60px rgba(0,40,104,.15)}
 
 /* Header */
-.invite-header{background:linear-gradient(140deg,#001a4a 0%,#002868 50%,#1a3a6b 100%);padding:2rem 2.5rem 1.5rem;position:relative;color:#fff;text-align:center;overflow:hidden}
+.invite-header{background:linear-gradient(140deg,#001a4a 0%,#002868 50%,#1a3a6b 100%);padding:1rem 2rem .8rem;position:relative;color:#fff;text-align:center;overflow:hidden}
 .invite-header::before{content:'';position:absolute;inset:0;opacity:.05;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='50' height='50'%3E%3Ctext x='25' y='32' text-anchor='middle' font-size='16' fill='white'%3E%E2%98%85%3C/text%3E%3C/svg%3E")}
 .invite-header .flag{position:absolute;top:0;left:0;right:0;height:5px;background:linear-gradient(90deg,#BF0A30 33%,#fff 33% 66%,#002868 66%)}
-.invite-header .badge-pill{display:inline-block;background:rgba(255,215,0,.12);border:1px solid rgba(255,215,0,.3);color:#FFD700;font-size:.6rem;font-weight:600;letter-spacing:3px;text-transform:uppercase;padding:.3rem 1rem;border-radius:50px;margin-bottom:.6rem}
-.invite-header h1{font-family:'Playfair Display',serif;font-size:2rem;font-weight:800;margin-bottom:.3rem}
+.invite-header .badge-pill{display:inline-block;background:rgba(255,215,0,.12);border:1px solid rgba(255,215,0,.3);color:#FFD700;font-size:.55rem;font-weight:600;letter-spacing:3px;text-transform:uppercase;padding:.2rem .8rem;border-radius:50px;margin-bottom:.3rem}
+.invite-header h1{font-family:'Playfair Display',serif;font-size:1.6rem;font-weight:800;margin-bottom:.2rem}
 .invite-header h1 span{color:#FFD700}
-.invite-header .subtitle{font-size:.8rem;opacity:.7;margin-bottom:.5rem}
-.invite-header .date-pill{display:inline-block;background:#BF0A30;font-weight:700;font-size:.75rem;padding:.3rem 1rem;border-radius:50px;letter-spacing:1px}
+.invite-header .subtitle{font-size:.7rem;opacity:.7;margin-bottom:.3rem}
+.invite-header .date-pill{display:inline-block;background:#BF0A30;font-weight:700;font-size:.65rem;padding:.2rem .8rem;border-radius:50px;letter-spacing:1px}
 
 /* Body */
-.invite-body{padding:2rem 2.5rem 1.5rem;font-size:.82rem;line-height:1.8;color:#333}
-.invite-body .greeting{font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:700;color:#002868;margin-bottom:.8rem}
-.invite-body p{margin-bottom:.8rem}
-.invite-body .section-head{font-weight:700;color:#002868;font-size:.85rem;margin-top:1.2rem;margin-bottom:.4rem;display:flex;align-items:center;gap:.4rem}
+.invite-body{padding:1rem 2rem 1rem;font-size:.72rem;line-height:1.65;color:#333}
+.invite-body .greeting{font-family:'Playfair Display',serif;font-size:.95rem;font-weight:700;color:#002868;margin-bottom:.5rem}
+.invite-body p{margin-bottom:.5rem}
+.invite-body .section-head{font-weight:700;color:#002868;font-size:.75rem;margin-top:.7rem;margin-bottom:.3rem;display:flex;align-items:center;gap:.4rem}
 
 /* Highlights */
-.highlights{background:#f8faff;border-left:4px solid #FFD700;border-radius:0 8px 8px 0;padding:.8rem 1.2rem;margin:1rem 0;font-size:.78rem}
-.highlights li{margin-bottom:.3rem;list-style:none}
+.highlights{background:#f8faff;border-left:4px solid #FFD700;border-radius:0 8px 8px 0;padding:.5rem 1rem;margin:.6rem 0;font-size:.7rem}
+.highlights li{margin-bottom:.2rem;list-style:none}
 
 /* What We'd Love */
-.ask-list{list-style:none;padding:0;margin:.6rem 0}
-.ask-list li{padding:.4rem 0;font-size:.8rem;border-bottom:1px solid #f0f0f0}
+.ask-list{list-style:none;padding:0;margin:.4rem 0}
+.ask-list li{padding:.25rem 0;font-size:.72rem;border-bottom:1px solid #f0f0f0}
 .ask-list li:last-child{border:none}
 
 /* Event Details Box */
-.event-box{background:linear-gradient(135deg,#001a4a,#002868);border-radius:10px;padding:1rem 1.5rem;color:#fff;margin:1rem 0;display:grid;grid-template-columns:1fr 1fr;gap:.4rem .8rem;font-size:.75rem}
-.event-box .item{display:flex;align-items:center;gap:.4rem}
+.event-box{background:linear-gradient(135deg,#001a4a,#002868);border-radius:8px;padding:.7rem 1.2rem;color:#fff;margin:.7rem 0;display:grid;grid-template-columns:1fr 1fr;gap:.3rem .8rem;font-size:.68rem}
+.event-box .item{display:flex;align-items:center;gap:.3rem}
 .event-box .item span{color:#FFD700}
 
 /* Closing */
-.closing{margin-top:1rem;font-style:italic;color:#555;font-size:.8rem;line-height:1.7}
+.closing{margin-top:.5rem;font-style:italic;color:#555;font-size:.7rem;line-height:1.6}
 
 /* Signature */
-.signature{margin-top:1.2rem;padding-top:1rem;border-top:1px solid #e0e0e0}
-.signature .name{font-weight:700;color:#002868;font-size:.9rem}
-.signature .role{font-size:.72rem;color:#666}
-.signature .contact{font-size:.68rem;color:#888;margin-top:.3rem}
+.signature{margin-top:.7rem;padding-top:.6rem;border-top:1px solid #e0e0e0}
+.signature .name{font-weight:700;color:#002868;font-size:.8rem}
+.signature .role{font-size:.65rem;color:#666}
+.signature .contact{font-size:.6rem;color:#888;margin-top:.2rem}
 
 /* Footer */
-.invite-footer{background:linear-gradient(135deg,#0a0a1a,#001a4a);padding:1rem 2.5rem;text-align:center;color:#fff}
-.invite-footer .org{font-size:.7rem;color:#FFD700;font-weight:600;letter-spacing:2px;text-transform:uppercase;margin-bottom:.3rem}
-.invite-footer .tagline{font-size:.62rem;color:rgba(255,255,255,.5)}
-.invite-footer .flag-bottom{height:3px;background:linear-gradient(90deg,#BF0A30 25%,#FFD700 25% 50%,#fff 50% 75%,#FFD700 75%);border-radius:2px;margin-top:.6rem}
+.invite-footer{background:linear-gradient(135deg,#0a0a1a,#001a4a);padding:.6rem 2rem;text-align:center;color:#fff}
+.invite-footer .org{font-size:.6rem;color:#FFD700;font-weight:600;letter-spacing:2px;text-transform:uppercase;margin-bottom:.2rem}
+.invite-footer .tagline{font-size:.55rem;color:rgba(255,255,255,.5)}
+.invite-footer .flag-bottom{height:3px;background:linear-gradient(90deg,#BF0A30 25%,#FFD700 25% 50%,#fff 50% 75%,#FFD700 75%);border-radius:2px;margin-top:.4rem}
 
 @media print{
 body{padding:0;background:#fff}
