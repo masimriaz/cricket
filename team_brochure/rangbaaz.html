@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rangbaaz — Freedom Cup 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800;900&family=Playfair+Display:wght@700;800;900&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Poppins',sans-serif;background:#0a0a0a;display:flex;justify-content:center;align-items:center;min-height:100vh;padding:20px}
+.card{width:1080px;height:1350px;position:relative;overflow:hidden;border-radius:12px;background:linear-gradient(180deg,#1a0000 0%,#2d0a0a 20%,#0a0a1a 50%,#001a4a 100%)}
+
+/* Background effects */
+.bg-glow{position:absolute;border-radius:50%;filter:blur(100px);pointer-events:none}
+.glow-1{width:500px;height:500px;background:#c0392b;top:-150px;right:-100px;opacity:.15}
+.glow-2{width:400px;height:400px;background:#FFD700;bottom:200px;left:-100px;opacity:.08}
+.glow-3{width:350px;height:350px;background:#002868;bottom:-50px;right:-50px;opacity:.12}
+
+/* Top stripe */
+.top-stripe{position:absolute;top:0;left:0;right:0;height:6px;background:linear-gradient(90deg,#c0392b,#FFD700,#fff,#FFD700,#c0392b)}
+
+/* Content */
+.content{position:relative;z-index:2;height:100%;display:flex;flex-direction:column;align-items:center;padding:40px 50px 35px;text-align:center}
+
+/* Event Badge */
+.event-badge{font-size:11px;font-weight:600;letter-spacing:4px;text-transform:uppercase;color:#FFD700;margin-bottom:5px}
+.event-sub{font-size:10px;color:rgba(255,255,255,.4);letter-spacing:2px;margin-bottom:25px}
+
+/* Team Logo */
+.team-logo{width:120px;height:120px;border-radius:50%;overflow:hidden;border:3px solid #c0392b;box-shadow:0 0 30px rgba(192,57,43,.4);margin-bottom:15px}
+.team-logo img{width:100%;height:100%;object-fit:cover}
+
+/* Team Name */
+.team-name{font-family:'Playfair Display',serif;font-size:52px;font-weight:900;color:#fff;letter-spacing:2px;text-shadow:0 4px 20px rgba(192,57,43,.3);margin-bottom:5px}
+.team-tagline{font-size:13px;color:#c0392b;font-weight:600;letter-spacing:3px;text-transform:uppercase;margin-bottom:5px}
+.team-desc{font-size:12px;color:rgba(255,255,255,.6);max-width:700px;margin-bottom:20px}
+
+/* Pool Badge */
+.pool-badge{display:inline-block;background:linear-gradient(135deg,#c0392b,#e74c3c);padding:6px 20px;border-radius:50px;font-size:12px;font-weight:700;color:#fff;letter-spacing:2px;margin-bottom:25px;box-shadow:0 4px 15px rgba(192,57,43,.3)}
+
+/* Team Photo */
+.team-photo{width:85%;max-width:750px;border-radius:12px;overflow:hidden;border:2px solid rgba(192,57,43,.4);box-shadow:0 10px 40px rgba(0,0,0,.5);margin-bottom:25px}
+.team-photo img{width:100%;height:auto;display:block}
+
+/* Squad List */
+.squad-section{width:100%;max-width:750px}
+.squad-title{font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:#FFD700;margin-bottom:10px}
+.squad-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:4px 12px}
+.squad-player{font-size:11px;color:rgba(255,255,255,.85);padding:4px 0;border-bottom:1px solid rgba(255,255,255,.06);display:flex;align-items:center;gap:6px}
+.squad-player .num{color:#c0392b;font-weight:700;font-size:10px;min-width:18px}
+.squad-player .captain{color:#FFD700;font-size:8px;font-weight:700}
+
+/* Footer */
+.footer{margin-top:auto;padding-top:15px}
+.footer-text{font-size:9px;color:rgba(255,255,255,.4);letter-spacing:1px}
+.footer-stripe{height:4px;background:linear-gradient(90deg,#c0392b 25%,#FFD700 25% 50%,#fff 50% 75%,#002868 75%);border-radius:2px;margin-top:10px;width:200px;margin-left:auto;margin-right:auto}
+</style>
+</head>
+<body>
+<div class="card">
+<div class="top-stripe"></div>
+<div class="bg-glow glow-1"></div>
+<div class="bg-glow glow-2"></div>
+<div class="bg-glow glow-3"></div>
+
+<div class="content">
+<div class="event-badge">🏏 Freedom Cup 2026</div>
+<div class="event-sub">Independence Day Cricket Tournament • July 4, New Haven CT</div>
+
+<div class="team-logo">
+<img src="rangbazz_logo.jpeg" alt="Rangbaaz Logo">
+</div>
+
+<div class="team-name">RANGBAAZ</div>
+<div class="team-tagline">🔥 Young • Talented • Fearless 🔥</div>
+<div class="team-desc">Emerging talent from Connecticut — hungry, skilled, and ready to make their mark at Freedom Cup 2026</div>
+
+<div class="pool-badge">★ POOL B — B1 ★</div>
+
+<div class="team-photo">
+<img src="rangbazz_team.jpeg" alt="Rangbaaz Team Photo">
+</div>
+
+<div class="squad-section">
+<div class="squad-title">📋 Squad</div>
+<div class="squad-grid">
+<div class="squad-player"><span class="num">1</span>Muhammad Ahsan <span class="captain">(C)</span></div>
+<div class="squad-player"><span class="num">2</span>Muhammad Saad</div>
+<div class="squad-player"><span class="num">3</span>Tahmeed Ahmad</div>
+<div class="squad-player"><span class="num">4</span>Arsalan Tanveer</div>
+<div class="squad-player"><span class="num">5</span>Moeid Ahmad</div>
+<div class="squad-player"><span class="num">6</span>Abdullah Ashraf</div>
+<div class="squad-player"><span class="num">7</span>Anees Iqbal</div>
+<div class="squad-player"><span class="num">8</span>Muazzam Alikhan</div>
+<div class="squad-player"><span class="num">9</span>Zaryaan Javaid</div>
+<div class="squad-player"><span class="num">10</span>Shahzaib Saeed</div>
+<div class="squad-player"><span class="num">11</span>Momin Sharif</div>
+</div>
+</div>
+
+<div class="footer">
+<div class="footer-text">🦅 Hamden Qalandars & New Haven Eagles • masimriaz.github.io/cricket</div>
+<div class="footer-stripe"></div>
+</div>
+</div>
+</div>
+</body>
+</html>
