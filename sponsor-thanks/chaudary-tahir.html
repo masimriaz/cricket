@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Thank You - Chaudary Tahir | Freedom Cup 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Poppins',sans-serif;background:#0a0a0a;display:flex;justify-content:center;align-items:center;min-height:100vh;padding:20px}
+.card{width:1080px;height:1350px;position:relative;overflow:hidden;background:linear-gradient(160deg,#0a0e1a 0%,#0d1b3e 25%,#142952 50%,#0d1b3e 75%,#0a0e1a 100%)}
+
+/* USA Flag Top */
+.flag-top{position:absolute;top:0;left:0;right:0;height:50px;display:flex;flex-direction:column}
+.flag-red{height:10px;background:#BF0A30}
+.flag-white{height:10px;background:#fff}
+.flag-blue{height:30px;background:#002868;display:flex;align-items:center;justify-content:center}
+.flag-stars{color:#fff;font-size:12px;letter-spacing:8px}
+.flag-bottom{position:absolute;bottom:0;left:0;right:0;height:8px;background:linear-gradient(90deg,#BF0A30 33%,#fff 33% 66%,#002868 66%)}
+
+/* Frames */
+.frame-outer{position:absolute;top:58px;left:24px;right:24px;bottom:16px;border:1px solid rgba(255,215,0,.2);pointer-events:none}
+.frame-inner{position:absolute;top:62px;left:28px;right:28px;bottom:20px;border:1px solid rgba(255,215,0,.08);pointer-events:none}
+
+/* Ambient */
+.amb{position:absolute;border-radius:50%;filter:blur(120px);pointer-events:none}
+.amb-1{width:500px;height:500px;background:#BF0A30;top:-200px;right:-150px;opacity:.1}
+.amb-2{width:400px;height:400px;background:#FFD700;bottom:100px;left:-150px;opacity:.07}
+.amb-3{width:500px;height:500px;background:#002868;bottom:-200px;right:50%;opacity:.12}
+
+/* Stars */
+.stars-bg{position:absolute;inset:0;opacity:.03;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60'%3E%3Ctext x='30' y='38' text-anchor='middle' font-size='18' fill='white'%3E%E2%98%85%3C/text%3E%3C/svg%3E");pointer-events:none}
+
+/* Content */
+.content{position:relative;z-index:2;height:100%;display:flex;flex-direction:column;align-items:center;padding:65px 55px 30px;text-align:center}
+.league-logo{width:70px;height:70px;border-radius:50%;overflow:hidden;border:2px solid #FFD700;margin-bottom:8px;box-shadow:0 0 20px rgba(255,215,0,.3)}
+.league-logo img{width:100%;height:100%;object-fit:cover}
+.header-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(255,215,0,.08);border:1px solid rgba(255,215,0,.25);border-radius:50px;padding:6px 20px;margin-bottom:6px}
+.header-badge span{font-size:12px;font-weight:700;letter-spacing:4px;text-transform:uppercase;color:#FFD700}
+.header-sub{font-size:13px;color:rgba(255,255,255,.6);margin-bottom:18px;letter-spacing:1px}
+
+/* Photo */
+.photo-wrap{position:relative;width:220px;height:220px;margin-bottom:20px}
+.photo-glow{position:absolute;inset:-15px;border-radius:50%;background:radial-gradient(circle,rgba(255,215,0,.15) 0%,transparent 70%)}
+.photo-ring{position:absolute;inset:-5px;border-radius:50%;border:3px solid transparent;background:linear-gradient(135deg,#FFD700,#BF0A30,#fff,#FFD700) border-box;-webkit-mask:linear-gradient(#fff 0 0) padding-box,linear-gradient(#fff 0 0);-webkit-mask-composite:xor;mask-composite:exclude;box-shadow:0 0 25px rgba(255,215,0,.3)}
+.photo-img{width:100%;height:100%;border-radius:50%;overflow:hidden;border:4px solid #0d1b3e}
+.photo-img img{width:100%;height:100%;object-fit:cover;object-position:center 15%}
+
+/* Name */
+.name{font-family:'Playfair Display',serif;font-size:44px;font-weight:900;color:#fff;margin-bottom:4px;text-shadow:0 3px 15px rgba(0,0,0,.5)}
+.role{font-size:13px;font-weight:600;letter-spacing:4px;text-transform:uppercase;color:#FFD700;margin-bottom:20px}
+
+/* Message */
+.quote{font-family:'Playfair Display',serif;font-size:24px;font-weight:700;color:#FFD700;line-height:1.4;max-width:780px;margin-bottom:12px;text-shadow:0 2px 8px rgba(255,215,0,.15)}
+.message{font-size:13px;font-weight:400;color:rgba(255,255,255,.88);line-height:1.75;max-width:720px;margin-bottom:18px}
+
+/* Cricket CT Badge */
+.ct-badge{background:rgba(255,255,255,.04);border:1px solid rgba(255,215,0,.2);border-radius:12px;padding:12px 30px;margin-bottom:18px;max-width:650px}
+.ct-badge .ct-text{font-size:12px;color:rgba(255,255,255,.75);line-height:1.6;font-style:italic}
+.ct-badge .ct-text strong{color:#FFD700;font-style:normal}
+
+/* USA divider */
+.usa-divider{display:flex;align-items:center;gap:10px;margin-bottom:16px;width:60%}
+.usa-divider .line{flex:1;height:1px;background:linear-gradient(90deg,transparent,rgba(255,215,0,.4),transparent)}
+.usa-divider .flag-emoji{font-size:18px}
+
+/* Event */
+.event-row{display:flex;gap:15px;justify-content:center;flex-wrap:wrap;margin-bottom:14px}
+.event-chip{background:rgba(255,255,255,.05);border:1px solid rgba(255,215,0,.15);border-radius:8px;padding:7px 14px;font-size:12px;color:#fff;font-weight:500}
+.event-chip span{color:#FFD700;margin-right:4px}
+
+/* Stats */
+.stats-row{display:flex;gap:18px;justify-content:center;margin-bottom:12px}
+.stat-item{text-align:center}
+.stat-item .stat-num{font-size:18px;font-weight:800;color:#FFD700}
+.stat-item .stat-label{font-size:8px;color:rgba(255,255,255,.5);letter-spacing:2px;text-transform:uppercase}
+
+.cricket-icons{font-size:20px;letter-spacing:8px;opacity:.2;margin-bottom:10px}
+
+/* Footer */
+.footer{margin-top:auto;display:flex;flex-direction:column;align-items:center}
+.footer-org{font-size:12px;font-weight:700;color:#FFD700;letter-spacing:2px;margin-bottom:3px}
+.footer-url{font-size:10px;color:rgba(255,255,255,.4)}
+</style>
+</head>
+<body>
+<div class="card">
+<div class="flag-top">
+<div class="flag-red"></div>
+<div class="flag-white"></div>
+<div class="flag-blue"><span class="flag-stars">★ ★ ★ ★ ★ ★ ★ ★ ★ ★ ★ ★</span></div>
+</div>
+<div class="flag-bottom"></div>
+<div class="frame-outer"></div>
+<div class="frame-inner"></div>
+<div class="stars-bg"></div>
+<div class="amb amb-1"></div>
+<div class="amb amb-2"></div>
+<div class="amb amb-3"></div>
+
+<div class="content">
+<div class="league-logo"><img src="../league_logo.jpeg" alt="Freedom Cup"></div>
+<div class="header-badge"><span>🇺🇸 Freedom Cup 2026 🇺🇸</span></div>
+<div class="header-sub">Independence Day Cricket Tournament • New Haven, CT</div>
+
+<div class="photo-wrap">
+<div class="photo-glow"></div>
+<div class="photo-ring"></div>
+<div class="photo-img"><img src="tahir.jpeg" alt="Chaudary Tahir"></div>
+</div>
+
+<div class="name">Chaudary Tahir</div>
+<div class="role">★ Respected Sponsor & Community Leader ★</div>
+
+<div class="quote">"With Deepest Gratitude for Your Support"</div>
+<div class="message">Your generous sponsorship and unwavering support for community cricket is an inspiration to all of us. You are helping build something bigger than a tournament — you are nurturing a sport and strengthening bonds that unite families across Connecticut.</div>
+
+<div class="ct-badge">
+<p class="ct-text"><strong>🏏 Growing Cricket in Connecticut:</strong> Through the support of leaders like Chaudary Tahir, tape ball cricket is thriving in New Haven and beyond — bringing together players of all ages, backgrounds, and skill levels in the true spirit of the game.</p>
+</div>
+
+<div class="usa-divider">
+<div class="line"></div>
+<div class="flag-emoji">🇺🇸</div>
+<div class="line"></div>
+</div>
+
+<div class="event-row">
+<div class="event-chip"><span>📅</span>Saturday, July 4, 2026</div>
+<div class="event-chip"><span>📍</span>150 Kimberly Ave, New Haven</div>
+<div class="event-chip"><span>⏰</span>9:00 AM – 7:30 PM</div>
+</div>
+
+<div class="stats-row">
+<div class="stat-item"><div class="stat-num">10</div><div class="stat-label">Teams</div></div>
+<div class="stat-item"><div class="stat-num">3</div><div class="stat-label">Pitches</div></div>
+<div class="stat-item"><div class="stat-num">22</div><div class="stat-label">Matches</div></div>
+<div class="stat-item"><div class="stat-num">9v9</div><div class="stat-label">Format</div></div>
+<div class="stat-item"><div class="stat-num">6</div><div class="stat-label">Overs</div></div>
+</div>
+
+<div class="cricket-icons">🏏 🏆 🏏 🏆 🏏 🏆 🏏 🏆 🏏</div>
+
+<div class="footer">
+<div class="footer-org">🦅 Hamden Qalandars & New Haven Eagles</div>
+<div class="footer-url">masimriaz.github.io/cricket</div>
+</div>
+</div>
+</div>
+</body>
+</html>
