@@ -10,6 +10,14 @@
 body{font-family:'Poppins',sans-serif;background:#000;display:flex;justify-content:center;align-items:center;min-height:100vh;padding:10px}
 .backdrop{width:3840px;height:2160px;position:relative;overflow:hidden;background:linear-gradient(160deg,#000810 0%,#001030 20%,#002868 50%,#001030 80%,#000810 100%)}
 
+/* USA Flag Background */
+.flag-bg{position:absolute;inset:0;opacity:.06;pointer-events:none;display:flex;flex-direction:column}
+.flag-bg .stripe{height:calc(100% / 13)}
+.flag-bg .stripe.red{background:#BF0A30}
+.flag-bg .stripe.white{background:#fff}
+.flag-bg .canton{position:absolute;top:0;left:0;width:40%;height:calc(100% * 7 / 13);background:#002868;display:flex;flex-wrap:wrap;align-items:center;justify-content:center;padding:20px}
+.flag-bg .canton span{color:#fff;font-size:28px;margin:5px 12px}
+
 /* USA Flag Top */
 .flag-top{position:absolute;top:0;left:0;right:0;height:24px;display:flex;flex-direction:column}
 .flag-red{height:8px;background:#BF0A30}
@@ -76,6 +84,24 @@ body{font-family:'Poppins',sans-serif;background:#000;display:flex;justify-conte
 </head>
 <body>
 <div class="backdrop">
+<!-- USA Flag Background -->
+<div class="flag-bg">
+<div class="stripe red"></div><div class="stripe white"></div>
+<div class="stripe red"></div><div class="stripe white"></div>
+<div class="stripe red"></div><div class="stripe white"></div>
+<div class="stripe red"></div><div class="stripe white"></div>
+<div class="stripe red"></div><div class="stripe white"></div>
+<div class="stripe red"></div><div class="stripe white"></div>
+<div class="stripe red"></div>
+<div class="canton">
+<span>★</span><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+<span>★</span><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+<span>★</span><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+<span>★</span><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+<span>★</span><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+</div>
+</div>
+
 <div class="flag-top"><div class="flag-red"></div><div class="flag-white"></div><div class="flag-blue"></div></div>
 <div class="flag-bottom"><div class="flag-blue"></div><div class="flag-white"></div><div class="flag-red"></div></div>
 <div class="frame"></div>
