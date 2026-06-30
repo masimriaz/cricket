@@ -31,62 +31,62 @@ body{font-family:'Poppins',sans-serif;background:#333;display:flex;justify-conte
 .side-right{position:absolute;top:0;bottom:0;right:0;width:30px;background:linear-gradient(180deg,#BF0A30,#FFD700,#002868,#FFD700,#BF0A30)}
 
 /* Content */
-.content{position:relative;z-index:2;height:100%;display:flex;flex-direction:column;align-items:center;padding:80px 100px 60px;text-align:center;justify-content:space-between}
+.content{position:relative;z-index:2;height:100%;display:flex;flex-direction:column;align-items:center;padding:70px 60px 50px;text-align:center;justify-content:space-evenly}
 
 /* Header */
-.header{display:flex;align-items:center;justify-content:center;gap:50px}
-.logo{width:180px;height:180px;border-radius:50%;overflow:hidden;border:5px solid #002868;box-shadow:0 6px 30px rgba(0,40,104,.2)}
+.header{display:flex;align-items:center;justify-content:center;gap:60px}
+.logo{width:220px;height:220px;border-radius:50%;overflow:hidden;border:6px solid #002868;box-shadow:0 8px 40px rgba(0,40,104,.2)}
 .logo img{width:100%;height:100%;object-fit:cover}
-.title-block h1{font-family:'Playfair Display',serif;font-size:110px;font-weight:900;color:#002868;letter-spacing:4px}
+.title-block h1{font-family:'Playfair Display',serif;font-size:150px;font-weight:900;color:#002868;letter-spacing:5px}
 .title-block h1 span{color:#BF0A30}
-.title-block .sub{font-size:28px;color:#444;letter-spacing:5px;text-transform:uppercase;margin-top:5px}
-.ceremony-badge{background:linear-gradient(135deg,#002868,#1a3a6b);padding:16px 70px;border-radius:60px;font-size:38px;font-weight:800;color:#FFD700;letter-spacing:8px;text-transform:uppercase;box-shadow:0 8px 30px rgba(0,40,104,.2)}
+.title-block .sub{font-size:36px;color:#444;letter-spacing:6px;text-transform:uppercase;margin-top:8px}
+.ceremony-badge{background:linear-gradient(135deg,#002868,#1a3a6b);padding:20px 90px;border-radius:60px;font-size:50px;font-weight:800;color:#FFD700;letter-spacing:10px;text-transform:uppercase;box-shadow:0 8px 40px rgba(0,40,104,.25)}
 
 /* Intro */
-.intro{font-size:18px;color:#555;line-height:1.7;max-width:3500px}
+.intro{font-size:26px;color:#555;line-height:1.6;max-width:4200px}
 .intro strong{color:#002868}
 
 /* Section titles */
-.sec-title{font-size:24px;font-weight:800;letter-spacing:6px;text-transform:uppercase;color:#002868;display:flex;align-items:center;gap:10px}
-.sec-title::before,.sec-title::after{content:'';flex:1;max-width:200px;height:2px;background:linear-gradient(90deg,transparent,#FFD700,transparent)}
+.sec-title{font-size:34px;font-weight:800;letter-spacing:8px;text-transform:uppercase;color:#002868;display:flex;align-items:center;gap:15px}
+.sec-title::before,.sec-title::after{content:'';flex:1;max-width:300px;height:3px;background:linear-gradient(90deg,transparent,#FFD700,transparent)}
 
 /* Photo rows */
-.photo-row{display:flex;justify-content:center;gap:30px;flex-wrap:wrap}
-.person{display:flex;flex-direction:column;align-items:center;width:160px}
-.person .pic{width:130px;height:130px;border-radius:50%;overflow:hidden;border:4px solid #002868;box-shadow:0 4px 15px rgba(0,40,104,.15);margin-bottom:8px}
+.photo-row{display:flex;justify-content:center;gap:40px;flex-wrap:wrap}
+.person{display:flex;flex-direction:column;align-items:center;width:200px}
+.person .pic{width:170px;height:170px;border-radius:50%;overflow:hidden;border:5px solid #002868;box-shadow:0 6px 25px rgba(0,40,104,.15);margin-bottom:10px}
 .person .pic img{width:100%;height:100%;object-fit:cover;object-position:center top}
-.person .pname{font-size:15px;font-weight:700;color:#002868;text-align:center;line-height:1.2}
-.person .prole{font-size:11px;color:#BF0A30;font-weight:600;text-align:center}
+.person .pname{font-size:20px;font-weight:700;color:#002868;text-align:center;line-height:1.2}
+.person .prole{font-size:14px;color:#BF0A30;font-weight:600;text-align:center}
 .person.sponsor .pic{border-color:#FFD700}
 
 /* Teams */
-.pools-wrap{display:flex;gap:60px;justify-content:center;width:100%}
-.pool-box{flex:1;max-width:2000px}
-.pool-label{display:inline-block;padding:8px 35px;border-radius:50px;font-size:20px;font-weight:800;color:#fff;letter-spacing:4px;margin-bottom:12px}
+.pools-wrap{display:flex;gap:80px;justify-content:center;width:100%}
+.pool-box{flex:1;max-width:2200px}
+.pool-label{display:inline-block;padding:12px 50px;border-radius:50px;font-size:28px;font-weight:800;color:#fff;letter-spacing:5px;margin-bottom:15px}
 .pool-label.blue{background:#002868}
 .pool-label.red{background:#BF0A30}
-.team-row{display:flex;justify-content:center;gap:15px;flex-wrap:wrap}
-.team-card{border-radius:12px;padding:14px 22px;text-align:center;min-width:150px}
-.team-card.blue{background:#e8f0fe;border:2px solid #002868}
-.team-card.red{background:#fde8e8;border:2px solid #BF0A30}
-.team-card .code{font-size:28px;font-weight:900}
+.team-row{display:flex;justify-content:center;gap:20px;flex-wrap:wrap}
+.team-card{border-radius:14px;padding:18px 30px;text-align:center;min-width:180px}
+.team-card.blue{background:#e8f0fe;border:3px solid #002868}
+.team-card.red{background:#fde8e8;border:3px solid #BF0A30}
+.team-card .code{font-size:40px;font-weight:900}
 .team-card.blue .code{color:#002868}
 .team-card.red .code{color:#BF0A30}
-.team-card .tname{font-size:12px;font-weight:600;color:#333}
+.team-card .tname{font-size:16px;font-weight:600;color:#333}
 
 /* Stats */
-.stats-row{display:flex;gap:40px;justify-content:center}
+.stats-row{display:flex;gap:60px;justify-content:center}
 .stat{text-align:center}
-.stat .num{font-size:44px;font-weight:900;color:#002868}
-.stat .label{font-size:12px;color:#666;letter-spacing:3px;text-transform:uppercase}
+.stat .num{font-size:60px;font-weight:900;color:#002868}
+.stat .label{font-size:16px;color:#666;letter-spacing:4px;text-transform:uppercase}
 
 /* Icons row */
-.icons-row{font-size:32px;letter-spacing:15px;opacity:.3}
+.icons-row{font-size:44px;letter-spacing:20px;opacity:.3}
 
 /* Footer */
 .footer{text-align:center}
-.footer-text{font-size:22px;color:#666;letter-spacing:3px}
-.footer-stripe{height:6px;width:500px;background:linear-gradient(90deg,#BF0A30,#FFD700,#fff,#FFD700,#002868);border-radius:3px;margin:12px auto 0}
+.footer-text{font-size:28px;color:#666;letter-spacing:4px}
+.footer-stripe{height:8px;width:700px;background:linear-gradient(90deg,#BF0A30,#FFD700,#fff,#FFD700,#002868);border-radius:4px;margin:15px auto 0}
 
 @media print{
 body{padding:0;background:#fff}
