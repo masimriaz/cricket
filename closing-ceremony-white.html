@@ -96,8 +96,8 @@ body{padding:0;background:#fff}
 </style>
 </head>
 <body>
-<div style="text-align:center;padding:10px;background:#333">
-<button onclick="downloadPDF()" style="background:linear-gradient(135deg,#FFD700,#f5c518);color:#002868;border:none;font-family:Poppins,sans-serif;font-weight:700;font-size:16px;padding:12px 30px;border-radius:50px;cursor:pointer;box-shadow:0 4px 20px rgba(255,215,0,.4)">📥 Download 7×10ft PDF for Printing</button>
+<div style="text-align:center;padding:10px;background:#333" class="no-print">
+<button onclick="downloadPNG()" id="dlBtn" style="background:linear-gradient(135deg,#FFD700,#f5c518);color:#002868;border:none;font-family:Poppins,sans-serif;font-weight:700;font-size:16px;padding:12px 30px;border-radius:50px;cursor:pointer;box-shadow:0 4px 20px rgba(255,215,0,.4)">📥 Download HD PNG (7×10ft Print)</button>
 </div>
 <div class="backdrop" id="backdrop">
 <div class="stars-bg"></div>
@@ -222,26 +222,40 @@ body{padding:0;background:#fff}
 
 </div>
 </div>
-<script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/dom-to-image-more@3.1.6/dist/dom-to-image-more.min.js"></script>
 <script>
-function downloadPDF() {
-  var btn = document.querySelector('button');
-  btn.textContent = '⏳ Generating PDF... Please wait';
+function downloadPNG() {
+  var btn = document.getElementById('dlBtn');
+  btn.textContent = '⏳ Generating HD PNG... Please wait';
   btn.disabled = true;
-  var element = document.getElementById('backdrop');
-  html2canvas(element, { scale: 2, useCORS: true, allowTaint: true }).then(function(canvas) {
-    var imgData = canvas.toDataURL('image/jpeg', 0.95);
-    var pdf = new jspdf.jsPDF({ orientation: 'landscape', unit: 'in', format: [7, 10] });
-    pdf.addImage(imgData, 'JPEG', 0, 0, 10, 7);
-    pdf.save('Freedom-Cup-2026-Ceremony-Backdrop-10x7ft.pdf');
-    btn.textContent = '📥 Download 7×10ft PDF for Printing';
-    btn.disabled = false;
-  }).catch(function(err) {
-    alert('PDF generation failed. Try using DevTools screenshot instead (Ctrl+Shift+P > Capture full size screenshot)');
-    btn.textContent = '📥 Download 7×10ft PDF for Printing';
-    btn.disabled = false;
-  });
+  var node = document.getElementById('backdrop');
+  domtoimage.toPng(node, { width: 5000, height: 3500, quality: 1 })
+    .then(function(dataUrl) {
+      var link = document.createElement('a');
+      link.download = 'Freedom-Cup-2026-Backdrop-10x7ft.png';
+      link.href = dataUrl;
+      link.click();
+      btn.textContent = '📥 Download HD PNG (7×10ft Print)';
+      btn.disabled = false;
+    })
+    .catch(function(err) {
+      // Fallback: try with blob
+      domtoimage.toBlob(node, { width: 5000, height: 3500 })
+        .then(function(blob) {
+          var url = URL.createObjectURL(blob);
+          var link = document.createElement('a');
+          link.download = 'Freedom-Cup-2026-Backdrop-10x7ft.png';
+          link.href = url;
+          link.click();
+          btn.textContent = '📥 Download HD PNG (7×10ft Print)';
+          btn.disabled = false;
+        })
+        .catch(function() {
+          btn.textContent = '📥 Download HD PNG (7×10ft Print)';
+          btn.disabled = false;
+          alert('Please use DevTools: Ctrl+Shift+P > Capture full size screenshot (set viewport to 5000x3500)');
+        });
+    });
 }
 </script>
 </body>
