@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Freedom Cup 2026 — Ceremony Backdrop (White) — 7ft × 10ft Print</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@600;700;800;900&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+
+/* 
+   PRINT DIMENSIONS: 7 feet tall × 10 feet wide = 84" × 120"
+   At 150 DPI (standard for large format):
+   - Width:  120" × 150 = 18000px  
+   - Height: 84" × 150 = 12600px
+   
+   We use a scaled-down on-screen version (1/3) for preview:
+   - Screen: 6000px × 4200px
+   - Print scales up to full 18000 × 12600 at 150 DPI
+*/
+
+body{
+  font-family:'Poppins',sans-serif;
+  background:#333;
+  display:flex;
+  justify-content:center;
+  align-items:flex-start;
+  min-height:100vh;
+  padding:10px;
+}
+
+.backdrop{
+  width:6000px;
+  height:4200px;
+  position:relative;
+  overflow:hidden;
+  background:#002868;
+}
+
+/* Stars BG pattern */
+.stars-bg{position:absolute;inset:0;opacity:.06;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80'%3E%3Ctext x='40' y='50' text-anchor='middle' font-size='24' fill='white'%3E%E2%98%85%3C/text%3E%3C/svg%3E");pointer-events:none}
+
+/* Top border - thick USA flag */
+.flag-top{position:absolute;top:0;left:0;right:0;height:50px;background:linear-gradient(90deg,#BF0A30 20%,#FFD700 20% 25%,#fff 25% 50%,#FFD700 50% 55%,#BF0A30 55%)}
+.flag-bottom{position:absolute;bottom:0;left:0;right:0;height:50px;background:linear-gradient(90deg,#BF0A30 20%,#FFD700 20% 25%,#fff 25% 50%,#FFD700 50% 55%,#BF0A30 55%)}
+
+/* Side stripes */
+.side-left{position:absolute;top:0;bottom:0;left:0;width:25px;background:linear-gradient(180deg,#BF0A30,#FFD700,#BF0A30)}
+.side-right{position:absolute;top:0;bottom:0;right:0;width:25px;background:linear-gradient(180deg,#BF0A30,#FFD700,#BF0A30)}
+
+/* Content */
+.content{position:relative;z-index:2;height:100%;width:100%;display:flex;flex-direction:column;align-items:center;padding:80px 100px 60px;text-align:center;justify-content:space-evenly}
+
+/* Header */
+.header{display:flex;align-items:center;justify-content:center;gap:70px}
+.logo{width:280px;height:280px;border-radius:50%;overflow:hidden;border:7px solid #FFD700;box-shadow:0 8px 40px rgba(255,215,0,.3)}
+.logo img{width:100%;height:100%;object-fit:cover}
+.title-block h1{font-family:'Playfair Display',serif;font-size:200px;font-weight:900;color:#fff;letter-spacing:6px;text-shadow:0 4px 20px rgba(0,0,0,.3)}
+.title-block h1 span{color:#FFD700}
+.title-block .sub{font-size:44px;color:rgba(255,255,255,.9);letter-spacing:7px;text-transform:uppercase;margin-top:10px}
+.ceremony-badge{background:linear-gradient(135deg,#FFD700,#f5c518);padding:26px 120px;border-radius:60px;font-size:64px;font-weight:800;color:#002868;letter-spacing:12px;text-transform:uppercase;box-shadow:0 8px 40px rgba(255,215,0,.4)}
+
+/* Intro */
+.intro{font-size:34px;color:rgba(255,255,255,.9);line-height:1.6;max-width:5400px}
+.intro strong{color:#FFD700}
+
+/* Section titles */
+.sec-title{font-size:44px;font-weight:800;letter-spacing:9px;text-transform:uppercase;color:#FFD700;display:flex;align-items:center;gap:18px;text-shadow:0 2px 10px rgba(0,0,0,.3)}
+.sec-title::before,.sec-title::after{content:'';flex:1;max-width:350px;height:3px;background:linear-gradient(90deg,transparent,#FFD700,transparent)}
+
+/* Photo rows */
+.photo-row{display:flex;justify-content:center;gap:50px;flex-wrap:wrap}
+.person{display:flex;flex-direction:column;align-items:center;width:240px}
+.person .pic{width:200px;height:200px;border-radius:50%;overflow:hidden;border:5px solid #FFD700;box-shadow:0 6px 25px rgba(0,0,0,.3);margin-bottom:12px}
+.person .pic img{width:100%;height:100%;object-fit:cover;object-position:center top}
+.person .pname{font-size:22px;font-weight:700;color:#fff;text-align:center;line-height:1.2}
+.person .prole{font-size:16px;color:#FFD700;font-weight:600;text-align:center}
+.person.sponsor .pic{border-color:#FFD700}
+
+/* Teams */
+.pools-wrap{display:flex;gap:100px;justify-content:center;width:100%}
+.pool-box{flex:1;max-width:2600px}
+.pool-label{display:inline-block;padding:14px 55px;border-radius:50px;font-size:32px;font-weight:800;color:#fff;letter-spacing:6px;margin-bottom:18px}
+.pool-label.blue{background:#002868}
+.pool-label.red{background:#BF0A30}
+.team-row{display:flex;justify-content:center;gap:25px;flex-wrap:wrap}
+.team-logo{text-align:center}
+.team-logo img{width:200px;height:200px;object-fit:cover;border-radius:50%;box-shadow:0 6px 20px rgba(0,0,0,.2)}
+.team-logo .tname{font-size:20px;font-weight:700;color:#FFD700;margin-top:10px}
+
+/* Stats */
+.stats-row{display:flex;gap:90px;justify-content:center}
+.stat{text-align:center}
+.stat .num{font-size:100px;font-weight:900;color:#FFD700}
+.stat .label{font-size:22px;color:rgba(255,255,255,.7);letter-spacing:5px;text-transform:uppercase}
+
+/* Icons row */
+.icons-row{font-size:56px;letter-spacing:24px;opacity:.3}
+
+/* Footer */
+.footer{text-align:center}
+.footer-text{font-size:36px;color:rgba(255,255,255,.7);letter-spacing:5px}
+.footer-stripe{height:10px;width:800px;background:linear-gradient(90deg,#BF0A30,#FFD700,#fff,#FFD700,#002868);border-radius:5px;margin:18px auto 0}
+
+/* ===== PRINT STYLES ===== */
+@media print{
+  body{padding:0;background:#fff;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .backdrop{
+    width:120in;
+    height:84in;
+    box-shadow:none;
+  }
+  @page{
+    size:120in 84in;
+    margin:0;
+  }
+}
+</style>
+</head>
+<body>
+<div class="backdrop" id="backdrop">
+<div class="stars-bg"></div>
+<div class="flag-top"></div>
+<div class="flag-bottom"></div>
+<div class="side-left"></div>
+<div class="side-right"></div>
+
+<div class="content">
+
+<!-- Header -->
+<div style="width:100%;margin-bottom:10px"><img src="images/happy_independence.png" alt="Happy Independence Day" style="width:100%;max-height:350px;object-fit:contain"></div>
+<div class="header">
+<div class="logo"><img src="images/league_logo.jpeg" alt="Freedom Cup"></div>
+<div class="title-block">
+<h1>FREEDOM <span>CUP</span> 2026</h1>
+<div class="sub">🏏 Independence Day Cricket Tournament • New Haven, CT 🇺🇸</div>
+</div>
+<div class="logo"><img src="images/league_logo.jpeg" alt="Freedom Cup"></div>
+</div>
+
+<div class="ceremony-badge">★ CLOSING CEREMONY ★</div>
+
+<!-- Intro -->
+<div class="intro">
+<strong>10 Teams • 22 Matches • 3 Pitches • 1 Champion</strong> — Cricket brings communities together across cultures and generations. The Freedom Cup celebrates America's Independence Day with thrilling tape ball cricket under the summer sun! 🏏🇺🇸🏆
+</div>
+
+<!-- VIP Guests -->
+<div class="sec-title">🎖️ VIP GUESTS & COMMUNITY LEADERS</div>
+<div class="photo-row">
+<div class="person"><div class="pic"><img src="images/guest_panel/Raja.jpeg" alt="Raja Shaukat Ali"></div><div class="pname">Raja Shaukat Ali</div><div class="prole">VIP Guest & Community Leader</div></div>
+<div class="person"><div class="pic"><img src="images/guest_panel/tahir.jpeg" alt="Choudry Tahir"></div><div class="pname">Choudry Tahir</div><div class="prole">Chief Guest & Community Leader</div></div>
+<div class="person"><div class="pic"><img src="images/guest_panel/shafi.png" alt="Shafi Ahmed"></div><div class="pname">Shafi Ahmed</div><div class="prole">VIP Guest</div></div>
+<div class="person"><div class="pic"><img src="images/guest_panel/Bobie_Grewal.jpeg" alt="Bobie Grewal"></div><div class="pname">Bobie Grewal</div><div class="prole">VIP Guest</div></div>
+<div class="person"><div class="pic"><img src="images/guest_panel/Abbas.jpeg" alt="Abbas"></div><div class="pname">Abdul Abbas</div><div class="prole">VIP Guest</div></div>
+<div class="person"><div class="pic"><img src="images/guest_panel/aithsham.png" alt="Dr Ahtsham"></div><div class="pname">Dr. Ahtsham</div><div class="prole">VIP Guest</div></div>
+<div class="person"><div class="pic"><img src="images/guest_panel/Nasir_Raza2.png" alt="Nasir Raza"></div><div class="pname">Nasir Raza</div><div class="prole">VIP Guest</div></div>
+<div class="person"><div class="pic"><img src="images/guest_panel/iftikhar.png" alt="Iftikhar"></div><div class="pname">Raja Iftikhar</div><div class="prole">VIP Guest</div></div>
+<div class="person"><div class="pic"><img src="images/guest_panel/yousaf.png" alt="Yousaf"></div><div class="pname">Yousaf Kashmiri</div><div class="prole">VIP Guest</div></div>
+<div class="person"><div class="pic"><img src="images/guest_panel/hafeez_sb.png" alt="Hafeez Sb"></div><div class="pname">Hafeez Sb</div><div class="prole">VIP Guest</div></div>
+<div class="person"><div class="pic"><img src="images/guest_panel/adnan_sb.jpeg" alt="Adnan Sb"></div><div class="pname">Adnan Sb</div><div class="prole">VIP Guest</div></div>
+</div>
+
+<!-- Sponsors -->
+<div class="sec-title">💎 OUR PROUD SPONSORS</div>
+<div class="photo-row">
+<div class="person sponsor"><div class="pic"><img src="sponsor-thanks/shafi.png" alt="Shafi"></div><div class="pname">Shafi Ahmed</div><div class="prole">Sponsor</div></div>
+<div class="person sponsor"><div class="pic"><img src="sponsor-thanks/Bobie_Grewal.jpeg" alt="Bobie"></div><div class="pname">Bobie Grewal</div><div class="prole">Sponsor</div></div>
+<div class="person sponsor"><div class="pic"><img src="sponsor-thanks/Naseer.jpeg" alt="Naseer"></div><div class="pname">Naseer</div><div class="prole">Water & Ice</div></div>
+<div class="person sponsor"><div class="pic"><img src="sponsor-thanks/sohaib.png" alt="Sohaib"></div><div class="pname">Sohaib</div><div class="prole">Pizza 🍕</div></div>
+<div class="person sponsor"><div class="pic"><img src="images/sponsor_gallary/Raza.jpeg" alt="Raza"></div><div class="pname">Nasir Raza</div><div class="prole">Sponsor</div></div>
+<div class="person sponsor"><div class="pic"><img src="images/sponsor_gallary/Abbas.jpeg" alt="Abbas"></div><div class="pname">Abdul Abbas</div><div class="prole">Sponsor</div></div>
+<div class="person sponsor"><div class="pic"><img src="images/sponsor_gallary/Raja.jpeg" alt="Raja"></div><div class="pname">Raja Shaukat Ali</div><div class="prole">Sponsor</div></div>
+<div class="person sponsor"><div class="pic"><img src="images/sponsor_gallary/Munir.jpeg" alt="Munir"></div><div class="pname">Munir</div><div class="prole">Sponsor</div></div>
+<div class="person sponsor"><div class="pic" style="background:#fff;position:relative"><img src="images/sponsor_gallary/united_energy.png" alt="United Energy" style="object-fit:contain;position:absolute;inset:15px"></div><div class="pname">United Energy</div><div class="prole">Sponsor</div></div>
+<div class="person sponsor"><div class="pic" style="background:#fff;position:relative"><img src="images/sponsor_gallary/roti_boti.png" alt="Roti Boti" style="object-fit:contain;position:absolute;inset:15px"></div><div class="pname">Roti Boti</div><div class="prole">Sponsor</div></div>
+<div class="person sponsor"><div class="pic"><img src="images/sponsor_gallary/Pranav_patel.jpeg" alt="Pranav Patel"></div><div class="pname">Pranav Patel</div><div class="prole">Sponsor</div></div>
+<div class="person sponsor"><div class="pic"><img src="images/sponsor_gallary/sharat_kullari.jpeg" alt="Sharat Kullari"></div><div class="pname">Sharat Kullari</div><div class="prole">Sponsor</div></div>
+<div class="person sponsor"><div class="pic"><img src="sponsor-thanks/adnan_sb.jpeg" alt="Adnan Sb"></div><div class="pname">Adnan Sb</div><div class="prole">Sponsor</div></div>
+</div>
+
+<!-- Teams -->
+<div class="sec-title">⚔️ THE TEAMS</div>
+<div class="pools-wrap">
+<div class="pool-box">
+<div class="pool-label blue">🔵 POOL A</div>
+<div class="team-row">
+<div class="team-logo"><img src="images/teams/young_fighter_logo.jpeg" alt="Young Fighters" style="border:4px solid #002868"><div class="tname">Young Fighters</div></div>
+<div class="team-logo"><img src="images/teams/zalmi_super_strikers.jpeg" alt="Zalmi" style="border:4px solid #FFD700"><div class="tname">Zalmi SuperStrikers</div></div>
+<div class="team-logo"><img src="images/teams/monroe_hawks.jpeg" alt="Monroe Hawks" style="border:4px solid #FFD700"><div class="tname">Monroe Hawks</div></div>
+<div class="team-logo"><img src="images/teams/wmcc_logo.jpeg" alt="WMCC" style="border:4px solid #FFD700"><div class="tname">WMCC</div></div>
+<div class="team-logo"><img src="images/teams/hamden_qalandars_green.jpeg" alt="HQ Green" style="border:4px solid #FFD700"><div class="tname">HQ Green</div></div>
+</div>
+</div>
+<div class="pool-box">
+<div class="pool-label red">🔴 POOL B</div>
+<div class="team-row">
+<div class="team-logo"><img src="images/teams/rangbazz_logo.jpeg" alt="Rangbazz" style="border:4px solid #BF0A30"><div class="tname">Rangbazz</div></div>
+<div class="team-logo"><img src="images/teams/afghan11_logo.jpeg" alt="Afghan 11" style="border:4px solid #FFD700"><div class="tname">Afghan 11</div></div>
+<div class="team-logo"><img src="images/teams/hamden_qalandars_blue.jpeg" alt="HQ Blue" style="border:4px solid #FFD700"><div class="tname">HQ Blue</div></div>
+<div class="team-logo"><img src="images/teams/msc_logo.jpeg" alt="MSC" style="border:4px solid #FFD700"><div class="tname">MSC</div></div>
+<div class="team-logo"><img src="images/teams/punjab_tigers.jpeg" alt="Punjab Tigers" style="border:4px solid #FFD700"><div class="tname">Punjab Tigers</div></div>
+</div>
+</div>
+</div>
+
+<!-- Stats -->
+<div class="stats-row">
+<div class="stat"><div class="num">22</div><div class="label">Matches</div></div>
+<div class="stat"><div class="num">3</div><div class="label">Pitches</div></div>
+<div class="stat"><div class="num">9v9</div><div class="label">Format</div></div>
+<div class="stat"><div class="num">6</div><div class="label">Overs</div></div>
+<div class="stat"><div class="num">1</div><div class="label">Day</div></div>
+<div class="stat"><div class="num">🏆</div><div class="label">Champion</div></div>
+</div>
+
+<!-- Management -->
+<div class="sec-title">🦅 MANAGEMENT COMMITTEE & VOLUNTEERS</div>
+<div class="photo-row">
+<div class="person"><div class="pic"><img src="images/management/asim.png" alt="Asim"></div><div class="pname">Asim</div><div class="prole">Director</div></div>
+<div class="person"><div class="pic"><img src="images/management/hammad.png" alt="Hammad"></div><div class="pname">Hammad</div><div class="prole">Organizer</div></div>
+<div class="person"><div class="pic"><img src="images/management/sohaib.png" alt="Sohaib"></div><div class="pname">Sohaib</div><div class="prole">Operations</div></div>
+<div class="person"><div class="pic"><img src="images/management/arsalan.png" alt="Arsalan"></div><div class="pname">Arsalan</div><div class="prole">Operations</div></div>
+<div class="person"><div class="pic"><img src="images/management/subhan.png" alt="Subhan"></div><div class="pname">Subhan</div><div class="prole">Operations</div></div>
+<div class="person"><div class="pic"><img src="images/management/raees.png" alt="Raees"></div><div class="pname">Raees</div><div class="prole">Operations</div></div>
+<div class="person"><div class="pic"><img src="images/management/yahya.png" alt="Yahya"></div><div class="pname">Yahya</div><div class="prole">Ground Crew</div></div>
+<div class="person"><div class="pic"><img src="images/management/yousaf.png" alt="Yousaf"></div><div class="pname">Yousaf</div><div class="prole">MC</div></div>
+<div class="person"><div class="pic"><img src="images/guest_panel/Nasir_Raza2.png" alt="Raza"></div><div class="pname">Raza</div><div class="prole">Coordinator</div></div>
+<div class="person"><div class="pic"><img src="images/management/ali.png" alt="Ali"></div><div class="pname">Ali</div><div class="prole">Supervisor</div></div>
+<div class="person"><div class="pic"><img src="images/management/osama.png" alt="Osama"></div><div class="pname">Osama</div><div class="prole">Volunteer</div></div>
+<div class="person"><div class="pic"><img src="images/management/usman.jpeg" alt="Usman"></div><div class="pname">Usman</div><div class="prole">Management</div></div>
+<div class="person"><div class="pic" style="background:#fff;position:relative"><img src="images/sponsor_gallary/New Haven Eagles.jpeg" alt="New Haven Eagles" style="object-fit:contain;position:absolute;inset:10px"></div><div class="pname">New Haven Eagles</div><div class="prole">Partner Club</div></div>
+</div>
+
+<!-- Icons & Footer -->
+<div class="icons-row">🏏 🏆 🇺🇸 ⚡ 🏏 🏆 🇺🇸 ⚡ 🏏 🏆 🇺🇸 ⚡ 🏏 🏆 🇺🇸</div>
+<div class="footer">
+<div class="footer-text">🦅 Hamden Qalandars & New Haven Eagles • Saturday, July 4, 2026 • masimriaz.github.io/cricket</div>
+<div class="footer-stripe"></div>
+</div>
+
+</div>
+</div>
+
+<!-- PDF Generation Script -->
+<script>
+// Instructions for generating the PDF:
+// Option 1: Use Chrome/Edge browser → Print → Save as PDF
+//   - Set paper size to Custom: 120in x 84in (or 10ft x 7ft)
+//   - Set margins to None
+//   - Enable "Background graphics"
+//   - Scale: 100%
+//
+// Option 2: Use a command-line tool like wkhtmltopdf or Puppeteer
+//   Example with Chrome headless:
+//   chrome --headless --print-to-pdf="closing-ceremony-7x10.pdf" --print-to-pdf-no-header --no-margins closing-ceremony-white-7x10.html
+</script>
+</body>
+</html>

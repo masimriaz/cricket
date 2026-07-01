@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Freedom Cup 2026 — Closing Ceremony Banner (2ft × 6ft White)</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@600;700;800;900&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Poppins',sans-serif;background:#555;display:flex;justify-content:center;align-items:flex-start;min-height:100vh;padding:20px}
+
+/* 2ft x 6ft = 24" x 72" at 150 DPI = 3600 x 10800px. Screen preview ~1/3 */
+.banner{width:1200px;height:3600px;position:relative;overflow:hidden;background:#ffffff}
+
+/* Borders */
+.flag-top{position:absolute;top:0;left:0;right:0;height:18px;background:linear-gradient(90deg,#BF0A30 33%,#fff 33% 66%,#002868 66%)}
+.flag-bottom{position:absolute;bottom:0;left:0;right:0;height:18px;background:linear-gradient(90deg,#BF0A30 33%,#fff 33% 66%,#002868 66%)}
+.side-left{position:absolute;top:0;bottom:0;left:0;width:8px;background:linear-gradient(180deg,#BF0A30,#FFD700,#002868)}
+.side-right{position:absolute;top:0;bottom:0;right:0;width:8px;background:linear-gradient(180deg,#BF0A30,#FFD700,#002868)}
+
+/* Content wrapper */
+.content{position:relative;z-index:2;height:100%;width:100%;display:flex;flex-direction:column;align-items:center;padding:40px 28px 30px;text-align:center;gap:22px}
+
+/* Header */
+.independence-img{width:92%;max-height:140px;object-fit:contain}
+.logo{width:150px;height:150px;border-radius:50%;overflow:hidden;border:5px solid #FFD700;box-shadow:0 4px 16px rgba(255,215,0,.3)}
+.logo img{width:100%;height:100%;object-fit:cover}
+.title-block h1{font-family:'Playfair Display',serif;font-size:68px;font-weight:900;color:#002868;letter-spacing:2px;margin:0}
+.title-block h1 span{color:#BF0A30}
+.title-block .sub{font-size:16px;color:#444;letter-spacing:3px;text-transform:uppercase;margin-top:4px}
+.ceremony-badge{background:linear-gradient(135deg,#FFD700,#f5c518);padding:12px 44px;border-radius:40px;font-size:22px;font-weight:800;color:#002868;letter-spacing:5px;text-transform:uppercase;box-shadow:0 3px 15px rgba(255,215,0,.3)}
+
+/* Dividers */
+.divider{width:85%;height:2px;background:linear-gradient(90deg,transparent,#FFD700,transparent);margin:6px 0}
+.divider-thick{width:90%;height:4px;background:linear-gradient(90deg,#BF0A30,#FFD700,#002868);border-radius:2px;margin:8px 0}
+
+/* Stats grid */
+.stats-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;width:90%;background:#f8f9ff;border-radius:14px;padding:18px;border:2px solid #e8ecf4}
+.stat-item{text-align:center}
+.stat-item .num{font-size:38px;font-weight:900;color:#002868}
+.stat-item .label{font-size:11px;color:#666;letter-spacing:2px;text-transform:uppercase;font-weight:600}
+
+/* Section titles */
+.sec-title{font-size:18px;font-weight:800;letter-spacing:4px;text-transform:uppercase;color:#002868;display:flex;align-items:center;gap:8px;margin-top:8px}
+.sec-title::before,.sec-title::after{content:'';flex:1;max-width:80px;height:2px;background:linear-gradient(90deg,transparent,#FFD700,transparent)}
+
+/* Rules section */
+.rules-box{width:92%;background:linear-gradient(135deg,#f0f4ff,#fff);border:2px solid #002868;border-radius:12px;padding:16px 18px;text-align:left}
+.rules-box h3{font-size:15px;font-weight:800;color:#002868;letter-spacing:2px;text-transform:uppercase;margin-bottom:10px;text-align:center}
+.rules-cols{display:grid;grid-template-columns:1fr 1fr;gap:8px 16px}
+.rule-item{font-size:11px;color:#333;line-height:1.4;padding-left:14px;position:relative}
+.rule-item::before{content:'▸';position:absolute;left:0;color:#BF0A30;font-weight:bold}
+.rule-item strong{color:#002868}
+
+/* Highlights box */
+.highlights-box{width:92%;background:linear-gradient(135deg,#fffbf0,#fff);border:2px solid #FFD700;border-radius:12px;padding:14px 18px;text-align:left}
+.highlights-box h3{font-size:14px;font-weight:800;color:#BF0A30;letter-spacing:2px;text-transform:uppercase;margin-bottom:10px;text-align:center}
+.highlight-item{font-size:11px;color:#333;line-height:1.6;padding-left:16px;position:relative;margin-bottom:4px}
+.highlight-item::before{content:'🏏';position:absolute;left:0;font-size:10px}
+
+/* Photo rows */
+.photo-row{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;padding:0 10px}
+.person{display:flex;flex-direction:column;align-items:center;width:95px}
+.person .pic{width:72px;height:72px;border-radius:50%;overflow:hidden;border:3px solid #FFD700;box-shadow:0 2px 8px rgba(0,0,0,.1);margin-bottom:4px}
+.person .pic img{width:100%;height:100%;object-fit:cover;object-position:center top}
+.person .pname{font-size:9.5px;font-weight:700;color:#002868;text-align:center;line-height:1.2}
+.person .prole{font-size:8px;color:#BF0A30;font-weight:600;text-align:center}
+.person.sponsor .pic{border-color:#FFD700}
+
+/* Teams */
+.pools-wrap{display:flex;flex-direction:column;gap:14px;width:92%}
+.pool-box{width:100%;background:#f8f9ff;border-radius:10px;padding:12px;border:1px solid #e0e5f0}
+.pool-label{display:inline-block;padding:5px 22px;border-radius:20px;font-size:13px;font-weight:800;color:#fff;letter-spacing:3px;margin-bottom:8px}
+.pool-label.blue{background:#002868}
+.pool-label.red{background:#BF0A30}
+.team-row{display:flex;justify-content:center;gap:10px;flex-wrap:wrap}
+.team-logo{text-align:center}
+.team-logo img{width:68px;height:68px;object-fit:cover;border-radius:50%;box-shadow:0 2px 8px rgba(0,0,0,.1)}
+.team-logo .tname{font-size:9px;font-weight:700;color:#002868;margin-top:4px}
+
+/* Management */
+.mgmt-row{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;padding:0 10px}
+.mgmt-person{text-align:center;width:78px}
+.mgmt-person img{width:56px;height:56px;border-radius:50%;object-fit:cover;border:2px solid #FFD700;box-shadow:0 2px 6px rgba(0,0,0,.1)}
+.mgmt-person .mname{font-size:9px;font-weight:700;color:#002868;margin-top:3px}
+.mgmt-person .mrole{font-size:7.5px;color:#666}
+
+/* Awards section */
+.awards-box{width:92%;background:linear-gradient(135deg,#f0fff4,#fff);border:2px solid #28a745;border-radius:12px;padding:14px 18px}
+.awards-box h3{font-size:14px;font-weight:800;color:#28a745;letter-spacing:2px;text-transform:uppercase;margin-bottom:8px;text-align:center}
+.award-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.award-item{font-size:11px;color:#333;text-align:center;background:#f8fff8;border-radius:8px;padding:8px 6px;border:1px solid #d4edda}
+.award-item .trophy{font-size:18px;display:block}
+.award-item .award-name{font-weight:700;color:#002868;font-size:10px}
+
+/* Footer */
+.footer{text-align:center;padding-top:12px}
+.footer-text{font-size:14px;color:#555;letter-spacing:2px;font-weight:600}
+.footer-stripe{height:5px;width:340px;background:linear-gradient(90deg,#BF0A30,#FFD700,#fff,#FFD700,#002868);border-radius:3px;margin:10px auto 0}
+.footer-icons{font-size:22px;letter-spacing:10px;opacity:.5;margin-bottom:6px}
+
+/* Print */
+@media print{
+body{padding:0;background:#fff;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+.banner{width:24in;height:72in;box-shadow:none}
+@page{size:24in 72in;margin:0}
+}
+</style>
+</head>
+<body>
+<div class="banner">
+<div class="flag-top"></div>
+<div class="flag-bottom"></div>
+<div class="side-left"></div>
+<div class="side-right"></div>
+
+<div class="content">
+
+<!-- Header -->
+<img src="images/happy_independence.png" alt="Happy Independence Day" class="independence-img">
+<div class="logo"><img src="images/league_logo.jpeg" alt="Freedom Cup"></div>
+<div class="title-block">
+<h1>FREEDOM <span>CUP</span> 2026</h1>
+<div class="sub">🏏 Independence Day Cricket • New Haven, CT 🇺🇸</div>
+</div>
+<div class="ceremony-badge">★ CLOSING CEREMONY ★</div>
+
+<div class="divider-thick"></div>
+
+<!-- Stats -->
+<div class="stats-grid">
+<div class="stat-item"><div class="num">10</div><div class="label">Teams</div></div>
+<div class="stat-item"><div class="num">22</div><div class="label">Matches</div></div>
+<div class="stat-item"><div class="num">3</div><div class="label">Pitches</div></div>
+<div class="stat-item"><div class="num">9v9</div><div class="label">Format</div></div>
+<div class="stat-item"><div class="num">6</div><div class="label">Overs</div></div>
+<div class="stat-item"><div class="num">🏆</div><div class="label">Champion</div></div>
+</div>
+
+<!-- Tournament Highlights -->
+<div class="highlights-box">
+<h3>🇺🇸 Tournament Highlights</h3>
+<div class="highlight-item">Independence Day celebration — July 4, 2026</div>
+<div class="highlight-item">Tape ball cricket under the summer sun</div>
+<div class="highlight-item">2 Pools of 5 teams → Knockouts → Grand Final</div>
+<div class="highlight-item">50 minutes per match • Fast-paced action</div>
+<div class="highlight-item">150+ players from diverse communities</div>
+<div class="highlight-item">Professional umpires & live scoring</div>
+<div class="highlight-item">Trophies, medals & individual awards</div>
+<div class="highlight-item">Food, family fun & community celebration</div>
+</div>
+
+<!-- Rules Quick Reference -->
+<div class="rules-box">
+<h3>📋 Quick Rules Reference</h3>
+<div class="rules-cols">
+<div class="rule-item"><strong>9 players</strong> per team on the field</div>
+<div class="rule-item"><strong>6 overs</strong> per innings</div>
+<div class="rule-item"><strong>4 bowlers</strong> must be used (2-2-1-1)</div>
+<div class="rule-item"><strong>27 min</strong> time limit per innings</div>
+<div class="rule-item"><strong>No LBW</strong> — tape ball rules</div>
+<div class="rule-item"><strong>Free hit</strong> after every no-ball</div>
+<div class="rule-item"><strong>Taped tennis ball</strong> only</div>
+<div class="rule-item"><strong>Fiber/tape bats</strong> allowed only</div>
+<div class="rule-item"><strong>5-run penalty</strong> for slow over rate</div>
+<div class="rule-item"><strong>No metal spikes</strong> or studs</div>
+<div class="rule-item"><strong>Win = 2 pts</strong> • Tie = 1 • Loss = 0</div>
+<div class="rule-item"><strong>Super Over</strong> for knockout ties</div>
+</div>
+</div>
+
+<div class="divider"></div>
+
+<!-- VIP Guests -->
+<div class="sec-title">🎖️ VIP GUESTS & LEADERS</div>
+<div class="photo-row">
+<div class="person"><div class="pic"><img src="images/guest_panel/Raja.jpeg" alt="Raja Shaukat Ali"></div><div class="pname">Raja Shaukat Ali</div><div class="prole">Community Leader</div></div>
+<div class="person"><div class="pic"><img src="images/guest_panel/tahir.jpeg" alt="Choudry Tahir"></div><div class="pname">Choudry Tahir</div><div class="prole">Chief Guest</div></div>
+<div class="person"><div class="pic"><img src="images/guest_panel/shafi.png" alt="Shafi Ahmed"></div><div class="pname">Shafi Ahmed</div><div class="prole">VIP Guest</div></div>
+<div class="person"><div class="pic"><img src="images/guest_panel/Bobie_Grewal.jpeg" alt="Bobie Grewal"></div><div class="pname">Bobie Grewal</div><div class="prole">VIP Guest</div></div>
+<div class="person"><div class="pic"><img src="images/guest_panel/Abbas.jpeg" alt="Abbas"></div><div class="pname">Abdul Abbas</div><div class="prole">VIP Guest</div></div>
+<div class="person"><div class="pic"><img src="images/guest_panel/aithsham.png" alt="Dr Ahtsham"></div><div class="pname">Dr. Ahtsham</div><div class="prole">VIP Guest</div></div>
+<div class="person"><div class="pic"><img src="images/guest_panel/Nasir_Raza2.png" alt="Nasir Raza"></div><div class="pname">Nasir Raza</div><div class="prole">VIP Guest</div></div>
+<div class="person"><div class="pic"><img src="images/guest_panel/iftikhar.png" alt="Iftikhar"></div><div class="pname">Raja Iftikhar</div><div class="prole">VIP Guest</div></div>
+<div class="person"><div class="pic"><img src="images/guest_panel/yousaf.png" alt="Yousaf"></div><div class="pname">Yousaf Kashmiri</div><div class="prole">VIP Guest</div></div>
+<div class="person"><div class="pic"><img src="images/guest_panel/hafeez_sb.png" alt="Hafeez Sb"></div><div class="pname">Hafeez Sb</div><div class="prole">VIP Guest</div></div>
+<div class="person"><div class="pic"><img src="images/guest_panel/adnan_sb.jpeg" alt="Adnan Sb"></div><div class="pname">Adnan Sb</div><div class="prole">VIP Guest</div></div>
+</div>
+
+<div class="divider"></div>
+
+<!-- Sponsors -->
+<div class="sec-title">💎 OUR PROUD SPONSORS</div>
+<div class="photo-row">
+<div class="person sponsor"><div class="pic"><img src="sponsor-thanks/shafi.png" alt="Shafi"></div><div class="pname">Shafi Ahmed</div><div class="prole">Sponsor</div></div>
+<div class="person sponsor"><div class="pic"><img src="sponsor-thanks/Bobie_Grewal.jpeg" alt="Bobie"></div><div class="pname">Bobie Grewal</div><div class="prole">Sponsor</div></div>
+<div class="person sponsor"><div class="pic"><img src="sponsor-thanks/Naseer.jpeg" alt="Naseer"></div><div class="pname">Naseer</div><div class="prole">Water & Ice</div></div>
+<div class="person sponsor"><div class="pic"><img src="sponsor-thanks/sohaib.png" alt="Sohaib"></div><div class="pname">Sohaib</div><div class="prole">Pizza 🍕</div></div>
+<div class="person sponsor"><div class="pic"><img src="images/sponsor_gallary/Raza.jpeg" alt="Raza"></div><div class="pname">Nasir Raza</div><div class="prole">Sponsor</div></div>
+<div class="person sponsor"><div class="pic"><img src="images/sponsor_gallary/Abbas.jpeg" alt="Abbas"></div><div class="pname">Abdul Abbas</div><div class="prole">Sponsor</div></div>
+<div class="person sponsor"><div class="pic"><img src="images/sponsor_gallary/Raja.jpeg" alt="Raja"></div><div class="pname">Raja Shaukat Ali</div><div class="prole">Sponsor</div></div>
+<div class="person sponsor"><div class="pic"><img src="images/sponsor_gallary/Munir.jpeg" alt="Munir"></div><div class="pname">Munir</div><div class="prole">Sponsor</div></div>
+<div class="person sponsor"><div class="pic" style="background:#f5f5f5;position:relative"><img src="images/sponsor_gallary/united_energy.png" alt="United Energy" style="object-fit:contain;position:absolute;inset:8px"></div><div class="pname">United Energy</div><div class="prole">Sponsor</div></div>
+<div class="person sponsor"><div class="pic" style="background:#f5f5f5;position:relative"><img src="images/sponsor_gallary/roti_boti.png" alt="Roti Boti" style="object-fit:contain;position:absolute;inset:8px"></div><div class="pname">Roti Boti</div><div class="prole">Sponsor</div></div>
+<div class="person sponsor"><div class="pic"><img src="images/sponsor_gallary/Pranav_patel.jpeg" alt="Pranav Patel"></div><div class="pname">Pranav Patel</div><div class="prole">Sponsor</div></div>
+<div class="person sponsor"><div class="pic"><img src="images/sponsor_gallary/sharat_kullari.jpeg" alt="Sharat Kullari"></div><div class="pname">Sharat Kullari</div><div class="prole">Sponsor</div></div>
+<div class="person sponsor"><div class="pic"><img src="sponsor-thanks/adnan_sb.jpeg" alt="Adnan Sb"></div><div class="pname">Adnan Sb</div><div class="prole">Sponsor</div></div>
+</div>
+
+<div class="divider"></div>
+
+<!-- Teams -->
+<div class="sec-title">⚔️ THE TEAMS</div>
+<div class="pools-wrap">
+<div class="pool-box">
+<div class="pool-label blue">🔵 POOL A</div>
+<div class="team-row">
+<div class="team-logo"><img src="images/teams/young_fighter_logo.jpeg" alt="Young Fighters" style="border:3px solid #002868"><div class="tname">Young Fighters</div></div>
+<div class="team-logo"><img src="images/teams/zalmi_super_strikers.jpeg" alt="Zalmi" style="border:3px solid #002868"><div class="tname">Zalmi</div></div>
+<div class="team-logo"><img src="images/teams/monroe_hawks.jpeg" alt="Monroe Hawks" style="border:3px solid #002868"><div class="tname">Monroe Hawks</div></div>
+<div class="team-logo"><img src="images/teams/wmcc_logo.jpeg" alt="WMCC" style="border:3px solid #002868"><div class="tname">WMCC</div></div>
+<div class="team-logo"><img src="images/teams/hamden_qalandars_green.jpeg" alt="HQ Green" style="border:3px solid #002868"><div class="tname">HQ Green</div></div>
+</div>
+</div>
+<div class="pool-box">
+<div class="pool-label red">🔴 POOL B</div>
+<div class="team-row">
+<div class="team-logo"><img src="images/teams/rangbazz_logo.jpeg" alt="Rangbazz" style="border:3px solid #BF0A30"><div class="tname">Rangbazz</div></div>
+<div class="team-logo"><img src="images/teams/afghan11_logo.jpeg" alt="Afghan 11" style="border:3px solid #BF0A30"><div class="tname">Afghan 11</div></div>
+<div class="team-logo"><img src="images/teams/hamden_qalandars_blue.jpeg" alt="HQ Blue" style="border:3px solid #BF0A30"><div class="tname">HQ Blue</div></div>
+<div class="team-logo"><img src="images/teams/msc_logo.jpeg" alt="MSC" style="border:3px solid #BF0A30"><div class="tname">MSC</div></div>
+<div class="team-logo"><img src="images/teams/punjab_tigers.jpeg" alt="Punjab Tigers" style="border:3px solid #BF0A30"><div class="tname">Punjab Tigers</div></div>
+</div>
+</div>
+</div>
+
+<div class="divider"></div>
+
+<!-- Awards -->
+<div class="awards-box">
+<h3>🏆 Awards & Recognition</h3>
+<div class="award-grid">
+<div class="award-item"><span class="trophy">🏆</span><span class="award-name">Champions Trophy</span></div>
+<div class="award-item"><span class="trophy">🥈</span><span class="award-name">Runners-Up Trophy</span></div>
+<div class="award-item"><span class="trophy">⭐</span><span class="award-name">Player of Tournament</span></div>
+<div class="award-item"><span class="trophy">🎯</span><span class="award-name">Best Bowler</span></div>
+<div class="award-item"><span class="trophy">🏏</span><span class="award-name">Best Batsman</span></div>
+<div class="award-item"><span class="trophy">🧤</span><span class="award-name">Best Fielder</span></div>
+</div>
+</div>
+
+<div class="divider"></div>
+
+<!-- Management -->
+<div class="sec-title">🦅 MANAGEMENT & VOLUNTEERS</div>
+<div class="mgmt-row">
+<div class="mgmt-person"><img src="images/management/asim.png" alt="Asim"><div class="mname">Asim</div><div class="mrole">Director</div></div>
+<div class="mgmt-person"><img src="images/management/hammad.png" alt="Hammad"><div class="mname">Hammad</div><div class="mrole">Organizer</div></div>
+<div class="mgmt-person"><img src="images/management/sohaib.png" alt="Sohaib"><div class="mname">Sohaib</div><div class="mrole">Operations</div></div>
+<div class="mgmt-person"><img src="images/management/arsalan.png" alt="Arsalan"><div class="mname">Arsalan</div><div class="mrole">Operations</div></div>
+<div class="mgmt-person"><img src="images/management/subhan.png" alt="Subhan"><div class="mname">Subhan</div><div class="mrole">Operations</div></div>
+<div class="mgmt-person"><img src="images/management/raees.png" alt="Raees"><div class="mname">Raees</div><div class="mrole">Operations</div></div>
+<div class="mgmt-person"><img src="images/management/yahya.png" alt="Yahya"><div class="mname">Yahya</div><div class="mrole">Ground Crew</div></div>
+<div class="mgmt-person"><img src="images/management/yousaf.png" alt="Yousaf"><div class="mname">Yousaf</div><div class="mrole">MC</div></div>
+<div class="mgmt-person"><img src="images/guest_panel/Nasir_Raza2.png" alt="Raza"><div class="mname">Raza</div><div class="mrole">Coordinator</div></div>
+<div class="mgmt-person"><img src="images/management/ali.png" alt="Ali"><div class="mname">Ali</div><div class="mrole">Supervisor</div></div>
+<div class="mgmt-person"><img src="images/management/osama.png" alt="Osama"><div class="mname">Osama</div><div class="mrole">Volunteer</div></div>
+<div class="mgmt-person"><img src="images/management/usman.jpeg" alt="Usman"><div class="mname">Usman</div><div class="mrole">Management</div></div>
+</div>
+
+<div class="divider-thick"></div>
+
+<!-- Code of Conduct Quick -->
+<div class="rules-box" style="border-color:#BF0A30;background:linear-gradient(135deg,#fff5f5,#fff)">
+<h3 style="color:#BF0A30">⚠️ Code of Conduct</h3>
+<div class="rules-cols">
+<div class="rule-item">Spirit of cricket at all times</div>
+<div class="rule-item">Respect umpires & opponents</div>
+<div class="rule-item">No abusive language/sledging</div>
+<div class="rule-item">Captain-only disputes</div>
+<div class="rule-item">No alcohol during matches</div>
+<div class="rule-item">Physical altercation = DQ</div>
+</div>
+</div>
+
+<!-- Footer -->
+<div class="footer">
+<div class="footer-icons">🏏 🏆 🇺🇸 ⚡ 🦅 🏏 🏆</div>
+<div class="footer-text">🦅 Hamden Qalandars & New Haven Eagles</div>
+<div class="footer-text" style="font-size:13px;margin-top:4px">Saturday, July 4, 2026 • New Haven, CT</div>
+<div class="footer-text" style="font-size:12px;margin-top:4px;color:#002868;font-weight:700">masimriaz.github.io/cricket</div>
+<div class="footer-stripe"></div>
+<div style="margin-top:10px;font-size:10px;color:#999;letter-spacing:1px">© 2026 New Haven Tapball Cricket League • All Rights Reserved</div>
+</div>
+
+</div>
+</div>
+</body>
+</html>
