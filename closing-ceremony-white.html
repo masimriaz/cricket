@@ -96,7 +96,10 @@ body{padding:0;background:#fff}
 </style>
 </head>
 <body>
-<div class="backdrop">
+<div style="text-align:center;padding:10px;background:#333">
+<button onclick="downloadPDF()" style="background:linear-gradient(135deg,#FFD700,#f5c518);color:#002868;border:none;font-family:Poppins,sans-serif;font-weight:700;font-size:16px;padding:12px 30px;border-radius:50px;cursor:pointer;box-shadow:0 4px 20px rgba(255,215,0,.4)">📥 Download 7×10ft PDF for Printing</button>
+</div>
+<div class="backdrop" id="backdrop">
 <div class="stars-bg"></div>
 <div class="flag-top"><div class="red"></div><div class="gold"></div><div class="white"></div><div class="gold"></div><div class="blue"></div><div class="gold"></div><div class="white"></div><div class="gold"></div><div class="red"></div></div>
 <div class="flag-bottom"><div class="red"></div><div class="gold"></div><div class="white"></div><div class="gold"></div><div class="blue"></div><div class="gold"></div><div class="white"></div><div class="gold"></div><div class="red"></div></div>
@@ -219,5 +222,19 @@ body{padding:0;background:#fff}
 
 </div>
 </div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+<script>
+function downloadPDF() {
+  var element = document.getElementById('backdrop');
+  var opt = {
+    margin: 0,
+    filename: 'Freedom-Cup-2026-Ceremony-Backdrop-10x7ft.pdf',
+    image: { type: 'jpeg', quality: 1 },
+    html2canvas: { scale: 2, useCORS: true, allowTaint: true, width: 5000, height: 3500 },
+    jsPDF: { unit: 'in', format: [10, 7], orientation: 'landscape' }
+  };
+  html2pdf().set(opt).from(element).save();
+}
+</script>
 </body>
 </html>
