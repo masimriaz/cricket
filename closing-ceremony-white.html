@@ -9,29 +9,23 @@
 *{margin:0;padding:0;box-sizing:border-box}
 body{font-family:'Poppins',sans-serif;background:#333;display:flex;justify-content:center;align-items:flex-start;min-height:100vh;padding:10px}
 /* 7ft x 10ft = ratio 7:10. At 420px per ft = 4200 x 3000 (landscape: 10ft wide x 7ft tall) */
-.backdrop{width:5000px;height:3500px;position:relative;overflow:hidden;background:linear-gradient(180deg,#002868 0%,#002868 40%,#fff 40%,#fff 46%,#BF0A30 46%,#BF0A30 54%,#fff 54%,#fff 60%,#002868 60%,#002868 100%)}
+.backdrop{width:5000px;height:3500px;position:relative;overflow:hidden;background:#002868}
 
 /* Stars BG pattern */
-.stars-bg{position:absolute;inset:0;opacity:.08;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80'%3E%3Ctext x='40' y='50' text-anchor='middle' font-size='24' fill='white'%3E%E2%98%85%3C/text%3E%3C/svg%3E");pointer-events:none}
+.stars-bg{position:absolute;inset:0;opacity:.06;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80'%3E%3Ctext x='40' y='50' text-anchor='middle' font-size='24' fill='white'%3E%E2%98%85%3C/text%3E%3C/svg%3E");pointer-events:none}
 
 /* Top border - thick USA flag */
-.flag-top{position:absolute;top:0;left:0;right:0;height:40px;display:flex}
-.flag-top .red{flex:1;background:#BF0A30}
-.flag-top .white{flex:1;background:#fff}
-.flag-top .blue{flex:1;background:#002868}
-.flag-top .gold{flex:.5;background:#FFD700}
-.flag-bottom{position:absolute;bottom:0;left:0;right:0;height:40px;display:flex}
-.flag-bottom .red{flex:1;background:#BF0A30}
-.flag-bottom .white{flex:1;background:#fff}
-.flag-bottom .blue{flex:1;background:#002868}
-.flag-bottom .gold{flex:.5;background:#FFD700}
+.flag-top{position:absolute;top:0;left:0;right:0;height:40px;background:linear-gradient(90deg,#BF0A30 20%,#FFD700 20% 25%,#fff 25% 50%,#FFD700 50% 55%,#BF0A30 55%)}
+.flag-top .red,.flag-top .white,.flag-top .blue,.flag-top .gold{display:none}
+.flag-bottom{position:absolute;bottom:0;left:0;right:0;height:40px;background:linear-gradient(90deg,#BF0A30 20%,#FFD700 20% 25%,#fff 25% 50%,#FFD700 50% 55%,#BF0A30 55%)}
+.flag-bottom .red,.flag-bottom .white,.flag-bottom .blue,.flag-bottom .gold{display:none}
 
 /* Side stripes */
-.side-left{position:absolute;top:0;bottom:0;left:0;width:30px;background:linear-gradient(180deg,#BF0A30,#FFD700,#002868,#FFD700,#BF0A30)}
-.side-right{position:absolute;top:0;bottom:0;right:0;width:30px;background:linear-gradient(180deg,#BF0A30,#FFD700,#002868,#FFD700,#BF0A30)}
+.side-left{position:absolute;top:0;bottom:0;left:0;width:20px;background:linear-gradient(180deg,#BF0A30,#FFD700,#BF0A30)}
+.side-right{position:absolute;top:0;bottom:0;right:0;width:20px;background:linear-gradient(180deg,#BF0A30,#FFD700,#BF0A30)}
 
 /* Content */
-.content{position:relative;z-index:2;height:100%;display:flex;flex-direction:column;align-items:center;padding:70px 60px 50px;text-align:center;justify-content:space-evenly}
+.content{position:relative;z-index:2;height:100%;width:100%;display:flex;flex-direction:column;align-items:center;padding:70px 80px 50px;text-align:center;justify-content:space-evenly}
 
 /* Header */
 .header{display:flex;align-items:center;justify-content:center;gap:60px}
@@ -101,8 +95,8 @@ body{padding:0;background:#fff}
 </div>
 <div class="backdrop" id="backdrop">
 <div class="stars-bg"></div>
-<div class="flag-top"><div class="red"></div><div class="gold"></div><div class="white"></div><div class="gold"></div><div class="blue"></div><div class="gold"></div><div class="white"></div><div class="gold"></div><div class="red"></div></div>
-<div class="flag-bottom"><div class="red"></div><div class="gold"></div><div class="white"></div><div class="gold"></div><div class="blue"></div><div class="gold"></div><div class="white"></div><div class="gold"></div><div class="red"></div></div>
+<div class="flag-top"></div>
+<div class="flag-bottom"></div>
 <div class="side-left"></div>
 <div class="side-right"></div>
 
