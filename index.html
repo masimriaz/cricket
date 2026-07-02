@@ -620,8 +620,29 @@ h1,h2,h3,h4,h5,h6,.display-1,.display-2,.display-3,.display-4{font-family:'Poppi
 
 <!-- SECTION 3: SCHEDULE -->
 <section id="schedule" class="section-padding bg-light" aria-label="Match Schedule">
+<style>
+#schedule .sched-table{border-collapse:separate;border-spacing:0;border-radius:12px;overflow:hidden;box-shadow:0 4px 20px rgba(0,0,0,.06)}
+#schedule .sched-table thead th{background:linear-gradient(135deg,#001233,#002868);color:#fff;font-size:.8rem;letter-spacing:1px;text-transform:uppercase;padding:.8rem .6rem;border:none}
+#schedule .sched-table thead th.pitch-1{background:linear-gradient(135deg,#1565c0,#0d47a1)}
+#schedule .sched-table thead th.pitch-2{background:linear-gradient(135deg,#2e7d32,#1b5e20)}
+#schedule .sched-table thead th.pitch-3{background:linear-gradient(135deg,#e65100,#bf360c)}
+#schedule .sched-table tbody tr{transition:all .2s ease;border-bottom:1px solid rgba(0,0,0,.05)}
+#schedule .sched-table tbody tr:hover{background:rgba(0,40,104,.04)!important;transform:scale(1.005)}
+#schedule .sched-table tbody td{padding:.8rem .6rem;vertical-align:middle;border:none;border-bottom:1px solid rgba(0,0,0,.06)}
+#schedule .sched-table .round-cell{font-weight:800;white-space:nowrap}
+#schedule .round-badge{display:inline-block;width:36px;height:36px;line-height:36px;border-radius:50%;background:linear-gradient(135deg,#002868,#1a3a6b);color:#fff;font-weight:800;font-size:.9rem;margin-bottom:4px}
+#schedule .match-cell{font-weight:600;font-size:.9rem;color:#1a1a2e}
+#schedule .match-cell small{font-weight:400}
+#schedule .r1-row{background:linear-gradient(90deg,rgba(191,10,48,.08),rgba(255,215,0,.08),rgba(191,10,48,.08))!important;border-left:4px solid #BF0A30;animation:r1Pulse 3s ease-in-out infinite}
+@keyframes r1Pulse{0%,100%{box-shadow:inset 0 0 0 rgba(191,10,48,0)}50%{box-shadow:inset 0 0 20px rgba(191,10,48,.05)}}
+#schedule .knockout-table{border-radius:12px;overflow:hidden;box-shadow:0 4px 20px rgba(0,0,0,.06)}
+#schedule .knockout-table thead th{background:linear-gradient(135deg,#BF0A30,#9a0826);color:#fff;font-size:.8rem;letter-spacing:1px;padding:.7rem;border:none}
+#schedule .knockout-table tbody td{padding:.7rem;border:none;border-bottom:1px solid rgba(0,0,0,.05)}
+#schedule .knockout-table tbody tr:last-child td{border-bottom:none}
+</style>
 <div class="container">
-<div class="text-center mb-3">
+<div class="text-center mb-4">
+<span class="d-inline-block px-3 py-1 rounded-pill mb-2" style="background:rgba(0,40,104,.08);color:var(--blue);font-size:.75rem;font-weight:600;letter-spacing:2px">📅 MATCH DAY</span>
 <h2 class="section-title display-5">Match Schedule</h2>
 <p class="text-muted mt-2">One explosive day — 20 pool matches across 3 pitches, semis & final! 🔥</p>
 </div>
@@ -629,65 +650,74 @@ h1,h2,h3,h4,h5,h6,.display-1,.display-2,.display-3,.display-4{font-family:'Poppi
 <!-- Quick Stats -->
 <div class="row g-3 mb-4 justify-content-center">
 <div class="col-6 col-md-3">
-<div class="card border-0 shadow-sm text-center p-3 h-100"><i class="bi bi-flag-fill text-danger fs-4"></i><h5 class="fw-bold mb-0 mt-2">8:30 AM</h5><small class="text-muted">Opening Ceremony</small></div>
+<div class="card border-0 shadow-sm text-center p-3 h-100" style="border-top:3px solid #BF0A30!important"><i class="bi bi-flag-fill text-danger fs-4"></i><h5 class="fw-bold mb-0 mt-2">8:30 AM</h5><small class="text-muted">Opening Ceremony</small></div>
 </div>
 <div class="col-6 col-md-3">
-<div class="card border-0 shadow-sm text-center p-3 h-100"><i class="bi bi-clock-fill text-primary fs-4"></i><h5 class="fw-bold mb-0 mt-2">9:00 AM</h5><small class="text-muted">First Ball</small></div>
+<div class="card border-0 shadow-sm text-center p-3 h-100" style="border-top:3px solid #002868!important"><i class="bi bi-clock-fill text-primary fs-4"></i><h5 class="fw-bold mb-0 mt-2">9:00 AM</h5><small class="text-muted">First Ball</small></div>
 </div>
 <div class="col-6 col-md-3">
-<div class="card border-0 shadow-sm text-center p-3 h-100"><i class="bi bi-pin-map-fill text-success fs-4"></i><h5 class="fw-bold mb-0 mt-2">3 Pitches</h5><small class="text-muted">Parallel</small></div>
+<div class="card border-0 shadow-sm text-center p-3 h-100" style="border-top:3px solid #2e7d32!important"><i class="bi bi-pin-map-fill text-success fs-4"></i><h5 class="fw-bold mb-0 mt-2">3 Pitches</h5><small class="text-muted">Simultaneous</small></div>
 </div>
 <div class="col-6 col-md-3">
-<div class="card border-0 shadow-sm text-center p-3 h-100"><i class="bi bi-trophy-fill text-warning fs-4"></i><h5 class="fw-bold mb-0 mt-2">6:00 PM</h5><small class="text-muted">Grand Final</small></div>
+<div class="card border-0 shadow-sm text-center p-3 h-100" style="border-top:3px solid #FFD700!important"><i class="bi bi-trophy-fill text-warning fs-4"></i><h5 class="fw-bold mb-0 mt-2">6:00 PM</h5><small class="text-muted">Grand Final</small></div>
 </div>
 </div>
 
 <!-- Match Format Card -->
-<div class="card border-0 shadow-sm mb-4">
-<div class="card-header bg-patriotic text-white text-center py-2"><h5 class="mb-0 h6">🏏 9-a-side • 6 Overs • 50-min Matches • 15-min Changeover</h5></div>
+<div class="text-center mb-4">
+<span class="d-inline-block px-4 py-2 rounded-pill shadow-sm" style="background:linear-gradient(135deg,#002868,#1a3a6b);color:#fff;font-size:.85rem;font-weight:600;letter-spacing:1px">🏏 9-a-side • 6 Overs • 50-min Matches • 15-min Changeover</span>
 </div>
 
 <!-- Pool Stage Schedule Table -->
-<div class="card border-0 shadow-sm mb-4">
-<div class="card-header bg-white border-bottom py-3">
-<h3 class="h5 mb-0"><i class="bi bi-calendar-date me-2 text-primary"></i>Saturday, July 4, 2026 — Pool Stage</h3>
+<div class="card border-0 shadow-sm mb-4" style="border-radius:16px;overflow:hidden">
+<div class="card-header border-bottom py-3" style="background:linear-gradient(135deg,#f8f9ff,#fff)">
+<div class="d-flex justify-content-between align-items-center flex-wrap gap-2">
+<div>
+<h3 class="h5 mb-0 fw-bold" style="color:var(--blue)"><i class="bi bi-calendar-date me-2"></i>Saturday, July 4, 2026 — Pool Stage</h3>
 <small class="text-muted">20 matches • 7 rounds • 3 pitches running simultaneously</small>
 </div>
-<div class="card-body p-3">
+<div class="d-flex gap-2">
+<span class="badge rounded-pill px-2 py-1" style="background:#1565c0;font-size:.7rem">🔵 Pitch 1</span>
+<span class="badge rounded-pill px-2 py-1" style="background:#2e7d32;font-size:.7rem">🟢 Pitch 2</span>
+<span class="badge rounded-pill px-2 py-1" style="background:#e65100;font-size:.7rem">🟠 Pitch 3</span>
+</div>
+</div>
+</div>
+<div class="card-body p-0">
 <div class="table-responsive">
-<table class="table table-bordered table-hover align-middle text-center mb-0">
-<thead class="table-dark"><tr><th style="width:15%">Round</th><th class="table-primary">Pitch 1</th><th class="table-success">Pitch 2</th><th class="table-warning">Pitch 3</th></tr></thead>
+<table class="table sched-table mb-0 align-middle text-center">
+<thead><tr><th style="width:14%">Round</th><th class="pitch-1">🔵 Pitch 1</th><th class="pitch-2">🟢 Pitch 2</th><th class="pitch-3">🟠 Pitch 3</th></tr></thead>
 <tbody>
-<tr style="background:linear-gradient(90deg,rgba(191,10,48,.1),rgba(255,215,0,.1),rgba(191,10,48,.1));border:2px solid #BF0A30"><td><strong style="font-size:1.2rem;color:#BF0A30">R1</strong><br><span class="badge bg-danger px-3 py-1" style="font-size:.85rem">9:00 AM</span><br><span class="badge bg-warning text-dark mt-1">⚡ OPENING ROUND</span><br><small class="text-danger fw-bold">6 Local Teams MUST Report</small></td><td><strong>HQ Green vs Monroe Hawks</strong><br><small class="text-muted">Pool A</small></td><td><strong>Rangbaaz vs HQ Blue</strong><br><small class="text-muted">Pool B</small></td><td><strong>Afghan 11 vs MSC</strong><br><small class="text-muted">Pool B</small></td></tr>
-<tr><td><strong>R2</strong><br><span class="badge bg-primary">10:05 AM</span></td><td>Zalmi vs HQ Green<br><small class="text-muted">Pool A</small></td><td>Rangbaaz vs MSC<br><small class="text-muted">Pool B</small></td><td>Afghan 11 vs HQ Blue<br><small class="text-muted">Pool B</small></td></tr>
-<tr><td><strong>R3</strong><br><span class="badge bg-primary">11:10 AM</span></td><td>Young Fighters vs Zalmi<br><small class="text-muted">Pool A</small></td><td>Rangbaaz vs Afghan 11<br><small class="text-muted">Pool B</small></td><td>WMCC vs HQ Green<br><small class="text-muted">Pool A</small></td></tr>
-<tr><td><strong>R4</strong><br><span class="badge bg-primary">12:15 PM</span></td><td>Zalmi vs Monroe Hawks<br><small class="text-muted">Pool A</small></td><td>MSC vs Punjab Tigers<br><small class="text-muted">Pool B</small></td><td>Young Fighters vs Monroe Hawks<br><small class="text-muted">Pool A</small></td></tr>
-<tr><td><strong>R5</strong><br><span class="badge bg-primary">1:20 PM</span></td><td>Rangbaaz vs Punjab Tigers<br><small class="text-muted">Pool B</small></td><td>Zalmi vs WMCC<br><small class="text-muted">Pool A</small></td><td>HQ Blue vs MSC<br><small class="text-muted">Pool B</small></td></tr>
-<tr><td><strong>R6</strong><br><span class="badge bg-primary">2:25 PM</span></td><td>Young Fighters vs WMCC<br><small class="text-muted">Pool A</small></td><td>Afghan 11 vs Punjab Tigers<br><small class="text-muted">Pool B</small></td><td>Young Fighters vs HQ Green<br><small class="text-muted">Pool A</small></td></tr>
-<tr><td><strong>R7</strong><br><span class="badge bg-primary">3:30 PM</span></td><td>Monroe Hawks vs WMCC<br><small class="text-muted">Pool A</small></td><td>HQ Blue vs Punjab Tigers<br><small class="text-muted">Pool B</small></td><td class="text-muted">—</td></tr>
+<tr class="r1-row"><td class="round-cell"><div class="round-badge" style="background:linear-gradient(135deg,#BF0A30,#9a0826)">1</div><br><span class="badge bg-danger px-2 py-1" style="font-size:.8rem">9:00 AM</span><br><span class="badge bg-warning text-dark mt-1" style="font-size:.65rem">⚡ OPENING</span></td><td class="match-cell"><strong>HQ Green vs Monroe Hawks</strong><br><span class="badge bg-primary bg-opacity-10 text-primary" style="font-size:.65rem">Pool A</span></td><td class="match-cell"><strong>Rangbaaz vs HQ Blue</strong><br><span class="badge bg-danger bg-opacity-10 text-danger" style="font-size:.65rem">Pool B</span></td><td class="match-cell"><strong>Afghan 11 vs MSC</strong><br><span class="badge bg-danger bg-opacity-10 text-danger" style="font-size:.65rem">Pool B</span></td></tr>
+<tr><td class="round-cell"><div class="round-badge">2</div><br><span class="badge bg-primary bg-opacity-75 px-2">10:05 AM</span></td><td class="match-cell">Zalmi vs HQ Green<br><span class="badge bg-primary bg-opacity-10 text-primary" style="font-size:.65rem">Pool A</span></td><td class="match-cell">Rangbaaz vs MSC<br><span class="badge bg-danger bg-opacity-10 text-danger" style="font-size:.65rem">Pool B</span></td><td class="match-cell">Afghan 11 vs HQ Blue<br><span class="badge bg-danger bg-opacity-10 text-danger" style="font-size:.65rem">Pool B</span></td></tr>
+<tr><td class="round-cell"><div class="round-badge">3</div><br><span class="badge bg-primary bg-opacity-75 px-2">11:10 AM</span></td><td class="match-cell">Young Fighters vs Zalmi<br><span class="badge bg-primary bg-opacity-10 text-primary" style="font-size:.65rem">Pool A</span></td><td class="match-cell">Rangbaaz vs Afghan 11<br><span class="badge bg-danger bg-opacity-10 text-danger" style="font-size:.65rem">Pool B</span></td><td class="match-cell">WMCC vs HQ Green<br><span class="badge bg-primary bg-opacity-10 text-primary" style="font-size:.65rem">Pool A</span></td></tr>
+<tr><td class="round-cell"><div class="round-badge">4</div><br><span class="badge bg-primary bg-opacity-75 px-2">12:15 PM</span></td><td class="match-cell">Zalmi vs Monroe Hawks<br><span class="badge bg-primary bg-opacity-10 text-primary" style="font-size:.65rem">Pool A</span></td><td class="match-cell">MSC vs Punjab Tigers<br><span class="badge bg-danger bg-opacity-10 text-danger" style="font-size:.65rem">Pool B</span></td><td class="match-cell">Young Fighters vs Monroe Hawks<br><span class="badge bg-primary bg-opacity-10 text-primary" style="font-size:.65rem">Pool A</span></td></tr>
+<tr><td class="round-cell"><div class="round-badge">5</div><br><span class="badge bg-primary bg-opacity-75 px-2">1:20 PM</span></td><td class="match-cell">Rangbaaz vs Punjab Tigers<br><span class="badge bg-danger bg-opacity-10 text-danger" style="font-size:.65rem">Pool B</span></td><td class="match-cell">Zalmi vs WMCC<br><span class="badge bg-primary bg-opacity-10 text-primary" style="font-size:.65rem">Pool A</span></td><td class="match-cell">HQ Blue vs MSC<br><span class="badge bg-danger bg-opacity-10 text-danger" style="font-size:.65rem">Pool B</span></td></tr>
+<tr><td class="round-cell"><div class="round-badge">6</div><br><span class="badge bg-primary bg-opacity-75 px-2">2:25 PM</span></td><td class="match-cell">Young Fighters vs WMCC<br><span class="badge bg-primary bg-opacity-10 text-primary" style="font-size:.65rem">Pool A</span></td><td class="match-cell">Afghan 11 vs Punjab Tigers<br><span class="badge bg-danger bg-opacity-10 text-danger" style="font-size:.65rem">Pool B</span></td><td class="match-cell">Young Fighters vs HQ Green<br><span class="badge bg-primary bg-opacity-10 text-primary" style="font-size:.65rem">Pool A</span></td></tr>
+<tr><td class="round-cell"><div class="round-badge">7</div><br><span class="badge bg-primary bg-opacity-75 px-2">3:30 PM</span></td><td class="match-cell">Monroe Hawks vs WMCC<br><span class="badge bg-primary bg-opacity-10 text-primary" style="font-size:.65rem">Pool A</span></td><td class="match-cell">HQ Blue vs Punjab Tigers<br><span class="badge bg-danger bg-opacity-10 text-danger" style="font-size:.65rem">Pool B</span></td><td class="match-cell text-muted">— Free —</td></tr>
 </tbody>
 </table>
 </div>
-<div class="alert alert-info small mt-3 mb-0 py-2">
-<i class="bi bi-info-circle me-1"></i><strong>Opening Ceremony:</strong> 8:30 AM — All 6 local teams must report by 8:15 AM. Guest teams (Zalmi, Punjab Tigers, Young Fighters, WMCC) join from Round 2.
+<div class="px-3 py-2" style="background:linear-gradient(135deg,rgba(191,10,48,.05),rgba(255,215,0,.05))">
+<p class="small mb-0 fw-semibold"><i class="bi bi-exclamation-triangle-fill text-danger me-1"></i><strong>Opening Ceremony 8:30 AM</strong> — 6 local teams must report by 8:15 AM. Guest teams (Zalmi, Punjab Tigers, Young Fighters, WMCC) join from Round 2.</p>
 </div>
 </div>
 </div>
 
 <!-- Knockout Stage -->
-<div class="card border-0 shadow-sm mb-4">
-<div class="card-header text-white py-3" style="background:linear-gradient(135deg,var(--red),#9a0826)">
-<h3 class="h5 mb-0"><i class="bi bi-trophy me-2"></i>Knockout Stage & Closing</h3>
+<div class="card border-0 shadow-sm mb-4" style="border-radius:16px;overflow:hidden">
+<div class="card-header text-white py-3" style="background:linear-gradient(135deg,#BF0A30,#9a0826)">
+<h3 class="h5 mb-0 fw-bold"><i class="bi bi-trophy me-2"></i>Knockout Stage & Closing Ceremony</h3>
 </div>
-<div class="card-body p-3">
+<div class="card-body p-0">
 <div class="table-responsive">
-<table class="table table-bordered align-middle text-center mb-0">
-<thead class="table-dark"><tr><th>Time</th><th>Event</th><th>Details</th></tr></thead>
+<table class="table knockout-table mb-0 align-middle text-center">
+<thead><tr><th style="width:18%">Time</th><th style="width:30%">Event</th><th>Details</th></tr></thead>
 <tbody>
-<tr class="table-info"><td><span class="badge bg-danger">4:45 PM</span></td><td><strong>Semi-Final 1</strong></td><td>Pool A #1 vs Pool B #2 — Pitch 1</td></tr>
-<tr class="table-info"><td><span class="badge bg-danger">4:45 PM</span></td><td><strong>Semi-Final 2</strong></td><td>Pool B #1 vs Pool A #2 — Pitch 2</td></tr>
-<tr class="table-warning"><td><span class="badge bg-dark">6:00 PM</span></td><td><strong>🏆 Grand Final</strong></td><td>SF1 Winner vs SF2 Winner — Pitch 1</td></tr>
-<tr><td><span class="badge bg-secondary">7:15 PM</span></td><td><strong>🎉 Closing Ceremony</strong></td><td>Awards, Speeches & Photos</td></tr>
+<tr style="background:rgba(13,110,253,.04)"><td><span class="badge bg-danger px-3 py-1" style="font-size:.8rem">4:45 PM</span></td><td><strong style="color:var(--blue)">⚔️ Semi-Final 1</strong></td><td class="fw-semibold">Pool A #1 vs Pool B #2 — <span class="badge rounded-pill" style="background:#1565c0;font-size:.65rem">Pitch 1</span></td></tr>
+<tr style="background:rgba(13,110,253,.04)"><td><span class="badge bg-danger px-3 py-1" style="font-size:.8rem">4:45 PM</span></td><td><strong style="color:var(--blue)">⚔️ Semi-Final 2</strong></td><td class="fw-semibold">Pool B #1 vs Pool A #2 — <span class="badge rounded-pill" style="background:#2e7d32;font-size:.65rem">Pitch 2</span></td></tr>
+<tr style="background:linear-gradient(90deg,rgba(255,215,0,.08),rgba(255,215,0,.04))"><td><span class="badge px-3 py-1" style="background:linear-gradient(135deg,#FFD700,#FFA500);color:#1a1a2e;font-size:.85rem;font-weight:700">6:00 PM</span></td><td><strong style="color:var(--blue);font-size:1.1rem">🏆 Grand Final</strong></td><td class="fw-bold">SF1 Winner vs SF2 Winner — <span class="badge rounded-pill" style="background:#1565c0;font-size:.65rem">Pitch 1</span></td></tr>
+<tr><td><span class="badge bg-dark px-3 py-1" style="font-size:.8rem">7:15 PM</span></td><td><strong>🎉 Closing Ceremony</strong></td><td>Awards, Trophies, Speeches & Team Photos</td></tr>
 </tbody>
 </table>
 </div>
