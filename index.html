@@ -109,6 +109,7 @@ h1,h2,h3,h4,h5,h6,.display-1,.display-2,.display-3,.display-4{font-family:'Poppi
 <ul class="navbar-nav ms-auto">
 <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
 <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+<li class="nav-item"><a class="nav-link" href="trophies-unveil.html" style="color:var(--gold)">🏆 Trophies</a></li>
 <li class="nav-item"><a class="nav-link" href="#teams">Teams</a></li>
 <li class="nav-item"><a class="nav-link" href="#schedule">Schedule</a></li>
 <li class="nav-item"><a class="nav-link" href="#pitch-map">Pitch Map</a></li>
@@ -268,6 +269,176 @@ h1,h2,h3,h4,h5,h6,.display-1,.display-2,.display-3,.display-4{font-family:'Poppi
 </div>
 
 </div>
+</section>
+
+<!-- SECTION: TROPHIES & PRIZES -->
+<section id="trophies" class="section-padding py-0" aria-label="Trophies and Prizes" style="background:linear-gradient(135deg,#030810 0%,#0a1628 30%,#0d1b3e 60%,#0a0a1a 100%);position:relative;overflow:hidden">
+<!-- Background effects - stage lighting -->
+<div style="position:absolute;inset:0;background:radial-gradient(ellipse at 50% 0%,rgba(255,215,0,.08) 0%,transparent 40%),radial-gradient(ellipse at 30% 60%,rgba(255,215,0,.04) 0%,transparent 35%),radial-gradient(ellipse at 70% 60%,rgba(255,215,0,.04) 0%,transparent 35%);pointer-events:none"></div>
+<div style="position:absolute;inset:0;opacity:.03;background-image:url('data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2260%22 height=%2260%22%3E%3Ctext x=%2230%22 y=%2235%22 text-anchor=%22middle%22 font-size=%2218%22 fill=%22gold%22%3E%E2%98%85%3C/text%3E%3C/svg%3E');pointer-events:none"></div>
+
+<style>
+@keyframes spotlightPulse{0%,100%{opacity:.7;transform:scale(1)}50%{opacity:1;transform:scale(1.05)}}
+@keyframes trophyGlow{0%,100%{box-shadow:0 0 30px rgba(255,215,0,.3),0 0 60px rgba(255,215,0,.1),0 20px 60px rgba(0,0,0,.5)}50%{box-shadow:0 0 50px rgba(255,215,0,.5),0 0 100px rgba(255,215,0,.2),0 20px 60px rgba(0,0,0,.5)}}
+@keyframes trophyFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+@keyframes goldPulse{0%,100%{text-shadow:0 0 10px rgba(255,215,0,.3)}50%{text-shadow:0 0 30px rgba(255,215,0,.7),0 0 60px rgba(255,215,0,.3)}}
+@keyframes shimmer{0%{background-position:-200% center}100%{background-position:200% center}}
+@keyframes revealUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
+@keyframes spotlightBeam{0%,100%{opacity:.4}50%{opacity:.8}}
+@keyframes crownBounce{0%,100%{transform:translateY(0) rotate(-3deg)}50%{transform:translateY(-5px) rotate(3deg)}}
+.trophy-spotlight{position:relative;padding:2.5rem 1.5rem 2rem;border-radius:24px;text-align:center;transition:all .4s ease}
+.trophy-spotlight::before{content:'';position:absolute;top:-20px;left:50%;transform:translateX(-50%);width:120px;height:200px;background:radial-gradient(ellipse,rgba(255,215,0,.15) 0%,transparent 70%);pointer-events:none;animation:spotlightBeam 3s ease-in-out infinite}
+.trophy-spotlight:hover{transform:translateY(-8px)}
+.trophy-spotlight:hover::before{opacity:1;width:160px}
+.trophy-spotlight-champion{background:linear-gradient(180deg,rgba(255,215,0,.1) 0%,rgba(255,215,0,.03) 50%,rgba(0,0,0,.2) 100%);border:2px solid rgba(255,215,0,.3)}
+.trophy-spotlight-champion:hover{border-color:rgba(255,215,0,.6);box-shadow:0 0 60px rgba(255,215,0,.2),0 30px 60px rgba(0,0,0,.4)}
+.trophy-spotlight-runner{background:linear-gradient(180deg,rgba(192,192,192,.08) 0%,rgba(192,192,192,.02) 50%,rgba(0,0,0,.2) 100%);border:2px solid rgba(192,192,192,.25)}
+.trophy-spotlight-runner:hover{border-color:rgba(192,192,192,.5);box-shadow:0 0 40px rgba(192,192,192,.15),0 30px 60px rgba(0,0,0,.4)}
+.trophy-img-main{border-radius:16px;animation:trophyFloat 5s ease-in-out infinite;transition:transform .4s ease,filter .4s ease;filter:brightness(1.05) contrast(1.05)}
+.trophy-img-main:hover{transform:scale(1.05);filter:brightness(1.15) contrast(1.1)}
+.trophy-crown{font-size:2.5rem;animation:crownBounce 3s ease-in-out infinite;display:inline-block}
+.award-card{background:linear-gradient(135deg,rgba(255,215,0,.06) 0%,rgba(0,0,0,.2) 100%);border:1px solid rgba(255,215,0,.15);border-radius:16px;padding:1.2rem 1rem;text-align:center;transition:all .3s ease;position:relative;overflow:hidden}
+.award-card:hover{transform:translateY(-5px);border-color:rgba(255,215,0,.4);box-shadow:0 12px 40px rgba(255,215,0,.1)}
+.award-card::after{content:'';position:absolute;top:0;left:-100%;width:100%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,215,0,.06),transparent);transition:left .5s ease}
+.award-card:hover::after{left:100%}
+.gold-text-glow{animation:goldPulse 2.5s ease-in-out infinite}
+.trophy-divider{width:80px;height:3px;background:linear-gradient(90deg,transparent,var(--gold),transparent);margin:0 auto;border-radius:2px}
+.unveil-badge{background:linear-gradient(90deg,#FFD700,#FFA500,#FFD700);background-size:200% 100%;animation:shimmer 3s linear infinite;border-radius:50px;padding:.8rem 2rem;display:inline-block;box-shadow:0 6px 25px rgba(255,215,0,.25)}
+</style>
+
+<div class="position-relative" style="padding:5rem 0">
+<div class="container">
+
+<!-- Section Header -->
+<div class="text-center mb-5">
+<div class="unveil-badge mb-3">
+<span style="color:#1a1a2e;font-family:'Poppins',sans-serif;font-weight:800;font-size:.85rem;letter-spacing:3px">★ THE GRAND UNVEILING ★</span>
+</div>
+<h2 class="display-4 fw-900 text-white mb-3">🏆 Trophies & Rewards</h2>
+<p class="lead mb-0 gold-text-glow" style="color:var(--gold);font-weight:600;font-size:1.4rem">Play for glory. Play for gold. Play for legacy.</p>
+<div class="trophy-divider mt-4"></div>
+</div>
+
+<!-- Hero Trophy Image - All Trophies Showcase -->
+<div class="text-center mb-5">
+<div class="position-relative d-inline-block">
+<div style="position:absolute;top:-30px;left:50%;transform:translateX(-50%);width:300px;height:100px;background:radial-gradient(ellipse,rgba(255,215,0,.2) 0%,transparent 70%);pointer-events:none;animation:spotlightPulse 3s ease-in-out infinite"></div>
+<img src="images/trophies/all_trophies.jpeg" alt="Freedom Cup 2026 - Complete Trophy Collection" class="trophy-img-main img-fluid" style="max-height:450px;width:auto;object-fit:cover;border:3px solid rgba(255,215,0,.3);box-shadow:0 0 40px rgba(255,215,0,.2),0 30px 80px rgba(0,0,0,.6);animation:trophyGlow 3s ease-in-out infinite,trophyFloat 6s ease-in-out infinite">
+<div class="position-absolute top-0 start-0 end-0 bottom-0" style="border-radius:16px;background:linear-gradient(180deg,transparent 50%,rgba(3,8,16,.7) 100%);pointer-events:none"></div>
+<div class="position-absolute bottom-0 start-0 end-0 text-center pb-3" style="pointer-events:none">
+<span class="badge rounded-pill px-4 py-2" style="background:rgba(255,215,0,.9);color:#1a1a2e;font-weight:800;font-size:.85rem;letter-spacing:1px">🏆 GLORY AWAITS THE CHAMPION</span>
+</div>
+</div>
+</div>
+
+<!-- Tagline -->
+<div class="text-center mb-5">
+<p class="h5 text-white fw-bold mb-1">Trophies, Medals & Exciting Cash Prizes</p>
+<p class="small" style="color:rgba(255,255,255,.6)">The biggest rewards in New Haven tape ball history — who will claim them?</p>
+</div>
+
+<!-- Winner & Runner-up Trophy Under The Lights -->
+<div class="row g-4 justify-content-center mb-5 align-items-stretch">
+<div class="col-sm-6 col-lg-5">
+<div class="trophy-spotlight trophy-spotlight-champion h-100">
+<div class="trophy-crown">👑</div>
+<h4 class="fw-900 mt-2 mb-3" style="color:var(--gold);font-size:1.5rem;letter-spacing:1px">CHAMPION</h4>
+<img src="images/trophies/winner_trophy.jpeg" alt="Freedom Cup 2026 Champion Trophy" class="trophy-img-main img-fluid mb-3" style="max-height:320px;width:auto;border:2px solid rgba(255,215,0,.3)">
+<p class="text-white fw-bold mb-1" style="font-size:1.1rem">Champion's Glory Trophy</p>
+<p class="small mb-0" style="color:rgba(255,215,0,.7)">Trophy + Cash Prize + Eternal Bragging Rights 🏆</p>
+</div>
+</div>
+<div class="col-sm-6 col-lg-5">
+<div class="trophy-spotlight trophy-spotlight-runner h-100">
+<div style="font-size:2.5rem">🥈</div>
+<h4 class="fw-900 mt-2 mb-3" style="color:#C0C0C0;font-size:1.5rem;letter-spacing:1px">RUNNER-UP</h4>
+<img src="images/trophies/winner__runner_trophy.jpeg" alt="Freedom Cup 2026 Winner and Runner-up Trophies" class="trophy-img-main img-fluid mb-3" style="max-height:320px;width:auto;border:2px solid rgba(192,192,192,.3);animation-delay:1.5s">
+<p class="text-white fw-bold mb-1" style="font-size:1.1rem">Runner-Up Trophy</p>
+<p class="small mb-0" style="color:rgba(192,192,192,.7)">Trophy + Cash Prize + Pride of the Fight 🥈</p>
+</div>
+</div>
+</div>
+
+<!-- Prize Cards Grid -->
+<div class="mb-5">
+<div class="text-center mb-4">
+<h3 class="h4 fw-bold text-white"><i class="bi bi-stars me-2" style="color:var(--gold)"></i>All Awards & Prizes</h3>
+<div class="trophy-divider mt-3"></div>
+</div>
+
+<div class="row g-3 justify-content-center">
+<!-- Champions -->
+<div class="col-6 col-md-4 col-lg-2">
+<div class="prize-card-trophy h-100">
+<div class="mb-2" style="font-size:2.5rem">🏆</div>
+<h6 class="fw-bold text-white mb-1" style="font-size:.85rem">Champions</h6>
+<p class="prize-amount mb-0" style="font-size:1.4rem">$500</p>
+<p class="small mb-0" style="color:rgba(255,255,255,.5)">Trophy + Cash</p>
+</div>
+</div>
+<!-- Runners-Up -->
+<div class="col-6 col-md-4 col-lg-2">
+<div class="prize-card-trophy h-100">
+<div class="mb-2" style="font-size:2.5rem">🥈</div>
+<h6 class="fw-bold text-white mb-1" style="font-size:.85rem">Runners-Up</h6>
+<p class="prize-amount mb-0" style="font-size:1.4rem">$250</p>
+<p class="small mb-0" style="color:rgba(255,255,255,.5)">Trophy + Cash</p>
+</div>
+</div>
+<!-- Player of Tournament -->
+<div class="col-6 col-md-4 col-lg-2">
+<div class="prize-card-trophy h-100">
+<div class="mb-2" style="font-size:2.5rem">⭐</div>
+<h6 class="fw-bold text-white mb-1" style="font-size:.85rem">Player of Tournament</h6>
+<p class="prize-amount mb-0" style="font-size:1.4rem">$100</p>
+<p class="small mb-0" style="color:rgba(255,255,255,.5)">Trophy + Cash</p>
+</div>
+</div>
+<!-- Best Batsman -->
+<div class="col-6 col-md-4 col-lg-2">
+<div class="prize-card-trophy h-100">
+<div class="mb-2" style="font-size:2.5rem">🏏</div>
+<h6 class="fw-bold text-white mb-1" style="font-size:.85rem">Best Batsman</h6>
+<p class="prize-amount mb-0" style="font-size:1.4rem">$50</p>
+<p class="small mb-0" style="color:rgba(255,255,255,.5)">Medal + Cash</p>
+</div>
+</div>
+<!-- Best Bowler -->
+<div class="col-6 col-md-4 col-lg-2">
+<div class="prize-card-trophy h-100">
+<div class="mb-2" style="font-size:2.5rem">🎯</div>
+<h6 class="fw-bold text-white mb-1" style="font-size:.85rem">Best Bowler</h6>
+<p class="prize-amount mb-0" style="font-size:1.4rem">$50</p>
+<p class="small mb-0" style="color:rgba(255,255,255,.5)">Medal + Cash</p>
+</div>
+</div>
+<!-- Best Fielder -->
+<div class="col-6 col-md-4 col-lg-2">
+<div class="prize-card-trophy h-100">
+<div class="mb-2" style="font-size:2.5rem">🧤</div>
+<h6 class="fw-bold text-white mb-1" style="font-size:.85rem">Best Fielder</h6>
+<p class="prize-amount mb-0" style="font-size:1.4rem">$50</p>
+<p class="small mb-0" style="color:rgba(255,255,255,.5)">Medal + Cash</p>
+</div>
+</div>
+</div>
+</div>
+
+<!-- Bottom Motivational CTA -->
+<div class="text-center p-4 rounded-4 position-relative overflow-hidden" style="background:linear-gradient(135deg,rgba(255,215,0,.08),rgba(255,215,0,.03));border:1px solid rgba(255,215,0,.2)">
+<div style="position:absolute;inset:0;background:radial-gradient(ellipse at center,rgba(255,215,0,.05) 0%,transparent 70%);pointer-events:none"></div>
+<div class="position-relative">
+<p class="display-6 fw-900 mb-2 text-white">Every match matters. Every run counts.</p>
+<p class="mb-3" style="color:var(--gold);font-weight:600;font-size:1.1rem">Will YOUR team be the one to lift the Freedom Cup? 🏆🔥</p>
+<a href="#teams" class="btn btn-lg fw-bold" style="background:linear-gradient(135deg,var(--gold),#FFA500);color:#1a1a2e;border-radius:50px;padding:.8rem 2.5rem;box-shadow:0 6px 20px rgba(255,215,0,.3)"><i class="bi bi-people-fill me-2"></i>Meet the Teams</a>
+</div>
+</div>
+
+</div>
+</div>
+
+<!-- Bottom gold stripe -->
+<div style="position:absolute;bottom:0;left:0;right:0;height:4px;background:linear-gradient(90deg,transparent 5%,var(--gold) 20%,#FFA500 50%,var(--gold) 80%,transparent 95%)"></div>
 </section>
 
 <!-- SECTION: TEAMS & POOLS -->
