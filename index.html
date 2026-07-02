@@ -621,23 +621,23 @@ h1,h2,h3,h4,h5,h6,.display-1,.display-2,.display-3,.display-4{font-family:'Poppi
 <!-- SECTION 3: SCHEDULE -->
 <section id="schedule" class="section-padding bg-light" aria-label="Match Schedule">
 <style>
-#schedule .sched-table{border-collapse:separate;border-spacing:0;border-radius:12px;overflow:hidden;box-shadow:0 4px 20px rgba(0,0,0,.06)}
-#schedule .sched-table thead th{background:linear-gradient(135deg,#001233,#002868);color:#fff;font-size:.8rem;letter-spacing:1px;text-transform:uppercase;padding:.8rem .6rem;border:none}
+#schedule .sched-table{border-collapse:collapse;border-radius:12px;overflow:hidden;box-shadow:0 4px 20px rgba(0,0,0,.06);border:1px solid rgba(0,0,0,.1)}
+#schedule .sched-table thead th{background:linear-gradient(135deg,#001233,#002868);color:#fff;font-size:.75rem;letter-spacing:1px;text-transform:uppercase;padding:.5rem .4rem;border:1px solid rgba(255,255,255,.1)}
 #schedule .sched-table thead th.pitch-1{background:linear-gradient(135deg,#1565c0,#0d47a1)}
 #schedule .sched-table thead th.pitch-2{background:linear-gradient(135deg,#2e7d32,#1b5e20)}
 #schedule .sched-table thead th.pitch-3{background:linear-gradient(135deg,#e65100,#bf360c)}
-#schedule .sched-table tbody tr{transition:all .2s ease;border-bottom:1px solid rgba(0,0,0,.05)}
-#schedule .sched-table tbody tr:hover{background:rgba(0,40,104,.04)!important;transform:scale(1.005)}
-#schedule .sched-table tbody td{padding:.8rem .6rem;vertical-align:middle;border:none;border-bottom:1px solid rgba(0,0,0,.06)}
+#schedule .sched-table tbody tr{transition:all .2s ease}
+#schedule .sched-table tbody tr:hover{background:rgba(0,40,104,.04)!important}
+#schedule .sched-table tbody td{padding:.45rem .4rem;vertical-align:middle;border:1px solid rgba(0,0,0,.1);font-size:.85rem}
 #schedule .sched-table .round-cell{font-weight:800;white-space:nowrap}
-#schedule .round-badge{display:inline-block;width:36px;height:36px;line-height:36px;border-radius:50%;background:linear-gradient(135deg,#002868,#1a3a6b);color:#fff;font-weight:800;font-size:.9rem;margin-bottom:4px}
-#schedule .match-cell{font-weight:600;font-size:.9rem;color:#1a1a2e}
+#schedule .round-badge{display:inline-block;width:30px;height:30px;line-height:30px;border-radius:50%;background:linear-gradient(135deg,#002868,#1a3a6b);color:#fff;font-weight:800;font-size:.8rem;margin-bottom:2px}
+#schedule .match-cell{font-weight:600;font-size:.82rem;color:#1a1a2e}
 #schedule .match-cell small{font-weight:400}
-#schedule .r1-row{background:linear-gradient(90deg,rgba(191,10,48,.08),rgba(255,215,0,.08),rgba(191,10,48,.08))!important;border-left:4px solid #BF0A30;animation:r1Pulse 3s ease-in-out infinite}
+#schedule .r1-row{background:linear-gradient(90deg,rgba(191,10,48,.08),rgba(255,215,0,.08),rgba(191,10,48,.08))!important;border-left:4px solid #BF0A30}
 @keyframes r1Pulse{0%,100%{box-shadow:inset 0 0 0 rgba(191,10,48,0)}50%{box-shadow:inset 0 0 20px rgba(191,10,48,.05)}}
-#schedule .knockout-table{border-radius:12px;overflow:hidden;box-shadow:0 4px 20px rgba(0,0,0,.06)}
-#schedule .knockout-table thead th{background:linear-gradient(135deg,#BF0A30,#9a0826);color:#fff;font-size:.8rem;letter-spacing:1px;padding:.7rem;border:none}
-#schedule .knockout-table tbody td{padding:.7rem;border:none;border-bottom:1px solid rgba(0,0,0,.05)}
+#schedule .knockout-table{border-radius:12px;overflow:hidden;box-shadow:0 4px 20px rgba(0,0,0,.06);border:1px solid rgba(0,0,0,.1)}
+#schedule .knockout-table thead th{background:linear-gradient(135deg,#BF0A30,#9a0826);color:#fff;font-size:.75rem;letter-spacing:1px;padding:.5rem;border:1px solid rgba(255,255,255,.1)}
+#schedule .knockout-table tbody td{padding:.45rem .5rem;border:1px solid rgba(0,0,0,.08);font-size:.85rem}
 #schedule .knockout-table tbody tr:last-child td{border-bottom:none}
 </style>
 <div class="container">
