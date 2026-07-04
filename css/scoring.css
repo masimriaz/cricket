@@ -1,0 +1,297 @@
+/* ============================================================
+   Freedom Cup 2026 - Live Scoring Stylesheet
+   Mobile-first, high-contrast for outdoor use
+   ============================================================ */
+:root {
+  --navy: #001a4a;
+  --navy-dark: #000d2b;
+  --blue: #002868;
+  --gold: #FFD700;
+  --red: #BF0A30;
+  --green: #28a745;
+  --purple: #7b2d8b;
+  --yellow: #ffc107;
+  --cyan: #17a2b8;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(180deg, var(--navy-dark) 0%, var(--navy) 100%);
+  min-height: 100vh;
+  margin: 0;
+  color: #fff;
+  -webkit-tap-highlight-color: transparent;
+  overscroll-behavior: none;
+}
+
+.screen { min-height: 100vh; }
+
+/* Cards */
+.card-dark {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 12px;
+}
+
+/* Gold Button */
+.btn-gold {
+  background: linear-gradient(135deg, var(--gold), #f5c518);
+  color: #1a1a2e;
+  border: none;
+  border-radius: 50px;
+  font-weight: 700;
+  box-shadow: 0 4px 15px rgba(255,215,0,0.3);
+}
+.btn-gold:hover, .btn-gold:active {
+  background: linear-gradient(135deg, #f5c518, var(--gold));
+  color: #000;
+  transform: scale(1.02);
+}
+
+/* Scoring Header */
+.scoring-header {
+  background: linear-gradient(135deg, var(--navy-dark), var(--blue));
+  padding: 10px 12px;
+  border-bottom: 3px solid var(--gold);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+.score-display {
+  font-size: 2rem;
+  font-weight: 900;
+  color: #fff;
+  line-height: 1;
+}
+.score-overs {
+  font-size: 0.85rem;
+  color: var(--gold);
+  font-weight: 600;
+}
+.score-crr {
+  font-size: 0.75rem;
+  color: rgba(255,255,255,0.7);
+}
+.score-target {
+  font-size: 0.85rem;
+  color: var(--yellow);
+  font-weight: 600;
+}
+
+/* Batsmen */
+.batsman-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 4px 8px;
+  border-radius: 6px;
+  margin-bottom: 2px;
+}
+.batsman-row.striker {
+  background: rgba(255,215,0,0.15);
+  border-left: 3px solid var(--gold);
+}
+.batsman-name { font-weight: 600; font-size: 0.9rem; }
+.batsman-stats { font-size: 0.8rem; color: rgba(255,255,255,0.8); }
+
+/* Bowler */
+.bowler-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 4px 8px;
+}
+.bowler-name { font-weight: 600; font-size: 0.85rem; color: var(--cyan); }
+.bowler-figures { font-size: 0.8rem; color: rgba(255,255,255,0.7); }
+
+/* This Over Display */
+.over-balls {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.ball-token {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.7rem;
+  font-weight: 700;
+  border: 2px solid rgba(255,255,255,0.2);
+}
+.ball-dot { background: rgba(255,255,255,0.1); color: rgba(255,255,255,0.5); }
+.ball-run { background: rgba(255,255,255,0.15); color: #fff; }
+.ball-four { background: rgba(40,167,69,0.3); color: #4cff7a; border-color: var(--green); }
+.ball-six { background: rgba(123,45,139,0.3); color: #d98fff; border-color: var(--purple); }
+.ball-wicket { background: rgba(191,10,48,0.3); color: #ff6b8a; border-color: var(--red); }
+.ball-wide { background: rgba(255,193,7,0.2); color: var(--yellow); border-color: var(--yellow); }
+.ball-noball { background: rgba(255,193,7,0.2); color: var(--yellow); border-color: var(--yellow); }
+.ball-bye { background: rgba(23,162,184,0.2); color: var(--cyan); border-color: var(--cyan); }
+
+/* Scoring Buttons */
+.btn-score {
+  height: 56px;
+  font-size: 1.3rem;
+  font-weight: 800;
+  border-radius: 12px;
+  border: 2px solid rgba(255,255,255,0.2);
+  transition: all 0.15s;
+}
+.btn-score:active { transform: scale(0.92); }
+.btn-dot { background: rgba(255,255,255,0.08); color: #fff; }
+.btn-dot:hover, .btn-dot:active { background: rgba(255,255,255,0.2); color: #fff; }
+.btn-run { background: rgba(255,255,255,0.12); color: #fff; }
+.btn-run:hover, .btn-run:active { background: rgba(255,255,255,0.25); color: #fff; }
+.btn-four { background: rgba(40,167,69,0.25); color: #4cff7a; border-color: var(--green); }
+.btn-four:hover, .btn-four:active { background: var(--green); color: #fff; }
+.btn-six { background: rgba(123,45,139,0.25); color: #d98fff; border-color: var(--purple); }
+.btn-six:hover, .btn-six:active { background: var(--purple); color: #fff; }
+
+.btn-extra {
+  height: 48px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  border-radius: 10px;
+  background: rgba(255,193,7,0.15);
+  color: var(--yellow);
+  border: 2px solid rgba(255,193,7,0.4);
+}
+.btn-extra:hover, .btn-extra:active { background: var(--yellow); color: #000; }
+
+.btn-wicket {
+  height: 52px;
+  font-size: 1rem;
+  font-weight: 800;
+  border-radius: 12px;
+  background: rgba(191,10,48,0.25);
+  color: #ff6b8a;
+  border: 2px solid var(--red);
+}
+.btn-wicket:hover, .btn-wicket:active { background: var(--red); color: #fff; }
+
+.btn-undo {
+  height: 52px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  border-radius: 12px;
+  background: rgba(255,255,255,0.08);
+  color: rgba(255,255,255,0.7);
+  border: 1px solid rgba(255,255,255,0.2);
+}
+.btn-undo:hover { background: rgba(255,255,255,0.15); color: #fff; }
+
+/* Free Hit Banner */
+.free-hit-banner {
+  background: linear-gradient(90deg, var(--green), #1b8c3a);
+  color: #fff;
+  text-align: center;
+  padding: 8px;
+  border-radius: 8px;
+  font-weight: 800;
+  font-size: 1rem;
+  animation: fhPulse 1s ease-in-out infinite;
+  margin-bottom: 8px;
+}
+@keyframes fhPulse {
+  0%,100% { opacity: 1; }
+  50% { opacity: 0.7; }
+}
+
+/* Over Summary */
+.over-summary-item {
+  display: inline-block;
+  padding: 2px 8px;
+  margin: 2px;
+  border-radius: 4px;
+  font-size: 0.7rem;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.1);
+  color: rgba(255,255,255,0.7);
+}
+
+/* Bowler Selection */
+.bowler-option {
+  display: block;
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 8px;
+  background: rgba(255,255,255,0.05);
+  border: 2px solid rgba(255,255,255,0.15);
+  border-radius: 10px;
+  color: #fff;
+  font-weight: 600;
+  text-align: left;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.bowler-option:hover { border-color: var(--cyan); background: rgba(23,162,184,0.15); }
+.bowler-option:disabled { opacity: 0.3; cursor: not-allowed; }
+.bowler-option .bo-overs { float: right; font-size: 0.75rem; color: rgba(255,255,255,0.5); }
+
+/* Player inputs */
+.player-input {
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.15);
+  color: #fff;
+  border-radius: 6px;
+  padding: 8px 10px;
+  font-size: 0.85rem;
+  width: 100%;
+  margin-bottom: 6px;
+}
+.player-input::placeholder { color: rgba(255,255,255,0.35); }
+.player-input:focus { outline: none; border-color: var(--gold); background: rgba(255,255,255,0.12); }
+
+/* Scorecard Table */
+.scorecard-table {
+  width: 100%;
+  font-size: 0.75rem;
+  border-collapse: collapse;
+}
+.scorecard-table th {
+  background: rgba(255,215,0,0.1);
+  color: var(--gold);
+  padding: 4px 6px;
+  text-align: left;
+  font-weight: 600;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+.scorecard-table td {
+  padding: 4px 6px;
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+  color: rgba(255,255,255,0.85);
+}
+.scorecard-table .not-out { color: var(--gold); font-weight: 600; }
+.scorecard-table .dismissed { color: rgba(255,255,255,0.5); }
+
+/* Form elements in dark mode */
+.form-select, .form-control {
+  background-color: rgba(0,0,0,0.3) !important;
+  color: #fff !important;
+  border-color: rgba(255,255,255,0.2) !important;
+}
+.form-select:focus, .form-control:focus {
+  border-color: var(--gold) !important;
+  box-shadow: 0 0 0 2px rgba(255,215,0,0.2) !important;
+}
+.form-label { font-size: 0.8rem; }
+
+/* Modal dark theme */
+.modal-content { color: #fff; }
+
+/* Responsive */
+@media (max-width: 575px) {
+  .score-display { font-size: 1.6rem; }
+  .btn-score { height: 50px; font-size: 1.1rem; }
+  .btn-extra { height: 44px; font-size: 0.75rem; }
+  .btn-wicket { height: 48px; font-size: 0.9rem; }
+}
+
+@media (min-width: 768px) {
+  .scoring-buttons { max-width: 500px; margin: 0 auto; }
+}

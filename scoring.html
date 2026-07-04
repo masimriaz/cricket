@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<title>Live Scoring | Freedom Cup 2026</title>
+<meta name="description" content="Freedom Cup 2026 Live Match Scoring System">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/scoring.css">
+</head>
+<body>
+<!-- SCREEN: RESUME PROMPT -->
+<div id="screenResume" class="screen d-none">
+<div class="container py-4">
+<div class="text-center mb-4">
+<i class="bi bi-arrow-clockwise" style="font-size:3rem;color:var(--gold)"></i>
+<h2 class="fw-bold text-white mt-2">Match In Progress</h2>
+<p class="text-white-50">A match was interrupted. Would you like to resume?</p>
+</div>
+<div id="resumeInfo" class="card-dark p-3 mb-4"></div>
+<div class="d-grid gap-2">
+<button class="btn btn-gold btn-lg fw-bold" onclick="FC.resumeMatch()"><i class="bi bi-play-fill me-2"></i>Resume Match</button>
+<button class="btn btn-outline-light btn-lg" onclick="FC.abandonResume()"><i class="bi bi-x-lg me-2"></i>Start New Match</button>
+</div>
+</div>
+</div>
+
+<!-- SCREEN 1: MATCH SETUP -->
+<div id="screenSetup" class="screen">
+<div class="container py-3">
+<div class="text-center mb-4">
+<h1 class="fw-900 text-white mb-1"><span class="text-gold">★</span> Freedom Cup 2026</h1>
+<p class="text-white-50 small mb-0">Live Scoring System</p>
+</div>
+<div class="card-dark p-4">
+<h3 class="fw-bold text-white mb-3"><i class="bi bi-gear me-2 text-gold"></i>Match Setup</h3>
+<div class="row g-3">
+<div class="col-6">
+<label class="form-label text-white-50">Round</label>
+<select id="setupRound" class="form-select form-select-lg bg-dark text-white border-secondary">
+<option value="R1">R1 - 9:00 AM</option>
+<option value="R2">R2 - 10:05 AM</option>
+<option value="R3">R3 - 11:10 AM</option>
+<option value="R4">R4 - 12:15 PM</option>
+<option value="R5">R5 - 1:20 PM</option>
+<option value="R6">R6 - 2:25 PM</option>
+<option value="R7">R7 - 3:30 PM</option>
+<option value="SF1">Semi-Final 1</option>
+<option value="SF2">Semi-Final 2</option>
+<option value="Final">Grand Final</option>
+</select>
+</div>
+<div class="col-6">
+<label class="form-label text-white-50">Pitch</label>
+<select id="setupPitch" class="form-select form-select-lg bg-dark text-white border-secondary">
+<option value="1">Pitch 1</option>
+<option value="2">Pitch 2</option>
+<option value="3">Pitch 3</option>
+</select>
+</div>
+<div class="col-12">
+<label class="form-label text-white-50">Team A</label>
+<select id="setupTeamA" class="form-select form-select-lg bg-dark text-white border-secondary">
+<option value="">Select Team...</option>
+<option>Punjab Tigers Albany</option>
+<option>Afghan 11</option>
+<option>Zalmi SuperStrikers</option>
+<option>Hamden Qalandars Green</option>
+<option>Young Fighters</option>
+<option>Rangbaaz</option>
+<option>MSC</option>
+<option>WMCC</option>
+<option>Hamden Qalandars Blue</option>
+<option>Monroe Hawks</option>
+</select>
+</div>
+<div class="col-12">
+<label class="form-label text-white-50">Team B</label>
+<select id="setupTeamB" class="form-select form-select-lg bg-dark text-white border-secondary">
+<option value="">Select Team...</option>
+<option>Punjab Tigers Albany</option>
+<option>Afghan 11</option>
+<option>Zalmi SuperStrikers</option>
+<option>Hamden Qalandars Green</option>
+<option>Young Fighters</option>
+<option>Rangbaaz</option>
+<option>MSC</option>
+<option>WMCC</option>
+<option>Hamden Qalandars Blue</option>
+<option>Monroe Hawks</option>
+</select>
+</div>
+<div class="col-12"><hr class="border-secondary"></div>
+<div class="col-6">
+<label class="form-label text-white-50">Toss Won By</label>
+<select id="setupTossWinner" class="form-select bg-dark text-white border-secondary">
+<option value="A">Team A</option>
+<option value="B">Team B</option>
+</select>
+</div>
+<div class="col-6">
+<label class="form-label text-white-50">Chose to</label>
+<select id="setupTossChoice" class="form-select bg-dark text-white border-secondary">
+<option value="bat">Bat</option>
+<option value="bowl">Bowl</option>
+</select>
+</div>
+<div class="col-12 mt-3">
+<button class="btn btn-gold btn-lg w-100 fw-bold" onclick="FC.setupNext()">
+<i class="bi bi-arrow-right me-2"></i>NEXT — Enter Players
+</button>
+</div>
+</div>
+</div>
+<!-- Previous Matches -->
+<div class="mt-4" id="previousMatches"></div>
+</div>
+</div>
+
+<!-- SCREEN 2: PLAYERS -->
+<div id="screenPlayers" class="screen d-none">
+<div class="container py-3">
+<div class="d-flex justify-content-between align-items-center mb-3">
+<button class="btn btn-sm btn-outline-light" onclick="FC.showScreen('screenSetup')"><i class="bi bi-arrow-left"></i> Back</button>
+<h5 class="fw-bold text-white mb-0">Enter Players</h5>
+<span></span>
+</div>
+<div class="row g-3">
+<div class="col-12">
+<div class="card-dark p-3">
+<h6 class="text-gold fw-bold mb-2" id="battingTeamLabel">🏏 Batting Team</h6>
+<div id="battingPlayersInputs"></div>
+</div>
+</div>
+<div class="col-12">
+<div class="card-dark p-3">
+<h6 class="text-info fw-bold mb-2" id="bowlingTeamLabel">⚾ Bowling Team</h6>
+<div id="bowlingPlayersInputs"></div>
+</div>
+</div>
+<div class="col-12">
+<button class="btn btn-gold btn-lg w-100 fw-bold" onclick="FC.startMatch()">
+<i class="bi bi-play-fill me-2"></i>START MATCH
+</button>
+</div>
+</div>
+</div>
+</div>
+
+<!-- SCREEN 3: LIVE SCORING -->
+<div id="screenScoring" class="screen d-none">
+<div class="scoring-header" id="scoringHeader"></div>
+<div class="container-fluid px-2 py-2">
+<!-- Batsmen Info -->
+<div class="card-dark p-2 mb-2" id="batsmenPanel"></div>
+<!-- Bowler Info -->
+<div class="card-dark p-2 mb-2" id="bowlerPanel"></div>
+<!-- This Over -->
+<div class="card-dark p-2 mb-2" id="thisOverPanel"></div>
+<!-- Free Hit Banner -->
+<div class="free-hit-banner d-none" id="freeHitBanner">
+<i class="bi bi-shield-fill me-1"></i>FREE HIT
+</div>
+<!-- Scoring Buttons -->
+<div class="scoring-buttons" id="scoringButtons">
+<div class="row g-2 mb-2">
+<div class="col-2"><button class="btn btn-score btn-dot w-100" onclick="FC.scoreRuns(0)">0</button></div>
+<div class="col-2"><button class="btn btn-score btn-run w-100" onclick="FC.scoreRuns(1)">1</button></div>
+<div class="col-2"><button class="btn btn-score btn-run w-100" onclick="FC.scoreRuns(2)">2</button></div>
+<div class="col-2"><button class="btn btn-score btn-run w-100" onclick="FC.scoreRuns(3)">3</button></div>
+<div class="col-2"><button class="btn btn-score btn-four w-100" onclick="FC.scoreRuns(4)">4</button></div>
+<div class="col-2"><button class="btn btn-score btn-six w-100" onclick="FC.scoreRuns(6)">6</button></div>
+</div>
+<div class="row g-2 mb-2">
+<div class="col-3"><button class="btn btn-extra w-100" onclick="FC.scoreWide()">Wide</button></div>
+<div class="col-3"><button class="btn btn-extra w-100" onclick="FC.scoreNoBall()">No Ball</button></div>
+<div class="col-3"><button class="btn btn-extra w-100" onclick="FC.scoreBye()">Bye</button></div>
+<div class="col-3"><button class="btn btn-extra w-100" onclick="FC.scoreLegBye()">Leg Bye</button></div>
+</div>
+<div class="row g-2">
+<div class="col-8"><button class="btn btn-wicket w-100" onclick="FC.scoreWicket()"><i class="bi bi-x-circle me-1"></i>WICKET</button></div>
+<div class="col-4"><button class="btn btn-undo w-100" onclick="FC.undoLast()"><i class="bi bi-arrow-counterclockwise me-1"></i>Undo</button></div>
+</div>
+</div>
+<!-- Over Summary -->
+<div class="card-dark p-2 mt-2" id="overSummaryPanel"></div>
+</div>
+</div>
+
+<!-- SCREEN 4: INNINGS BREAK -->
+<div id="screenBreak" class="screen d-none">
+<div class="container py-3">
+<div class="text-center mb-3">
+<h2 class="fw-bold text-white">Innings Break</h2>
+<div class="display-4 fw-900 text-gold" id="breakScore"></div>
+<p class="text-white-50" id="breakOvers"></p>
+</div>
+<div class="card-dark p-3 mb-3" id="breakScorecard"></div>
+<div class="alert alert-warning text-center fw-bold" id="breakTarget"></div>
+<div class="card-dark p-3 mb-3">
+<h6 class="text-gold fw-bold mb-2" id="innings2BattingLabel">🏏 2nd Innings Batting Order</h6>
+<div id="innings2BattingInputs"></div>
+</div>
+<button class="btn btn-gold btn-lg w-100 fw-bold" onclick="FC.startInnings2()">
+<i class="bi bi-play-fill me-2"></i>START 2ND INNINGS
+</button>
+</div>
+</div>
+
+<!-- SCREEN 5: MATCH COMPLETE -->
+<div id="screenResult" class="screen d-none">
+<div class="container py-3">
+<div class="text-center mb-3">
+<i class="bi bi-trophy-fill" style="font-size:3rem;color:var(--gold)"></i>
+<h2 class="fw-bold text-white mt-2">Match Complete</h2>
+<div class="display-6 fw-900 text-gold" id="resultString"></div>
+</div>
+<div class="card-dark p-3 mb-3" id="fullScorecard"></div>
+<div class="d-grid gap-2">
+<button class="btn btn-gold btn-lg fw-bold" onclick="FC.shareResult()"><i class="bi bi-share me-2"></i>Share Result</button>
+<a href="index.html#schedule" class="btn btn-outline-light btn-lg"><i class="bi bi-calendar me-2"></i>Back to Schedule</a>
+<button class="btn btn-outline-warning" onclick="FC.newMatch()"><i class="bi bi-plus-lg me-2"></i>Score Another Match</button>
+</div>
+</div>
+</div>
+
+<!-- MODAL: Wicket -->
+<div class="modal fade" id="wicketModal" tabindex="-1" data-bs-backdrop="static">
+<div class="modal-dialog modal-dialog-centered">
+<div class="modal-content bg-dark border-danger">
+<div class="modal-header border-danger">
+<h5 class="modal-title text-danger fw-bold"><i class="bi bi-x-circle me-2"></i>WICKET</h5>
+</div>
+<div class="modal-body" id="wicketModalBody"></div>
+<div class="modal-footer border-secondary">
+<button class="btn btn-danger w-100 fw-bold" onclick="FC.confirmWicket()">Confirm Wicket</button>
+</div>
+</div>
+</div>
+</div>
+
+<!-- MODAL: Bowler Selection -->
+<div class="modal fade" id="bowlerModal" tabindex="-1" data-bs-backdrop="static">
+<div class="modal-dialog modal-dialog-centered">
+<div class="modal-content bg-dark border-info">
+<div class="modal-header border-info">
+<h5 class="modal-title text-info fw-bold"><i class="bi bi-person me-2"></i>Select Bowler</h5>
+</div>
+<div class="modal-body" id="bowlerModalBody"></div>
+</div>
+</div>
+</div>
+
+<!-- MODAL: Runs Prompt (for NB, Bye, LB) -->
+<div class="modal fade" id="runsModal" tabindex="-1" data-bs-backdrop="static">
+<div class="modal-dialog modal-dialog-centered modal-sm">
+<div class="modal-content bg-dark border-warning">
+<div class="modal-header border-warning">
+<h5 class="modal-title text-warning fw-bold" id="runsModalTitle">Runs</h5>
+</div>
+<div class="modal-body text-center">
+<p class="text-white-50 small" id="runsModalDesc"></p>
+<div class="d-flex gap-2 justify-content-center flex-wrap" id="runsModalButtons"></div>
+</div>
+</div>
+</div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="js/scoring.js"></script>
+</body>
+</html>
