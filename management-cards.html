@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Management Committee Cards — Freedom Cup 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Poppins',sans-serif;background:#fff}
+
+.page{
+  width:8.5in;
+  height:11in;
+  padding:.4in .5in;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:flex-start;
+  gap:4px;
+  padding-top:.5in;
+  page-break-after:always;
+}
+.page:last-child{page-break-after:avoid}
+
+.card{
+  width:4in;
+  height:2.4in;
+  border:2px solid #002868;
+  border-radius:10px;
+  overflow:hidden;
+  position:relative;
+  background:linear-gradient(135deg,#ffffff 0%,#f0f4ff 100%);
+}
+
+/* Top stripe */
+.card-top{
+  height:10px;
+  background:linear-gradient(90deg,#BF0A30 33%,#fff 33% 66%,#002868 66%);
+}
+
+/* Bottom stripe */
+.card-bottom{
+  position:absolute;
+  bottom:0;
+  left:0;
+  right:0;
+  height:8px;
+  background:linear-gradient(90deg,#002868 33%,#FFD700 33% 66%,#BF0A30 66%);
+}
+
+/* Content */
+.card-content{
+  padding:10px 16px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  height:calc(100% - 18px);
+  text-align:center;
+}
+
+/* Logo */
+.card-logo{
+  width:40px;
+  height:40px;
+  border-radius:50%;
+  border:2px solid #FFD700;
+  overflow:hidden;
+  margin-bottom:6px;
+}
+.card-logo img{width:100%;height:100%;object-fit:cover}
+
+/* Title */
+.card-title{
+  font-size:9px;
+  font-weight:700;
+  color:#002868;
+  letter-spacing:2px;
+  text-transform:uppercase;
+  margin-bottom:5px;
+}
+
+/* Role badge */
+.card-role{
+  background:linear-gradient(135deg,#002868,#1a3a6b);
+  color:#fff;
+  font-size:14px;
+  font-weight:800;
+  letter-spacing:2px;
+  padding:6px 22px;
+  border-radius:5px;
+  text-transform:uppercase;
+  margin-bottom:5px;
+}
+
+/* Event name */
+.card-event{
+  font-size:18px;
+  font-weight:900;
+  color:#002868;
+  letter-spacing:1px;
+}
+.card-event span{color:#BF0A30}
+
+/* Year */
+.card-year{
+  font-size:9px;
+  color:#666;
+  letter-spacing:2px;
+  margin-top:3px;
+}
+
+/* Side accents */
+.card::before{
+  content:'';
+  position:absolute;
+  top:10px;
+  left:0;
+  bottom:8px;
+  width:5px;
+  background:linear-gradient(180deg,#FFD700,#BF0A30);
+}
+.card::after{
+  content:'';
+  position:absolute;
+  top:10px;
+  right:0;
+  bottom:8px;
+  width:5px;
+  background:linear-gradient(180deg,#FFD700,#002868);
+}
+
+@media print{
+  body{padding:0}
+  .page{padding:.35in .5in}
+  @page{size:letter;margin:0}
+  body{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+}
+</style>
+</head>
+<body>
+
+<!-- Page 1: 5 cards -->
+<div class="page">
+<div class="card"><div class="card-top"></div><div class="card-content"><div class="card-logo"><img src="images/league_logo.jpeg" alt="Logo"></div><div class="card-title">🏏 Independence Day Cricket Tournament</div><div class="card-role">Management Committee</div><div class="card-event">FREEDOM <span>CUP</span> 2026</div><div class="card-year">July 4, 2026 • New Haven, CT</div></div><div class="card-bottom"></div></div>
+
+<div class="card"><div class="card-top"></div><div class="card-content"><div class="card-logo"><img src="images/league_logo.jpeg" alt="Logo"></div><div class="card-title">🏏 Independence Day Cricket Tournament</div><div class="card-role">Management Committee</div><div class="card-event">FREEDOM <span>CUP</span> 2026</div><div class="card-year">July 4, 2026 • New Haven, CT</div></div><div class="card-bottom"></div></div>
+
+<div class="card"><div class="card-top"></div><div class="card-content"><div class="card-logo"><img src="images/league_logo.jpeg" alt="Logo"></div><div class="card-title">🏏 Independence Day Cricket Tournament</div><div class="card-role">Management Committee</div><div class="card-event">FREEDOM <span>CUP</span> 2026</div><div class="card-year">July 4, 2026 • New Haven, CT</div></div><div class="card-bottom"></div></div>
+
+<div class="card"><div class="card-top"></div><div class="card-content"><div class="card-logo"><img src="images/league_logo.jpeg" alt="Logo"></div><div class="card-title">🏏 Independence Day Cricket Tournament</div><div class="card-role">Management Committee</div><div class="card-event">FREEDOM <span>CUP</span> 2026</div><div class="card-year">July 4, 2026 • New Haven, CT</div></div><div class="card-bottom"></div></div>
+
+<div class="card"><div class="card-top"></div><div class="card-content"><div class="card-logo"><img src="images/league_logo.jpeg" alt="Logo"></div><div class="card-title">🏏 Independence Day Cricket Tournament</div><div class="card-role">Management Committee</div><div class="card-event">FREEDOM <span>CUP</span> 2026</div><div class="card-year">July 4, 2026 • New Haven, CT</div></div><div class="card-bottom"></div></div>
+</div>
+
+<!-- Page 2: 5 cards -->
+<div class="page">
+<div class="card"><div class="card-top"></div><div class="card-content"><div class="card-logo"><img src="images/league_logo.jpeg" alt="Logo"></div><div class="card-title">🏏 Independence Day Cricket Tournament</div><div class="card-role">Management Committee</div><div class="card-event">FREEDOM <span>CUP</span> 2026</div><div class="card-year">July 4, 2026 • New Haven, CT</div></div><div class="card-bottom"></div></div>
+
+<div class="card"><div class="card-top"></div><div class="card-content"><div class="card-logo"><img src="images/league_logo.jpeg" alt="Logo"></div><div class="card-title">🏏 Independence Day Cricket Tournament</div><div class="card-role">Management Committee</div><div class="card-event">FREEDOM <span>CUP</span> 2026</div><div class="card-year">July 4, 2026 • New Haven, CT</div></div><div class="card-bottom"></div></div>
+
+<div class="card"><div class="card-top"></div><div class="card-content"><div class="card-logo"><img src="images/league_logo.jpeg" alt="Logo"></div><div class="card-title">🏏 Independence Day Cricket Tournament</div><div class="card-role">Management Committee</div><div class="card-event">FREEDOM <span>CUP</span> 2026</div><div class="card-year">July 4, 2026 • New Haven, CT</div></div><div class="card-bottom"></div></div>
+
+<div class="card"><div class="card-top"></div><div class="card-content"><div class="card-logo"><img src="images/league_logo.jpeg" alt="Logo"></div><div class="card-title">🏏 Independence Day Cricket Tournament</div><div class="card-role">Management Committee</div><div class="card-event">FREEDOM <span>CUP</span> 2026</div><div class="card-year">July 4, 2026 • New Haven, CT</div></div><div class="card-bottom"></div></div>
+
+<div class="card"><div class="card-top"></div><div class="card-content"><div class="card-logo"><img src="images/league_logo.jpeg" alt="Logo"></div><div class="card-title">🏏 Independence Day Cricket Tournament</div><div class="card-role">Management Committee</div><div class="card-event">FREEDOM <span>CUP</span> 2026</div><div class="card-year">July 4, 2026 • New Haven, CT</div></div><div class="card-bottom"></div></div>
+</div>
+
+</body>
+</html>
