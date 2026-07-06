@@ -23,14 +23,15 @@
 }
 
 body {
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif;
   color: #222;
   overflow-x: hidden;
 }
 
 h1, h2, h3, h4, h5, h6,
 .display-1, .display-2, .display-3, .display-4, .display-5, .display-6 {
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
 }
 
 ::selection {
@@ -191,7 +192,7 @@ h1, h2, h3, h4, h5, h6,
 
 /* === Section Styling === */
 .section-padding {
-  padding: 3.5rem 0;
+  padding: 5rem 0;
 }
 
 .section-title {
@@ -367,7 +368,7 @@ h1, h2, h3, h4, h5, h6,
   font-family: 'Inter', serif;
   max-width: 700px;
   margin: 0 auto;
-  line-height: 1.7;
+  line-height: 1.8;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
 }
 
@@ -639,6 +640,30 @@ h1, h2, h3, h4, h5, h6,
     font-size: 0.85rem;
     padding: 0.75rem 1rem;
   }
+  /* Champion card mobile */
+  .champion-card {
+    padding: 1.5rem !important;
+  }
+  .champion-card h3 {
+    font-size: 1.3rem !important;
+  }
+  /* Gallery grid mobile */
+  .gallery-grid {
+    gap: 4px;
+  }
+  /* Schedule table mobile */
+  .table-responsive {
+    border-radius: 8px;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  .table-responsive table {
+    min-width: 600px;
+  }
+  /* Closing note mobile */
+  .closing-note-card {
+    padding: 1.5rem !important;
+  }
 }
 
 @media (max-width: 575.98px) {
@@ -657,17 +682,263 @@ h1, h2, h3, h4, h5, h6,
     border-radius: 8px;
   }
   .section-padding {
-    padding: 2.5rem 0;
+    padding: 2rem 0;
   }
   .display-5 {
-    font-size: 1.4rem;
+    font-size: 1.35rem;
+  }
+  .display-6 {
+    font-size: 1.15rem;
   }
   .table {
-    font-size: 0.75rem;
+    font-size: 0.72rem;
   }
   .card {
     border-radius: 10px;
   }
+  /* Pool cards mobile */
+  #allTeamsRow .col-6 {
+    padding-left: 4px;
+    padding-right: 4px;
+  }
+  /* Champion section xs */
+  .champion-card h3 {
+    font-size: 1.15rem !important;
+  }
+}
+
+/* ============================================================
+   ENHANCED UI POLISH - Freedom Cup 2026
+   ============================================================ */
+
+/* === Champion Section Premium Styling === */
+.champion-card {
+  border-radius: 20px !important;
+  transition: transform 0.3s ease;
+}
+
+.champion-card:hover {
+  transform: scale(1.01);
+}
+
+.champion-glow {
+  font-family: 'Playfair Display', serif !important;
+  letter-spacing: 0.5px;
+}
+
+/* === Section Header Consistency === */
+section .display-5 {
+  letter-spacing: -0.5px;
+  line-height: 1.2;
+}
+
+section .text-muted {
+  font-size: 0.95rem;
+}
+
+/* === Improved Card Consistency === */
+.card {
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.card.border-0 {
+  border-radius: var(--radius) !important;
+}
+
+/* === Schedule Table Enhancement === */
+.table-bordered td,
+.table-bordered th {
+  vertical-align: middle;
+}
+
+.table td strong {
+  color: #1a1a2e;
+}
+
+.table .badge {
+  font-size: 0.7rem;
+  letter-spacing: 0.3px;
+}
+
+/* === Sponsor Cards Consistency === */
+#sponsor-gallery .card {
+  border-radius: 16px !important;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#sponsor-gallery .card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 48px rgba(0, 40, 104, 0.15) !important;
+}
+
+/* === Management Cards === */
+#management .card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#management .card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 40px rgba(0, 40, 104, 0.15) !important;
+}
+
+/* === Gallery Section Polish === */
+#gallery .gallery-grid {
+  padding: 0;
+}
+
+#closingCeremonyGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 6px;
+}
+
+@media (min-width: 576px) {
+  #closingCeremonyGrid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 8px;
+  }
+}
+
+@media (min-width: 992px) {
+  #closingCeremonyGrid {
+    grid-template-columns: repeat(6, 1fr);
+    gap: 8px;
+  }
+}
+
+/* === Closing Note Polish === */
+#closing-note .rounded-4 {
+  transition: box-shadow 0.3s ease;
+}
+
+#closing-note .rounded-4:hover {
+  box-shadow: 0 20px 60px rgba(0, 40, 104, 0.12) !important;
+}
+
+/* === Improved Navbar Mobile === */
+@media (max-width: 991.98px) {
+  .navbar-nhtcl .navbar-collapse {
+    background: var(--blue-dark);
+    border-radius: 12px;
+    padding: 1rem;
+    margin-top: 0.5rem;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+    max-height: 70vh;
+    overflow-y: auto;
+  }
+  .navbar-nhtcl .nav-link {
+    padding: 0.6rem 1rem;
+    border-radius: 8px;
+    font-size: 0.85rem;
+  }
+  .navbar-nhtcl .nav-link:hover {
+    background: rgba(255, 215, 0, 0.08);
+  }
+}
+
+/* === Pool Cards Enhancement === */
+#allTeamsRow > div > div {
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+#allTeamsRow > div > div:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+/* === Rules Accordion Polish === */
+#rulesAccordion .accordion-item {
+  border-radius: 12px !important;
+  overflow: hidden;
+}
+
+#rulesAccordion .accordion-button {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+/* === Footer Enhancement === */
+footer a {
+  transition: color 0.2s ease;
+}
+
+footer a:hover {
+  color: var(--gold) !important;
+}
+
+/* === Focus Visible (Accessibility) === */
+a:focus-visible,
+button:focus-visible,
+.btn:focus-visible {
+  outline: 3px solid var(--gold);
+  outline-offset: 2px;
+}
+
+/* === Smooth Loading === */
+body {
+  animation: fadeInPage 0.4s ease;
+}
+
+@keyframes fadeInPage {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* === Consistent Border Radius === */
+.rounded-3 { border-radius: 10px !important; }
+.rounded-4 { border-radius: 16px !important; }
+
+/* === Hover State for All Interactive Elements === */
+a.text-decoration-none:hover {
+  opacity: 0.9;
+}
+
+/* === Table Striped Override for Dark Header === */
+.table-dark th {
+  background: var(--blue) !important;
+  border-color: rgba(255, 255, 255, 0.1) !important;
+  font-weight: 600;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* === Badge Polish === */
+.badge {
+  font-weight: 600;
+  letter-spacing: 0.3px;
+}
+
+/* === Improved Section Spacing (Tablet) === */
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .section-padding {
+    padding: 3.5rem 0;
+  }
+  .display-5 {
+    font-size: 2rem;
+  }
+}
+
+/* === Tournament Complete Banner === */
+.tournament-complete-banner {
+  background: rgba(40, 167, 69, 0.15);
+  border: 2px solid rgba(40, 167, 69, 0.5);
+  border-radius: 50px;
+  padding: 0.5rem 1.5rem;
+  display: inline-block;
+}
+
+/* === Quick Links Grid Fix on Small === */
+@media (max-width: 575.98px) {
+  .quick-link-card p {
+    font-size: 0.7rem !important;
+  }
+}
+
+/* === Text Shadow for Section Titles on Dark BG === */
+section[style*="background:linear-gradient"] .display-5.text-white {
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
 }
 
 /* ============================================================
