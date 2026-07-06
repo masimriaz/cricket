@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en" data-bs-spy="scroll" data-bs-target="#mainNav">
 <head>
 <meta charset="UTF-8">
@@ -92,6 +92,12 @@ h1,h2,h3,h4,h5,h6,.display-1,.display-2,.display-3,.display-4{font-family:'Poppi
 .gallery-lb-counter{position:absolute;bottom:20px;color:rgba(255,255,255,.9);font-size:.8rem;background:rgba(0,20,60,.7);padding:6px 18px;border-radius:20px;border:1px solid rgba(255,215,0,.2);backdrop-filter:blur(6px)}
 @media print{.no-print{display:none!important}.print-only{display:block!important}}
 .print-only{display:none}
+
+/* Champion Glow Animation */
+.champion-glow{animation:championGlow 2s ease-in-out infinite alternate}
+@keyframes championGlow{from{text-shadow:0 0 10px rgba(255,215,0,.3),0 0 20px rgba(255,215,0,.2)}to{text-shadow:0 0 20px rgba(255,215,0,.6),0 0 40px rgba(255,215,0,.3),0 0 60px rgba(255,215,0,.15)}}
+.champion-card{animation:cardPulse 3s ease-in-out infinite}
+@keyframes cardPulse{0%,100%{box-shadow:0 0 30px rgba(255,215,0,.1),0 0 60px rgba(255,215,0,.05)}50%{box-shadow:0 0 40px rgba(255,215,0,.2),0 0 80px rgba(255,215,0,.1)}}
 </style>
 </head>
 <body>
@@ -118,6 +124,7 @@ h1,h2,h3,h4,h5,h6,.display-1,.display-2,.display-3,.display-4{font-family:'Poppi
 <li class="nav-item"><a class="nav-link" href="#sponsors">Get Involved</a></li>
 <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
 <li class="nav-item"><a class="nav-link" href="#gallery">Gallery</a></li>
+<li class="nav-item"><a class="nav-link" href="#closing-note">Thank You</a></li>
 <li class="nav-item"><a class="nav-link" href="brochure.html">Brochure</a></li>
 <li class="nav-item"><a class="nav-link" href="scoring.html" style="color:var(--gold)">ðŸ“Š Live Scoring</a></li>
 <li class="nav-item"><a class="nav-link" href="#sponsor-gallery">Sponsors</a></li>
@@ -141,17 +148,27 @@ h1,h2,h3,h4,h5,h6,.display-1,.display-2,.display-3,.display-4{font-family:'Poppi
 <p class="lead mb-4"><i class="bi bi-geo-alt me-2"></i>150 Kimberly Avenue, New Haven, CT</p>
 
 <!-- Countdown -->
-<div class="d-flex justify-content-center gap-3 flex-wrap mb-4" id="countdown" data-target="2026-07-04T09:00:00-04:00" aria-live="polite" aria-label="Countdown to tournament">
-<div class="countdown-box text-center"><div class="count-num" data-days>--</div><div class="count-label">Days</div></div>
-<div class="countdown-box text-center"><div class="count-num" data-hours>--</div><div class="count-label">Hours</div></div>
-<div class="countdown-box text-center"><div class="count-num" data-minutes>--</div><div class="count-label">Minutes</div></div>
-<div class="countdown-box text-center"><div class="count-num" data-seconds>--</div><div class="count-label">Seconds</div></div>
+<!-- Tournament Complete Banner -->
+<div class="mb-4" aria-live="polite" aria-label="Tournament Complete">
+<div class="d-inline-block px-4 py-2 rounded-pill mb-3" style="background:rgba(40,167,69,.2);border:2px solid rgba(40,167,69,.6)">
+<span class="fw-bold text-uppercase" style="color:#4cff91;letter-spacing:3px;font-size:.85rem">&#10003; TOURNAMENT COMPLETE</span>
+</div>
 </div>
 
-<a href="#schedule" class="btn btn-patriotic btn-lg mb-4"><i class="bi bi-calendar-event me-2"></i>View Schedule</a>
+<!-- Champions Announcement -->
+<div class="mx-auto mb-4 p-4 rounded-4 position-relative overflow-hidden champion-card" style="max-width:650px;background:linear-gradient(135deg,rgba(255,215,0,.08),rgba(255,215,0,.02));border:2px solid rgba(255,215,0,.4);box-shadow:0 0 40px rgba(255,215,0,.15)">
+<div class="position-absolute top-0 start-0 end-0 bottom-0" style="opacity:.05;background-image:url('data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2240%22 height=%2240%22%3E%3Ctext x=%2220%22 y=%2225%22 text-anchor=%22middle%22 font-size=%2216%22 fill=%22gold%22%3E%E2%98%85%3C/text%3E%3C/svg%3E')"></div>
+<div class="position-relative">
+<p class="mb-2" style="font-size:2.5rem;line-height:1">&#127942;</p>
+<h3 class="fw-900 mb-1 champion-glow" style="color:var(--gold);font-size:1.8rem;text-shadow:0 0 20px rgba(255,215,0,.5)">CHAMPIONS: Young Fighters</h3>
+<p class="mb-0 fw-bold" style="color:rgba(255,255,255,.85);font-size:1.1rem">&#129352; Runner-Up: WMCC</p>
+</div>
+</div>
+
+<a href="#awards" class="btn btn-patriotic btn-lg mb-4"><i class="bi bi-trophy me-2"></i>View Awards &amp; Results</a>
 
 <!-- Event Summary -->
-<p class="mx-auto mb-5" style="max-width:600px;opacity:.9">Celebrate America's Independence Day with the Freedom Cup â€” New Haven's premier tape ball cricket tournament. Ten teams battle across 3 mat pitches in one explosive day of sixes, fours, and pure cricketing glory. Fast-paced, exciting, and open to all skill levels!</p>
+<p class="mx-auto mb-5" style="max-width:600px;opacity:.9">The Freedom Cup 2026 was an incredible success! Ten teams battled across 3 mat pitches in one explosive day of sixes, fours, and pure cricketing glory. Thank you to everyone who made this Independence Day celebration unforgettable! &#127951;&#127482;&#127480;</p>
 </div>
 </div>
 
@@ -942,7 +959,7 @@ h1,h2,h3,h4,h5,h6,.display-1,.display-2,.display-3,.display-4{font-family:'Poppi
 <span style="font-size:3.5rem">ðŸ†</span>
 </div>
 <h3 class="fw-900 text-white mb-1" style="font-size:1.8rem">CHAMPIONS</h3>
-<p class="fw-bold mb-2" style="color:var(--gold);font-size:1rem">Freedom Cup Winners</p>
+<p class="fw-bold mb-2" style="color:var(--gold);font-size:1rem">&#127942; Young Fighters</p>
 <p class="text-white small opacity-75 mb-3">The ultimate glory â€” lift the trophy, own the day, make history</p>
 <div class="d-inline-block px-4 py-2 rounded-pill" style="background:linear-gradient(90deg,var(--gold),#f5c518);box-shadow:0 4px 16px rgba(255,215,0,.4)">
 <span class="fw-bold" style="color:#1a1a2e">ðŸ’° Cash Prize + Trophy + Glory</span>
@@ -956,7 +973,7 @@ h1,h2,h3,h4,h5,h6,.display-1,.display-2,.display-3,.display-4{font-family:'Poppi
 <span style="font-size:3rem">ðŸ¥ˆ</span>
 </div>
 <h3 class="fw-900 mb-1" style="font-size:1.6rem;color:#495057">RUNNER-UP</h3>
-<p class="fw-bold mb-2" style="color:var(--red)">Freedom Cup Finalists</p>
+<p class="fw-bold mb-2" style="color:var(--red)">&#129352; WMCC</p>
 <p class="small text-muted mb-3">Fought till the last ball â€” respect earned, heads held high</p>
 <div class="d-inline-block px-4 py-2 rounded-pill" style="background:#f1f1f1;border:1px solid #ddd">
 <span class="fw-bold" style="color:#495057">ðŸ’° Cash Prize + Trophy</span>
@@ -1700,6 +1717,49 @@ h1,h2,h3,h4,h5,h6,.display-1,.display-2,.display-3,.display-4{font-family:'Poppi
 <div class="gm-item" data-type="video"><video src="images/photo_gallary/WhatsApp Video 2026-06-13 at 9.35.36 PM.mp4" preload="metadata" muted></video><div class="gm-ov"><i class="bi bi-play-circle-fill"></i></div></div>
 </div>
 </div>
+
+<!-- Closing Ceremony Gallery -->
+<div class="container mt-5">
+<div class="d-flex align-items-center justify-content-between mb-4 flex-wrap gap-2">
+<p class="fw-bold small text-uppercase mb-0" style="color:var(--gold);letter-spacing:2px"><i class="bi bi-camera-reels me-1"></i>Closing Ceremony</p>
+<span class="badge rounded-pill" style="background:rgba(255,215,0,.15);color:var(--gold);font-size:.75rem">11 Photos &bull; 3 Videos</span>
+</div>
+
+<!-- Closing Ceremony Videos -->
+<div class="row g-3 mb-4">
+<div class="col-12 col-md-4">
+<div class="rounded-3 overflow-hidden" style="aspect-ratio:16/9;background:#0a0f1a;border:1px solid rgba(255,215,0,.15)">
+<video src="images/closing_ceremony/WhatsApp%20Video%202026-07-05%20at%208.20.22%20PM.mp4" controls preload="metadata" style="width:100%;height:100%;object-fit:cover" class="rounded-3"></video>
+</div>
+</div>
+<div class="col-12 col-md-4">
+<div class="rounded-3 overflow-hidden" style="aspect-ratio:16/9;background:#0a0f1a;border:1px solid rgba(255,215,0,.15)">
+<video src="images/closing_ceremony/WhatsApp%20Video%202026-07-05%20at%208.20.22%20PM%20(1).mp4" controls preload="metadata" style="width:100%;height:100%;object-fit:cover" class="rounded-3"></video>
+</div>
+</div>
+<div class="col-12 col-md-4">
+<div class="rounded-3 overflow-hidden" style="aspect-ratio:16/9;background:#0a0f1a;border:1px solid rgba(255,215,0,.15)">
+<video src="images/closing_ceremony/WhatsApp%20Video%202026-07-05%20at%208.20.21%20PM.mp4" controls preload="metadata" style="width:100%;height:100%;object-fit:cover" class="rounded-3"></video>
+</div>
+</div>
+</div>
+
+<!-- Closing Ceremony Photos Grid -->
+<div class="gallery-grid" id="closingCeremonyGrid">
+<div class="gm-item" data-type="photo"><img src="images/closing_ceremony/WhatsApp%20Image%202026-07-05%20at%208.20.23%20PM.jpeg" alt="Closing Ceremony - Trophy presentation" loading="lazy"><div class="gm-ov"><i class="bi bi-arrows-fullscreen"></i><span>Ceremony</span></div></div>
+<div class="gm-item" data-type="photo"><img src="images/closing_ceremony/WhatsApp%20Image%202026-07-05%20at%208.20.23%20PM%20(2).jpeg" alt="Closing Ceremony - Champions celebration" loading="lazy"><div class="gm-ov"><i class="bi bi-arrows-fullscreen"></i><span>Ceremony</span></div></div>
+<div class="gm-item" data-type="photo"><img src="images/closing_ceremony/WhatsApp%20Image%202026-07-05%20at%208.20.23%20PM%20(1).jpeg" alt="Closing Ceremony - Award distribution" loading="lazy"><div class="gm-ov"><i class="bi bi-arrows-fullscreen"></i><span>Ceremony</span></div></div>
+<div class="gm-item" data-type="photo"><img src="images/closing_ceremony/WhatsApp%20Image%202026-07-05%20at%208.20.22%20PM%20(8).jpeg" alt="Closing Ceremony - Team photo" loading="lazy"><div class="gm-ov"><i class="bi bi-arrows-fullscreen"></i><span>Ceremony</span></div></div>
+<div class="gm-item" data-type="photo"><img src="images/closing_ceremony/WhatsApp%20Image%202026-07-05%20at%208.20.22%20PM%20(7).jpeg" alt="Closing Ceremony - Speeches" loading="lazy"><div class="gm-ov"><i class="bi bi-arrows-fullscreen"></i><span>Ceremony</span></div></div>
+<div class="gm-item" data-type="photo"><img src="images/closing_ceremony/WhatsApp%20Image%202026-07-05%20at%208.20.22%20PM%20(6).jpeg" alt="Closing Ceremony - Prize distribution" loading="lazy"><div class="gm-ov"><i class="bi bi-arrows-fullscreen"></i><span>Ceremony</span></div></div>
+<div class="gm-item" data-type="photo"><img src="images/closing_ceremony/WhatsApp%20Image%202026-07-05%20at%208.20.22%20PM%20(5).jpeg" alt="Closing Ceremony - Group photo" loading="lazy"><div class="gm-ov"><i class="bi bi-arrows-fullscreen"></i><span>Ceremony</span></div></div>
+<div class="gm-item" data-type="photo"><img src="images/closing_ceremony/WhatsApp%20Image%202026-07-05%20at%208.20.22%20PM%20(4).jpeg" alt="Closing Ceremony - Sponsors appreciation" loading="lazy"><div class="gm-ov"><i class="bi bi-arrows-fullscreen"></i><span>Ceremony</span></div></div>
+<div class="gm-item" data-type="photo"><img src="images/closing_ceremony/WhatsApp%20Image%202026-07-05%20at%208.20.22%20PM%20(3).jpeg" alt="Closing Ceremony - Shield presentation" loading="lazy"><div class="gm-ov"><i class="bi bi-arrows-fullscreen"></i><span>Ceremony</span></div></div>
+<div class="gm-item" data-type="photo"><img src="images/closing_ceremony/WhatsApp%20Image%202026-07-05%20at%208.20.22%20PM%20(2).jpeg" alt="Closing Ceremony - Celebration" loading="lazy"><div class="gm-ov"><i class="bi bi-arrows-fullscreen"></i><span>Ceremony</span></div></div>
+<div class="gm-item" data-type="photo"><img src="images/closing_ceremony/WhatsApp%20Image%202026-07-05%20at%208.20.22%20PM%20(1).jpeg" alt="Closing Ceremony - Final moments" loading="lazy"><div class="gm-ov"><i class="bi bi-arrows-fullscreen"></i><span>Ceremony</span></div></div>
+</div>
+</div>
+
 </div>
 </section>
 
@@ -1739,6 +1799,46 @@ h1,h2,h3,h4,h5,h6,.display-1,.display-2,.display-3,.display-4{font-family:'Poppi
 </div>
 
 </main>
+
+
+<!-- SECTION: THANK YOU / CLOSING NOTE -->
+<section id="closing-note" class="section-padding" aria-label="Thank You" style="background:linear-gradient(180deg,#fff 0%,#f8f5f0 50%,#fffef8 100%)">
+<div class="container">
+<div class="text-center mb-5">
+<div class="d-inline-block px-4 py-1 rounded-pill mb-3" style="background:linear-gradient(135deg,rgba(255,215,0,.15),rgba(255,215,0,.05));border:1px solid rgba(255,215,0,.3)">
+<span class="fw-bold text-uppercase" style="color:#b8860b;letter-spacing:2px;font-size:.75rem">&#9733; A Message From The Organizers &#9733;</span>
+</div>
+<h2 class="display-5 fw-bold" style="color:var(--blue)">Thank You &mdash; Freedom Cup 2026</h2>
+</div>
+
+<div class="mx-auto rounded-4 p-4 p-md-5 position-relative overflow-hidden" style="max-width:800px;background:#fff;box-shadow:0 16px 50px rgba(0,40,104,.08);border:1px solid rgba(0,40,104,.06)">
+<div class="position-absolute top-0 start-0 end-0" style="height:5px;background:linear-gradient(90deg,var(--red) 20%,var(--gold) 20% 40%,var(--blue) 40% 60%,var(--gold) 60% 80%,var(--red) 80%)"></div>
+
+<div class="text-center">
+<p class="fw-bold mb-4" style="color:var(--blue);font-size:1.1rem">To All 10 Teams, Our Champions and Runner-Up, and Our Guest Teams,</p>
+
+<p class="mb-4" style="font-size:1.05rem;line-height:1.9;color:#444">A heartfelt thank you to each and every one of you for being part of this incredible journey. Your passion, talent, sportsmanship, and competitive spirit made this tournament truly special.</p>
+
+<p class="mb-4" style="font-size:1.05rem;line-height:1.9;color:#444">We understand there were a few scheduling delays and some CricClubs-related technical glitches along the way, and we sincerely appreciate your patience, understanding, and cooperation throughout the day. Your support and flexibility helped us overcome those challenges and keep the tournament moving.</p>
+
+<p class="mb-4" style="font-size:1.05rem;line-height:1.9;color:#444">Whether you were champions, runners-up, or guest teams, your participation made this one of the finest community cricket events in Connecticut. Thank you for your trust, enthusiasm, and for making this event such a memorable success. We truly appreciate each and every one of you. &#127951;&#10084;&#65039;</p>
+
+<hr class="my-4 mx-auto" style="max-width:200px;border-color:rgba(255,215,0,.4);border-width:2px">
+
+<!-- 2027 Teaser -->
+<div class="mt-4 p-4 rounded-4 position-relative overflow-hidden" style="background:linear-gradient(135deg,var(--blue-dark),var(--blue),#1a3a6b);box-shadow:0 12px 40px rgba(0,40,104,.2)">
+<div class="position-absolute top-0 start-0 end-0 bottom-0" style="opacity:.06;background-image:url('data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2250%22 height=%2250%22%3E%3Ctext x=%2225%22 y=%2230%22 text-anchor=%22middle%22 font-size=%2216%22 fill=%22white%22%3E%E2%98%85%3C/text%3E%3C/svg%3E')"></div>
+<div class="position-relative text-white text-center">
+<p class="text-uppercase fw-bold mb-2 small" style="color:var(--gold);letter-spacing:3px">COMING SOON</p>
+<h3 class="fw-900 mb-2" style="font-size:1.6rem">Freedom Cup 2027</h3>
+<p class="fw-bold mb-0" style="color:rgba(255,255,255,.85);font-size:1.1rem">Bigger. Better. Stronger.</p>
+<p class="mb-0 mt-2" style="color:var(--gold)">See you next Independence Day! &#127482;&#127480;&#127951;</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
 
 <!-- FOOTER -->
 <footer class="bg-patriotic text-white py-5 no-print">

@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Manual Scoring Sheet — Freedom Cup 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Poppins',sans-serif;background:#fff;color:#000;font-size:9px}
+.page{width:8.5in;height:11in;margin:0 auto;padding:.3in .4in;position:relative;page-break-after:always}
+.page:last-child{page-break-after:avoid}
+
+/* Header */
+.header{display:flex;justify-content:space-between;align-items:center;border-bottom:2px solid #000;padding-bottom:4px;margin-bottom:6px}
+.header h1{font-size:14px;font-weight:900}
+.header-info{font-size:8px;text-align:right}
+.match-info{display:flex;gap:10px;margin-bottom:6px;font-size:9px}
+.match-info .field{flex:1;border-bottom:1px solid #000;padding:2px 0;min-height:16px}
+.match-info label{font-weight:700;font-size:7.5px;text-transform:uppercase;color:#333}
+
+/* Table styles */
+table{width:100%;border-collapse:collapse;margin-bottom:6px}
+th,td{border:1px solid #000;padding:2px 3px;text-align:center;font-size:8px}
+th{background:#f0f0f0;font-weight:700;font-size:7.5px;text-transform:uppercase}
+
+/* Batting card */
+.batting-table th{background:#002868;color:#fff}
+.batting-table td{height:16px}
+.batting-table .name-col{width:20%;text-align:left;padding-left:4px}
+.batting-table .how-out-col{width:22%}
+.batting-table .bowler-col{width:12%}
+.batting-table .runs-col{width:8%}
+.batting-table .balls-col{width:8%}
+.batting-table .fours-col{width:7%}
+.batting-table .sixes-col{width:7%}
+
+/* Bowling card */
+.bowling-table th{background:#BF0A30;color:#fff}
+.bowling-table td{height:16px}
+
+/* Over-by-over */
+.overs-grid{display:grid;grid-template-columns:auto 1fr;gap:2px;margin-bottom:6px}
+.over-label{font-weight:700;font-size:8px;padding:2px 4px;background:#f0f0f0;border:1px solid #000;text-align:center;width:40px}
+.over-balls{display:grid;grid-template-columns:repeat(8,1fr);border:1px solid #000}
+.over-balls .ball{border-right:1px solid #ccc;height:18px;display:flex;align-items:center;justify-content:center}
+.over-balls .ball:last-child{border-right:none}
+.over-balls .ball-total{background:#f0f0f0;font-weight:700;border-left:1px solid #000}
+
+/* Extras & Total */
+.totals-row{display:flex;gap:8px;margin-bottom:6px;font-size:9px}
+.total-box{border:1px solid #000;padding:3px 8px;font-weight:700;text-align:center;min-width:60px}
+.total-box span{font-size:7px;font-weight:400;display:block}
+
+/* Section title */
+.section-title{font-size:10px;font-weight:800;background:#000;color:#fff;padding:3px 8px;margin-bottom:4px}
+.innings-label{font-size:11px;font-weight:900;text-align:center;margin:4px 0;padding:3px;border:2px solid #000}
+
+/* Fall of wickets */
+.fow-row{display:grid;grid-template-columns:repeat(8,1fr);gap:2px;margin-bottom:6px}
+.fow-box{border:1px solid #000;text-align:center;padding:2px;font-size:7px}
+.fow-box .wk-num{font-weight:700;font-size:8px}
+
+@media print{
+body{padding:0}
+@page{size:letter;margin:0}
+}
+</style>
+</head>
+<body>
+<!-- Generate 3 copies of the scoring sheet (one per pitch per match) -->
+
+<!-- SHEET 1 -->
+<div class="page">
+<div class="header">
+<h1>🏏 FREEDOM CUP 2026 — SCORING SHEET</h1>
+<div class="header-info">July 4, 2026 • New Haven, CT<br>9v9 • 6 Overs • Tape Ball</div>
+</div>
+
+<!-- Match Info -->
+<div class="match-info">
+<div><label>Round:</label><div class="field"></div></div>
+<div><label>Pitch:</label><div class="field"></div></div>
+<div><label>Time:</label><div class="field"></div></div>
+<div style="flex:2"><label>Team A (Batting First):</label><div class="field"></div></div>
+<div style="flex:2"><label>Team B (Bowling First):</label><div class="field"></div></div>
+<div><label>Toss Won By:</label><div class="field"></div></div>
+</div>
+
+<!-- 1ST INNINGS -->
+<div class="innings-label">1ST INNINGS — BATTING: __________________ vs BOWLING: __________________</div>
+
+<!-- Batting Scorecard -->
+<table class="batting-table">
+<thead><tr><th class="name-col">Batsman</th><th class="how-out-col">How Out</th><th class="bowler-col">Bowler</th><th class="runs-col">Runs</th><th class="balls-col">Balls</th><th class="fours-col">4s</th><th class="sixes-col">6s</th></tr></thead>
+<tbody>
+<tr><td class="name-col"></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td class="name-col"></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td class="name-col"></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td class="name-col"></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td class="name-col"></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td class="name-col"></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td class="name-col"></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td class="name-col"></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td class="name-col"></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+</tbody>
+</table>
+
+<!-- Bowling Scorecard -->
+<table class="bowling-table">
+<thead><tr><th style="width:22%">Bowler</th><th style="width:10%">Overs</th><th style="width:10%">Maidens</th><th style="width:10%">Runs</th><th style="width:10%">Wickets</th><th style="width:10%">Wides</th><th style="width:10%">No Balls</th></tr></thead>
+<tbody>
+<tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+</tbody>
+</table>
+
+<!-- Over by Over -->
+<div class="section-title">OVER-BY-OVER (write each ball: 0, 1, 2, 3, 4, 6, W=wide, N=no-ball, Wk=wicket)</div>
+<div class="overs-grid">
+<div class="over-label">Over 1</div><div class="over-balls"><div class="ball"></div><div class="ball"></div><div class="ball"></div><div class="ball"></div><div class="ball"></div><div class="ball"></div><div class="ball"></div><div class="ball ball-total">Total</div></div>
+<div class="over-label">Over 2</div><div class="over-balls"><div class="ball"></div><div class="ball"></div><div class="ball"></div><div class="ball"></div><div class="ball"></div><div class="ball"></div><div class="ball"></div><div class="ball ball-total">Total</div></div>
+<div class="over-label">Over 3</div><div class="over-balls"><div class="ball"></div><div class="ball"></div><div class="ball"></div><div class="ball"></div><div class="ball"></div><div class="ball"></div><div class="ball"></div><div class="ball ball-total">Total</div></div>
+<div class="over-label">Over 4</div><div class="over-balls"><div class="ball"></div><div class="ball"></div><div class="ball"></div><div class="ball"></div><div class="ball"></div><div class="ball"></div><div class="ball"></div><div class="ball ball-total">Total</div></div>
+<div class="over-label">Over 5</div><div class="over-balls"><div class="ball"></div><div class="ball"></div><div class="ball"></div><div class="ball"></div><div class="ball"></div><div class="ball"></div><div class="ball"></div><div class="ball ball-total">Total</div></div>
+<div class="over-label">Over 6</div><div class="over-balls"><div class="ball"></div><div class="ball"></div><div class="ball"></div><div class="ball"></div><div class="ball"></div><div class="ball"></div><div class="ball"></div><div class="ball ball-total">Total</div></div>
+</div>
+
+<!-- Totals -->
+<div class="totals-row">
+<div class="total-box"><span>TOTAL</span>___/___</div>
+<div class="total-box"><span>OVERS</span>___._</div>
+<div class="total-box"><span>WIDES</span>___</div>
+<div class="total-box"><span>NO BALLS</span>___</div>
+<div class="total-box"><span>BYES</span>___</div>
+<div class="total-box"><span>LEG BYES</span>___</div>
+<div class="total-box"><span>EXTRAS TOTAL</span>___</div>
+</div>
+
+<!-- Fall of Wickets -->
+<div class="section-title">FALL OF WICKETS</div>
+<div class="fow-row">
+<div class="fow-box"><div class="wk-num">1st</div>___/___</div>
+<div class="fow-box"><div class="wk-num">2nd</div>___/___</div>
+<div class="fow-box"><div class="wk-num">3rd</div>___/___</div>
+<div class="fow-box"><div class="wk-num">4th</div>___/___</div>
+<div class="fow-box"><div class="wk-num">5th</div>___/___</div>
+<div class="fow-box"><div class="wk-num">6th</div>___/___</div>
+<div class="fow-box"><div class="wk-num">7th</div>___/___</div>
+<div class="fow-box"><div class="wk-num">8th</div>___/___</div>
+</div>
+
+<!-- Result -->
+<div style="border:2px solid #000;padding:4px 8px;margin-top:4px;font-size:10px;font-weight:700;text-align:center">
+RESULT: _________________________________ won by _________ | Scorer: ________________
+</div>
+</div>
+
+<!-- SHEET 2 (2ND INNINGS - same match, back of page) -->
+<div class="page">
+<div class="header">
+<h1>🏏 FREEDOM CUP 2026 — SCORING SHEET</h1>
+<div class="header-info">July 4, 2026 • New Haven, CT<br>9v9 • 6 Overs • Tape Ball</div>
+</div>
+
+<div class="match-info">
+<div><label>Round:</label><div class="field"></div></div>
+<div><label>Pitch:</label><div class="field"></div></div>
+<div><label>Time:</label><div class="field"></div></div>
+<div style="flex:2"><label>Team A:</label><div class="field"></div></div>
+<div style="flex:2"><label>Team B:</label><div class="field"></div></div>
+<div><label>Target:</label><div class="field"></div></div>
+</div>
+
+<!-- 2ND INNINGS -->
+<div class="innings-label">2ND INNINGS — BATTING: __________________ vs BOWLING: __________________</div>
+
+<table class="batting-table">
+<thead><tr><th class="name-col">Batsman</th><th class="how-out-col">How Out</th><th class="bowler-col">Bowler</th><th class="runs-col">Runs</th><th class="balls-col">Balls</th><th class="fours-col">4s</th><th class="sixes-col">6s</th></tr></thead>
+<tbody>
+<tr><td class="name-col"></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td class="name-col"></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td class="name-col"></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td class="name-col"></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td class="name-col"></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td class="name-col"></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td class="name-col"></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td class="name-col"></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td class="name-col"></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+</tbody>
+</table>
+
+<table class="bowling-table">
+<thead><tr><th style="width:22%">Bowler</th><th style="width:10%">Overs</th><th style="width:10%">Maidens</th><th style="width:10%">Runs</th><th style="width:10%">Wickets</th><th style="width:10%">Wides</th><th style="width:10%">No Balls</th></tr></thead>
+<tbody>
+<tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+</tbody>
+</table>
+
+<div class="section-title">OVER-BY-OVER</div>
+<div class="overs-grid">
+<div class="over-label">Over 1</div><div class="over-balls"><div class="ball"></div><div class="ball"></div><div class="ball"></div><div class="ball"></div><div class="ball"></div><div class="ball"></div><div class="ball"></div><div class="ball ball-total">Total</div></div>
+<div class="over-label">Over 2</div><div class="over-balls"><div class="ball"></div><div class="ball"></div><div class="ball"></div><div class="ball"></div><div class="ball"></div><div class="ball"></div><div class="ball"></div><div class="ball ball-total">Total</div></div>
+<div class="over-label">Over 3</div><div class="over-balls"><div class="ball"></div><div class="ball"></div><div class="ball"></div><div class="ball"></div><div class="ball"></div><div class="ball"></div><div class="ball"></div><div class="ball ball-total">Total</div></div>
+<div class="over-label">Over 4</div><div class="over-balls"><div class="ball"></div><div class="ball"></div><div class="ball"></div><div class="ball"></div><div class="ball"></div><div class="ball"></div><div class="ball"></div><div class="ball ball-total">Total</div></div>
+<div class="over-label">Over 5</div><div class="over-balls"><div class="ball"></div><div class="ball"></div><div class="ball"></div><div class="ball"></div><div class="ball"></div><div class="ball"></div><div class="ball"></div><div class="ball ball-total">Total</div></div>
+<div class="over-label">Over 6</div><div class="over-balls"><div class="ball"></div><div class="ball"></div><div class="ball"></div><div class="ball"></div><div class="ball"></div><div class="ball"></div><div class="ball"></div><div class="ball ball-total">Total</div></div>
+</div>
+
+<div class="totals-row">
+<div class="total-box"><span>TOTAL</span>___/___</div>
+<div class="total-box"><span>OVERS</span>___._</div>
+<div class="total-box"><span>WIDES</span>___</div>
+<div class="total-box"><span>NO BALLS</span>___</div>
+<div class="total-box"><span>BYES</span>___</div>
+<div class="total-box"><span>LEG BYES</span>___</div>
+<div class="total-box"><span>EXTRAS TOTAL</span>___</div>
+</div>
+
+<div class="section-title">FALL OF WICKETS</div>
+<div class="fow-row">
+<div class="fow-box"><div class="wk-num">1st</div>___/___</div>
+<div class="fow-box"><div class="wk-num">2nd</div>___/___</div>
+<div class="fow-box"><div class="wk-num">3rd</div>___/___</div>
+<div class="fow-box"><div class="wk-num">4th</div>___/___</div>
+<div class="fow-box"><div class="wk-num">5th</div>___/___</div>
+<div class="fow-box"><div class="wk-num">6th</div>___/___</div>
+<div class="fow-box"><div class="wk-num">7th</div>___/___</div>
+<div class="fow-box"><div class="wk-num">8th</div>___/___</div>
+</div>
+
+<div style="border:2px solid #000;padding:4px 8px;margin-top:4px;font-size:10px;font-weight:700;text-align:center">
+RESULT: _________________________________ won by _________ runs / wickets | Scorer: ________________
+</div>
+
+<div style="margin-top:6px;font-size:7.5px;text-align:center;color:#666;border-top:1px solid #ddd;padding-top:3px">
+<strong>Dismissal Codes:</strong> B=Bowled | C=Caught (c fielder b bowler) | RO=Run Out | S=Stumped | HW=Hit Wicket | NO LBW | <strong>Extras:</strong> W=Wide | NB=No Ball | Bye | LB=Leg Bye
+</div>
+</div>
+
+</body>
+</html>

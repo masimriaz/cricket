@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Freedom Cup 2026 — Match Schedule (Print)</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800;900&family=Playfair+Display:wght@700;800;900&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Poppins',sans-serif;background:#fff;color:#1a1a2e;font-size:10px}
+.page{width:8.5in;height:11in;margin:0 auto;padding:.4in .45in;position:relative}
+
+/* Header */
+.header{display:flex;align-items:center;justify-content:space-between;border-bottom:3px solid #002868;padding-bottom:8px;margin-bottom:10px}
+.header-left{display:flex;align-items:center;gap:10px}
+.logo{width:42px;height:42px;border-radius:50%;border:2px solid #FFD700;overflow:hidden}
+.logo img{width:100%;height:100%;object-fit:cover}
+.header-title h1{font-family:'Playfair Display',serif;font-size:20px;color:#002868}
+.header-title p{font-size:8px;color:#666;letter-spacing:1px}
+.header-right{text-align:right;font-size:8px;color:#333}
+.header-right strong{color:#002868;font-size:9px}
+
+/* Info strip */
+.info-strip{display:flex;justify-content:space-between;background:#f0f4ff;border:1px solid #dde;border-radius:6px;padding:6px 12px;margin-bottom:10px;font-size:8.5px}
+.info-item{text-align:center}
+.info-item strong{color:#002868;font-size:10px;display:block}
+
+/* Table */
+table{width:100%;border-collapse:collapse;margin-bottom:10px;font-size:9px}
+th{background:#002868;color:#fff;padding:5px 4px;text-align:center;font-size:8px;letter-spacing:.5px;text-transform:uppercase}
+th.p1{background:#1565c0}
+th.p2{background:#2e7d32}
+th.p3{background:#e65100}
+td{padding:5px 4px;text-align:center;border:1px solid #ddd;vertical-align:middle}
+tr:nth-child(even){background:#f9f9f9}
+.round-cell{font-weight:800;color:#002868;white-space:nowrap}
+.round-num{font-size:11px;font-weight:900}
+.time-badge{display:inline-block;background:#002868;color:#fff;padding:1px 6px;border-radius:10px;font-size:7.5px;font-weight:600}
+.match-cell{font-weight:600;font-size:9px}
+.pool-badge{display:inline-block;font-size:6.5px;padding:1px 5px;border-radius:8px;font-weight:700;margin-top:1px}
+.pool-a{background:#e3f2fd;color:#1565c0}
+.pool-b{background:#fce4ec;color:#c62828}
+
+/* R1 highlight */
+.r1-row{background:linear-gradient(90deg,rgba(191,10,48,.06),rgba(255,215,0,.06),rgba(191,10,48,.06))!important;border-left:3px solid #BF0A30}
+.r1-row td:first-child{border-left:none}
+
+/* Knockout */
+.knockout-header{background:linear-gradient(135deg,#BF0A30,#9a0826);color:#fff;padding:5px 10px;border-radius:5px 5px 0 0;font-size:10px;font-weight:700;margin-top:6px}
+.knockout-table td{font-size:9px}
+.knockout-table .final-row{background:rgba(255,215,0,.1);font-weight:700}
+
+/* Pools section */
+.pools-section{display:flex;gap:12px;margin-top:8px}
+.pool-box{flex:1;border:1px solid #ddd;border-radius:6px;overflow:hidden}
+.pool-title{background:#002868;color:#fff;padding:4px 8px;font-size:9px;font-weight:700;text-align:center}
+.pool-title.pool-b-title{background:#BF0A30}
+.pool-teams{padding:5px 8px;font-size:8.5px}
+.pool-teams li{list-style:none;padding:2px 0;border-bottom:1px solid #f0f0f0}
+.pool-teams li:last-child{border:none}
+.pool-teams .guest{color:#999;font-style:italic}
+
+/* Footer */
+.footer{position:absolute;bottom:.35in;left:.45in;right:.45in;text-align:center;font-size:7.5px;color:#999;border-top:1px solid #eee;padding-top:5px}
+.footer strong{color:#002868}
+
+/* Notes */
+.notes{background:#fff8e1;border:1px solid #ffe082;border-radius:5px;padding:5px 8px;margin-top:6px;font-size:8px}
+.notes strong{color:#BF0A30}
+
+@media print{
+body{padding:0}
+.page{box-shadow:none}
+@page{size:letter;margin:0}
+body{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+}
+</style>
+</head>
+<body>
+<div class="page">
+
+<!-- Header -->
+<div class="header">
+<div class="header-left">
+<div class="logo"><img src="images/league_logo.jpeg" alt="Logo"></div>
+<div class="header-title">
+<h1>FREEDOM CUP 2026</h1>
+<p>🏏 OFFICIAL MATCH SCHEDULE • INDEPENDENCE DAY TOURNAMENT</p>
+</div>
+</div>
+<div class="header-right">
+<strong>Saturday, July 4, 2026</strong><br>
+150 Kimberly Ave, New Haven, CT<br>
+Format: 9v9 • 6 Overs • 50-min Matches
+</div>
+</div>
+
+<!-- Info Strip -->
+<div class="info-strip">
+<div class="info-item"><strong>8:30 AM</strong>Opening Ceremony</div>
+<div class="info-item"><strong>9:00 AM</strong>First Ball</div>
+<div class="info-item"><strong>3 Pitches</strong>Simultaneous</div>
+<div class="info-item"><strong>20 Matches</strong>Pool Stage</div>
+<div class="info-item"><strong>4:45 PM</strong>Semi-Finals</div>
+<div class="info-item"><strong>6:00 PM</strong>Grand Final</div>
+<div class="info-item"><strong>7:15 PM</strong>Closing Ceremony</div>
+</div>
+
+<!-- Pool Stage Table -->
+<table>
+<thead>
+<tr><th style="width:12%">Round</th><th class="p1" style="width:29%">🔵 Pitch 1 (Main)</th><th class="p2" style="width:29%">🟢 Pitch 2 (Center)</th><th class="p3" style="width:29%">🟠 Pitch 3 (Far End)</th></tr>
+</thead>
+<tbody>
+<tr class="r1-row"><td class="round-cell"><span class="round-num">R1</span><br><span class="time-badge" style="background:#BF0A30">9:00 AM</span><br><span style="font-size:6.5px;color:#BF0A30;font-weight:700">⚡ OPENING</span></td><td class="match-cell">HQ Green vs Monroe Hawks<br><span class="pool-badge pool-a">Pool A</span></td><td class="match-cell">Rangbaaz vs HQ Blue<br><span class="pool-badge pool-b">Pool B</span></td><td class="match-cell">Afghan 11 vs MSC<br><span class="pool-badge pool-b">Pool B</span></td></tr>
+<tr><td class="round-cell"><span class="round-num">R2</span><br><span class="time-badge">10:05 AM</span></td><td class="match-cell">Zalmi vs HQ Green<br><span class="pool-badge pool-a">Pool A</span></td><td class="match-cell">Rangbaaz vs MSC<br><span class="pool-badge pool-b">Pool B</span></td><td class="match-cell">Afghan 11 vs HQ Blue<br><span class="pool-badge pool-b">Pool B</span></td></tr>
+<tr><td class="round-cell"><span class="round-num">R3</span><br><span class="time-badge">11:10 AM</span></td><td class="match-cell">Young Fighters vs Zalmi<br><span class="pool-badge pool-a">Pool A</span></td><td class="match-cell">Rangbaaz vs Afghan 11<br><span class="pool-badge pool-b">Pool B</span></td><td class="match-cell">HQ Green vs WMCC<br><span class="pool-badge pool-a">Pool A</span></td></tr>
+<tr><td class="round-cell"><span class="round-num">R4</span><br><span class="time-badge">12:15 PM</span></td><td class="match-cell">Monroe Hawks vs Young Fighters<br><span class="pool-badge pool-a">Pool A</span></td><td class="match-cell">MSC vs Punjab Tigers<br><span class="pool-badge pool-b">Pool B</span></td><td class="match-cell">Zalmi vs WMCC<br><span class="pool-badge pool-a">Pool A</span></td></tr>
+<tr><td class="round-cell"><span class="round-num">R5</span><br><span class="time-badge">1:20 PM</span></td><td class="match-cell">Rangbaaz vs Punjab Tigers<br><span class="pool-badge pool-b">Pool B</span></td><td class="match-cell">Monroe Hawks vs Zalmi<br><span class="pool-badge pool-a">Pool A</span></td><td class="match-cell">HQ Blue vs MSC<br><span class="pool-badge pool-b">Pool B</span></td></tr>
+<tr><td class="round-cell"><span class="round-num">R6</span><br><span class="time-badge">2:25 PM</span></td><td class="match-cell">Young Fighters vs HQ Green<br><span class="pool-badge pool-a">Pool A</span></td><td class="match-cell">Afghan 11 vs Punjab Tigers<br><span class="pool-badge pool-b">Pool B</span></td><td class="match-cell">Monroe Hawks vs WMCC<br><span class="pool-badge pool-a">Pool A</span></td></tr>
+<tr><td class="round-cell"><span class="round-num">R7</span><br><span class="time-badge">3:30 PM</span></td><td class="match-cell">Young Fighters vs WMCC<br><span class="pool-badge pool-a">Pool A</span></td><td class="match-cell">HQ Blue vs Punjab Tigers<br><span class="pool-badge pool-b">Pool B</span></td><td style="color:#999;text-align:center">— Free —</td></tr>
+</tbody>
+</table>
+
+<!-- Knockout Stage -->
+<div class="knockout-header">🏆 Knockout Stage & Closing</div>
+<table class="knockout-table">
+<thead><tr><th style="width:15%;background:#333">Time</th><th style="width:30%;background:#333">Event</th><th style="background:#333">Details</th></tr></thead>
+<tbody>
+<tr><td><span class="time-badge" style="background:#BF0A30">4:45 PM</span></td><td class="match-cell">⚔️ Semi-Final 1</td><td>Pool A #1 vs Pool B #2 — Pitch 1</td></tr>
+<tr><td><span class="time-badge" style="background:#BF0A30">4:45 PM</span></td><td class="match-cell">⚔️ Semi-Final 2</td><td>Pool B #1 vs Pool A #2 — Pitch 2</td></tr>
+<tr class="final-row"><td><span class="time-badge" style="background:#FFD700;color:#1a1a2e">6:00 PM</span></td><td class="match-cell">🏆 Grand Final</td><td><strong>SF1 Winner vs SF2 Winner — Pitch 1</strong></td></tr>
+<tr><td><span class="time-badge" style="background:#333">7:15 PM</span></td><td class="match-cell">🎉 Closing Ceremony</td><td>Awards, Trophies, Speeches & Team Photos</td></tr>
+</tbody>
+</table>
+
+<!-- Pools -->
+<div class="pools-section">
+<div class="pool-box">
+<div class="pool-title">🔵 POOL A (5 Teams)</div>
+<ul class="pool-teams">
+<li><strong>HQ Green</strong> (Local)</li>
+<li><strong>Monroe Hawks</strong> (Local)</li>
+<li><strong>Zalmi SuperStrikers</strong> <span class="guest">(Guest - from R2)</span></li>
+<li><strong>Young Fighters</strong> <span class="guest">(Guest - from R2)</span></li>
+<li><strong>WMCC</strong> <span class="guest">(Guest - from R2)</span></li>
+</ul>
+</div>
+<div class="pool-box">
+<div class="pool-title pool-b-title">🔴 POOL B (5 Teams)</div>
+<ul class="pool-teams">
+<li><strong>Rangbaaz</strong> (Local)</li>
+<li><strong>HQ Blue</strong> (Local)</li>
+<li><strong>Afghan 11</strong> (Local)</li>
+<li><strong>MSC</strong> (Local)</li>
+<li><strong>Punjab Tigers</strong> <span class="guest">(Guest - from R2)</span></li>
+</ul>
+</div>
+</div>
+
+<!-- Notes -->
+<div class="notes">
+<strong>⚠️ IMPORTANT:</strong> Opening Ceremony 8:30 AM — 6 local teams MUST report by 8:15 AM. Guest teams (Zalmi, Punjab Tigers, Young Fighters, WMCC) join from Round 2. | 15-min changeover between rounds. | Points: Win=2, Tie=1, Loss=0 | Top 2 per pool advance to Semi-Finals. | Tie in knockout: Super Over.
+</div>
+
+<!-- Footer -->
+<div class="footer">
+<strong>Freedom Cup 2026</strong> — New Haven Tapball Cricket League | 🦅 Hamden Qalandars & New Haven Eagles | masimriaz.github.io/cricket
+</div>
+
+</div>
+</body>
+</html>
