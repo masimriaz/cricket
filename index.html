@@ -107,7 +107,7 @@ h1,h2,h3,h4,h5,h6,.display-1,.display-2,.display-3,.display-4,.display-5,.displa
 <!-- Navigation -->
 <nav class="navbar navbar-expand-lg navbar-dark navbar-nhtcl fixed-top" id="mainNav" aria-label="Main navigation">
 <div class="container">
-<a class="navbar-brand fw-bold" href="#home"><span style="color:var(--gold)">&#9733;</span> Freedom Cup</a>
+<a class="navbar-brand fw-bold" href="#home"><span class="text-gold">â˜…</span> Freedom Cup</a>
 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navContent" aria-controls="navContent" aria-expanded="false" aria-label="Toggle navigation">
 <span class="navbar-toggler-icon"></span>
 </button>
@@ -144,8 +144,8 @@ h1,h2,h3,h4,h5,h6,.display-1,.display-2,.display-3,.display-4,.display-5,.displa
 .hero-carousel-slide.active img{animation:kenBurns 8s ease-in-out forwards}
 @keyframes kenBurns{0%{transform:scale(1) translate(0,0)}100%{transform:scale(1.08) translate(-1%,-1%)}}
 .hero-overlay{position:absolute;inset:0;z-index:3;background:linear-gradient(180deg,rgba(0,10,40,.55) 0%,rgba(0,20,60,.7) 40%,rgba(0,10,30,.85) 100%);pointer-events:none}
-.hero-content-wrap{position:absolute;inset:0;z-index:5;display:flex;align-items:flex-end;justify-content:center;padding:0 1rem 3rem;background:linear-gradient(180deg,transparent 0%,transparent 40%,rgba(0,20,60,.7) 100%)}
-.hero-glass-card{background:transparent;backdrop-filter:none;-webkit-backdrop-filter:none;border:none;border-radius:0;padding:1.5rem 1.5rem 0;max-width:650px;width:100%;text-align:center;box-shadow:none}
+.hero-content-wrap{position:absolute;inset:0;z-index:5;display:flex;align-items:center;justify-content:center;padding:5rem 1rem 2rem}
+.hero-glass-card{background:rgba(0,20,60,.2);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border:1px solid rgba(255,215,0,.12);border-radius:16px;padding:1.5rem 1.5rem;max-width:580px;width:100%;text-align:center;box-shadow:0 12px 40px rgba(0,0,0,.3)}
 .hero-indicators{position:absolute;bottom:28px;left:50%;transform:translateX(-50%);z-index:6;display:flex;gap:10px}
 .hero-indicator{width:40px;height:4px;border-radius:3px;background:rgba(255,255,255,.35);cursor:pointer;transition:all .3s}
 .hero-indicator.active{background:var(--gold);width:56px;box-shadow:0 0 12px rgba(255,215,0,.5)}
@@ -160,8 +160,8 @@ h1,h2,h3,h4,h5,h6,.display-1,.display-2,.display-3,.display-4,.display-5,.displa
 .hero-complete-pill{animation:completePulse 3s ease-in-out infinite}
 @keyframes completePulse{0%,100%{box-shadow:0 0 15px rgba(40,167,69,.3)}50%{box-shadow:0 0 25px rgba(40,167,69,.5)}}
 @media(max-width:767.98px){
-.hero-glass-card{padding:1rem .8rem 0;margin:0 .5rem}
-.hero-glass-card h1{font-size:1.6rem!important}
+.hero-glass-card{padding:1.2rem 1rem;border-radius:14px;margin:0 .5rem}
+.hero-glass-card h1{font-size:1.8rem!important}
 .hero-glass-card .hero-subtitle{font-size:.75rem!important}
 .hero-thumb-strip{display:none}
 .hero-indicators{bottom:18px}
@@ -194,14 +194,31 @@ h1,h2,h3,h4,h5,h6,.display-1,.display-2,.display-3,.display-4,.display-5,.displa
 <!-- Hero Content -->
 <div class="hero-content-wrap">
 <div class="hero-glass-card">
-<h1 class="fw-900 text-white mb-1" style="font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3.2rem);text-shadow:0 2px 20px rgba(0,0,0,.6);letter-spacing:-1px">FREEDOM CUP 2026</h1>
-<p class="mb-2" style="color:rgba(255,255,255,.8);font-size:.85rem;letter-spacing:1px">🏏 Independence Day Cricket Tournament • New Haven, CT</p>
-<div class="d-flex align-items-center justify-content-center gap-3 flex-wrap">
-<span style="background:linear-gradient(135deg,rgba(255,215,0,.15),rgba(255,215,0,.05));border:1.5px solid rgba(255,215,0,.5);border-radius:8px;padding:6px 16px;display:inline-flex;align-items:center;gap:6px">
-<span style="font-size:1.2rem">🏆</span>
-<span class="fw-800 champion-glow" style="color:var(--gold);font-size:.95rem">Champions: Young Fighters</span>
+<!-- Tournament Complete Indicator -->
+<div class="mb-2">
+<span class="d-inline-block px-2 py-1 rounded-pill hero-complete-pill" style="background:rgba(40,167,69,.1);border:1px solid rgba(40,167,69,.4);color:#4cff91;font-size:.65rem;font-weight:600;letter-spacing:1.5px;text-transform:uppercase">
+<i class="bi bi-check-circle-fill me-1"></i>Tournament Successfully Completed
 </span>
-<span style="color:rgba(255,255,255,.7);font-size:.85rem;font-weight:600">🥈 Runner-Up: WMCC</span>
+</div>
+
+<!-- Title -->
+<p class="text-uppercase fw-bold mb-1" style="color:var(--gold);letter-spacing:3px;font-size:.65rem">&#9733; Independence Day &#9733;</p>
+<h1 class="display-5 fw-900 text-white mb-1" style="text-shadow:0 4px 20px rgba(0,0,0,.5);letter-spacing:-1px">FREEDOM CUP<br>2026</h1>
+<p class="hero-subtitle mb-2" style="color:rgba(255,255,255,.75);font-size:.85rem;font-weight:400">
+<i class="bi bi-geo-alt-fill me-1" style="color:var(--gold)"></i>Independence Day Cricket Tournament &mdash; New Haven, CT
+</p>
+
+<!-- Champions Badge -->
+<div class="d-inline-block px-3 py-2 rounded-3 mb-2 hero-champion-badge" style="background:linear-gradient(135deg,rgba(255,215,0,.08),rgba(255,215,0,.03));border:1.5px solid rgba(255,215,0,.4)">
+<p class="mb-0" style="font-size:1.4rem;line-height:1">&#127942;</p>
+<h3 class="fw-900 mb-0 champion-glow" style="color:var(--gold);font-size:1.2rem;letter-spacing:.5px">CHAMPIONS: Young Fighters</h3>
+<p class="mb-0 fw-600" style="color:rgba(255,255,255,.7);font-size:.8rem">&#129352; Runner-Up: WMCC</p>
+</div>
+
+<!-- CTA Buttons -->
+<div class="mt-2 d-flex flex-wrap gap-2 justify-content-center">
+<a href="#awards" class="btn btn-sm btn-patriotic"><i class="bi bi-trophy me-1"></i>Awards</a>
+<a href="#gallery" class="btn btn-sm" style="background:rgba(255,255,255,.08);color:#fff;border:1px solid rgba(255,255,255,.2);border-radius:50px;padding:.4rem 1.2rem;font-weight:600;font-size:.8rem;backdrop-filter:blur(4px);transition:all .3s" onmouseenter="this.style.background='rgba(255,215,0,.12)';this.style.borderColor='var(--gold)';this.style.color='var(--gold)'" onmouseleave="this.style.background='rgba(255,255,255,.08)';this.style.borderColor='rgba(255,255,255,.2)';this.style.color='#fff'"><i class="bi bi-images me-1"></i>Gallery</a>
 </div>
 </div>
 </div>
